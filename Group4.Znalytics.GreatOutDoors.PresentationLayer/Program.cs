@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Group4.Znalytics.GreatOutDoors.PresentationLayer
+﻿class program
 {
-    class Program
+    public void Main()
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }
