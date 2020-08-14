@@ -1,60 +1,14 @@
-﻿public class Employee
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-    private int _empID;
-    private string _empName;
-    private double _noOfHoursWorked;
-    private double _hourlyPrice;
-    public void SetEmpId(int value)
+    public class Class1
     {
-        _empID = value;
-    }
-
-    public int GetEmpID()
-    {
-        return _empID;
-    }
-    public void SetEmpName(string value)
-    {
-        _empName = value;
-    }
-
-    public string GetEmpName()
-    {
-        return _empName;
-    }
-    public void SetNoOfHoursWorked(double value)
-    {
-        _noOfHoursWorked = value;
-    }
-
-    public double GetNoOfHoursWorked()
-    {
-        return _noOfHoursWorked;
-    }
-
-    public void SetHourlyPrice(double value)
-    {
-        _hourlyPrice = value;
-    }
-
-    public double GetHourlyPrice()
-    {
-        return _hourlyPrice;
-    }
-    public double GetGrossSalary()
-    {
-        return _noOfHoursWorked * _hourlyPrice;
 
     }
-    public double GetNetSalary()
-    {
-        if (GetGrossSalary() > 30000)
-        {
-            return GetGrossSalary() - ((GetGrossSalary() * 5) / 100);
-        }
-        else
-        {
-            return (GetGrossSalary());
-        }
-    }
+
 }
