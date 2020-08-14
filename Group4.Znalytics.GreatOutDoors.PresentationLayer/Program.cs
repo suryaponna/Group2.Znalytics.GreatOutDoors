@@ -1,6 +1,13 @@
 ﻿class program
 {
-    public void Main()
+    static void Main()
     {
+        
+        
+        System.Console.WriteLine("Hello World");
+        System.Console.ReadKey();
+
+
+        
     }
 }
