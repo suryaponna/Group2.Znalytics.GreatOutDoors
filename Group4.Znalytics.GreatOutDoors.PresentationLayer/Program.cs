@@ -1,48 +1,50 @@
-﻿class Program
+﻿class Basic
 {
     static void Main()
+{
+    Master m = new Master();
+
+    System.Console.WriteLine("Select The below options for your product");
+    System.Console.WriteLine("enter 1 for  personal accessories ");
+    System.Console.WriteLine("enter 2 for golf equipment");
+    System.Console.WriteLine("enter 3 for camping equipment");
+    System.Console.WriteLine("enter 4 for mountaineering equipment ");
+    System.Console.WriteLine("enter 5 for outdoor protection");
+    System.Console.WriteLine("Enter your product option ");
+    int choice = System.Convert.ToInt32(System.Console.ReadLine());
+    switch (choice)
     {
-
-        System.Console.WriteLine("********WELCOME TO RETAIL STORE********");
-        //retail store id
-        System.Console.WriteLine("Enter The Retail store Id");
-        //int a = int.Parse(System.Console.ReadLine());
-        Retailstore r = new Retailstore();
-        r.RetailStoreID = (System.Convert.ToInt32(System.Console.ReadLine()));
-        System.Console.WriteLine("The retail store Id is:" + r.RetailStoreID);
-        System.Console.WriteLine(r.RetailStoreID);
-
-
-        //choice of choosing reports
-        System.Console.WriteLine("*****Select the choice  for payment choosing reports******");
-        System.Console.WriteLine("1.Monthly reports");
-        System.Console.WriteLine("2.Quaterly reports");
-        System.Console.WriteLine("3.Annual reports");
-        int Choice = int.Parse(System.Console.ReadLine());
-        switch (Choice)
-        {
-            case 1:
-                System.Console.WriteLine("Monthly reports");
-                r.Reports = "Monthly reports";
-                break;
-            case 2:
-                System.Console.WriteLine("Quarterly reports");
-                r.Reports = "Quarterly reports";
-                break;
-            case 3:
-                System.Console.WriteLine("Annual reports");
-                r.Reports = "Annual Reports";
-                break;
-            default:
-                System.Console.WriteLine("Unknown choice");
-                break;
-        }
-
-
-        System.Console.Write("Selected reports are:" + r.Reports);
-        System.Console.ReadKey();
-
+        case 0:
+            System.Console.WriteLine("personal accessories");
+            break;
+        case 1:
+            System.Console.WriteLine("golf equipment");
+            break;
+        case 2:
+            System.Console.WriteLine("camping equipment");
+            break;
+        case 3:
+            System.Console.WriteLine("mountaineering equipment");
+            break;
+        case 4:
+            System.Console.WriteLine("outdoor protection");
+            break;
+        case 5:
+            System.Console.WriteLine("personal accessories");
+            break;
     }
+    System.Console.WriteLine("Enter your Id");
+    m.SetId(System.Console.ReadLine());
+    System.Console.WriteLine("your id:" + m.GetId());
+    System.Console.WriteLine("Enter your FirstName");
+    m.SetId(System.Console.ReadLine());
+    System.Console.WriteLine("your FirstName:" + m.GetId());
+    System.Console.WriteLine("Enter your LastName");
+    m.SetId(System.Console.ReadLine());
+    System.Console.WriteLine("your LastName:" + m.GetId());
+    System.Console.WriteLine("Enter your Number");
+    m.SetNumber(System.Convert.ToInt64(System.Console.ReadLine()));
+    System.Console.WriteLine("your Number:" + m.GetId());
+    System.Console.ReadLine();
 }
-
-
+}
