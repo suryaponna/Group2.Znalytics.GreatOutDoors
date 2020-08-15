@@ -8,7 +8,7 @@ class Product
         ReturnsModule r;
         r = new ReturnsModule();
         int choice;
-        System.Console.WriteLine("Select your reason ");
+        System.Console.WriteLine("Select your reason for returning product ");
         System.Console.WriteLine("______________________");
         System.Console.WriteLine("1. Unsatisfactory Product");
         System.Console.WriteLine("2. Defective Product");
