@@ -1,60 +1,79 @@
-﻿public class Employee
+﻿/// <summary>
+/// 
+/// </summary>
+class Product
 {
-    private int _empID;
-    private string _empName;
-    private double _noOfHoursWorked;
-    private double _hourlyPrice;
-    public void SetEmpId(int value)
+    static void Main()
     {
-        _empID = value;
-    }
+        ReturnsModule r;
+        r = new ReturnsModule();
+        int choice;
+        System.Console.WriteLine("Select your reason ");
+        System.Console.WriteLine("______________________");
+        System.Console.WriteLine("1. Unsatisfactory Product");
+        System.Console.WriteLine("2. Defective Product");
+        System.Console.WriteLine("3. Incomplete Product");
+        System.Console.WriteLine("4. Wrong Product Ordered");
+        System.Console.WriteLine("5. Wrong Product Shipped");
 
-    public int GetEmpID()
-    {
-        return _empID;
-    }
-    public void SetEmpName(string value)
-    {
-        _empName = value;
-    }
-
-    public string GetEmpName()
-    {
-        return _empName;
-    }
-    public void SetNoOfHoursWorked(double value)
-    {
-        _noOfHoursWorked = value;
-    }
-
-    public double GetNoOfHoursWorked()
-    {
-        return _noOfHoursWorked;
-    }
-
-    public void SetHourlyPrice(double value)
-    {
-        _hourlyPrice = value;
-    }
-
-    public double GetHourlyPrice()
-    {
-        return _hourlyPrice;
-    }
-    public double GetGrossSalary()
-    {
-        return _noOfHoursWorked * _hourlyPrice;
-
-    }
-    public double GetNetSalary()
-    {
-        if (GetGrossSalary() > 30000)
+        System.Console.WriteLine(" Enter your Choice");
+        choice = System.Convert.ToInt32(System.Console.ReadLine());
+        //switch case to select reasons
+        switch (choice)
         {
-            return GetGrossSalary() - ((GetGrossSalary() * 5) / 100);
+            case 1:
+                System.Console.WriteLine(" Unsatisfactory Product");
+                break;
+            case 2:
+                System.Console.WriteLine("Defective Product");
+                break;
+            case 3:
+                System.Console.WriteLine("Incomplete Product");
+                break;
+            case 4:
+                System.Console.WriteLine("Wrong Product Ordered");
+                break;
+            case 5:
+                System.Console.WriteLine(" Wrong Product Shipped");
+                break;
         }
-        else
-        {
-            return (GetGrossSalary());
-        }
+
+
+
+        System.Console.WriteLine("Enter ProductID");
+        r.ProductID = (System.Console.ReadLine());
+        System.Console.WriteLine(r.ProductID);
+
+        System.Console.WriteLine("Enter ProductName");
+        r.ProductName = (System.Console.ReadLine());
+        System.Console.WriteLine(r.ProductName);
+
+        System.Console.WriteLine("Enter ProductDate");
+        r.Productdate = (System.Console.ReadLine());
+        System.Console.WriteLine(r.Productdate);
+
+        System.Console.WriteLine("Enter ProductQuantity");
+        r.ProductQuantity = (System.Convert.ToInt32(System.Console.ReadLine()));
+        System.Console.WriteLine(r.ProductQuantity);
+
+        System.Console.WriteLine("Enter Producttype");
+        r.Producttype = (System.Console.ReadLine());
+        System.Console.WriteLine(r.Producttype);
+
+
+        System.Console.WriteLine("--------------- Deatils are --------------");
+        System.Console.WriteLine("Product Id: " + r.ProductID);
+        System.Console.WriteLine("Employee Name: " + r.ProductName);
+        System.Console.WriteLine("number of hours you worked: " + r.Productdate);
+        System.Console.WriteLine("Hourly price of yours: " + r.ProductQuantity);
+        System.Console.WriteLine("Gross Salary of your is: " + r.Producttype);
+        System.Console.WriteLine("ThankYou for your Response");
+        System.Console.ReadKey();
+
+
+        // System.Collections.Generic.List<ProductID> products = new System.Collections.Generic.List<ProductID>();
+        // products.Add(ProductID);
+
+
     }
 }
