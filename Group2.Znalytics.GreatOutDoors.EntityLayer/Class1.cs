@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows.Markup;
-/// <summary>
+﻿/// <summary>
 /// Shippinng Address Details
 /// </summary>
 public class AddressDetails
