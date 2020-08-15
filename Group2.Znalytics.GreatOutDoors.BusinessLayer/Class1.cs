@@ -1,60 +1,53 @@
-﻿public class Employee
+﻿public class Master
 {
-    private int _empID;
-    private string _empName;
-    private double _noOfHoursWorked;
-    private double _hourlyPrice;
-    public void SetEmpId(int value)
+    private string _id;
+    private string _password;
+    private string _firstName;
+    private string _lastName;
+    private long _number;
+
+    public void SetId(string Id)
     {
-        _empID = value;
+        this._id = Id;
+    }
+    public string GetId()
+    {
+        return this._id;
+    }
+    public void SetPassword(string Password)
+    {
+        this._password = Password;
+    }
+    public string GetPassword()
+    {
+        return this._password;
     }
 
-    public int GetEmpID()
+    public void SetFirstName(string Firstname)
     {
-        return _empID;
+        this._firstName = Firstname;
     }
-    public void SetEmpName(string value)
+    public string GetFirstName()
     {
-        _empName = value;
-    }
-
-    public string GetEmpName()
-    {
-        return _empName;
-    }
-    public void SetNoOfHoursWorked(double value)
-    {
-        _noOfHoursWorked = value;
+        return this._firstName;
     }
 
-    public double GetNoOfHoursWorked()
+
+    public void SetLastName(string lastname)
     {
-        return _noOfHoursWorked;
+        this._lastName = lastname;
+    }
+    public string GetLastName()
+    {
+        return this._lastName;
     }
 
-    public void SetHourlyPrice(double value)
+    public void SetNumber(long number)
     {
-        _hourlyPrice = value;
+        this._number = number;
     }
-
-    public double GetHourlyPrice()
+    public long GetNumber()
     {
-        return _hourlyPrice;
-    }
-    public double GetGrossSalary()
-    {
-        return _noOfHoursWorked * _hourlyPrice;
-
-    }
-    public double GetNetSalary()
-    {
-        if (GetGrossSalary() > 30000)
-        {
-            return GetGrossSalary() - ((GetGrossSalary() * 5) / 100);
-        }
-        else
-        {
-            return (GetGrossSalary());
-        }
+        return this._number;
     }
 }
