@@ -71,9 +71,5 @@ class Product
         System.Console.ReadKey();
 
 
-        // System.Collections.Generic.List<ProductID> products = new System.Collections.Generic.List<ProductID>();
-        // products.Add(ProductID);
-
-
     }
 }
