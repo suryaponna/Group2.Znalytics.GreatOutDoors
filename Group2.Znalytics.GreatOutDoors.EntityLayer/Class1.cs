@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// Shippinng Address Details
 /// </summary>
-public class AddressDetails
+public class AddressDetail
 {
     private string _customerCountry;
     private string _customerFullName;
@@ -13,7 +13,7 @@ public class AddressDetails
     private string _townCity;
     private string _selState;
     private string _addressType;
-    private bool _changeAddress = false;
+    //private bool _changeAddress = false;
 
     public string CustomerCountry
     {
