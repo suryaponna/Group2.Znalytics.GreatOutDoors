@@ -58,7 +58,11 @@
     {
         set
         {
-            _
+            _suppliers = value;
+        }
+        get
+        {
+            return _suppliers;
         }
     }
 }
