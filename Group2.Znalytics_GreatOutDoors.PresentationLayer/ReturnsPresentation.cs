@@ -13,8 +13,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             // public static void ReturnsPresentationLogic()
             //{
-            ReturnsModule r;
-            r = new ReturnsModule();
+            ReturnsModule rr;
+            rr = new ReturnsModule();
             int choice;
             System.Console.WriteLine("Select your reason ");
             System.Console.WriteLine("______________________");
