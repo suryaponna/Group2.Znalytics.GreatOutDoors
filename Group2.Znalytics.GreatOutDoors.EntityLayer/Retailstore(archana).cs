@@ -6,7 +6,8 @@
     private string _outlierProducts;
     private string _suppliers;
     private double _cost;
-    private double _trackingTime;
+    private string _trackingTime;
+
 
     public int RetailStoreID
     {
@@ -54,7 +55,7 @@
             return _outlierProducts;
         }
     }
-    public string suppliers
+    public string Suppliers
     {
         set
         {
@@ -63,6 +64,29 @@
         get
         {
             return _suppliers;
+        }
+    }
+    public double Cost
+
+    {
+        set
+        {
+            _cost = value;
+        }
+        get
+        {
+            return _cost;
+        }
+    }
+    public string Trackingtime
+    {
+        set
+        {
+            _trackingTime = value;
+        }
+        get
+        {
+            return _trackingTime;
         }
     }
 }
