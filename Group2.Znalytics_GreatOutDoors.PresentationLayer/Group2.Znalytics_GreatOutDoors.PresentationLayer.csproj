@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="Retailstore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnsPresentation.cs" />
   </ItemGroup>
