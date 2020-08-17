@@ -1,132 +1,132 @@
-﻿using System.Runtime.CompilerServices;
-using System.Windows.Markup;
-/// <summary>
-/// Shippinng Address Details
-/// </summary>
-public class AddressDetails
-{
-    private string _customerCountry;
-    private string _customerFullName;
-    private long _mobileNumber;
-    private long _pinCode;
-    private string _flatDno;
-    private string _areaColony;
-    private string _landMark;
-    private string _townCity;
-    private string _selState;
-    private string _addressType;
-    private bool _changeAddress = false;
+﻿namespace Znalytics.Group2.GreatOutDoor.Entity {
+    public class AddressDetails
+    {
+        private string _customerCountry;
+        private string _customerFullName;
+        private long _mobileNumber;
+        private long _pinCode;
+        private string _flatDno;
+        private string _areaColony;
+        private string _landMark;
+        private string _townCity;
+        private string _selState;
+        private string _addressType;
+        private bool _changeAddress = false;
 
-    public string CustomerCountry
-    {
-        set
+        public string CustomerCountry
         {
-            _customerCountry = value;
+            set
+            {
+                _customerCountry = value;
+            }
+            get
+            {
+                return _customerCountry;
+            }
         }
-        get
+        public string CustomerName
         {
-            return _customerCountry;
+            set
+            {
+                value = _customerFullName;
+            }
+            get
+            {
+                return this._customerFullName;
+            }
         }
-    }
-    public string CustomerName
-    {
-        set
+        public long MobileNumber
         {
-            value = _customerFullName;
+            set
+            {
+                this._mobileNumber = value;
+            }
+            get
+            {
+                return this._mobileNumber;
+            }
         }
-        get
+        public long PinCode
         {
-            return this._customerFullName;
+            set
+            {
+                this._pinCode = value;
+            }
+            get
+            {
+                return this._pinCode;
+            }
         }
-    }
-    public long MobileNumber
-    {
-        set
+        public string FlatNo
         {
-            this._mobileNumber = value;
+            set
+            {
+                this._flatDno = value;
+            }
+            get
+            {
+                return this._flatDno;
+            }
         }
-        get
+        public string AreaColony
         {
-            return this._mobileNumber;
+            set
+            {
+                this._areaColony = value;
+            }
+            get
+            {
+                return this._areaColony;
+            }
         }
-    }
-    public long PinCode
-    {
-        set
+        public string LandMark
         {
-            this._pinCode = value;
+            set
+            {
+                this._landMark = value;
+            }
+            get
+            {
+                return this._landMark;
+            }
         }
-        get
-        {
-            return this._pinCode;
-        }
-    }
-    public string FlatNo
-    {
-        set
-        {
-            this._flatDno = value;
-        }
-        get
-        {
-            return this._flatDno;
-        }
-    }
-    public string AreaColony
-    {
-        set
-        {
-            this._areaColony = value;
-        }
-        get
-        {
-            return this._areaColony;
-        }
-    }
-    public string LandMark
-    {
-        set
-        {
-            this._landMark = value;
-        }
-        get
-        {
-            return this._landMark;
-        }
-    }
 
-    public string Town
-    {
-        set
+        public string Town
         {
-            this._townCity = value;
+            set
+            {
+                this._townCity = value;
+            }
+            get
+            {
+                return this._townCity;
+            }
         }
-        get
+        public string State
         {
-            return this._townCity;
+            set
+            {
+                this._selState = value;
+            }
+            get
+            {
+                return this._selState;
+            }
         }
-    }
-    public string State
-    {
-        set
+        public string AddressType
         {
-            this._selState = value;
+            set
+            {
+                this._addressType = value;
+            }
+            get
+            {
+                return this._addressType;
+            }
         }
-        get
-        {
-            return this._selState;
+        public string GetDet() {
+            return this._customerCountry;
         }
-    }
-    public string AddressType
-    {
-        set
-        {
-            this._addressType = value;
-        }
-        get
-        {
-            return this._addressType;
-        }
-    }
 
+    }
 }

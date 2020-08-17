@@ -1,12 +1,13 @@
-﻿class Address
+﻿using Znalytics.Group2.GreatOutDoor.Entity;
+public class Address
 {
     static void Main()
     {
     NewAddress:
         int spec = 0;
+        BusinessLogic bd = new BusinessLogic();
         AddressDetails ad = new AddressDetails();
         Retail r = new Retail();
-        r.Id = 524;
         System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
         System.Console.WriteLine("Enter Country:");
         ad.CustomerCountry = (System.Console.ReadLine());
@@ -131,6 +132,7 @@
             }
         }
     Lab:
+        bd.AddAddress(ad);
         System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
         System.Console.ReadKey();
 
