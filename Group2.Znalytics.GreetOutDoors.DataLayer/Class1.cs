@@ -2,11 +2,10 @@
 using System.Configuration;
 using Znalytics.Group2.GreatOutDoor.Entity;
 
-public class LogicLayer {
+public class DataLayer {
     List<string> DataBase = new List<string>();
-    AddressDetails ad = new AddressDetails();
-    private string _name;
-    public void SetName(){
-        _name=ad.CustomerCountry ;
+    public void AddAddress(string address) {
+        DataBase.Add(address);
     }
+    
 } 

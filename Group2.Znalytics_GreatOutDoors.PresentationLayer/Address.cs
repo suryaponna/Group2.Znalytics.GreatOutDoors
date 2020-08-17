@@ -7,7 +7,6 @@ public class Address
         int spec = 0;
         AddressDetails ad = new AddressDetails();
         Retail r = new Retail();
-        r.Id = 524;
         System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
         System.Console.WriteLine("Enter Country:");
         ad.CustomerCountry = (System.Console.ReadLine());
