@@ -5,6 +5,7 @@ public class Address
     {
     NewAddress:
         int spec = 0;
+        BusinessLogic bd = new BusinessLogic();
         AddressDetails ad = new AddressDetails();
         Retail r = new Retail();
         System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
@@ -132,6 +133,7 @@ public class Address
         }
     Lab:
         System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
+        bd.AddAddress(ad);
         System.Console.ReadKey();
 
     }
