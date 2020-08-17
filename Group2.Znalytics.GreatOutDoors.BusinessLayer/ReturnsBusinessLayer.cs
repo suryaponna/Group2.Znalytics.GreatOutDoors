@@ -9,12 +9,20 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
     public class ReturnsBusinessLayer
     {
-        public void AddReturnsModule(ReturnsModule r)
+        ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
+        public void AddReturnsModule(ReturnsModule rm)
         {
-            if(r.ProductName!=null)
+            if(rm.ProductName.Length<=20)
             {
-                ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
-                rdl.AddReturnsModule(r);
+                rdl.AddReturnsModule(rm);
+            }
+            if(rm.Productdate!=null)
+            {
+                rdl.AddReturnsModule(System.Convert.ToString(rm));
+            }
+            if(rm.ProductQuantity<=20)
+            {
+                rdl.AddReturnsModule(System.Convert.ToString(rm));
             }
         }
     }
