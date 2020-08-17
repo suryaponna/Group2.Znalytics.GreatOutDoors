@@ -1,4 +1,5 @@
-﻿class Address
+﻿using Znalytics.Group2.GreatOutDoor.Entity;
+public class Address
 {
     static void Main()
     {
