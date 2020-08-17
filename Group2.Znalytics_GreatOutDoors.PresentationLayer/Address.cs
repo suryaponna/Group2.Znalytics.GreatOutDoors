@@ -132,8 +132,8 @@ public class Address
             }
         }
     Lab:
-        System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
         bd.AddAddress(ad);
+        System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
         System.Console.ReadKey();
 
     }
