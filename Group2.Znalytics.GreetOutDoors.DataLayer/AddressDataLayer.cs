@@ -5,12 +5,12 @@ using Znalytics.Group2.GreatOutDoor.Entity;
 /// Data Layer
 /// </summary>
 public class DataLayer {
-    List<string> DataBase = new List<string>();
+    List<AddressDetails> DataBase = new List<AddressDetails>();
     /// <summary>
     /// 
     /// </summary>
     /// <param name="address">Attribute to add adddress in to collection</param>
-    public void AddAddress(string address) {
+    public void AddAddress(AddressDetails address) {
         DataBase.Add(address);
     }
     
