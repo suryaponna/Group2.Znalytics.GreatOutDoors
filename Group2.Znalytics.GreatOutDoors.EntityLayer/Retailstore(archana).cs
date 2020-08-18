@@ -1,14 +1,18 @@
-﻿public class Retailstore
+﻿/// <summary>
+/// RETAIL STORE MODULE
+/// </summary>
+public class Retailstore
 {
+
     private int _retailStoreID;
     private string _reports;
     private string _retailProducts;
-    private string _outlierProducts;
     private string _suppliers;
-    private double _cost;
-    private string _trackingTime;
+    private string _damagedProducts;
 
-
+    /// <summary>
+    /// RetailStoreID
+    /// </summary>
     public int RetailStoreID
     {
         set
@@ -21,6 +25,9 @@
             return _retailStoreID;
         }
     }
+    /// <summary>
+    /// Reports
+    /// </summary>
     public string Reports
     {
         set
@@ -32,6 +39,9 @@
             return _reports;
         }
     }
+    /// <summary>
+    /// RetailProducts
+    /// </summary>
     public string RetailProducts
     {
         set
@@ -44,17 +54,10 @@
             return _retailProducts;
         }
     }
-    public string OutliersProducts
-    {
-        set
-        {
-            _outlierProducts = value;
-        }
-        get
-        {
-            return _outlierProducts;
-        }
-    }
+    /// <summary>
+    /// Suppliers
+    /// </summary>
+
     public string Suppliers
     {
         set
@@ -66,28 +69,20 @@
             return _suppliers;
         }
     }
-    public double Cost
+    /// <summary>
+    /// Outlier Products
+    /// </summary>
+    public string DamagedProducts
+    {
+        set
+        {
+            _damagedProducts = value;
+        }
+        get
+        {
+            return _damagedProducts;
+        }
+    }
 
-    {
-        set
-        {
-            _cost = value;
-        }
-        get
-        {
-            return _cost;
-        }
-    }
-    public string Trackingtime
-    {
-        set
-        {
-            _trackingTime = value;
-        }
-        get
-        {
-            return _trackingTime;
-        }
-    }
 }
 
