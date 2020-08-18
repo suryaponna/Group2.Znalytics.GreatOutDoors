@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group2.Znalytics.GreetOutDoors.DataLayer
+namespace Group2.Znalytics.GreatOutDoors.RetailStore.DataLayer
 {
-    public class RetailStoreDataLayaer
+    public class RetailStoreDataLayer
     {
         List<string> DataBase = new List<string>();
         public void AddAddress(string retailStore)
