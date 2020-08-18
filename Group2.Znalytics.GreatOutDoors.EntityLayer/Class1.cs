@@ -1,4 +1,8 @@
-﻿namespace Znalytics.Group2.GreatOutDoor.Entity {
+﻿/// <summary>
+/// Address Entity Class 
+/// </summary>
+
+namespace Znalytics.Group2.GreatOutDoor.Entity {
     public class AddressDetails
     {
         private string _customerCountry;
@@ -13,6 +17,9 @@
         private string _addressType;
         private bool _changeAddress = false;
 
+        /// <summary>
+        /// PRoperty for CustomerCountry
+        /// </summary>
         public string CustomerCountry
         {
             set
@@ -24,6 +31,10 @@
                 return _customerCountry;
             }
         }
+        /// <summary>
+        /// Property for CustomerName
+        /// </summary>
+
         public string CustomerName
         {
             set
@@ -35,6 +46,10 @@
                 return this._customerFullName;
             }
         }
+        /// <summary>
+        /// Property for MobileNumber
+        /// </summary>
+
         public long MobileNumber
         {
             set
@@ -46,6 +61,10 @@
                 return this._mobileNumber;
             }
         }
+        /// <summary>
+        /// Property for PinCode
+        /// </summary>
+
         public long PinCode
         {
             set
@@ -57,6 +76,10 @@
                 return this._pinCode;
             }
         }
+        /// <summary>
+        /// Property for FlatNumber
+        /// </summary>
+
         public string FlatNo
         {
             set
@@ -67,7 +90,10 @@
             {
                 return this._flatDno;
             }
-        }
+        }/// <summary>
+         /// Property for Area and Colony
+         /// </summary>
+
         public string AreaColony
         {
             set
@@ -79,6 +105,10 @@
                 return this._areaColony;
             }
         }
+        /// <summary>
+        /// Property for Land Mark of the address
+        /// </summary>
+
         public string LandMark
         {
             set
@@ -90,6 +120,10 @@
                 return this._landMark;
             }
         }
+        /// <summary>
+        /// Property for Town
+        /// </summary>
+
 
         public string Town
         {
@@ -102,6 +136,10 @@
                 return this._townCity;
             }
         }
+        /// <summary>
+        /// Property for State
+        /// </summary>
+
         public string State
         {
             set
@@ -113,6 +151,10 @@
                 return this._selState;
             }
         }
+        /// <summary>
+        /// Property for AddressType
+        /// </summary>
+
         public string AddressType
         {
             set
@@ -123,9 +165,6 @@
             {
                 return this._addressType;
             }
-        }
-        public string GetDet() {
-            return this._customerCountry;
         }
 
     }
