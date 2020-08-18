@@ -1,7 +1,11 @@
-﻿class Program
+using System;
+using System.Diagnostics.Tracing;
+
+class RetailStorePresentation
 {
     static void Main()
     {
+        //creating object
         Retailstore r = new Retailstore();
         System.Console.WriteLine("********WELCOME TO RETAIL STORE********");
 
@@ -35,19 +39,22 @@
                 break;
         }
         System.Console.WriteLine("Selected reports are:" + r.Reports);
-        System.Console.ReadKey();
-
 
         //retail products
+
         System.Console.WriteLine("******choice of choosing types of products******");
-        System.Console.WriteLine("Enter 1 for Electrical Appliances");
-        System.Console.WriteLine("Enter 2 for Grocery products");
-        System.Console.WriteLine("Enter 3 for Medicines");
-        System.Console.WriteLine("Enter 4 for Fashion products");
-        System.Console.WriteLine("Enter 5 for Fitness products");
-        System.Console.WriteLine("Enter 6 for Industrial products");
+        System.Console.WriteLine("Enter 1 for Electrical Appliances cost range is  1000-100000");
+        System.Console.WriteLine("Enter 2 for Grocery products cost range is  1000-5000");
+        System.Console.WriteLine("Enter 3 for Medical Products cost range is  10-30000");
+        System.Console.WriteLine("Enter 4 for Fashion products cost range is  100-5000");
+        System.Console.WriteLine("Enter 5 for Fitness products cost range is  100-50000");
+        System.Console.WriteLine("Enter 6 for Industrial products cost range is  1000-500000");
+        System.Console.WriteLine("Enter 7 for Eletronical devices cost range is  1000-100000");
+        System.Console.WriteLine("Enter 8 for Kitchen Products cost range is  100-535000");
+        System.Console.WriteLine("Enter morethan 9 to exit");
         int b = int.Parse(System.Console.ReadLine());
-        while (true)
+
+        while (b <= 8)
         {
             switch (b)
             {
@@ -61,7 +68,7 @@
                     break;
                 case 3:
                     r.RetailProducts = System.Console.ReadLine();
-                    r.RetailProducts = " Medicines";
+                    r.RetailProducts = " Medical Products";
                     break;
                 case 4:
                     r.RetailProducts = System.Console.ReadLine();
@@ -75,16 +82,53 @@
                     r.RetailProducts = System.Console.ReadLine();
                     r.RetailProducts = "Industrial products";
                     break;
-                default:
-                    System.Console.WriteLine("Enter Valid option");
+                case 7:
+                    r.RetailProducts = System.Console.ReadLine();
+                    r.RetailProducts = "Eletronical devices";
                     break;
+                case 8:
+                    r.RetailProducts = System.Console.ReadLine();
+                    r.RetailProducts = "Kitchen Products";
+                    break;
+                default:
+                    System.Console.WriteLine("In Valid option");
+                    break;
+
             }
             System.Console.WriteLine("Selected the type of Retail products are:" + r.RetailProducts);
-            System.Console.ReadKey();
-
+            b = int.Parse(System.Console.ReadLine());
         }
-       // System.Console.WriteLine();
 
+        // Suppliers for transporting
+        System.Console.WriteLine("*******Suppliers For Transporting*******");
+        System.Console.WriteLine("Enter true for if you want suppliers else enter false");
+        //r.Suppliers = System.Console.ReadLine();
+        bool k = true;
+        bool s = bool.Parse(System.Console.ReadLine());
+        if (s == true)
+        {
+            System.Console.WriteLine("Yes I want suppliers");
+        }
+        else
+        {
+            k = false;
+            System.Console.WriteLine("No i doesn't want suppliers");
+        }
+        //System.Console.WriteLine("get suppliers:" + r.Suppliers);
+
+        /** //Outlier Products
+         System.Console.WriteLine("*************** Damaged Products ******************");
+         System.Console.WriteLine("Is their any damaged products ");
+         string a = System.Console.ReadLine();
+         int d = int.Parse(System.Console.ReadLine());
+         if (d == 1)
+         {
+             System.Console.ReadLine("Yes their is some damgaed products are their in the middle ");
+         }*/
+
+
+        System.Console.WriteLine("************* THANK YOU FOR CHOOSING OUR RETAIL STORE ****************");
+        System.Console.ReadKey();
     }
 
 }
