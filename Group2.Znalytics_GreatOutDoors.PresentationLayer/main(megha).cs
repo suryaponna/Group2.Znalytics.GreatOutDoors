@@ -1,8 +1,8 @@
-﻿class program
+﻿public class program
 {
     static void Main()
     {
-        Master m = new Master();
+        StartMenu m;
 
         System.Console.WriteLine("Select The below options for your product");
         System.Console.WriteLine("enter 1 for  personal accessories ");
@@ -169,4 +169,5 @@ public class Categories
     {
         return this._outdoorProtection;
     }
+}
 

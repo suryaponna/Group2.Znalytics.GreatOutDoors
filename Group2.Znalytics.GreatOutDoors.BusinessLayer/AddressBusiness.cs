@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Business Logic for Address
 /// </summary>
-public class BusinessLogic{
+public class AddressBusinessLogic{
     
     //List<string> TotalAddresses = new List<string>();
     DataLayer dl = new DataLayer();
