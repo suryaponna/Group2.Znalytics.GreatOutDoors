@@ -1,8 +1,10 @@
-﻿public class program
+﻿using Znalytics.Group2.GreatOutDoor.Entity;
+
+public class program
 {
     static void Main()
     {
-        StartMenu m;
+        StartMenu a; 
 
         System.Console.WriteLine("Select The below options for your product");
         System.Console.WriteLine("enter 1 for  personal accessories ");
