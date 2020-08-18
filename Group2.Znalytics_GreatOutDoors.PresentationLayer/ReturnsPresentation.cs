@@ -16,9 +16,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsModule rm;
             rm = new ReturnsModule();
 
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-            rbl.AddReturnsModule(rm);
-
+            ReturnsBusinessLayer rbl=new ReturnsBusinessLayer()
+            rbl.AddReturnsModule(r);
             int choice;
             System.Console.WriteLine("Select your reason for returning");
             System.Console.WriteLine("______________________");
