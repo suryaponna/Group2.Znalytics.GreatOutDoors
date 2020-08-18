@@ -3,8 +3,6 @@
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
-
-
     public class Retailstore
     {
 
