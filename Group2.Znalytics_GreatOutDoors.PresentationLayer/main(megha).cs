@@ -2,7 +2,7 @@
 {
     static void Main()
     {
-        Master m = new Master();
+        ProductMaster m = new ProductMaster();
 
         System.Console.WriteLine("Select The below options for your product");
         System.Console.WriteLine("enter 1 for  personal accessories ");
@@ -18,11 +18,14 @@
                 System.Console.WriteLine("personal accessories");
                 switch (choice)
                 {
-                    case 0: System.Console.WriteLine("bangle");
+                    case 0:
+                        System.Console.WriteLine("bangle");
                         break;
-                    case 1: System.Console.WriteLine("hand bags");
+                    case 1:
+                        System.Console.WriteLine("hand bags");
                         break;
-                    case 2:System.Console.WriteLine("makeup");
+                    case 2:
+                        System.Console.WriteLine("makeup");
                         break;
                 }
                 break;
@@ -86,8 +89,11 @@
                         break;
                 }
                 break;
-           
+
         }
+
+
+
         System.Console.WriteLine("Enter your Id");
         m.SetId(System.Console.ReadLine());
         System.Console.WriteLine("your id:" + m.GetId());
@@ -98,8 +104,8 @@
         m.SetId(System.Console.ReadLine());
         System.Console.WriteLine("your LastName:" + m.GetId());
         System.Console.WriteLine("Enter your Number");
-        m.SetNumber(System.Convert.ToInt64(System.Console.ReadLine()));
-        System.Console.WriteLine("your Number:" + m.GetId());
+        m.SetPhoneNumber(System.Convert.ToInt64(System.Console.ReadLine()));
+        System.Console.WriteLine("your PhoneNumber:" + m.GetId());
     }
 }
 
@@ -107,66 +113,4 @@
 
 
 
-
-// ANOTHER CLASS FOR CATEGORIES//
-
-public class Categories
-{
-    private string _personalAccessories;
-    private string _golfEquipment;
-    private string _campingEquipment;
-    private string _mountaineeringEquipment;
-    private string _outdoorProtection;
-
-    public void SetPersonalAccessories(string PersonalAccessories)
-    {
-        this._personalAccessories = _personalAccessories;
-    }
-    public string GetPersonalAccessories()
-    {
-        return this._personalAccessories;
-    }
-
-
-    public void SetGolfEquipment(string GolfEquipment)
-    {
-        this._golfEquipment = _golfEquipment;
-    }
-    public string GetGolfEquipment()
-    {
-        return this._golfEquipment;
-    }
-
-
-    public void SetcampingEquipment(string campingEquipment)
-    {
-        this._campingEquipment = _campingEquipment;
-    }
-    public string GetCampingEquipment()
-    {
-        return this._golfEquipment;
-    }
-
-
-
-    public void SetMountaineeringEquipment(string MountaineeringEquipment)
-    {
-        this._mountaineeringEquipment = _mountaineeringEquipment;
-    }
-    public string GetMountaineeringEquipment()
-    {
-        return this._mountaineeringEquipment;
-    }
-
-
-
-
-    public void SetOutdoorProtection(string OutdoorProtection)
-    {
-        this._mountaineeringEquipment = _mountaineeringEquipment;
-    }
-    public string Get_outdoorProtection()
-    {
-        return this._outdoorProtection;
-    }
 

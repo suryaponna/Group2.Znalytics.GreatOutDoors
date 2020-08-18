@@ -1,4 +1,4 @@
-﻿public class Master
+﻿public class ProductMaster
 {
     private string _id;
     private string _password;
@@ -51,4 +51,8 @@
         return this._number;
     }
 }
+
+
+
+
 
