@@ -1,6 +1,4 @@
-﻿// PRODUCT MASTER CODE//
-
-class Master
+﻿class Program
 {
     static void Main()
     {
@@ -18,22 +16,75 @@ class Master
         {
             case 0:
                 System.Console.WriteLine("personal accessories");
+                switch (choice)
+                {
+                    case 1: System.Console.WriteLine("bangles");
+                        break;
+                    case 2:System.Console.WriteLine("makeup");
+                        break;
+                    case 3:System.Console.WriteLine("handbags");
+                        break;
+                }
                 break;
-            case 1:
-                System.Console.WriteLine("golf equipment");
+            case 1:System.Console.WriteLine("golf equipment");
+                
+                switch(choice)
+                {
+                    case 1:System.Console.WriteLine("pitching wedge");
+                        break;
+                    case 2:System.Console.WriteLine("sand wedge");
+                        break;
+                    case 3:System.Console.WriteLine("gap wedge");
+                        break;
+                }
                 break;
             case 2:
                 System.Console.WriteLine("camping equipment");
+                switch (choice)
+                {
+                    case 1:
+                        System.Console.WriteLine("tent");
+                        break;
+                    case 2:
+                        System.Console.WriteLine("tent platform");
+                        break;
+                    case 3:
+                        System.Console.WriteLine("tarptent");
+                        break;
+                }
+
                 break;
             case 3:
                 System.Console.WriteLine("mountaineering equipment");
+                switch (choice)
+                {
+                    case 1:
+                        System.Console.WriteLine("climbing rope");
+                        break;
+                    case 2:
+                        System.Console.WriteLine("gas stove");
+                        break;
+                    case 3:
+                        System.Console.WriteLine("cramponsS");
+                        break;
+                }
                 break;
             case 4:
                 System.Console.WriteLine("outdoor protection");
+                switch (choice)
+                {
+                    case 1:
+                        System.Console.WriteLine("pitching wedge");
+                        break;
+                    case 2:
+                        System.Console.WriteLine("sand wedge");
+                        break;
+                    case 3:
+                        System.Console.WriteLine("gap wedge");
+                        break;
+                }
                 break;
-            case 5:
-                System.Console.WriteLine("personal accessories");
-                break;
+           
         }
         System.Console.WriteLine("Enter your Id");
         m.SetId(System.Console.ReadLine());
@@ -47,9 +98,16 @@ class Master
         System.Console.WriteLine("Enter your Number");
         m.SetNumber(System.Convert.ToInt64(System.Console.ReadLine()));
         System.Console.WriteLine("your Number:" + m.GetId());
-        System.Console.ReadLine();
+
     }
+
+    
 }
+
+
+
+
+
 
 // ANOTHER CLASS FOR CATEGORIES//
 
@@ -113,8 +171,5 @@ public class Categories
         return this._outdoorProtection;
     }
 
-
-
-
-
+    
 }
