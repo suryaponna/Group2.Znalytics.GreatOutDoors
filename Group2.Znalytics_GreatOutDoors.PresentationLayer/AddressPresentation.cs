@@ -1,5 +1,6 @@
 ﻿//using Znalytics.Group2.GreatOutDoor.Entity;
 
+using Znalytics.Group2.GreatOutDoor.Entity;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class Address
@@ -9,7 +10,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         NewAddress:
             int spec = 0;
             AddressDetails ad = new AddressDetails();
-            AddressBusinessLogic bd = new AddressBusinessLogic();
+            AddressBusinessLogic bd;
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
             System.Console.WriteLine("Enter Country:");
             ad.CustomerCountry = (System.Console.ReadLine());
