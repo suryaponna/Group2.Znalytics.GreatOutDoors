@@ -8,15 +8,14 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
     public class ReturnsDataAccessLayer
     {
-        private List<ReturnsModule> Returns;
 
         public ReturnsDataAccessLayer()
         {
-            Returns = new List<ReturnsModule>();
+            List<string> Data = new List<string>();
         }
-        public void AddReturnsModule(ReturnsModule r)
+        public void AddReturnsModule(string ReturnsModule)
         {
-            Returns.Add(r);
+            Data.Add(ReturnsModule);
         }
 
     }
