@@ -2,28 +2,38 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// BusinessLogic Layer
+/// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
+
     public class ReturnsBusinessLayer
     {
-        ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
-        public void AddReturnsModule(ReturnsModule rm)
+        
+       
+        // creating method for validating Productdate
+        public void AddProductName(Return rm)
         {
-            if(rm.ProductName.Length<=30)
+            if (rm.ProductName!=null)
             {
-                rdl.AddReturnsModule(rm);
-            }
-            if(rm.Productdate!=null)
-            {
-                rdl.AddReturnsModule(rm);
-            }
-            if(rm.ProductQuantity<=20)
-            {
-                rdl.AddReturnsModule(rm);
+                ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
+                rdl.AddProductName(rm); 
             }
         }
+        // checking condition for ProductQuantity
+        public void AddProductQuantity(Return rm)
+        {
+            if (rm.ProductQuantity <= 20)
+            {
+                ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
+                rdl.AddProductQuantity(rm);
+            }
+        }
+       
     }
+    
 }

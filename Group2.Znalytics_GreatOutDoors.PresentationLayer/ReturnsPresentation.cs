@@ -13,8 +13,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             // public static void ReturnsPresentationLogic()
             //{
-            ReturnsModule rm;
-            rm = new ReturnsModule();
+            Return rm;
+            rm = new Return();
 
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             
@@ -77,7 +77,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.WriteLine("Enter 10 for Fitness products");
             System.Console.WriteLine("Enter 11 for Industrial products");
             int b = int.Parse(System.Console.ReadLine());
-
+            //switch case for choosing producttype
             switch (b)
             {
                 case 6:
@@ -90,7 +90,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     break;
                 case 8:
                     rm.Producttype = System.Console.ReadLine();
-                    rm.Producttype = " Medicines";
+                    rm.Producttype = " Medicical Products";
                     break;
                 case 9:
                     rm.Producttype = System.Console.ReadLine();
@@ -104,10 +104,19 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     rm.Producttype = System.Console.ReadLine();
                     rm.Producttype = "Industrial products";
                     break;
+                case 12:
+                    rm.Producttype = System.Console.ReadLine();
+                    rm.Producttype = "Electronical devices";
+                    break;
+                case 13:
+                    rm.Producttype = System.Console.ReadLine();
+                    rm.Producttype = "Kitchen products";
+
+                    break;
             }
 
             System.Console.WriteLine(rm.Producttype);
-            
+            //Displays all the details 
             System.Console.WriteLine("--------------- Detils are --------------");
             System.Console.WriteLine("Product Id: " + rm.ProductID);
             System.Console.WriteLine("Product Name: " + rm.ProductName);
@@ -118,7 +127,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.ReadKey();
 
 
-            rbl.AddReturnsModule(rm);
+            rbl.AddReturn(rm);
         }
 
         // }
