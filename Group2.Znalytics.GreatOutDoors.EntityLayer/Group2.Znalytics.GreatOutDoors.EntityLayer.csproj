@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressEntity.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Classlib%28meg%29.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Retailstore%28archana%29.cs" />
+    <Compile Include="Retailstore.cs" />
     <Compile Include="Return.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Group2.Znalytics_GreatOutDoors.PresentationLayer\Group2.Znalytics_GreatOutDoors.PresentationLayer.csproj">
+      <Project>{88916087-53ed-421e-bea7-b35af5ba30f4}</Project>
+      <Name>Group2.Znalytics_GreatOutDoors.PresentationLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
