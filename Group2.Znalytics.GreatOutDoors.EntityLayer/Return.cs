@@ -3,6 +3,7 @@
 /// </summary>
 public class ReturnsModule
 {
+    //private fields
     private string _productID;
     private string _productName;
     private string _productdate;
