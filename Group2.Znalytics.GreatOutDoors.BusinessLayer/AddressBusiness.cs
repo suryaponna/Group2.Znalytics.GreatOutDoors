@@ -1,5 +1,6 @@
 ﻿using Znalytics.Group2.GreatOutDoor.Entity;
 using System.Collections.Generic;
+///--------------------Surya 
 /// <summary>
 /// Business Logic for Address
 /// </summary>
@@ -7,14 +8,14 @@ public class BusinessLogic{
     
     //List<string> TotalAddresses = new List<string>();
     DataLayer dl = new DataLayer();
-    AddressDetails ad = new AddressDetails();
+    AddressDetail ad = new AddressDetail();
     string sample = "";
     int j = 1;
     /// <summary>
     /// Method for Adding Customer Country
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
-    public void AddCountry(AddressDetails ad) {
+    public void AddCountry(AddressDetail ad) {
        
         if (ad.CustomerCountry.Length < 15)
         {
@@ -29,7 +30,7 @@ public class BusinessLogic{
     /// Method for Validating Customer Name
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
-    public void AddCustomerName(AddressDetails ad) {
+    public void AddCustomerName(AddressDetail ad) {
         if (ad.CustomerName.Length < 15)
         {
             this.sample = this.sample + ad.CustomerName + ",";
@@ -45,7 +46,7 @@ public class BusinessLogic{
     /// Method for Adding Customer Mobile Number
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
-    public void AddMobileNumber(AddressDetails ad) {
+    public void AddMobileNumber(AddressDetail ad) {
         if (ad.MobileNumber <= 999999999)
         {
             this.sample = this.sample + System.Convert.ToString(ad.MobileNumber) + ",";
@@ -60,7 +61,7 @@ public class BusinessLogic{
     /// Method for Adding Customer Pincode
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
-    public void AddPinCode(AddressDetails ad) {
+    public void AddPinCode(AddressDetail ad) {
         if (System.Convert.ToString(ad.PinCode).Length < 6)
         {
             this.sample = this.sample + System.Convert.ToString(ad.PinCode) + ",";
@@ -76,7 +77,7 @@ public class BusinessLogic{
     /// Method for Adding Customer Flat number
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
-    public void AddFlatNo(AddressDetails ad) {
+    public void AddFlatNo(AddressDetail ad) {
         if (ad.FlatNo.Length < 15)
         {
             this.sample = this.sample + ad.FlatNo + ",";
@@ -88,7 +89,7 @@ public class BusinessLogic{
         }
 
     }
-    public void AddAreaColony(AddressDetails ad) {
+    public void AddAreaColony(AddressDetail ad) {
         if (ad.AreaColony.Length < 15)
         {
             this.sample = this.sample + ad.AreaColony + ",";
@@ -100,7 +101,7 @@ public class BusinessLogic{
         }
 
     }
-    public void AddLandMark(AddressDetails ad) {
+    public void AddLandMark(AddressDetail ad) {
         if (ad.LandMark.Length < 10)
         {
             this.sample = this.sample + ad.LandMark + ",";
@@ -112,7 +113,7 @@ public class BusinessLogic{
         }
 
     }
-    public void AddTown(AddressDetails ad) {
+    public void AddTown(AddressDetail ad) {
         if (ad.Town.Length < 10)
         {
            this.sample = this.sample + ad.Town + ",";
@@ -123,7 +124,7 @@ public class BusinessLogic{
             this.j = 0;
         }
     }
-    public void AddState(AddressDetails ad) {
+    public void AddState(AddressDetail ad) {
         if (ad.State.Length < 15)
         {
             sample = sample + ad.State + ",";
@@ -135,7 +136,7 @@ public class BusinessLogic{
         }
 
     }
-    public void AddAddressType(AddressDetails ad) {
+    public void AddAddressType(AddressDetail ad) {
         if (ad.AddressType.Length < 10)
         {
             sample = sample + ad.AddressType + ",";
@@ -149,7 +150,7 @@ public class BusinessLogic{
     /// <summary>
     /// Adding Address to Data Layer
     /// </summary>
-    public void AddFullAddress(AddressDetails ad) {
+    public void AddFullAddress(AddressDetail ad) {
         if (this.j != 0) { dl.AddAddress(ad); }
     }
 

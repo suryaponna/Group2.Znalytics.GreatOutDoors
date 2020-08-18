@@ -14,7 +14,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             if(rm.ProductName.Length<=30)
             {
-                rdl.AddReturnsModule(rm);
+                rdl.AddReturnsModule(System.Convert.ToString(rm));
             }
             if(rm.Productdate!=null)
             {

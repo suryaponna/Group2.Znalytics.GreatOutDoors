@@ -1,4 +1,5 @@
 ﻿using Znalytics.Group2.GreatOutDoor.Entity;
+
 public class Address
 {
     static void Main()
@@ -6,7 +7,7 @@ public class Address
     NewAddress:
         int spec = 0;
         BusinessLogic bd = new BusinessLogic();
-        AddressDetails ad = new AddressDetails();
+        AddressDetail ad = new AddressDetail();
         Retail r = new Retail();
         System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
         System.Console.WriteLine("Enter Country:");
