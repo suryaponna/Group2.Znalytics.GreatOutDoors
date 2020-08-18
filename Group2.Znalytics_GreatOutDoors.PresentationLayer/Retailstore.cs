@@ -7,7 +7,7 @@ class RetailStorePresentation
     {
         //creating object
         Retailstore r = new Retailstore();
-        System.Console.WriteLine("********WELCOME TO RETAIL STORE********");
+        System.Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
         //retail id
         System.Console.WriteLine("Enter The Retail store Id");
@@ -15,7 +15,7 @@ class RetailStorePresentation
         System.Console.WriteLine("The retail store Id is:" + r.RetailStoreID);
 
         //choice of choosing reports
-        System.Console.WriteLine("*****Select the choice  for payment choosing reports******");
+        System.Console.WriteLine("================Select the choice  for payment choosing reports================");
         System.Console.WriteLine("Enter 1 for Monthly reports");
         System.Console.WriteLine("Enter 2 for Quaterly reports");
         System.Console.WriteLine("Enter 3 for Annual reports");
@@ -42,7 +42,7 @@ class RetailStorePresentation
 
         //retail products
 
-        System.Console.WriteLine("******choice of choosing types of products******");
+        System.Console.WriteLine("================choice of choosing types of products================");
         System.Console.WriteLine("Enter 1 for Electrical Appliances cost range is  1000-100000");
         System.Console.WriteLine("Enter 2 for Grocery products cost range is  1000-5000");
         System.Console.WriteLine("Enter 3 for Medical Products cost range is  10-30000");
@@ -100,7 +100,7 @@ class RetailStorePresentation
         }
 
         // Suppliers for transporting
-        System.Console.WriteLine("*******Suppliers For Transporting*******");
+        System.Console.WriteLine("================ Suppliers For Transporting================");
         System.Console.WriteLine("Enter true for if you want suppliers else enter false");
         //r.Suppliers = System.Console.ReadLine();
         bool k = true;
@@ -127,7 +127,7 @@ class RetailStorePresentation
          }*/
 
 
-        System.Console.WriteLine("************* THANK YOU FOR CHOOSING OUR RETAIL STORE ****************");
+        System.Console.WriteLine("================ THANK YOU FOR CHOOSING OUR RETAIL STORE ================");
         System.Console.ReadKey();
     }
 
