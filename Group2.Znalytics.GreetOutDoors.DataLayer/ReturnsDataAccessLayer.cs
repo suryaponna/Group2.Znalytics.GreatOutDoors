@@ -11,11 +11,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         public ReturnsDataAccessLayer()
         {
-            List<string> Data = new List<string>();
+            List<ReturnsModule> returnsModules  = new List<ReturnsModule>();
         }
-        public void AddReturnsModule(string ReturnsModule)
+        public void AddReturnsModule(ReturnsModule returnsModule)
         {
-            Data.Add(ReturnsModule);
+            returnsModule.Add(returnsModule);
         }
 
     }
