@@ -9,6 +9,22 @@ public class Retailstore
     private string _retailProducts;
     private string _suppliers;
     private string _damagedProducts;
+    /// <summary>
+    /// Constructors that initializes details of RetailStore
+    /// </summary>
+    /// <param name="RetailStoreID"></param>
+    /// <param name="Reports"></param>
+    /// <param name="RetailProducts"></param>
+    /// <param name="Suppliers"></param>
+    /// <param name="DamagedProducts"></param>
+    public Retailstore(int RetailStoreID, string Reports, string RetailProducts, string Suppliers, string DamagedProducts)
+    {
+        _retailStoreID = RetailStoreID;
+        _reports = Reports;
+        _reports = RetailProducts;
+        _suppliers = Suppliers;
+        _damagedProducts = DamagedProducts;
+    }
 
     /// <summary>
     /// RetailStoreID
