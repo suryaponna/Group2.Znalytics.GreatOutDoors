@@ -3,7 +3,7 @@
 /// </summary>
 
 namespace Znalytics.Group2.GreatOutDoor.Entity {
-    public class AddressDetails
+    public class AddressDetail
     {
         private string _customerCountry;
         private string _customerFullName;
@@ -14,7 +14,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity {
         private string _landMark;
         private string _townCity;
         private string _selState;
-        private string _addressType;
+        public enum _addressType { 
+            Home,Office
+        }
         
 
         /// <summary>
@@ -155,17 +157,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity {
         /// Property for AddressType
         /// </summary>
 
-        public string AddressType
-        {
-            set
-            {
-                this._addressType = value;
-            }
-            get
-            {
-                return this._addressType;
-            }
-        }
+        
 
     }
 }
