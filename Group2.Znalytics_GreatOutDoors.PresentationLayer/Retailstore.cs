@@ -1,7 +1,7 @@
 using System;
 
 
-namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
+namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
 {
     class RetailStorePresentation
     {
