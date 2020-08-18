@@ -45,11 +45,5 @@
     <Compile Include="Exchange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj">
-      <Project>{eb5e0352-6c8c-4f46-8f9a-d9f688f99b06}</Project>
-      <Name>Group2.Znalytics.GreatOutDoors.EntityLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
