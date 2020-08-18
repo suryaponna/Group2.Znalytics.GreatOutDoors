@@ -7,6 +7,7 @@ public class BusinessLogic{
     
     //List<string> TotalAddresses = new List<string>();
     DataLayer dl = new DataLayer();
+    AddressDetails ad = new AddressDetails();
     string sample = "";
     int j = 1;
     /// <summary>
@@ -148,8 +149,8 @@ public class BusinessLogic{
     /// <summary>
     /// Adding Address to Data Layer
     /// </summary>
-    public void AddFullAddress() {
-        if (this.j != 0) { dl.AddAddress(sample); }
+    public void AddFullAddress(AddressDetails ad) {
+        if (this.j != 0) { dl.AddAddress(ad); }
     }
 
 }

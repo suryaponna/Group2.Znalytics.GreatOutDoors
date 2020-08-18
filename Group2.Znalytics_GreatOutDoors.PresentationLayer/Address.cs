@@ -152,7 +152,7 @@ public class Address
             }
         }
     Lab:
-        bd.AddFullAddress();
+        bd.AddFullAddress(ad);
         System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
         System.Console.ReadKey();
 
