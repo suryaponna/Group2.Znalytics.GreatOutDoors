@@ -6,9 +6,12 @@ using Znalytics.Group2.GreatOutDoor.Entity;
 /// Data Layer
 /// </summary>
 public class DataLayer {
-    List<AddressDetail> DataBase = new List<AddressDetail>();
+    
+    public DataLayer() {
+        List<AddressDetail> DataBase = new List<AddressDetail>();
+    }
     /// <summary>
-    /// 
+    /// Adding new Customer Address
     /// </summary>
     /// <param name="address">Attribute to add adddress in to collection</param>
     public void AddAddress(AddressDetail address) {
