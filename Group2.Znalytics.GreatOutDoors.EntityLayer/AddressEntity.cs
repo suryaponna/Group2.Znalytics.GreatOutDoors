@@ -15,7 +15,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity {
         private string _townCity;
         private string _selState;
         private string _addressType;
-        private bool _changeAddress = false;
+        
 
         /// <summary>
         /// PRoperty for CustomerCountry
@@ -24,7 +24,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity {
         {
             set
             {
-                _customerCountry = value;
+                this._customerCountry = value;
             }
             get
             {
@@ -39,7 +39,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity {
         {
             set
             {
-                value = _customerFullName;
+                this._customerFullName=value;
             }
             get
             {

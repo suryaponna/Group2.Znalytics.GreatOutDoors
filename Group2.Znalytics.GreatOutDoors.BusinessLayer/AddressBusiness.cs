@@ -8,13 +8,12 @@ public class BusinessLogic{
     //List<string> TotalAddresses = new List<string>();
     DataLayer dl = new DataLayer();
     string sample = "";
+    int j = 1;
     /// <summary>
     /// Method for Adding Customer Country
     /// </summary>
     /// <param name="ad">parameter is of AddressDeatils</param>
     public void AddCountry(AddressDetails ad) {
-        int i = 0, j = 1;
-        string sample = " ";
        
         if (ad.CustomerCountry.Length < 15)
         {
@@ -22,7 +21,7 @@ public class BusinessLogic{
             //dl.AddAddress(ad.CustomerCountry);
         }
         else {
-            j = 0;
+            this.j = 0;
         }
     }
     /// <summary>
@@ -37,7 +36,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -53,7 +52,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
     }
     /// <summary>
@@ -68,7 +67,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -84,7 +83,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -96,7 +95,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -108,7 +107,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -120,7 +119,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
     }
     public void AddState(AddressDetails ad) {
@@ -131,7 +130,7 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
+            this.j = 0;
         }
 
     }
@@ -143,18 +142,14 @@ public class BusinessLogic{
         }
         else
         {
-            j = 0;
-        }
-        if (j != 0)
-        {
-            dl.AddAddress(sample);
+            this.j = 0;
         }
     }
     /// <summary>
     /// Adding Address to Data Layer
     /// </summary>
     public void AddFullAddress() {
-        dl.AddAddress(sample);
+        if (this.j != 0) { dl.AddAddress(sample); }
     }
 
 }
