@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
-    <Compile Include="Exchange.cs" />
     <Compile Include="Retailstore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReturnsPresentation.cs" />
@@ -53,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.BusinessLayer\Group2.Znalytics.GreatOutDoors.BusinessLayer.csproj">
+      <Project>{ad3e2949-6503-48d4-a6f9-74eebe7131fd}</Project>
+      <Name>Group2.Znalytics.GreatOutDoors.BusinessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj">
       <Project>{eb5e0352-6c8c-4f46-8f9a-d9f688f99b06}</Project>
       <Name>Group2.Znalytics.GreatOutDoors.EntityLayer</Name>
