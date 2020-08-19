@@ -1,6 +1,4 @@
-﻿
-
-public class UserLogin
+﻿public class UserLogin
 {
 
     private string _id;
