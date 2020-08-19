@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreetOutDoors.Product.Entities;
 
-namespace Znalytics.Inventory.Product.BusinessLogicLayer
+namespace Group2.Znalytics.GreetOutDoors.Product.Entities
 {
 
     /// <summary>
