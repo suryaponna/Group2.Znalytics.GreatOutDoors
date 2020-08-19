@@ -9,7 +9,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
         NewAddress:
             int spec = 0;
-            AddressDetails ad = new AddressDetails();
+            AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
             System.Console.WriteLine("Enter Country:");

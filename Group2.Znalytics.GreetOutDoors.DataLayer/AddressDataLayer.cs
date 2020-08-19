@@ -5,9 +5,9 @@ using Znalytics.Group2.GreatOutDoor.Entity;
 /// <summary>
 /// Data Layer
 /// </summary>
-public class DataLayer {
+public class AddressDataLayer {
     
-    public DataLayer() {
+    public AddressDataLayer() {
         List<AddressDetail> DataBase = new List<AddressDetail>();
     }
     /// <summary>

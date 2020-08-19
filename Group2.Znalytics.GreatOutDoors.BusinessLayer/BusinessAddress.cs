@@ -9,7 +9,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     {
 
         //List<string> TotalAddresses = new List<string>();
-        DataLayer dl = new DataLayer();
+        AddressDataLayer dl = new AddressDataLayer();
         AddressDetail ad = new AddressDetail();
         string sample = "";
         int j = 1;
