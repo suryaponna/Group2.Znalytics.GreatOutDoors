@@ -1,4 +1,4 @@
-namespace Znalytics.Inventory.Product.Entities
+namespace Group2.Znalytics.GreetOutDoors.Product.Entities
 {
     /// <summary>
     /// referes to ProductDetails class in Entities 

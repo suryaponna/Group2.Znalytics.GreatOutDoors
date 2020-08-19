@@ -1,124 +1,44 @@
-﻿public class UserLogin
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Group2.Znalytics.GreetOutDoors.DataLayer;
+using Group2.Znalytics.GreetOutDoors.Product.Entities;
+
+namespace Znalytics.Inventory.Product.BusinessLogicLayer
 {
 
-    private string _id;
-    private string _password;
-    private string _firstName;
-    private string _lastName;
-    private long _phonenumber;
-
-    public void SetId(string value)
+    /// <summary>
+    /// refers tp Product BusinessLogic
+    /// </summary>
+    public class ProductBusiness
     {
-        if (value.Length <= 10)
+
+        /// <summary>
+        /// adding the products 
+        /// </summary>
+        /// <param name="n"> gets object of ProductDetails</param>
+        public void AddProducts(ProductDetails n)
         {
-            _id = value;
+            if (n.ProductName != null)
+            {
+                Productdata d = new Productdata();
+                d.AddProduct(n);
+            }
         }
-    }
-    public string GetId()
-    {
-        return _id;
-    }
+        /// <summary>
+        /// displaying the products
+        /// </summary>
+        /// <param name="n">gets object of ProductDeatils</param>
 
-    
-    public void SetFirstName(string value)
-    {
-        if (value.Length <= 20)
+        public void DisplayProducts(ProductDetails n)
         {
-            _firstName = value;
-        }
-    }
-    public string GetFirstName()
-    {
-        return _firstName;
-    }
+            Productdata d = new Productdata();
+            d.DisplayProducts(n);
 
-    public void SetLastName(string value)
-    {
-        if (value.Length <= 20)
-        {
-            _lastName = value;
-        }
-    }
-    public string GetLastName()
-    {
-        return _lastName;
-    }
-
-    public void SetPhoneNumber(long value)
-    {
-        if (value >= 0 && value <= 9)
-        {
-            _phonenumber = value;
         }
 
-    }
-    public long GetNumber()
-    {
-        return _phonenumber;
 
-    }
-
-}
-public class Categories
-{
-    private string _personalAccessories;
-    private string _golfEquipment;
-    private string _campingEquipment;
-    private string _mountaineeringEquipment;
-    private string _outdoorProtection;
-
-    public void SetPersonalAccessories(string PersonalAccessories)
-    {
-        this._personalAccessories = _personalAccessories;
-    }
-    public string GetPersonalAccessories()
-    {
-        return this._personalAccessories;
-    }
-
-
-    public void SetGolfEquipment(string GolfEquipment)
-    {
-        this._golfEquipment = _golfEquipment;
-    }
-    public string GetGolfEquipment()
-    {
-        return this._golfEquipment;
-    }
-
-
-    public void SetcampingEquipment(string campingEquipment)
-    {
-        this._campingEquipment = _campingEquipment;
-    }
-    public string GetCampingEquipment()
-    {
-        return this._golfEquipment;
-    }
-
-
-
-    public void SetMountaineeringEquipment(string MountaineeringEquipment)
-    {
-        this._mountaineeringEquipment = _mountaineeringEquipment;
-    }
-    public string GetMountaineeringEquipment()
-    {
-        return this._mountaineeringEquipment;
-    }
-
-
-
-
-    public void SetOutdoorProtection(string OutdoorProtection)
-    {
-        this._mountaineeringEquipment = _mountaineeringEquipment;
-    }
-    public string Get_outdoorProtection()
-    {
-        return this._outdoorProtection;
     }
 }
-
-
-
