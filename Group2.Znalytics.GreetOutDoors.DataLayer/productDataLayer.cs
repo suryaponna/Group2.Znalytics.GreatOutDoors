@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
-    class productDAL
+    class productDataLayer
     {
     }
 }
