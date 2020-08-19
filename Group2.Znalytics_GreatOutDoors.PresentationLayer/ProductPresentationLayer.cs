@@ -34,18 +34,18 @@
                         System.Console.WriteLine("enter the Productprice:");
                         p.ProductPrice = System.Convert.ToDouble(System.Console.ReadLine());
                         p.AddProducts(p); //adding the products into the List
-
-                        System.Console.WriteLine("Product Added Sucessfully!!!");
-
-                        
+                        System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
                         break;
 
 
                     case 2:
-                        System.Console.WriteLine("===============Product Details=============");
+                        ///<summary>///
+                        ///Displaying the products which are added///
+                        ///</summary>///
+                        System.Console.WriteLine("***Product Details***");
                         System.Console.WriteLine("ProductName" + "   " + "ProductID" + "  " + "Number of Products Avalilable ");
                         System.Console.WriteLine("-----------------------------------------------------------------------");
-                        System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Price);// Displaying the products
+                        System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Price);
 
                         break;
 
