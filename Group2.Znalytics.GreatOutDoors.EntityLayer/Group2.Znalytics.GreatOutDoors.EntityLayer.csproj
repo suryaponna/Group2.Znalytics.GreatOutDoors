@@ -42,8 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressDetail.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Classlib%28meg%29.cs" />
+    <Compile Include="ProductEntityLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailstore.cs" />
     <Compile Include="Return.cs" />

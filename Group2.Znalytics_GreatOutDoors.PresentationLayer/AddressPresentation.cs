@@ -105,7 +105,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             break;
                         case 4:
                             System.Console.WriteLine("Enter Your Pincode:");
-                            ad.PinCode = System.Console.ReadLine());
+                            ad.PinCode = System.Console.ReadLine();
                             break;
                         case 5:
                             System.Console.WriteLine("Enter Flat/DoorNumber:");
