@@ -1,7 +1,8 @@
 ﻿/// <summary>
 /// RETAIL STORE MODULE
 /// </summary>
-namespace Group2.Znalytics.GreatOutDoors.RetailStore.EntityLayer
+using System;
+namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     public class Retailstore
     {

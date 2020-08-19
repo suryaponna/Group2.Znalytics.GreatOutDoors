@@ -1,14 +1,14 @@
 using System;
 
 
-namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
+namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
     class RetailStorePresentation
     {
         static void Main()
         {
             //creating object
-            Retailstore r = new Retailstore();
+            RetailStore r = new RetailStore();
             System.Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id
