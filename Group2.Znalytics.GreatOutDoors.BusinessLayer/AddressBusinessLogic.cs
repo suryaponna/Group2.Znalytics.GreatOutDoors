@@ -3,6 +3,7 @@
 /// <summary>
 /// Business Logic for Address
 /// </summary>
+using Znalytics.Group2.GreatOutDoor.Entity;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class AddressBusinessLogic
@@ -21,16 +22,16 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void AddAddressType(AddressDetail ad,int Type)
         {
             if (Type == 0) 
-                sample = sample + _addressType.Home + ",";
+                sample = sample +AddressDetail._addressType.Home;
             else
-                sample=sample + _addressType.Home + ",";
+                sample=sample + AddressDetail._addressType.Office;
         }
         /// <summary>
         /// Adding Address to Data Layer
         /// </summary>
         public void AddFullAddress(AddressDetail ad)
         {
-            if (this.j != 0) { dl.AddAddress(ad); }
+           dl.AddAddress(ad); 
         }
 
     }

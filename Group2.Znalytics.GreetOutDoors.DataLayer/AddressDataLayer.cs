@@ -23,6 +23,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void AddAddress(AddressDetail address)
         {
             _dataBase.Add(address);
+
         }
 
     }

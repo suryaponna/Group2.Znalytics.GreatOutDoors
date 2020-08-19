@@ -10,10 +10,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// <summary>
     /// Represents an address of Customer
     /// </summary>
-    public enum _addressType : int
-        {
-            Home = 0, Office = 1
-        }
+    
     public class AddressDetail
     {
         private string _customerCountry;
@@ -25,7 +22,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _landMark;
         private string _townCity;
         private string _selState;
-        
+        public enum _addressType : int
+        {
+            Home = 0, Office = 1
+        }
+
         /// <summary>
         /// PRoperty for CustomerCountry
         /// </summary>

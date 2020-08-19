@@ -34,7 +34,6 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             ad.State = (System.Console.ReadLine());
             System.Console.WriteLine("Enter your Address 0 for Type Home or 1 for Office");
             bool val=int.TryParse(System.Console.ReadLine(),out Type);
-            AddressType:
             if (val)
             {
                 bd.AddAddressType(ad,Type);
