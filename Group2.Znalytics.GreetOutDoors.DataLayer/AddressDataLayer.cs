@@ -1,16 +1,20 @@
-﻿using System.Collections.Generic;
+﻿//--------------------Surya
+using System.Collections.Generic;
 using System.Configuration;
 using Znalytics.Group2.GreatOutDoor.Entity;
 /// <summary>
 /// Data Layer
 /// </summary>
-public class DataLayer {
-    List<AddressDetails> DataBase = new List<AddressDetails>();
+public class AddressDataLayer {
+    
+    public AddressDataLayer() {
+        List<AddressDetail> DataBase = new List<AddressDetail>();
+    }
     /// <summary>
-    /// 
+    /// Adding new Customer Address
     /// </summary>
     /// <param name="address">Attribute to add adddress in to collection</param>
-    public void AddAddress(AddressDetails address) {
+    public void AddAddress(AddressDetail address) {
         DataBase.Add(address);
     }
     

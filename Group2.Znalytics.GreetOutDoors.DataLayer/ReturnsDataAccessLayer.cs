@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// DataAccess Layer
+/// </summary>
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
     public class ReturnsDataAccessLayer
@@ -11,11 +13,12 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         public ReturnsDataAccessLayer()
         {
-            List<ReturnsModule> returnsModules  = new List<ReturnsModule>();
+            //creating a list 
+            List<Return> returns  = new List<Return>();
         }
-        public void AddReturnsModule(ReturnsModule returnsModule)
+        public void AddReturnsModule(Return returns)
         {
-            returnsModule.Add(returnsModule);
+            Return.Add(returns);//
         }
 
     }
