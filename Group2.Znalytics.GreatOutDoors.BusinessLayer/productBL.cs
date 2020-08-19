@@ -1,6 +1,6 @@
 ﻿
-// ANOTHER CLASS FOR CATEGORIES//
-public class ProductMaster
+
+public class UserLogin
 {
 
     private string _id;
