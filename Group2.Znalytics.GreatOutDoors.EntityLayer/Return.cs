@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// This is Returns Module
+/// This is Return Module
 /// </summary>
 public class Return
 {

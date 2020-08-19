@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -12,7 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         {
 
             // public static void ReturnsPresentationLogic()
-            //{
+            
             Return rm;
             rm = new Return();
 
@@ -127,9 +128,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.ReadKey();
 
 
-            rbl.AddReturn(rm);
+            rbl.AddProductID(rm);
         }
 
-        // }
+         }
     }
-}
+

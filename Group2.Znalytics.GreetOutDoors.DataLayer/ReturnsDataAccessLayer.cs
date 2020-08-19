@@ -4,21 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
-/// DataAccess Layer
+/// This class represents DataAccess Layer for Return
 /// </summary>
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
     public class ReturnsDataAccessLayer
     {
-
+        List<Return> _return;
+        /// <summary>
+        /// Constructor Return Data Access Logic that initializes collection
+        /// </summary>
         public ReturnsDataAccessLayer()
         {
             //creating a list 
-            List<Return> returns  = new List<Return>();
+            _return  = new List<Return>();
         }
-        public void AddReturnsModule(Return returns)
+        public void AddProductID(Return rt)
         {
-            Return.Add(returns);//
+            _return.Add(rt);//
         }
 
     }
