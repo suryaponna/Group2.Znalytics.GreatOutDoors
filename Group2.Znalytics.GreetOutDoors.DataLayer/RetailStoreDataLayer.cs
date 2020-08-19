@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Data
+/// </summary>
 
-namespace Group2.Znalytics.GreatOutDoors.RetailStore.DataLayer
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
     public class RetailStoreDataLayer
     {

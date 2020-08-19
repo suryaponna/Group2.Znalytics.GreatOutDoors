@@ -1,15 +1,15 @@
 using System;
 
 
-namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
+namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
     class RetailStorePresentation
     {
         static void Main()
         {
             //creating object
-            Retailstore r = new Retailstore();
-            System.Console.WriteLine("================WELCOME TO RETAIL STORE================");
+            RetailStore r = new RetailStore();
+            Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id
             System.Console.WriteLine("Enter The Retail store Id");
@@ -41,22 +41,24 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                     break;
             }
             System.Console.WriteLine("Selected reports are:" + r.Reports);
+            System.Console.WriteLine("--------------------------------------------------------------");
 
             //retail products
 
             System.Console.WriteLine("================choice of choosing types of products================");
             System.Console.WriteLine("Enter 1 for Electrical Appliances cost range is  1000-100000");
-            System.Console.WriteLine("Enter 2 for Grocery products cost range is  1000-5000");
-            System.Console.WriteLine("Enter 3 for Medical Products cost range is  10-30000");
-            System.Console.WriteLine("Enter 4 for Fashion products cost range is  100-5000");
-            System.Console.WriteLine("Enter 5 for Fitness products cost range is  100-50000");
-            System.Console.WriteLine("Enter 6 for Industrial products cost range is  1000-500000");
-            System.Console.WriteLine("Enter 7 for Eletronical devices cost range is  1000-100000");
-            System.Console.WriteLine("Enter 8 for Kitchen Products cost range is  100-535000");
-            System.Console.WriteLine("Enter morethan 9 to exit");
+            System.Console.WriteLine("Enter 2 for Sports Equipment cost range is  100-100000");
+            System.Console.WriteLine("Enter 3 for Grocery products cost range is  1000-5000");
+            System.Console.WriteLine("Enter 4 for Medical Products cost range is  10-30000");
+            System.Console.WriteLine("Enter 5 for Fashion products cost range is  100-5000");
+            System.Console.WriteLine("Enter 6 for Fitness products cost range is  100-50000");
+            System.Console.WriteLine("Enter 7 for Industrial products cost range is  1000-500000");
+            System.Console.WriteLine("Enter 8 for Eletronical devices cost range is  1000-100000");
+            System.Console.WriteLine("Enter 9 for Kitchen Products cost range is  100-535000");
+            System.Console.WriteLine("Enter morethan 10 to exit");
             int b = int.Parse(System.Console.ReadLine());
 
-            while (b <= 8)
+            while (b <= 9)
             {
                 switch (b)
                 {
@@ -66,29 +68,33 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                         break;
                     case 2:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = "Grocery products";
+                        r.RetailProducts = "Sports Equipments";
                         break;
                     case 3:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = " Medical Products";
+                        r.RetailProducts = "Grocery products";
                         break;
                     case 4:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = "Fashion products";
+                        r.RetailProducts = " Medical Products";
                         break;
                     case 5:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = "Fitness products";
+                        r.RetailProducts = "Fashion products";
                         break;
                     case 6:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = "Industrial products";
+                        r.RetailProducts = "Fitness products";
                         break;
                     case 7:
                         r.RetailProducts = System.Console.ReadLine();
-                        r.RetailProducts = "Eletronical devices";
+                        r.RetailProducts = "Industrial products";
                         break;
                     case 8:
+                        r.RetailProducts = System.Console.ReadLine();
+                        r.RetailProducts = "Eletronical devices";
+                        break;
+                    case 9:
                         r.RetailProducts = System.Console.ReadLine();
                         r.RetailProducts = "Kitchen Products";
                         break;
@@ -99,6 +105,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                 }
                 System.Console.WriteLine("Selected the type of Retail products are:" + r.RetailProducts);
                 b = int.Parse(System.Console.ReadLine());
+                System.Console.WriteLine("--------------------------------------------------------------");
             }
 
             // Suppliers for transporting
@@ -116,10 +123,10 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                 k = false;
                 System.Console.WriteLine("No i doesn't want suppliers");
             }
-            //System.Console.WriteLine("get suppliers:" + r.Suppliers);
+            System.Console.WriteLine("--------------------------------------------------------------");
 
             //Outlier Products
-            System.Console.WriteLine("================ Damaged Products ================");
+            //System.Console.WriteLine("================ Damaged Products ================");
             // replace:
             //System.Console.WriteLine("I ");
 

@@ -2,9 +2,8 @@
 
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
-    using System;
-    namespace Znalytics.GreatOutDoors.BusinessLogicLayer
-    {
+    
+    
         //class
         public class Exchange
         {
@@ -32,7 +31,9 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 _productId = productId;
                 _exchangeDelieveredProduct = exchangeDelieveredProduct;
             }
-
+        /// <summary>
+        /// Intializes the properties 
+        /// </summary>
             public string CustomerName
             {
                 set
@@ -111,4 +112,4 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 
         }
     }
-}
+

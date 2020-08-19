@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
-/// BusinessLogic Layer
+/// This represents BusinessLogic Layer of Return
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
@@ -16,23 +16,23 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         
        
         // creating method for validating Productdate
-        public void AddProductName(Return rm)
+        public void AddProductID(Return rm)
         {
-            if (rm.ProductName!=null)
+            if (rm.ProductID!=null)
             {
                 ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
-                rdl.AddProductName(rm); 
+                rdl.AddProductID(rm); 
             }
         }
         // checking condition for ProductQuantity
-        public void AddProductQuantity(Return rm)
+       /* public void AddProductQuantity(Return rm)
         {
             if (rm.ProductQuantity <= 20)
             {
                 ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
                 rdl.AddProductQuantity(rm);
             }
-        }
+        }*/
        
     }
     
