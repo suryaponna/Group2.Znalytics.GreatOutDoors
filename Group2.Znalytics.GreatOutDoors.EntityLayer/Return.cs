@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// This is Returns Module
 /// </summary>
-public class ReturnsModule
+public class Return
 {
     //private fields
     private string _productID;
@@ -9,7 +9,7 @@ public class ReturnsModule
     private string _productdate;
     private int _productQuantity;
     private string _producttype;
-    ///ProductID details
+    ///Property for ProductID details
     public string ProductID
     {
         set
@@ -22,16 +22,15 @@ public class ReturnsModule
         }
     }
     /// <summary>
-    /// ProductName
+    ///Property for  ProductName
     /// </summary>
     public string ProductName
     {
         set
         {
-            if (value.Length <= 30)
-            {
+           
                 _productName = value;
-            }
+            
         }
         get
         {
