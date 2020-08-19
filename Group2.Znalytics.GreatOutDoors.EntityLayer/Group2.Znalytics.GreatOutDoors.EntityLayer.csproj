@@ -47,11 +47,5 @@
     <Compile Include="Retailstore.cs" />
     <Compile Include="Return.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Group2.Znalytics_GreatOutDoors.PresentationLayer\Group2.Znalytics_GreatOutDoors.PresentationLayer.csproj">
-      <Project>{88916087-53ed-421e-bea7-b35af5ba30f4}</Project>
-      <Name>Group2.Znalytics_GreatOutDoors.PresentationLayer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

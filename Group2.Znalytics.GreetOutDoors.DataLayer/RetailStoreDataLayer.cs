@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group2.Znalytics.GreattOutDoors.DataLayer
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
     public class RetailStoreDataLayer
     {
