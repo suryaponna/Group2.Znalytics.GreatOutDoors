@@ -41,6 +41,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                     break;
             }
             System.Console.WriteLine("Selected reports are:" + r.Reports);
+            System.Console.WriteLine("--------------------------------------------------------------");
 
             //retail products
 
@@ -104,6 +105,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                 }
                 System.Console.WriteLine("Selected the type of Retail products are:" + r.RetailProducts);
                 b = int.Parse(System.Console.ReadLine());
+                System.Console.WriteLine("--------------------------------------------------------------");
             }
 
             // Suppliers for transporting
@@ -121,10 +123,10 @@ namespace Group2.Znalytics.GreatOutDoors.RetailStore.PresentationLayer
                 k = false;
                 System.Console.WriteLine("No i doesn't want suppliers");
             }
-            //System.Console.WriteLine("get suppliers:" + r.Suppliers);
+            System.Console.WriteLine("--------------------------------------------------------------");
 
             //Outlier Products
-            System.Console.WriteLine("================ Damaged Products ================");
+            //System.Console.WriteLine("================ Damaged Products ================");
             // replace:
             //System.Console.WriteLine("I ");
 
