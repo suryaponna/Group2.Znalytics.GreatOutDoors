@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
-/// Data Access Logic for RetailStore
+/// Data
 /// </summary>
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
