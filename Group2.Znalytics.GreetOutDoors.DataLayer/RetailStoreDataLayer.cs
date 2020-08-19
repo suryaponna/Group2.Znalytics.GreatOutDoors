@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// Data Access Logic for RetailStore
+/// </summary>
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
