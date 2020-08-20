@@ -138,7 +138,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
 
-            System.Console.WriteLine("================ THANK YOU FOR CHOOSING OUR RETAIL STORE ================");
+            System.Console.WriteLine("================ :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: ================");
             System.Console.ReadKey();
         }
     }
