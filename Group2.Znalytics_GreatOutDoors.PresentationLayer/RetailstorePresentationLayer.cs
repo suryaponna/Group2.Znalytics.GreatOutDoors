@@ -1,5 +1,7 @@
 using System;
-
+using System.Collections.Generic;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
@@ -9,8 +11,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         static void Main()
         {
             //creating object
+            
+            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
             RetailStore r = new RetailStore();
-            RetailStoreBusinessLogic ad = new RetailStoreBusinessLogic();
             Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id
