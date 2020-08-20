@@ -2,13 +2,15 @@ using System;
 
 
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
+
 {
-    class RetailStorePresentation
+   public class RetailStorePresentation
     {
         static void Main()
         {
             //creating object
             RetailStore r = new RetailStore();
+            RetailStoreBusinessLogic ad = new RetailStoreBusinessLogic();
             Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id

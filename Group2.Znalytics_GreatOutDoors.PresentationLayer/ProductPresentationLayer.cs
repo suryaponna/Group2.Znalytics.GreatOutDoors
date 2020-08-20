@@ -1,117 +1,80 @@
-﻿using Znalytics.Group2.GreatOutDoor.Entity;
+﻿using Group2.Znalytics.GreetOutDoors.Product.Entities;
 
-public class program
+class Product
 {
+
     static void Main()
     {
-
-        ProductMaster m = new ProductMaster();
-        System.Console.WriteLine("Select The below options for your product");
-        System.Console.WriteLine("enter 1 for  personal accessories ");
-        System.Console.WriteLine("enter 2 for golf equipment");
-        System.Console.WriteLine("enter 3 for camping equipment");
-        System.Console.WriteLine("enter 4 for mountaineering equipment ");
-        System.Console.WriteLine("enter 5 for outdoor protection");
-        System.Console.WriteLine("Enter your product option ");
-        int choice = System.Convert.ToInt32(System.Console.ReadLine());
-        switch (choice)
+        // creating the object for ProductDeatils class
+        ProductDetails p = new ProductDetails();
+        ProductBusiness pb = new ProductBusiness();
+      
+        int Choice;
+        bool b;
+        while (true)
         {
-            case 0:
-                System.Console.WriteLine("personal accessories");
-                switch (choice)
-                {
-                    case 0:
-                        System.Console.WriteLine("bangle");
-                        break;
-                    case 1:
-                        System.Console.WriteLine("hand bags");
-                        break;
-                    case 2:
-                        System.Console.WriteLine("makeup");
-                        break;
-                }
-                break;
-            case 1:
-                System.Console.WriteLine("golf equipment");
-                switch (choice)
-                {
-                    case 0:
-                        System.Console.WriteLine("pitching wedge");
-                        break;
-                    case 1:
-                        System.Console.WriteLine("sand wedge");
-                        break;
-                    case 2:
-                        System.Console.WriteLine("gap wedge");
-                        break;
-                }
-                break;
-            case 2:
-                System.Console.WriteLine("camping equipment");
-                switch (choice)
-                {
-                    case 0:
-                        System.Console.WriteLine("tarptant");
-                        break;
-                    case 1:
-                        System.Console.WriteLine("tent");
-                        break;
-                    case 2:
-                        System.Console.WriteLine("trangia");
-                        break;
-                }
-                break;
-            case 3:
-                System.Console.WriteLine("mountaineering equipment");
-                switch (choice)
-                {
-                    case 0:
-                        System.Console.WriteLine("Climbing");
-                        break;
-                    case 1:
-                        System.Console.WriteLine("gas stove");
-                        break;
-                    case 2:
-                        System.Console.WriteLine("climbing rope");
-                        break;
-                }
-                break;
-            case 4:
-                System.Console.WriteLine("outdoor protection");
-                switch (choice)
-                {
-                    case 0:
-                        System.Console.WriteLine("outdoor");
-                        break;
-                    case 1:
-                        System.Console.WriteLine("hand bags");
-                        break;
-                    case 2:
-                        System.Console.WriteLine("makeup");
-                        break;
-                }
-                break;
+            
+            System.Console.WriteLine("1.ProductDetails");
+            System.Console.WriteLine("2. Categories");
+            System.Console.WriteLine("3. Exit");
 
+            b = int.TryParse(System.Console.ReadLine(), out Choice);
+
+            if (b == true)
+            {
+
+                switch (Choice)
+                {
+                    case 1:
+                        System.Console.WriteLine("enter the ProductName:");
+                        p.ProductName = System.Console.ReadLine();
+                        System.Console.WriteLine("enter the ProductId");
+                        p.ProductID = int.Parse(System.Console.ReadLine());
+                        System.Console.WriteLine("enter the ProductType");
+                        p.ProductType = int.Parse(System.Console.ReadLine());
+                        System.Console.WriteLine("enter the Produccolor");
+                        p.ProductColor = int.Parse(System.Console.ReadLine());
+                        System.Console.WriteLine("enter the Productprice:");
+                        p.ProductPrice = System.Convert.ToDouble(System.Console.ReadLine());
+                        pb.AddProducts(p); //adding the products into the List
+                        System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
+                        break;
+
+                    case 2:
+                        ///<summary>///
+                        ///Displaying the products which are added///
+                        ///</summary>///
+                        System.Console.WriteLine("***Product Details***");
+                        System.Console.WriteLine("ProductName" + "   " + "ProductID" + "  " + "Number of Products Avalilable ");
+                        System.Console.WriteLine("-----------------------------------------------------------------------");
+                        System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Price);
+
+                        break;
+                    case 3:
+                        ///<summary>///
+                        ///list of  product categories    ///
+                        /// </summary>///
+                        System.Console.WriteLine("personal accessories ");
+                        p.personal accessories = System.Console.ReadLine();
+                        System.Console.WriteLine("golf equipment");
+                        p.golf equipment = System.Console.ReadLine();
+                        System.Console.WriteLine("camping equipment");
+                        p.camping equipment = System.Console.ReadLine();
+                        System.Console.WriteLine("mountaineering equipment ");
+                        p.mountaineering equipment = System.Console.ReadLine();
+                        System.Console.WriteLine("outdoor protection");
+                        p.outdoor protection =System.Console.ReadLine();
+                        break;
+                    default:
+                        System.Console.WriteLine("Please Enter the Correct Option");
+                        break;
+                }
+            }
+            else
+            {
+                System.Console.WriteLine("Please Enter the only digits");
+            }
         }
 
-
-
-        System.Console.WriteLine("Enter your Id");
-        m.SetId(System.Console.ReadLine());
-        System.Console.WriteLine("your id:" + m.GetId());
-        System.Console.WriteLine("Enter your FirstName");
-        m.SetId(System.Console.ReadLine());
-        System.Console.WriteLine("your FirstName:" + m.GetId());
-        System.Console.WriteLine("Enter your LastName");
-        m.SetId(System.Console.ReadLine());
-        System.Console.WriteLine("your LastName:" + m.GetId());
-        System.Console.WriteLine("Enter your Number");
-        m.SetPhoneNumber(System.Convert.ToInt64(System.Console.ReadLine()));
-        System.Console.WriteLine("your PhoneNumber:" + m.GetId());
     }
 }
-
-
-
-
-
