@@ -9,9 +9,9 @@ using Group2.Znalytics.GreetOutDoors.DataLayer;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
-    public class AddressDataLayer:IAddressInterface
+    public class AddressDataLayer
     {
-        //AddressDetail ad = new AddressDetail();
+        
         private List<AddressDetail> _dataBase;
         public AddressDataLayer()
         {
