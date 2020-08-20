@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+//using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -18,7 +18,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             rm = new Return();
 
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-            
+            rbl.Add(rm);
 
             int choice;
             System.Console.WriteLine("Select your reason for returning");
@@ -128,7 +128,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.ReadKey();
 
 
-            rbl.AddProductID(rm);
+            
         }
 
          }

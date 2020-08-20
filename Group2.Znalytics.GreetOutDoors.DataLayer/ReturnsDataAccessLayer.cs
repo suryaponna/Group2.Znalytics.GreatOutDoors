@@ -8,21 +8,35 @@ using System.Threading.Tasks;
 /// </summary>
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer
+    public class ReturnsDataAccessLayer:IReturnsDataAccessLayer
     {
-        List<Return> _return;
+        private static List<Return> _return;
         /// <summary>
         /// Constructor Return Data Access Logic that initializes collection
         /// </summary>
-        public ReturnsDataAccessLayer()
+        static ReturnsDataAccessLayer()
         {
             //creating a list 
-            _return  = new List<Return>();
+            _return = new List<Return>();
         }
-        public void AddProductID(Return rt)
+        public void Add(Return rm)
         {
-            _return.Add(rt);//
+          
+            _return.Add(rm);//
         }
-
+        // Method for updating ProductQuantity
+        public void UpdateProductQuantity(Return rm)
+        {
+            Return ret = _return.Find(temp => temp.ProductQuantity == rm.ProductQuantity);
+            if (ret != null)
+            {
+                ret.ProductQuantity = rm.ProductQuantity;
+            }  
+        }
+        // List to Get Returns
+        public List<Return> GetReturns()
+        {
+            return _return;
+        }
     }
 }
