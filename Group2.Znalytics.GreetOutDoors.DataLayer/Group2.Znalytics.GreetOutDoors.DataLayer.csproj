@@ -43,9 +43,8 @@
   <ItemGroup>
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="AbstractAddress.cs" />
     <Compile Include="Exchange.cs" />
-    <Compile Include="IAddressInterface.cs" />
+    <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="productDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailStoreDataLayer.cs" />
