@@ -23,7 +23,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         {
             if (n.ProductName != null)
             {
-                Productdata d = new Productdata();
+                productDataLayer d = new productDataLayer();
                 d.AddProduct(n);
             }
         }
