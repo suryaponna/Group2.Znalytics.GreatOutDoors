@@ -13,20 +13,20 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public class RetailStoreBusinessLogicLayer
+   public class RetailStoreBusinessLogicLayer: IRetaiLStoreBusinessLogicLayer
     {
-        // RetailStoreDataLayer dl = new RetailStoreDataLayer();
-        // RetailStoreadd ad = new RetailStoreadd();
-        RetailStoreDataLayer _retailDataAccessLogic;
+        
+       private RetailStoreDataLayer _retailDataAccessLogic;
         public RetailStoreBusinessLogicLayer()
         {
             _retailDataAccessLogic = new RetailStoreDataLayer();
         }
         
+        //Creating method for Validating RetailStore Id
         public void Add(RetailStoreID rsid)
         {
 
-            if (rsid.RetailStoreID.Length != null)
+            if (rsid.RetailStoreID!= null)
             {
                 _retailDataAccessLogic.Add(RetailStoreID);
                 
