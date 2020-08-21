@@ -7,8 +7,8 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
         static void Main()
         {
             Details d = new Details();
+            Console.WriteLine("GREAT OUTDOORS"); 
             int select;
-            Console.WriteLine("GREAT OUTDOORS");
             Console.WriteLine("Enter Your Name:");
             string a = System.Console.ReadLine();
             Console.WriteLine("Enter Your Mobile Number");
