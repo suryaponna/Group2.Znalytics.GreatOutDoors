@@ -9,7 +9,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     public interface IReturnsBusinessLayer
     {
 
-        void UpdateProductQuantity(Return rm);
-
+        
+        void AddProductName(Return rm);
     }
 }

@@ -22,11 +22,21 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _landMark;
         private string _townCity;
         private string _selState;
+        private int _customerId=524;
         public enum _addressType : int
         {
             Home = 0, Office = 1
         }
+        public int CustomerId {
+            set {
+                _customerId = value;
+            }
+            get
+            {
 
+                return _customerId;
+            }
+        }
         /// <summary>
         /// PRoperty for CustomerCountry
         /// </summary>

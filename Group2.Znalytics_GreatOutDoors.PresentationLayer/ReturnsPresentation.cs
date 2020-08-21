@@ -116,20 +116,22 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                     break;
             }
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-            rbl.Add(rm);
+           
 
-            void UpdateProductQuantity()
+            void AddProductName()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                Return rm = new Return();
+                
 
-                Console.Write("Enter new Quantity: ");
-                rm.ProductQuantity =int.Parse( System.Console.ReadLine());
+                Console.Write("Enter new Product Name: ");
+                rm.ProductName = Console.ReadLine();
 
-                rbl.UpdateProductQuantity(rm);
-                System.Console.WriteLine("ProductQuantity Updated");
+                rbl.Add(rm);
+                Console.WriteLine("Product  Added");
+
             }
+
+            
 
             System.Console.WriteLine(rm.Producttype);
             //Displays all the details 

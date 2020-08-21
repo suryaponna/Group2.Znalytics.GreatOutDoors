@@ -33,15 +33,20 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw new Exception("ProductID can't be null");
             }
         }
-
-        // checking condition for ProductQuantity
-        public void UpdateProductQuantity(Return rm)
+        
+            public void AddProductName(Return rm)
         {
-            
-                _rdl.UpdateProductQuantity(rm);
-            
+            if(rm.ProductName!=null)
+             {
+                    _rdl.AddProductName(rm);
+             }
+            else
+            {
+                throw new Exception("Add valid Product Name")
+            }
         }
 
+       
     }
 
 }
