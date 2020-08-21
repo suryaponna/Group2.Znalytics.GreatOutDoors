@@ -10,7 +10,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     {
 
         //List<string> TotalAddresses = new List<string>();
-        AddressDataLayer dl = new AddressDataLayer();
+        AddressDataLayer dll = new AddressDataLayer();
         AddressDetail ad = new AddressDetail();
         string sample = "";
         int j = 1;
@@ -29,9 +29,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Adding Address to Data Layer
         /// </summary>
-        public void AddFullAddress(AddressDetail ad)
+        public void AddFullAddresss(AddressDetail ad)
         {
-           dl.AddNewAddress(ad); 
+           dll.AddNewAddress(ad); 
         }
 
     }
