@@ -12,10 +12,10 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         static void Main()
         {
             //creating object
-
-            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
             Retailstore r;
             r = new Retailstore();
+            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
+            
             Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id
