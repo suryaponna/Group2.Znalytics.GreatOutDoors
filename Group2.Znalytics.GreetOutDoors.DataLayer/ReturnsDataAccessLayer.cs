@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 /// </summary>
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer:IReturnsDataAccessLayer
+    public class ReturnsDataAccessLayer : IReturnsDataAccessLayer
     {
         private static List<Return> _return;
         /// <summary>
@@ -21,7 +21,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
         public void Add(Return rm)
         {
-          
+
             _return.Add(rm);//
         }
         // Method for updating ProductQuantity
@@ -31,7 +31,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             if (ret != null)
             {
                 ret.ProductQuantity = rm.ProductQuantity;
-            }  
+            }
         }
         // List to Get Returns
         public List<Return> GetReturns()

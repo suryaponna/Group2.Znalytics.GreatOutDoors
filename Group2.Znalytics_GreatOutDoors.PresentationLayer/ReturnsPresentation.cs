@@ -13,7 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         {
 
             // public static void ReturnsPresentationLogic()
-            
+
             Return rm;
             rm = new Return();
 
@@ -69,7 +69,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.WriteLine(rm.ProductQuantity);
 
             System.Console.WriteLine("Enter the type of product you want to return");
-          // Select the producttype 
+            // Select the producttype 
             System.Console.WriteLine("******choice of choosing types of products******");
             System.Console.WriteLine("Enter 6 for Electrical Appliances");
             System.Console.WriteLine("Enter 7 for Grocery products");
@@ -128,9 +128,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.ReadKey();
 
 
-            
+
         }
 
-         }
     }
+}
 

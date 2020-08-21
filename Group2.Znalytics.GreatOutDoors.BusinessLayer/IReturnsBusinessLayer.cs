@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public interface IReturnsBusinessLayer
+    public interface IReturnsBusinessLayer
     {
-        
+
         void UpdateProductQuantity(Return rm);
 
     }
