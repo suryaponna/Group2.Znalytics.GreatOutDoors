@@ -26,6 +26,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
                 productDataLayer d = new productDataLayer();
                 d.AddProduct(n);
             }
+
         }
         /// <summary>
         /// displaying the products
