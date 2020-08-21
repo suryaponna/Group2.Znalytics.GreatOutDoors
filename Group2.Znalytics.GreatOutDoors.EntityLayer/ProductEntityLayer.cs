@@ -91,6 +91,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
     }
+
     public class Categories
     {
         public string _personalAccessories;

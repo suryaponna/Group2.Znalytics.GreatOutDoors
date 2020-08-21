@@ -22,7 +22,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
 
         /// <summary>
-        /// adding the products into the List
+        /// adding the products in the List
         /// </summary>
         /// <param name="productDetails"></param>
         public void AddProduct(ProductDetails productDetails)
