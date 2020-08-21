@@ -26,16 +26,17 @@ class Product
                 switch (Choice)
                 {
                     case 1:
+                        System.Console.WriteLine("***PRODUCT DETAILS***");
                         System.Console.WriteLine("enter the ProductName:");
                         p.ProductName = System.Console.ReadLine();
                         System.Console.WriteLine("enter the ProductId");
                         p.ProductID = int.Parse(System.Console.ReadLine());
                         System.Console.WriteLine("enter the ProductType");
-                        p.ProductType = int.Parse(System.Console.ReadLine());
+                        p.ProductType = System.Console.ReadLine();
                         System.Console.WriteLine("enter the Produccolor");
-                        p.ProductColor = int.Parse(System.Console.ReadLine());
+                        p.ProductColor = System.Console.ReadLine();
                         System.Console.WriteLine("enter the Productprice:");
-                        p.ProductPrice = System.Convert.ToDouble(System.Console.ReadLine());
+                        p.Productprice = System.Convert.ToDouble(System.Console.ReadLine());
                         pb.AddProducts(p); //adding the products into the List
                         System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
                         break;
@@ -59,7 +60,7 @@ class Product
                         System.Console.WriteLine("golf equipment");
                         p.golf equipment = System.Console.ReadLine();
                         System.Console.WriteLine("camping equipment");
-                        p.camping equipment = System.Console.ReadLine();
+                        p.camping Equipment = System.Console.ReadLine();
                         System.Console.WriteLine("mountaineering equipment ");
                         p.mountaineering equipment = System.Console.ReadLine();
                         System.Console.WriteLine("outdoor protection");

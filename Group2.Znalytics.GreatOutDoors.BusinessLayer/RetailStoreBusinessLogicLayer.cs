@@ -26,7 +26,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
         
-        public void Add(RetailStoreID rsid)
+        public void AddRetailstore(RetailStoreID rsid)
         {
 
             if (rsid.RetailStoreID != null)
@@ -40,7 +40,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             }
         }
         //Get RetailStoreID
-       public List<RetailstoreID> GetRetailstoreID()
+       public List<RetailStoreID> GetRetailStoreID()
         {
             return _retailDataAccessLogic.GetRetailStoreID();
         }
