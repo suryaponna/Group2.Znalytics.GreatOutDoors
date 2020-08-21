@@ -2,5 +2,6 @@
 {
     public class RetailStoreID
     {
+        public object Retailstore { get; internal set; }
     }
 }
