@@ -26,7 +26,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
         
-        public void Add(RetailStoreID rsid)
+        public void AddRetailstore(RetailStoreID rsid)
         {
 
             if (rsid.RetailStoreID != null)

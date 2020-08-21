@@ -22,7 +22,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
 
         //Add retailstore id
-        public void Add(RetailStoreID rsid)
+        public void AddRetailstore(RetailStoreID rsid)
         {
             _retailstoreid.Add(rsid);
         }
