@@ -9,7 +9,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         static void Main()
         {
         NewAddress:
-            int spec = 0,sam=0;
+            int spec = 0, sam = 0;
             int Type;
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();
@@ -33,14 +33,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             System.Console.WriteLine("Enter your State");
             ad.State = (System.Console.ReadLine());
             System.Console.WriteLine("Enter your Address 0 for Type Home or 1 for Office");
-            bool val=int.TryParse(System.Console.ReadLine(),out Type);
+            bool val = int.TryParse(System.Console.ReadLine(), out Type);
             if (val)
             {
-                bd.AddAddressType(ad,Type);
+                bd.AddAddressType(ad, Type);
             }
             else
-                throw new Exception("Enter valid option 0 or 1");            
-        Add:
+                throw new Exception("Enter valid option 0 or 1");
+            Add:
             System.Console.WriteLine("These are your Address Details");
             System.Console.WriteLine("Country: " + ad.CustomerCountry);
             System.Console.WriteLine("Name: " + ad.CustomerName);

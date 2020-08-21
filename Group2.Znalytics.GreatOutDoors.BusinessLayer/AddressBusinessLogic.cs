@@ -18,20 +18,20 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Method for Adding Customer Country
         /// </summary>
         /// <param name="ad">parameter is of AddressDeatils</param>
-        
-        public void AddAddressType(AddressDetail ad,int Type)
+
+        public void AddAddressType(AddressDetail ad, int Type)
         {
-            if (Type == 0) 
-                sample = sample +AddressDetail._addressType.Home;
+            if (Type == 0)
+                sample = sample + AddressDetail._addressType.Home;
             else
-                sample=sample + AddressDetail._addressType.Office;
+                sample = sample + AddressDetail._addressType.Office;
         }
         /// <summary>
         /// Adding Address to Data Layer
         /// </summary>
         public void AddFullAddress(AddressDetail ad)
         {
-           dl.AddAddress(ad); 
+            dl.AddNewAddress(ad);
         }
 
     }

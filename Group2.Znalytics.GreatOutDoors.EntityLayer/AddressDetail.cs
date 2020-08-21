@@ -10,7 +10,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// <summary>
     /// Represents an address of Customer
     /// </summary>
-    
+
     public class AddressDetail
     {
         private string _customerCountry;
@@ -189,5 +189,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
+        public _addressType AddressType {
+            set;
+            get;
+        }
+
     }
 }

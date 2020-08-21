@@ -6,34 +6,42 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
+/// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
 
-    public class ReturnsBusinessLayer
+    public class ReturnsBusinessLayer : IReturnsBusinessLayer
     {
-        
-       
-        // creating method for validating Productdate
-        public void AddProductID(Return rm)
+        private ReturnsDataAccessLayer _rdl;
+
+        public ReturnsBusinessLayer()
         {
-            if (rm.ProductID!=null)
+            _rdl = new ReturnsDataAccessLayer();
+        }
+
+        // creating method for validating ProductID
+        public void Add(Return rm)
+        {
+            if (rm.ProductID != null)
             {
-                ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
-                rdl.AddProductID(rm); 
+                _rdl.Add(rm);
+            }
+            else
+            {
+                throw new Exception("ProductID can't be null");
             }
         }
+
         // checking condition for ProductQuantity
-       /* public void AddProductQuantity(Return rm)
+        public void UpdateProductQuantity(Return rm)
         {
-            if (rm.ProductQuantity <= 20)
-            {
-                ReturnsDataAccessLayer rdl = new ReturnsDataAccessLayer();
-                rdl.AddProductQuantity(rm);
-            }
-        }*/
-       
+            
+                _rdl.UpdateProductQuantity(rm);
+            
+        }
+
     }
-    
+
 }

@@ -1,9 +1,11 @@
-﻿using System;
+﻿//created by K.Prasanna
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+//using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -13,11 +15,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         {
 
             // public static void ReturnsPresentationLogic()
-            
+
             Return rm;
             rm = new Return();
 
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             
 
             int choice;
@@ -69,7 +70,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.WriteLine(rm.ProductQuantity);
 
             System.Console.WriteLine("Enter the type of product you want to return");
-          // Select the producttype 
+            // Select the producttype 
             System.Console.WriteLine("******choice of choosing types of products******");
             System.Console.WriteLine("Enter 6 for Electrical Appliances");
             System.Console.WriteLine("Enter 7 for Grocery products");
@@ -115,6 +116,20 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                     break;
             }
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            rbl.Add(rm);
+
+            void UpdateProductQuantity()
+            {
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+                Return rm = new Return();
+
+                Console.Write("Enter new Quantity: ");
+                rm.ProductQuantity =int.Parse( System.Console.ReadLine());
+
+                rbl.UpdateProductQuantity(rm);
+                System.Console.WriteLine("ProductQuantity Updated");
+            }
 
             System.Console.WriteLine(rm.Producttype);
             //Displays all the details 
@@ -128,9 +143,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.ReadKey();
 
 
-            rbl.AddProductID(rm);
+
         }
 
-         }
     }
+}
 

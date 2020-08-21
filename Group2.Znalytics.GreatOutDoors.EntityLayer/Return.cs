@@ -1,4 +1,5 @@
 ﻿/// <summary>
+/// Created by K.Prasanna
 /// This is Return Module
 /// </summary>
 public class Return
@@ -28,9 +29,9 @@ public class Return
     {
         set
         {
-           
-                _productName = value;
-            
+
+            _productName = value;
+
         }
         get
         {
