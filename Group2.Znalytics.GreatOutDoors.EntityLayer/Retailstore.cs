@@ -22,7 +22,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         }
 
         /// <summary>
-        /// Constructors that initializes details of RetailStore
+        /// Constructor that initializes details of RetailStore
         /// </summary>
         /// <param name="RetailStoreID">Represents Retail store identity using an ID</param>
         /// <param name="Reports">Represents the payment of reports</param>
