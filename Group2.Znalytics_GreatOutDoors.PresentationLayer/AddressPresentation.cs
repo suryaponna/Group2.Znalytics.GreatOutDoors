@@ -1,6 +1,6 @@
-﻿//using Znalytics.Group2.GreatOutDoor.Entity;
+﻿//-----------------------Surya----------------------------------------
 
-
+using Znalytics.Group2.GreatOutDoor.Entity;
 using System;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
@@ -9,7 +9,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         static void Main()
         {
         NewAddress:
-            int spec = 0,sam=0;
+            int spec = 0;
             int Type;
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();

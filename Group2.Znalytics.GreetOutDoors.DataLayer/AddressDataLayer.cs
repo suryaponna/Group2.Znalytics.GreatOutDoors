@@ -12,8 +12,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     public class AddressDataLayer
     {
         
-        private List<AddressDetail> _dataBase;
-        public AddressDataLayer()
+        private static List<AddressDetail> _dataBase;
+        static AddressDataLayer()
         {
             _dataBase = new List<AddressDetail>();
         }

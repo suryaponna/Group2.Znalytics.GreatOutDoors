@@ -189,5 +189,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
+        public _addressType AddressType {
+            set;
+            get;
+        }
+
     }
 }

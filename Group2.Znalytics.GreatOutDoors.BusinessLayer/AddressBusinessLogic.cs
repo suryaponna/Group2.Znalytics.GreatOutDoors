@@ -22,9 +22,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void AddAddressType(AddressDetail ad,int Type)
         {
             if (Type == 0) 
-                sample = sample +AddressDetail._addressType.Home;
+                ad.AddressType=AddressDetail._addressType.Home;
             else
-                sample=sample + AddressDetail._addressType.Office;
+                ad.AddressType=AddressDetail._addressType.Office;
         }
         /// <summary>
         /// Adding Address to Data Layer
