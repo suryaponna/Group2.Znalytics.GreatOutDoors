@@ -13,6 +13,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         private string _retailProducts;
         private string _suppliers;
         private string _damagedProducts;
+
+        /// <summary>
+        /// Auto implemented Property
+        /// </summary>
+        public Retailstore()
+        {
+        }
+
         /// <summary>
         /// Constructors that initializes details of RetailStore
         /// </summary>
@@ -21,6 +29,8 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <param name="RetailProducts">Represents Retail products</param>
         /// <param name="Suppliers">Represents the suppliers for transport</param>
         /// <param name="DamagedProducts">Represensts about damaged products</param>
+
+
         public Retailstore(int RetailStoreID, string Reports, string RetailProducts, string Suppliers, string DamagedProducts)
         {
             _retailStoreID = RetailStoreID;
