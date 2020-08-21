@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CustomerDataLayerLogic.cs" />
     <Compile Include="Exchange.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="productDataLayer.cs" />
