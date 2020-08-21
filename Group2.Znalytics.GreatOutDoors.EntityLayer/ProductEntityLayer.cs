@@ -6,15 +6,15 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
     public class ProductDetails
     {
         //creating private feilds
-        private string _productName;
-        private int _productId;
-        private string _productColor;
-        private string _productType;
-        private double _productPrice;
+        public string _productName;
+        public int _productId;
+        public string _productColor;
+        public string _productType;
+        public double _productPrice;
 
 
         /// <summary>
-        /// Property for ProductName
+        /// creating Property for ProductName
         /// </summary>
         public string ProductName
         {
@@ -30,7 +30,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// Property for ProductID
+        /// creating Property for ProductID
         /// </summary>
         public int ProductID
         {
@@ -46,7 +46,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
 
 
         /// <summary>
-        /// property for product color///
+        /// creating property for product color///
         /// </summary>
         public string ProductColor
         {
@@ -61,7 +61,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// property for product Type///
+        /// creating property for product Type///
         /// </summary>
         public string ProductType
         {
@@ -76,7 +76,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// Property for Price
+        /// creating Property for Price
         /// </summary>
         public double Productprice
         {
@@ -91,12 +91,95 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
     }
-}
+    public class Categories
+    {
+        public string _personalAccessories;
+        public string _golfEquipment;
+        public string _campingEquipment;
+        public string _mountaineeringEquipment;
+        public string _outdoorProtection;
+
+        /// <summary>
+        /// creating property for personal accesories
+        /// </summary>
+        public string PersonalAccesories
+        {
+            set
+            {
+                _personalAccessories = value;
+            }
+            get
+            {
+                return _personalAccessories;
+            }
+        }
+        /// <summary>
+        /// creating property for golf equipment
+        /// </summary>
+        public string GolfEquipment
+        {
+            set
+            {
+                _golfEquipment = value;
+            }
+            get
+            {
+                return _golfEquipment;
+
+            }
+        }
+        /// <summary>
+        /// creating property for camping equipment
+        /// </summary>
+        public string CampingEquipment
+        {
+            set
+            {
+                _campingEquipment = value;
+
+            }
+            get
+            {
+                return _campingEquipment;
+            }
+        }
+        /// <summary>
+        /// craeting property for mountaineering equipment
+        /// </summary>
+        public string MountaineeringEquipment
+        {
+            set
+            {
+                _mountaineeringEquipment = value;
+
+            }
+            get
+            {
+                return _mountaineeringEquipment;
+            }
+        }
+        /// <summary>
+        /// creating property for outdoor protection
+        /// </summary>
+        public string OutdoorProtection
+        {
+            set
+            {
+                _outdoorProtection = value;
+
+            }
+            get
+            {
+                return _outdoorProtection;
+            }
+        }
+    }
+ }
 
 
 
 
-   
+
 
 
 

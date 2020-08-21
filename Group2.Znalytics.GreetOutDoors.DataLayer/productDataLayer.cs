@@ -39,7 +39,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             for (int i = 0; i < ProductsList.Count; i++)
             {
                 ProductDetails n = ProductsList[i];
-                System.Console.WriteLine("Product Name ={0},Product Id ={1},Price= {3}", n.ProductName, n.ProductID, n.Price);
+                System.Console.WriteLine("Product Name ={0},Product Id ={1},Price= {3}", n.ProductName, n.ProductID, n.Productprice);
             }
 
 
