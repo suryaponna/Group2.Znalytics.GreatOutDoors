@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 /// <summary>
+/// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
@@ -36,10 +37,9 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         // checking condition for ProductQuantity
         public void UpdateProductQuantity(Return rm)
         {
-            if (rm.ProductQuantity <= 20)
-            {
+            
                 _rdl.UpdateProductQuantity(rm);
-            }
+            
         }
 
     }

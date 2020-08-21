@@ -1,4 +1,6 @@
-﻿using System;
+﻿//created by K.Prasanna
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +19,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             Return rm;
             rm = new Return();
 
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-            rbl.Add(rm);
+            
 
             int choice;
             System.Console.WriteLine("Select your reason for returning");
@@ -114,6 +115,20 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     rm.Producttype = "Kitchen products";
 
                     break;
+            }
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            rbl.Add(rm);
+
+            void UpdateProductQuantity()
+            {
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+                Return rm = new Return();
+
+                Console.Write("Enter new Quantity: ");
+                rm.ProductQuantity =int.Parse( System.Console.ReadLine());
+
+                rbl.UpdateProductQuantity(rm);
+                System.Console.WriteLine("ProductQuantity Updated");
             }
 
             System.Console.WriteLine(rm.Producttype);
