@@ -1,6 +1,7 @@
-﻿//using Znalytics.Group2.GreatOutDoor.Entity;
+﻿//-----------------------Surya----------------------------------------
 
 using Znalytics.Group2.GreatOutDoor.Entity;
+using System;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class Address
@@ -9,39 +10,36 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
         NewAddress:
             int spec = 0;
+            int Type;
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
             System.Console.WriteLine("Enter Country:");
             ad.CustomerCountry = (System.Console.ReadLine());
-            bd.AddCountry(ad);
             System.Console.WriteLine("Enter Your Name:");
             ad.CustomerName = (System.Console.ReadLine());
-            bd.AddCustomerName(ad);
             System.Console.WriteLine("Enter Mobile Number:");
             ad.MobileNumber = (System.Convert.ToInt64(System.Console.ReadLine()));
-            bd.AddMobileNumber(ad);
             System.Console.WriteLine("Enter Your Pincode:");
-            ad.PinCode = (System.Convert.ToInt64(System.Console.ReadLine()));
-            bd.AddPinCode(ad);
+            ad.PinCode = (System.Console.ReadLine());
             System.Console.WriteLine("Enter Flat/DoorNumber:");
             ad.FlatNo = (System.Console.ReadLine());
-            bd.AddFlatNo(ad);
             System.Console.WriteLine("Enter Your Area");
             ad.AreaColony = (System.Console.ReadLine());
-            bd.AddAreaColony(ad);
             System.Console.WriteLine("Enter your LandMark:");
             ad.LandMark = (System.Console.ReadLine());
-            bd.AddLandMark(ad);
             System.Console.WriteLine("Enter your Town/City:");
             ad.Town = (System.Console.ReadLine());
-            bd.AddTown(ad);
             System.Console.WriteLine("Enter your State");
             ad.State = (System.Console.ReadLine());
-            bd.AddState(ad);
-            System.Console.WriteLine("Enter your Address Type");
-            ad.AddressType = (System.Console.ReadLine());
-            bd.AddAddressType(ad);
+            System.Console.WriteLine("Enter your Address 0 for Type Home or 1 for Office");
+            bool val=int.TryParse(System.Console.ReadLine(),out Type);
+            if (val)
+            {
+                bd.AddAddressType(ad,Type);
+            }
+            else
+                throw new Exception("Enter valid option 0 or 1");            
         Add:
             System.Console.WriteLine("These are your Address Details");
             System.Console.WriteLine("Country: " + ad.CustomerCountry);
@@ -53,7 +51,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             System.Console.WriteLine("LandMark: " + ad.LandMark);
             System.Console.WriteLine("Town/City: " + ad.Town);
             System.Console.WriteLine("State: " + ad.State);
-            System.Console.WriteLine("Address Type: " + ad.AddressType);
+            //System.Console.WriteLine("Address Type: " + ad.AddressType);
             if (spec == 1)
             {
                 goto Lab;
@@ -94,53 +92,39 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                         case 1:
                             System.Console.WriteLine("Enter Country:");
                             ad.CustomerCountry = (System.Console.ReadLine());
-                            bd.AddCountry(ad);
                             break;
 
                         case 2:
                             System.Console.WriteLine("Enter Your Name:");
                             ad.CustomerName = (System.Console.ReadLine());
-                            bd.AddCustomerName(ad);
                             break;
                         case 3:
                             System.Console.WriteLine("Enter Mobile Number:");
                             ad.MobileNumber = (System.Convert.ToInt64(System.Console.ReadLine()));
-                            bd.AddMobileNumber(ad);
                             break;
                         case 4:
                             System.Console.WriteLine("Enter Your Pincode:");
-                            ad.PinCode = (System.Convert.ToInt64(System.Console.ReadLine()));
-                            bd.AddPinCode(ad);
+                            ad.PinCode = System.Console.ReadLine();
                             break;
                         case 5:
                             System.Console.WriteLine("Enter Flat/DoorNumber:");
                             ad.FlatNo = (System.Console.ReadLine());
-                            bd.AddFlatNo(ad);
                             break;
                         case 6:
                             System.Console.WriteLine("Enter Your Area");
                             ad.AreaColony = (System.Console.ReadLine());
-                            bd.AddAreaColony(ad);
                             break;
                         case 7:
                             System.Console.WriteLine("Enter your LandMark:");
                             ad.LandMark = (System.Console.ReadLine());
-                            bd.AddLandMark(ad);
                             break;
                         case 8:
                             System.Console.WriteLine("Enter your Town:");
                             ad.Town = (System.Console.ReadLine());
-                            bd.AddTown(ad);
                             break;
                         case 9:
                             System.Console.WriteLine("Enter your State:");
                             ad.State = (System.Console.ReadLine());
-                            bd.AddState(ad);
-                            break;
-                        case 10:
-                            System.Console.WriteLine("Enter your Address Type:");
-                            ad.AddressType = (System.Console.ReadLine());
-                            bd.AddAddressType(ad);
                             break;
                         case 11:
                             System.Console.WriteLine("---------Mofification are finished-------");
@@ -155,7 +139,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 }
             }
         Lab:
-            bd.AddFullAddress(ad);
+            bd.AddFullAddresss(ad);
             System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
             System.Console.ReadKey();
 

@@ -1,15 +1,21 @@
 using System;
-
+using System.Collections.Generic;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
+
 {
-    class RetailStorePresentation
+   public class RetailStorePresentation
     {
         static void Main()
         {
             //creating object
-            RetailStore r = new RetailStore();
-            System.Console.WriteLine("================WELCOME TO RETAIL STORE================");
+            
+            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
+            Retailstore r;
+            r= new Retailstore();
+            Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id
             System.Console.WriteLine("Enter The Retail store Id");
@@ -133,7 +139,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
 
-            System.Console.WriteLine("================ THANK YOU FOR CHOOSING OUR RETAIL STORE ================");
+            System.Console.WriteLine("================ :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: ================");
             System.Console.ReadKey();
         }
     }
