@@ -139,7 +139,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 }
             }
         Lab:
-            bd.AddFullAddress(ad);
+            bd.AddFullAddresss(ad);
             System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
             System.Console.ReadKey();
 
