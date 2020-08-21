@@ -25,7 +25,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             _retailDataAccessLogic = new RetailStoreDataLayer();
         }
 
-        //Creating method for Validating RetailStore ID
+        
         public void Add(RetailStoreID rsid)
         {
 
@@ -40,7 +40,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             }
         }
         //Get RetailStoreID
-        public List<RetailstoreID> GetRetailstoreIDs()
+       public List<RetailstoreID> GetRetailstoreID()
         {
             return _retailDataAccessLogic.GetRetailStoreID();
         }
