@@ -31,7 +31,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
             if (rsid.RetailStoreID != null)
             {
-                _retailDataAccessLogic.Add(RetailStoreID);
+                _retailDataAccessLogic.AddRetailstore(RetailStoreID);
 
             }
             else

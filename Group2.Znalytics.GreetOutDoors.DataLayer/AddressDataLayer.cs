@@ -11,9 +11,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class AddressDataLayer
     {
-        
-        private static List<AddressDetail> _dataBase;
-        static AddressDataLayer()
+
+        private List<AddressDetail> _dataBase;
+        public AddressDataLayer()
         {
             _dataBase = new List<AddressDetail>();
         }
@@ -22,19 +22,12 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Adding new Customer Address
         /// </summary>
         /// <param name="address">Attribute to add adddress in to collection</param>
-        public void AddNewAddress(AddressDetail address)
+        public void AddAddress(AddressDetail address)
         {
             _dataBase.Add(address);
 
         }
-        public void UpdateCustomerExistingAddress(AddressDetail ad) { 
-            
-        }
-
-        public void DeleteExistingAddress(AddressDetail ad,int ID) {
-            //_dataBase.RemoveAll( id => ad.CustomerId == ID);
-            //_dataBase.Remove(ID);
-        }
+        
 
     }
 }
