@@ -27,7 +27,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             _dataBase.Add(address);
 
         }
-        
+        public void UpdateCustomerExistingAddress(AddressDetail ad) { 
+            
+        }
+
+        public void DeleteExistingAddress(AddressDetail ad,int ID) {
+            //_dataBase.RemoveAll( id => ad.CustomerId == ID);
+            //_dataBase.Remove(ID);
+        }
 
     }
 }
