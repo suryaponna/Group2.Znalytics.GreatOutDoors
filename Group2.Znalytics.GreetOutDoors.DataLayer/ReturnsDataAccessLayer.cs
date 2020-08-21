@@ -25,6 +25,13 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
             _return.Add(rm);//
         }
+        
+        public void AddProductName(Return rm)
+        {
+            _return.AddProductName(rm);
+        }
+
        
     }
+    
 }
