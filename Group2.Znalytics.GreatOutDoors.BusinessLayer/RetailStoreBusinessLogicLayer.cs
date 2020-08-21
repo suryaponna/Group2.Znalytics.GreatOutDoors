@@ -1,7 +1,10 @@
-﻿using System;
+﻿//---------Archana
+
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Group2.Znalytics.GreatOutDoors.DataLayer;
@@ -13,7 +16,7 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-    public class RetailStoreBusinessLogicLayer
+   public class RetailStoreBusinessLogicLayer
     {
 
         private RetailStoreDataLayer _retailDataAccessLogic;
@@ -39,9 +42,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         //Get RetailStoreID
         public List<RetailstoreID> GetRetailstoreIDs()
         {
-            return _retailDataAccessLogic.GetRetailStoreIDs();
+            return _retailDataAccessLogic.GetRetailStoreID();
         }
 
     }
+   
+
 
 }
