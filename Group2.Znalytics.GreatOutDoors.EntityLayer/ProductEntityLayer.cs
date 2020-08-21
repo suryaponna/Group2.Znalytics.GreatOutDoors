@@ -78,7 +78,17 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         /// <summary>
         /// Property for Price
         /// </summary>
-        public double Productprice { set; get; }
+        public double Productprice
+        {
+            set
+            {
+                _productPrice = value;
+            }
+            get
+            {
+                return _productPrice;
+            }
+        }
 
     }
 }
