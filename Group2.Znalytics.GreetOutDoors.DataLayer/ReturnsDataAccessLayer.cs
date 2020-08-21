@@ -25,19 +25,6 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
             _return.Add(rm);//
         }
-        // Method for updating ProductQuantity
-        public void UpdateProductQuantity(Return rm)
-        {
-            Return ret = _return.Find(temp => temp.ProductQuantity == rm.ProductQuantity);
-            if (ret != null)
-            {
-                ret.ProductQuantity = rm.ProductQuantity;
-            }
-        }
-        // List to Get Returns
-        public List<Return> GetReturns()
-        {
-            return _return;
-        }
+       
     }
 }
