@@ -1,6 +1,7 @@
 ﻿
 
 
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
 using System.CodeDom;
 using System.Runtime.InteropServices;
@@ -23,10 +24,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _townCity;
         private string _selState;
         private int _customerId=524;
-        public enum _addressType : int
-        {
-            Home = 0, Office = 1
-        }
+        private AddressType _addressType;
+
         public int CustomerId {
             set {
                 _customerId = value;
@@ -199,7 +198,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
-        public _addressType AddressType {
+        public AddressType AddressTypee{
             set;
             get;
         }

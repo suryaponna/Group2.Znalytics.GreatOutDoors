@@ -77,7 +77,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
 
         Labb:
-            bd.AddFullAddresss(ad);
+            bd.AddFullAddres(ad);
             System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
             System.Console.ReadKey();
 
@@ -140,8 +140,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             ad.State = (System.Console.ReadLine());
                             break;
                         case 11:
-                            System.Console.WriteLine("---------Mofification are finished-------");                            
+                            System.Console.WriteLine("---------Mofification are finished-------");
                             goto Labb;
+                            //break;
                         default:
                             System.Console.WriteLine("Enter valid Option");
                             break;

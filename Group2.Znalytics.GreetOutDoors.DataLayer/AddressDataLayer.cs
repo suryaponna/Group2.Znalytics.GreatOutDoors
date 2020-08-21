@@ -22,7 +22,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Adding new Customer Address
         /// </summary>
         /// <param name="address">Attribute to add adddress in to collection</param>
-        public void AddNewAddress(AddressDetail address)
+        public void AddAddress(AddressDetail address)
         {
             _dataBase.Add(address);
 
