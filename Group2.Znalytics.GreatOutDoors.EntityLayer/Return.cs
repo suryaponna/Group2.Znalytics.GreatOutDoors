@@ -10,6 +10,7 @@ public class Return
     private string _productdate;
     private int _productQuantity;
     private string _producttype;
+    private bool _accepted;
     ///Property for ProductID details
     public string ProductID
     {
@@ -87,4 +88,19 @@ public class Return
             return _producttype;
         }
     }
+    public bool Accepted
+    {
+        set
+        {
+            if (Accepted == true)
+            {
+                _accepted = value;
+            }
+        }
+        get
+        {
+            return _accepted;
+        }
+    }
+
 }
