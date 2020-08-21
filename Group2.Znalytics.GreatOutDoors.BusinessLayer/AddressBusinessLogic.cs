@@ -10,7 +10,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     {
 
         //List<string> TotalAddresses = new List<string>();
-        AddressDataLayer dll = new AddressDataLayer();
+        AddressDataLayer dl = new AddressDataLayer();
         AddressDetail ad = new AddressDetail();
         string sample = "";
         int j = 1;
@@ -18,20 +18,20 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Method for Adding Customer Country
         /// </summary>
         /// <param name="ad">parameter is of AddressDeatils</param>
-        
-        public void AddAddressType(AddressDetail ad,int Type)
+
+        public void AddAddressType(AddressDetail ad, int Type)
         {
-            if (Type == 0) 
-                ad.AddressType=AddressDetail._addressType.Home;
+            if (Type == 0)
+                sample = sample + AddressDetail._addressType.Home;
             else
-                ad.AddressType=AddressDetail._addressType.Office;
+                sample = sample + AddressDetail._addressType.Office;
         }
         /// <summary>
         /// Adding Address to Data Layer
         /// </summary>
-        public void AddFullAddresss(AddressDetail ad)
+        public void AddFullAddress(AddressDetail ad)
         {
-           dll.AddNewAddress(ad); 
+            dl.AddNewAddress(ad);
         }
         public void UpdateExistingAddress(AddressDetail ad) { 
             

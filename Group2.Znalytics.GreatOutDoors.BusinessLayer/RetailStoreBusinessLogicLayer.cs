@@ -1,7 +1,10 @@
-﻿using System;
+﻿//---------Archana
+
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Group2.Znalytics.GreatOutDoors.DataLayer;
@@ -15,33 +18,35 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
    public class RetailStoreBusinessLogicLayer
     {
-        
-       private RetailStoreDataLayer _retailDataAccessLogic;
+
+        private RetailStoreDataLayer _retailDataAccessLogic;
         public RetailStoreBusinessLogicLayer()
         {
             _retailDataAccessLogic = new RetailStoreDataLayer();
         }
+
         
-        //Creating method for Validating RetailStore ID
         public void Add(RetailStoreID rsid)
         {
 
-            if (rsid.RetailStoreID!= null)
+            if (rsid.RetailStoreID != null)
             {
                 _retailDataAccessLogic.Add(RetailStoreID);
-                
+
             }
             else
             {
                 throw new Exception("Retail store ID can't be null");
-            } 
+            }
         }
         //Get RetailStoreID
-        public List<RetailstoreID> GetRetailstoreIDs()
+       public List<RetailstoreID> GetRetailstoreID()
         {
-            return _retailDataAccessLogic.GetRetailStoreIDs();
+            return _retailDataAccessLogic.GetRetailStoreID();
         }
-       
+
     }
+   
+
 
 }

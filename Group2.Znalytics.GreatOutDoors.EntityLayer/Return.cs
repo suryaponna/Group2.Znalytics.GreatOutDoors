@@ -1,4 +1,5 @@
 ﻿/// <summary>
+/// Created by K.Prasanna
 /// This is Return Module
 /// </summary>
 public class Return
@@ -9,6 +10,7 @@ public class Return
     private string _productdate;
     private int _productQuantity;
     private string _producttype;
+    private bool _accepted;
     ///Property for ProductID details
     public string ProductID
     {
@@ -28,9 +30,9 @@ public class Return
     {
         set
         {
-           
-                _productName = value;
-            
+
+            _productName = value;
+
         }
         get
         {
@@ -86,4 +88,23 @@ public class Return
             return _producttype;
         }
     }
+    public bool Accepted
+    {
+        set
+        {
+            if (Accepted == true)
+            {
+                _accepted = value;
+            }
+            else
+            {
+                throw new System.Exception(" Not Accepted");
+            }
+        }
+        get
+        {
+            return _accepted;
+        }
+    }
+
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//Created by K.Prasanna
 /// <summary>
 /// This class represents DataAccess Layer for Return
 /// </summary>
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer:IReturnsDataAccessLayer
+    public class ReturnsDataAccessLayer : IReturnsDataAccessLayer
     {
         private static List<Return> _return;
         /// <summary>
@@ -21,22 +22,16 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
         public void Add(Return rm)
         {
-          
+
             _return.Add(rm);//
         }
-        // Method for updating ProductQuantity
-        public void UpdateProductQuantity(Return rm)
+        
+        public void AddProductName(Return rm)
         {
-            Return ret = _return.Find(temp => temp.ProductQuantity == rm.ProductQuantity);
-            if (ret != null)
-            {
-                ret.ProductQuantity = rm.ProductQuantity;
-            }  
+            _return.AddProductName(rm);
         }
-        // List to Get Returns
-        public List<Return> GetReturns()
-        {
-            return _return;
-        }
+
+       
     }
+    
 }

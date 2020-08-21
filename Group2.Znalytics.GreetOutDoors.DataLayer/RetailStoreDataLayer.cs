@@ -1,4 +1,5 @@
-﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+﻿//---------Archana
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         static RetailStoreDataLayer()
         {
             _retailstoreid = new List<RetailStoreID>();
-          
+
         }
-        
+
         //Add retailstore id
         public void Add(RetailStoreID rsid)
         {

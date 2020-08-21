@@ -8,12 +8,12 @@ class Product
         // creating the object for ProductDeatils class
         ProductDetails p = new ProductDetails();
         ProductBusiness pb = new ProductBusiness();
-      
+
         int Choice;
         bool b;
         while (true)
         {
-            
+
             System.Console.WriteLine("1.ProductDetails");
             System.Console.WriteLine("2. Categories");
             System.Console.WriteLine("3. Exit");
@@ -63,7 +63,7 @@ class Product
                         System.Console.WriteLine("mountaineering equipment ");
                         p.mountaineering equipment = System.Console.ReadLine();
                         System.Console.WriteLine("outdoor protection");
-                        p.outdoor protection =System.Console.ReadLine();
+                        p.outdoor protection = System.Console.ReadLine();
                         break;
                     default:
                         System.Console.WriteLine("Please Enter the Correct Option");
