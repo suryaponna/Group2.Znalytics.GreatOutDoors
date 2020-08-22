@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Group2.Znalytics.GreetOutDoors.EntityLayer;
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class ReturnsPresentation
@@ -115,21 +115,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                     break;
             }
-            System.Console.WriteLine(rm.Producttype);
+           System.Console.WriteLine(rm.Producttype);
+           
 
-            bool k = true;
-            bool s = bool.Parse(System.Console.ReadLine());
-            if (s == true)
-            {
-                System.Console.WriteLine("Accepted");
-            }
-            else
-            {
-                k = false;
-                System.Console.WriteLine("Rejected");
-            }
-
-            void AddProductName()
+            void AddReturn()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
                 
@@ -137,9 +126,14 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.Write("Enter new Product Name: ");
                 rm.ProductName = Console.ReadLine();
 
-                rbl.AddProductName(rm);
+                rbl.AddReturn(rm);
                 Console.WriteLine("Product  Added");
 
+            }
+            void GetReturnByProductID()
+            {
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+                rbl.GetReturnByProductID();
             }
 
             
