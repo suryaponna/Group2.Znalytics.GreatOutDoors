@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using System.CodeDom.Compiler;
 /// <summary>
 /// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
@@ -22,31 +24,30 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
         // creating method for validating ProductID
-        public void Add(Return rm)
+       
+        public void AddReturn(Return rm)
         {
-            if (rm.ProductID != null)
+            if (rm.ProductName != null)
             {
-                _rdl.Add(rm);
+                _rdl.AddReturn(rm);
             }
-            else
-            {
-                throw new Exception("ProductID can't be null");
-            }
-        }
-        
-            public void AddProductName(Return rm)
-        {
-            if(rm.ProductName!=null)
-             {
-                    _rdl.AddProductName(rm);
-             }
             else
             {
                 throw new Exception("Add valid Product Name");
             }
         }
-
+        public List<Return> GetReturns()
+        {
+            return _rdl.GetReturns();
+        }
+        //Method to display Return  by ProductId
+        public List<Return> GetReturnByProductID()
+        {
+            return _rdl.GetReturnByProductID();
+        }
        
+
+
     }
 
 }
