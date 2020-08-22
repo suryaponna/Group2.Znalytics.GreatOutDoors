@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-    class IRetailStoreBusinessLogicLayer
+    public interface IRetailStoreBusinessLogicLayer
     {
         void AddRetailStoreID(Retailstore rsid);
+        
     }
 }
+

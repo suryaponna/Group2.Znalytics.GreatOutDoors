@@ -26,5 +26,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             _retailstoreid.Add(rsid);
         }
+
+       
     }
 }

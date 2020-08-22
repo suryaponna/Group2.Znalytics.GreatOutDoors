@@ -19,34 +19,44 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
    public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
 
-        private RetailStoreDataLayer _rdl;
-        public RetailStoreBusinessLogicLayer()
-        {
-            _rdl = new RetailStoreDataLayer();
-        }
+       private RetailStoreDataLayer _rdl;
+         public RetailStoreBusinessLogicLayer()
+         {
+             _rdl = new RetailStoreDataLayer();
+         }
 
-        
+         
+         public void AddRetailStoreID(Retailstore rsid)
+         {
+
+             if (rsid.RetailStoreID != null)
+             {
+                 _rdl.AddRetailStoreID(rsid);
+
+             }
+             else
+             {
+                 throw new Exception("Retail store ID can't be null");
+             }
+         }
+         //Get RetailStoreID
+        public List<RetailStoreID> GetRetailStoreID()
+         {
+             return _rdl.GetRetailStoreID();
+         }
+       /** RetailStoreDataLayer d = new RetailStoreDataLayer();
         public void AddRetailStoreID(Retailstore rsid)
         {
-
-            if (rsid.RetailStoreID != null)
+            if(rsid.RetailStoreID!=null)
             {
-                _rdl.AddRetailStoreID(rsid);
-
-            }
-            else
-            {
-                throw new Exception("Retail store ID can't be null");
+                d.AddRetailStoreID(rsid);
             }
         }
-        //Get RetailStoreID
-       public List<RetailStoreID> GetRetailStoreID()
+        public List<RetailStoreID>GetRetailStoreIDs()
         {
-            return _rdl.GetRetailStoreID();
-        }
+            return d.AddGetRetailStoreIDs();
+        }*/
 
     }
-   
-
 
 }
