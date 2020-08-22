@@ -42,7 +42,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
              }
             else
             {
-                throw new Exception("Add valid Product Name")
+                throw new Exception("Add valid Product Name");
             }
         }
 

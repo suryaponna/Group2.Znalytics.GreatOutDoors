@@ -16,22 +16,22 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public class RetailStoreBusinessLogicLayer
+   public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
 
-        private RetailStoreDataLayer _retailDataAccessLogic;
+        private RetailStoreDataLayer _rdl;
         public RetailStoreBusinessLogicLayer()
         {
-            _retailDataAccessLogic = new RetailStoreDataLayer();
+            _rdl = new RetailStoreDataLayer();
         }
 
         
-        public void AddRetailstore(RetailStoreID rsid)
+        public void AddRetailStoreID(Retailstore rsid)
         {
 
             if (rsid.RetailStoreID != null)
             {
-                _retailDataAccessLogic.AddRetailstore(RetailStoreID);
+                _rdl.AddRetailStoreID(rsid);
 
             }
             else
@@ -42,7 +42,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         //Get RetailStoreID
        public List<RetailStoreID> GetRetailStoreID()
         {
-            return _retailDataAccessLogic.GetRetailStoreID();
+            return _rdl.GetRetailStoreID();
         }
 
     }
