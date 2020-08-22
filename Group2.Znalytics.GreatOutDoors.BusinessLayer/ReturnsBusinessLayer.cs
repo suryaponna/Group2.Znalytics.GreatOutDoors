@@ -22,31 +22,25 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
         // creating method for validating ProductID
-        public void Add(Return rm)
-        {
-            if (rm.ProductID != null)
-            {
-                _rdl.Add(rm);
-            }
-            else
-            {
-                throw new Exception("ProductID can't be null");
-            }
-        }
-        
-            public void AddProductName(Return rm)
-        {
-            if(rm.ProductName!=null)
-             {
-                    _rdl.AddProductName(rm);
-             }
-            else
-            {
-                throw new Exception("Add valid Product Name")
-            }
-        }
-
        
+        public void AddProductName(Return rm)
+        {
+            if (rm.ProductName != null)
+            {
+                _rdl.AddProductName(rm);
+            }
+            else
+            {
+                throw new Exception("Add valid Product Name");
+            }
+        }
+        public List<Return> GetReturns()
+        {
+            return _rdl.GetReturns();
+        }
+       
+
+
     }
 
 }

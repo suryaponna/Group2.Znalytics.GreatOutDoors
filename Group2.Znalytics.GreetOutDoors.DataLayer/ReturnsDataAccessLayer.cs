@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,18 +21,19 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             //creating a list 
             _return = new List<Return>();
         }
-        public void Add(Return rm)
-        {
-
-            _return.Add(rm);//
-        }
         
         public void AddProductName(Return rm)
         {
             _return.AddProductName(rm);
         }
+        public List<Return> GetReturns()
+        {
+           return  _return;
 
+        }
        
+
+
     }
     
 }

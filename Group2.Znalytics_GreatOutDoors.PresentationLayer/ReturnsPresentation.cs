@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -116,7 +115,19 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                     break;
             }
-           
+            System.Console.WriteLine(rm.Producttype);
+
+            bool k = true;
+            bool s = bool.Parse(System.Console.ReadLine());
+            if (s == true)
+            {
+                System.Console.WriteLine("Accepted");
+            }
+            else
+            {
+                k = false;
+                System.Console.WriteLine("Rejected");
+            }
 
             void AddProductName()
             {
@@ -126,25 +137,30 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.Write("Enter new Product Name: ");
                 rm.ProductName = Console.ReadLine();
 
-                rbl.Add(rm);
+                rbl.AddProductName(rm);
                 Console.WriteLine("Product  Added");
 
             }
 
             
 
-            System.Console.WriteLine(rm.Producttype);
-            //Displays all the details 
-            System.Console.WriteLine("--------------- Detils are --------------");
-            System.Console.WriteLine("Product Id: " + rm.ProductID);
-            System.Console.WriteLine("Product Name: " + rm.ProductName);
-            System.Console.WriteLine("Product date is: " + rm.Productdate);
-            System.Console.WriteLine("Product Quantity is: " + rm.ProductQuantity);
-            System.Console.WriteLine("Product type is: " + rm.Producttype);
-            System.Console.WriteLine("ThankYou for your Response");
-            System.Console.ReadKey();
+           void GetReturns()
+            {
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+                rbl.GetReturns();
 
+                List<Return> rets = rbl.GetReturns();
+                //Displays all the details 
+                System.Console.WriteLine("--------------- Detils are --------------");
+                System.Console.WriteLine("Product Id: " + rm.ProductID);
+                System.Console.WriteLine("Product Name: " + rm.ProductName);
+                System.Console.WriteLine("Product date is: " + rm.Productdate);
+                System.Console.WriteLine("Product Quantity is: " + rm.ProductQuantity);
+                System.Console.WriteLine("Product type is: " + rm.Producttype);
+                System.Console.WriteLine("ThankYou for your Response");
+                System.Console.ReadKey();
 
+            }
 
         }
 
