@@ -1,5 +1,6 @@
 ﻿//--------------------Surya
 using System.Collections.Generic;
+using System.Collections;
 using System.Configuration;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
@@ -9,15 +10,20 @@ using Group2.Znalytics.GreetOutDoors.DataLayer;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
-    public class AddressDataLayer
+    public class AddressDataLayer:IEnumerable
     {
 
-        private List<AddressDetail> _dataBase;
+        private List<AddressDetail> _customerAddressesList;
         public AddressDataLayer()
         {
-            _dataBase = new List<AddressDetail>();
+            _customerAddressesList = new List<AddressDetail>();
         }
+        public IEnumerator GetEnumerator() {
+            for (int i = 0; i < _customerAddressesList.Count; i++) {
+                yield return _customerAddressesList[i];
 
+            }
+        }
         /// <summary>
         /// Adding new Customer Address
         /// </summary>
