@@ -2,7 +2,7 @@
 {
     static void Main()
     {
-        System.Console.WriteLine("Hello hiiiiiiii");
+        System.Console.WriteLine("Hello hiiiiiiii world");
         System.Console.ReadLine();
     }
 }
