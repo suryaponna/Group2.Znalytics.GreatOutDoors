@@ -59,20 +59,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             int index = _customerAddressesList.FindIndex(ad);
             return index;
         }
-        public int IndexOf(AddressDetail ad) {
-            int index = _customerAddressesList.IndexOf(ad);
-            return index;
-        }
-        /// <summary>
-        /// Finding the address Contains in list or not 
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public bool Contains(AddressDetail value) {
-            bool b = _customerAddressesList.Contains(value);
-            return b;
-        }
-
+        
         /// <summary>
         /// Removing Address through index 
         /// </summary>
@@ -95,15 +82,23 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             throw new NotImplementedException();
         }
+        /// <summary>
+        /// Finding the address Contains in list or not 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
 
-        public bool Contains(object value)
+        public bool Contains(AddressDetail value)
         {
-            throw new NotImplementedException();
+            bool b = _customerAddressesList.Contains(value);
+            return b;
+            //throw new NotImplementedException();
         }
 
-        public int IndexOf(object value)
+        public int IndexOf(AddressDetail value)
         {
-            throw new NotImplementedException();
+            int index = _customerAddressesList.IndexOf(ad);
+            return index;
         }
 
         public void Insert(int index, object value)
