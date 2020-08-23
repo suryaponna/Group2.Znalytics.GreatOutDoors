@@ -14,17 +14,19 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
     public class RetailStoreDataLayer
     {
         //private fields
-        private static List<RetailStoreID> _retailstoreid;
-        static RetailStoreDataLayer()
+        private static List<Retailstore> _retailstoreid;
+        public RetailStoreDataLayer()
         {
-            _retailstoreid = new List<RetailStoreID>();
+            _retailstoreid = new List<Retailstore>();
 
         }
 
         //Add retailstore id
-        public void AddRetailstore(RetailStoreID rsid)
+        public void AddRetailStoreID(Retailstore rsid)
         {
             _retailstoreid.Add(rsid);
         }
+
+       
     }
 }
