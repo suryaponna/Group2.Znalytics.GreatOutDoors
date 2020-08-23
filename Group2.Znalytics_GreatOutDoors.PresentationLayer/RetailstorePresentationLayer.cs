@@ -1,3 +1,4 @@
+//---------Archana
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
@@ -6,15 +7,15 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 {
-   public class RetailStorePresentation
+    public class RetailStorePresentation
     {
         static void Main()
         {
             //creating object
-            
-            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
             Retailstore r;
-            r= new Retailstore();
+            r = new Retailstore();
+            RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
+            
             Console.WriteLine("================WELCOME TO RETAIL STORE================");
 
             //retail id

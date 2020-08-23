@@ -5,15 +5,18 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using System.CodeDom.Compiler;
 /// <summary>
+/// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
 
-    public class ReturnsBusinessLayer:IReturnsBusinessLayer
+    public class ReturnsBusinessLayer : IReturnsBusinessLayer
     {
-       private ReturnsDataAccessLayer _rdl;
+        private ReturnsDataAccessLayer _rdl;
 
         public ReturnsBusinessLayer()
         {
@@ -21,27 +24,30 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
         // creating method for validating ProductID
-        public void Add(Return rm)
+       
+        public void AddReturn(Return rm)
         {
-            if (rm.ProductID!=null)
+            if (rm.ProductName != null)
             {
-                _rdl.Add(rm); 
+                _rdl.AddReturn(rm);
             }
             else
             {
-                throw new Exception("ProductID can't be null");
+                throw new Exception("Add valid Product Name");
             }
         }
-       
-        // checking condition for ProductQuantity
-        public void UpdateProductQuantity(Return rm)
+        public List<Return> GetReturns()
         {
-            if (rm.ProductQuantity <= 20)
-            {
-                _rdl.UpdateProductQuantity(rm);
-            }
+            return _rdl.GetReturns();
+        }
+        //Method to display Return  by ProductId
+        public List<Return> GetReturnByProductID()
+        {
+            return _rdl.GetReturnByProductID();
         }
        
+
+
     }
-    
+
 }

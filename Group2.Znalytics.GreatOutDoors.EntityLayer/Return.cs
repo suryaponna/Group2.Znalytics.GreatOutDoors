@@ -1,89 +1,113 @@
-﻿/// <summary>
+﻿/// <summary></summary>
+// Created by K.Prasanna
 /// This is Return Module
 /// </summary>
-public class Return
+namespace Group2.Znalytics.GreetOutDoors.EntityLayer
 {
-    //private fields
-    private string _productID;
-    private string _productName;
-    private string _productdate;
-    private int _productQuantity;
-    private string _producttype;
-    ///Property for ProductID details
-    public string ProductID
+    public class Return
     {
-        set
+        //private fields
+        private string _productID;
+        private string _productName;
+        private string _productdate;
+        private int _productQuantity;
+        private string _producttype;
+        private string _accepted;
+        ///Property for ProductID details
+        public string ProductID
         {
-            _productID = value;
+            set
+            {
+                _productID = value;
+            }
+            get
+            {
+                return _productID;
+            }
         }
-        get
+        /// <summary>
+        ///Property for  ProductName
+        /// </summary>
+        public string ProductName
         {
-            return _productID;
-        }
-    }
-    /// <summary>
-    ///Property for  ProductName
-    /// </summary>
-    public string ProductName
-    {
-        set
-        {
-           
-                _productName = value;
-            
-        }
-        get
-        {
-            return _productName;
-        }
-    }
-    /// <summary>
-    /// Productdate
-    /// </summary>
-    public string Productdate
-    {
-        set
-        {
-            _productdate = value;
-        }
-        get
-        {
-            return _productdate;
-        }
-    }
-    /// <summary>
-    /// Product Quantity
-    /// </summary>
+            set
+            {
 
-    public int ProductQuantity
-    {
-        set
-        {
-            if (value < 20)
+                _productName = value;
+
+            }
+            get
             {
-                _productQuantity = value;
+                return _productName;
             }
         }
-        get
+        /// <summary>
+        /// Productdate
+        /// </summary>
+        public string Productdate
         {
-            return _productQuantity;
-        }
-    }
-    /// <summary>
-    /// Product Type
-    /// </summary>
-    public string Producttype
-    {
-        set
-        {
-            if (value.Length <= 30)
+            set
             {
-                _producttype = value;
+                _productdate = value;
+            }
+            get
+            {
+                return _productdate;
             }
         }
-        get
+        /// <summary>
+        /// Product Quantity
+        /// </summary>
+
+        public int ProductQuantity
         {
-            return _producttype;
+            set
+            {
+                if (value < 20)
+                {
+                    _productQuantity = value;
+                }
+            }
+            get
+            {
+                return _productQuantity;
+            }
         }
+        /// <summary>
+        /// Product Type
+        /// </summary>
+        public string Producttype
+        {
+            set
+            {
+                if (value.Length <= 30)
+                {
+                    _producttype = value;
+                }
+            }
+            get
+            {
+                return _producttype;
+            }
+        }
+        public string Accepted
+        {
+            set
+            {
+                if ("Accepted" == value)
+                {
+                    _accepted = value;
+                }
+                else
+                {
+                    throw new System.Exception(" Not Accepted");
+                }
+            }
+            get
+            {
+                return _accepted;
+            }
+        }
+
     }
 }

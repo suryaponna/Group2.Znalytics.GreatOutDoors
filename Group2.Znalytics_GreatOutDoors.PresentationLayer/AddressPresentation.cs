@@ -8,9 +8,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     {
         static void Main()
         {
-        NewAddress:
-            int spec = 0;
+            int choice;
             int Type;
+    Address:
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
@@ -51,44 +51,57 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             System.Console.WriteLine("LandMark: " + ad.LandMark);
             System.Console.WriteLine("Town/City: " + ad.Town);
             System.Console.WriteLine("State: " + ad.State);
-            //System.Console.WriteLine("Address Type: " + ad.AddressType);
-            if (spec == 1)
-            {
-                goto Lab;
+            System.Console.WriteLine("Address Type: " + ad.AddressType);
+            System.Console.WriteLine("Enter Folllowing Options for further process");
+            System.Console.WriteLine("Enter 1 to to update existing Address");
+            System.Console.WriteLine("Enter 2 to to add new Shipping Address");
+            System.Console.WriteLine("Enter 3 for all details are correct");
+            bool ch = int.TryParse(System.Console.ReadLine(),out choice);
+            if (ch) {
+                do
+                {
+                     switch (choice)
+                    {
+                        case 1:
+                            UpdateAddress(ad);
+                            break;
+                        case 2:
+                            AddNewAddress(ad);
+                            break;
+                        case 3:
+                            goto Labb;
+                    }
+
+                } while (choice <= 4);
             }
 
-            System.Console.WriteLine("If you want to add new address enter 1");
-            System.Console.WriteLine("If you want to modify  address enter 2");
-            System.Console.WriteLine("Enter 3 to Finalize the adress ");
-            int a = System.Convert.ToInt32(System.Console.ReadLine());
-            if (a == 3)
+
+        Labb:
+            bd.AddFullAddres(ad);
+            System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
+            System.Console.ReadKey();
+
+        }
+        static void UpdateAddress(AddressDetail ad) {
+        Update:
+            int choice2;
+            System.Console.WriteLine("Enter your option for updating Particular field");
+            System.Console.WriteLine("For Country enter 1");
+            System.Console.WriteLine("For Name enter 2");
+            System.Console.WriteLine("For Mobile Number enter 3");
+            System.Console.WriteLine("for PinCode Enter 4 ");
+            System.Console.WriteLine("For FlatNo Enter 5");
+            System.Console.WriteLine("For Area Enter 6");
+            System.Console.WriteLine("For LandMark Enter 7");
+            System.Console.WriteLine("For Town/City Enter 8");
+            System.Console.WriteLine("For State Enter 9");
+            System.Console.WriteLine("For Address Type Enter 10 ");
+            System.Console.WriteLine("To Finish Modifiying Enter 11");
+            bool c= int.TryParse(System.Console.ReadLine(),out choice2);
+            if (c)
             {
-                goto Lab;
-            }
-            if (a == 1)
-            {
-                System.Console.WriteLine("Enter New Address Details");
-                goto NewAddress;
-            }
-            else
-            {
-                System.Console.WriteLine("Select your Fileds to modify");
-                while (true)
-                {
-                    System.Console.WriteLine("For Country enter 1");
-                    System.Console.WriteLine("For Name enter 2");
-                    System.Console.WriteLine("For Mobile Number enter 3");
-                    System.Console.WriteLine("for PinCode Enter 4 ");
-                    System.Console.WriteLine("For FlatNo Enter 5");
-                    System.Console.WriteLine("For Area Enter 6");
-                    System.Console.WriteLine("For LandMark Enter 7");
-                    System.Console.WriteLine("For Town/City Enter 8");
-                    System.Console.WriteLine("For State Enter 9");
-                    System.Console.WriteLine("For Address Type Enter 10 ");
-                    System.Console.WriteLine("To Finish Modifiying Enter 11");
-                    int b = int.Parse(System.Console.ReadLine());
-                    switch (b)
-                    {
+                do {
+                    switch(choice2){
                         case 1:
                             System.Console.WriteLine("Enter Country:");
                             ad.CustomerCountry = (System.Console.ReadLine());
@@ -128,24 +141,27 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             break;
                         case 11:
                             System.Console.WriteLine("---------Mofification are finished-------");
-                            spec = 1;
-                            goto Add;
+                            goto Labb;
+                            //break;
                         default:
                             System.Console.WriteLine("Enter valid Option");
                             break;
 
                     }
 
-                }
+                } while (choice2<=11);
             }
-        Lab:
-            bd.AddFullAddresss(ad);
-            System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
-            System.Console.ReadKey();
-
+            else {
+                goto Update;
+            }
         }
+        static void AddNewAddress(AddressDetail ad) {
+            goto Address;
+        }
+    
 
     }
+    
 }
 
 

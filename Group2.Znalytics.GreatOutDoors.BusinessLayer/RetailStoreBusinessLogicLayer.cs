@@ -1,7 +1,10 @@
-﻿using System;
+﻿//---------Archana
+
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Group2.Znalytics.GreatOutDoors.DataLayer;
@@ -13,35 +16,47 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public class RetailStoreBusinessLogicLayer
+   public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
-        
-       private RetailStoreDataLayer _retailDataAccessLogic;
-        public RetailStoreBusinessLogicLayer()
-        {
-            _retailDataAccessLogic = new RetailStoreDataLayer();
-        }
-        
-        //Creating method for Validating RetailStore ID
-        public void Add(RetailStoreID rsid)
-        {
 
-            if (rsid.RetailStoreID!= null)
-            {
-                _retailDataAccessLogic.Add(RetailStoreID);
-                
-            }
-            else
-            {
-                throw new Exception("Retail store ID can't be null");
-            } 
-        }
-        //Get RetailStoreID
-        public List<RetailstoreID> GetRetailstoreIDs()
+       private RetailStoreDataLayer _rdl;
+         public RetailStoreBusinessLogicLayer()
+         {
+             _rdl = new RetailStoreDataLayer();
+         }
+
+         
+         public void AddRetailStoreID(Retailstore rsid)
+         {
+
+             if (rsid.RetailStoreID != null)
+             {
+                 _rdl.AddRetailStoreID(rsid);
+
+             }
+             else
+             {
+                 throw new Exception("Retail store ID can't be null");
+             }
+         }
+         //Get RetailStoreID
+        public List<RetailStoreID> GetRetailStoreID()
+         {
+             return _rdl.GetRetailStoreID();
+         }
+       /** RetailStoreDataLayer d = new RetailStoreDataLayer();
+        public void AddRetailStoreID(Retailstore rsid)
         {
-            return _retailDataAccessLogic.GetRetailStoreIDs();
+            if(rsid.RetailStoreID!=null)
+            {
+                d.AddRetailStoreID(rsid);
+            }
         }
-       
+        public List<RetailStoreID>GetRetailStoreIDs()
+        {
+            return d.AddGetRetailStoreIDs();
+        }*/
+
     }
 
 }

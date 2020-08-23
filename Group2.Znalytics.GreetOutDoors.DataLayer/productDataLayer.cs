@@ -7,7 +7,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     /// <summary>
     /// referes to ProductData in Property class
     /// </summary>
-    public class productDataLayer
+    public class productDataLayer 
     {
 
         private List<ProductDetails> ProductsList  //creating a reference varibale for List
@@ -22,7 +22,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
 
         /// <summary>
-        /// adding the products into the List
+        /// adding the products in the List
         /// </summary>
         /// <param name="productDetails"></param>
         public void AddProduct(ProductDetails productDetails)
@@ -39,11 +39,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             for (int i = 0; i < ProductsList.Count; i++)
             {
                 ProductDetails n = ProductsList[i];
-                System.Console.WriteLine("Product Name ={0},Product Id ={1},Price= {3}", n.ProductName, n.ProductID, n.Price);
+                System.Console.WriteLine("Product Name ={0},Product Id ={1},Price= {3}", n.ProductName, n.ProductID, n.Productprice);
             }
 
-
+        }
+        
         }
 
     }
-}

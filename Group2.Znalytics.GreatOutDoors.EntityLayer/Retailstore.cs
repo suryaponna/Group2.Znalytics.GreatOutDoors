@@ -1,5 +1,6 @@
-﻿
+﻿//---------Archana
 using System;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     /// <summary>
@@ -22,7 +23,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         }
 
         /// <summary>
-        /// Constructors that initializes details of RetailStore
+        /// Constructor that initializes details of RetailStore
         /// </summary>
         /// <param name="RetailStoreID">Represents Retail store identity using an ID</param>
         /// <param name="Reports">Represents the payment of reports</param>
@@ -116,4 +117,33 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 
     }
 }
+
+/**
+ * private RetailStoreDataLayer _retailDataAccessLogic;
+         public RetailStoreBusinessLogicLayer()
+         {
+             _retailDataAccessLogic = new RetailStoreDataLayer();
+         }
+
+         
+         public void AddRetailstore(Retailstore rsid)
+         {
+
+             if (rsid != null)
+             {
+                 _retailDataAccessLogic.AddRetailstore(rsid);
+
+             }
+             else
+             {
+                 throw new Exception("Retail store ID can't be null");
+             }
+         }
+         //Get RetailStoreID
+        public List<Retailstore> GetRetailStoreID()
+         {
+             return _retailDataAccessLogic.GetRetailstore();
+         }*/
+
+
 

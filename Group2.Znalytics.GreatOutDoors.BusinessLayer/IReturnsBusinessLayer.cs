@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Group2.Znalytics.GreetOutDoors.DataLayer;
+using Group2.Znalytics.GreetOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public interface IReturnsBusinessLayer
+    public interface IReturnsBusinessLayer
     {
-        
-        void UpdateProductQuantity(Return rm);
 
+        List<Return> GetReturnByProductID(Return rm);
+        void AddReturn(Return rm);
     }
 }

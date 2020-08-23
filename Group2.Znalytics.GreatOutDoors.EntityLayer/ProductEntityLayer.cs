@@ -6,15 +6,15 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
     public class ProductDetails
     {
         //creating private feilds
-        private string _productName;
-        private int _productId;
-        private string _productColor;
-        private string _productType;
-        private double _productPrice;
+        public string _productName;
+        public int _productId;
+        public string _productColor;
+        public string _productType;
+        public double _productPrice;
 
 
         /// <summary>
-        /// Property for ProductName
+        /// creating Property for ProductName
         /// </summary>
         public string ProductName
         {
@@ -30,7 +30,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// Property for ProductID
+        /// creating Property for ProductID
         /// </summary>
         public int ProductID
         {
@@ -46,7 +46,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
 
 
         /// <summary>
-        /// property for product color///
+        /// creating property for product color///
         /// </summary>
         public string ProductColor
         {
@@ -61,7 +61,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// property for product Type///
+        /// creating property for product Type///
         /// </summary>
         public string ProductType
         {
@@ -76,68 +76,112 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         }
 
         /// <summary>
-        /// Property for Price
+        /// creating Property for Price
         /// </summary>
-        public double Productprice { set; get; }
+        public double Productprice
+        {
+            set
+            {
+                _productPrice = value;
+            }
+            get
+            {
+                return _productPrice;
+            }
+        }
 
     }
 
-
-
-    public class customerLogin
+    public class Categories
     {
-        private string _id;
-        private string _password;
-        private string _firstName;
-        private string _lastName;
-        private long _number;
+        public string _personalAccessories;
+        public string _golfEquipment;
+        public string _campingEquipment;
+        public string _mountaineeringEquipment;
+        public string _outdoorProtection;
 
-        public void SetId(string Id)
+        /// <summary>
+        /// creating property for personal accesories
+        /// </summary>
+        public string PersonalAccesories
         {
-            this._id = Id;
+            set
+            {
+                _personalAccessories = value;
+            }
+            get
+            {
+                return _personalAccessories;
+            }
         }
-        public string GetId()
+        /// <summary>
+        /// creating property for golf equipment
+        /// </summary>
+        public string GolfEquipment
         {
-            return this._id;
-        }
-        public void SetPassword(string Password)
-        {
-            this._password = Password;
-        }
-        public string GetPassword()
-        {
-            return this._password;
-        }
+            set
+            {
+                _golfEquipment = value;
+            }
+            get
+            {
+                return _golfEquipment;
 
-        public void SetFirstName(string Firstname)
-        {
-            this._firstName = Firstname;
+            }
         }
-        public string GetFirstName()
+        /// <summary>
+        /// creating property for camping equipment
+        /// </summary>
+        public string CampingEquipment
         {
-            return this._firstName;
-        }
+            set
+            {
+                _campingEquipment = value;
 
+            }
+            get
+            {
+                return _campingEquipment;
+            }
+        }
+        /// <summary>
+        /// craeting property for mountaineering equipment
+        /// </summary>
+        public string MountaineeringEquipment
+        {
+            set
+            {
+                _mountaineeringEquipment = value;
 
-        public void SetLastName(string lastname)
-        {
-            this._lastName = lastname;
+            }
+            get
+            {
+                return _mountaineeringEquipment;
+            }
         }
-        public string GetLastName()
+        /// <summary>
+        /// creating property for outdoor protection
+        /// </summary>
+        public string OutdoorProtection
         {
-            return this._lastName;
-        }
+            set
+            {
+                _outdoorProtection = value;
 
-        public void SetNumber(long number)
-        {
-            this._number = number;
-        }
-        public long GetNumber()
-        {
-            return this._number;
+            }
+            get
+            {
+                return _outdoorProtection;
+            }
         }
     }
-}
+ }
+
+
+
+
+
+
 
 
 
