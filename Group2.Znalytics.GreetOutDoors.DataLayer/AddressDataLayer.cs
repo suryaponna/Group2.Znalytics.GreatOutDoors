@@ -20,11 +20,13 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
         public bool IsFixedSize => ((IList)_customerAddressesList).IsFixedSize;
 
-        public int Count => ((ICollection)_customerAddressesList).Count;
+        
 
         public object SyncRoot => ((ICollection)_customerAddressesList).SyncRoot;
 
         public bool IsSynchronized => ((ICollection)_customerAddressesList).IsSynchronized;
+
+        int ICollection.Count => ((ICollection)_customerAddressesList).Count;
 
         public object this[int index] { get => ((IList)_customerAddressesList)[index]; set => ((IList)_customerAddressesList)[index] = value; }
 
