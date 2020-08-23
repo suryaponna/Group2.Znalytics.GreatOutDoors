@@ -46,6 +46,7 @@
     <Compile Include="AddressBusinessLogic.cs" />
     <Compile Include="CustomerBusinessLayerLogic.cs" />
     <Compile Include="Exchange.cs" />
+    <Compile Include="IRetailStoreBusinessLogicLayer.cs" />
     <Compile Include="IReturnsBusinessLayer.cs" />
     <Compile Include="ProductBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

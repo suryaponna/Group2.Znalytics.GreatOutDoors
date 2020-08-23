@@ -1,4 +1,6 @@
-﻿using Group2.Znalytics.GreetOutDoors.Product.Entities;
+﻿using System;
+using System.Collections.Generic;
+using Group2.Znalytics.GreetOutDoors.Product.Entities;
 
 class Product
 {
@@ -78,4 +80,5 @@ class Product
         }
 
     }
+
 }

@@ -14,7 +14,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
     public class RetailStoreDataLayer
     {
         //private fields
-        private List<Retailstore> _retailstoreid;
+        private static List<Retailstore> _retailstoreid;
         public RetailStoreDataLayer()
         {
             _retailstoreid = new List<Retailstore>();
@@ -22,9 +22,11 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
 
         //Add retailstore id
-        public void AddRetailStore(Retailstore rsid)
+        public void AddRetailStoreID(Retailstore rsid)
         {
             _retailstoreid.Add(rsid);
         }
+
+       
     }
 }

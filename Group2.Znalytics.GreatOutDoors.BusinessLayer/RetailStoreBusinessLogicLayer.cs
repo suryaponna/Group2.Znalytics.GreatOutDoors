@@ -16,37 +16,47 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public class RetailStoreBusinessLogicLayer
+   public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
 
-        private RetailStoreDataLayer _retailDataAccessLogic;
-        public RetailStoreBusinessLogicLayer()
-        {
-            _retailDataAccessLogic = new RetailStoreDataLayer();
-        }
+       private RetailStoreDataLayer _rdl;
+         public RetailStoreBusinessLogicLayer()
+         {
+             _rdl = new RetailStoreDataLayer();
+         }
 
-        
-        public void AddRetailstore(RetailStoreID rsid)
-        {
+         
+         public void AddRetailStoreID(Retailstore rsid)
+         {
 
-            if (rsid.RetailStoreID != null)
+             if (rsid.RetailStoreID != null)
+             {
+                 _rdl.AddRetailStoreID(rsid);
+
+             }
+             else
+             {
+                 throw new Exception("Retail store ID can't be null");
+             }
+         }
+         //Get RetailStoreID
+        public List<RetailStoreID> GetRetailStoreID()
+         {
+             return _rdl.GetRetailStoreID();
+         }
+       /** RetailStoreDataLayer d = new RetailStoreDataLayer();
+        public void AddRetailStoreID(Retailstore rsid)
+        {
+            if(rsid.RetailStoreID!=null)
             {
-                _retailDataAccessLogic.AddRetailstore(RetailStoreID);
-
-            }
-            else
-            {
-                throw new Exception("Retail store ID can't be null");
+                d.AddRetailStoreID(rsid);
             }
         }
-        //Get RetailStoreID
-       public List<RetailStoreID> GetRetailStoreID()
+        public List<RetailStoreID>GetRetailStoreIDs()
         {
-            return _retailDataAccessLogic.GetRetailStoreID();
-        }
+            return d.AddGetRetailStoreIDs();
+        }*/
 
     }
-   
-
 
 }

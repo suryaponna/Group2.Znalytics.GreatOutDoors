@@ -12,7 +12,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// Represents an address of Customer
     /// </summary>
 
-    public class AddressDetail
+    public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
         private string _customerCountry;
         private string _customerFullName;
@@ -25,6 +25,44 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _selState;
         private int _customerId=524;
         private AddressType _addressType;
+        /// <summary>
+        /// IEquatable method for comparing two customer are same or not
+        /// </summary>
+        /// <param name="other">Addresdetail Object</param>
+        /// <returns></returns>
+        public bool Equals(AddressDetail other) {
+            if (this._customerId == other._customerId)
+            {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        /// <summary>
+        /// IComparable method for comparing two adddress are equal or not
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(AddressDetail other) {
+            int compare;
+            compare = this._addressType.CompareTo(other._addressType);
+            if (compare == 0) { 
+                
+            }
+            if (compare == 0) {
+                compare = this._customerFullName.CompareTo(other._customerFullName);
+            }
+            if (compare == 0) {
+                compare = this._selState.CompareTo(other._selState);
+            }
+            if (compare == 0) {
+                compare = this._townCity.CompareTo(other._townCity);
+            }
+            //else { return compare; }
+            return compare;
+        }
+            
 
         public int CustomerId {
             set {
