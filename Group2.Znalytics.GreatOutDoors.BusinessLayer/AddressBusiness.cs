@@ -1,6 +1,4 @@
-﻿
-using System.Collections.Generic;
-///--------------------Surya 
+﻿///--------------------Surya 
 /// <summary>
 /// Business Logic for Address
 /// </summary>

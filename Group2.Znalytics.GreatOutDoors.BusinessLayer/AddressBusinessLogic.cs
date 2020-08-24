@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-///--------------------Surya 
+﻿///--------------------Surya 
 /// <summary>
 /// Business Logic for Address
 /// </summary>
-using Znalytics.Group2.GreatOutDoor.Entity;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class AddressBusinessLogic

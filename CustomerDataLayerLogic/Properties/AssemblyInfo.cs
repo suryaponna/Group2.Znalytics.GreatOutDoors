@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Group2.Znalytics.GreatOutDoors.EntityLayer")]
+[assembly: AssemblyTitle("CustomerDataLayerLogic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Group2.Znalytics.GreatOutDoors.EntityLayer")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2020")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("CustomerDataLayerLogic")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("eb5e0352-6c8c-4f46-8f9a-d9f688f99b06")]
+[assembly: Guid("6301621f-e6c5-4a7b-b851-da9f3a96a449")]
 
 // Version information for an assembly consists of the following four values:
 //

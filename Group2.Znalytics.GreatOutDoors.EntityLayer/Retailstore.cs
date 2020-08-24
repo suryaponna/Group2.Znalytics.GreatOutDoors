@@ -1,6 +1,4 @@
 ﻿//---------Archana
-using System;
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     /// <summary>

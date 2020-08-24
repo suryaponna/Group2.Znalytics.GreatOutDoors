@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using Group2.Znalytics.GreetOutDoors.Product.Entities;
 
 namespace Group2.Znalytics.GreetOutDoors.DataLayer

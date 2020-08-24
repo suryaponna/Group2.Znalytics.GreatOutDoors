@@ -1,9 +1,6 @@
 ﻿//--------------------Surya
 using System.Collections.Generic;
 using System.Collections;
-using System.Configuration;
-using Znalytics.Group2.GreatOutDoor.Entity;
-using Group2.Znalytics.GreetOutDoors.DataLayer;
 using System;
 /// <summary>
 /// Data Access Logic for Address
