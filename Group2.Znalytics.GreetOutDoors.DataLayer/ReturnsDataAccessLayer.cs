@@ -23,6 +23,10 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             _return.AddReturn(rm);
         }
+        public void ExchangeProduct(Return rm)
+        {
+            _return.ExchangeProduct();
+        }
         public List<Return> GetReturnByProductID()
         {
             return _return;

@@ -31,6 +31,13 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw new Exception("Add valid Product Name");
             }
         }
+        public void ExchangeProduct(Return rm)
+        {
+            if(rm.ProductID!=null)
+            {
+                _rdl.ExchangeProduct(rm);
+            }
+        }
         public List<Return> GetReturns()
         {
             return _rdl.GetReturns();
