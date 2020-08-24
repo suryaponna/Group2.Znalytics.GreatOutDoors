@@ -15,8 +15,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     {
 
         private static List<AddressDetail> _customerAddressesList;
+        //string[] Copy =(string[]) _customerAddressesList.ToArray();
 
-        
+
 
         /// <summary>
         /// Creating List only once memory is allocated 
@@ -39,15 +40,13 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Adding new Customer Address
         /// </summary>
         /// <param name="address">Attribute to add adddress in to collection</param>
-        public void AddAddress(AddressDetail address)
-        {
-            _customerAddressesList.Add(address);
-
-        }
+        
 
         public int Add(object value)
         {
-            return ((IList)_customerAddressesList).Add(value);
+            AddressDetail address = (AddressDetail)value;
+            _customerAddressesList.Add(address);
+            return _customerAddressesList.Count - 1;
         }
 
         /// <summary>
@@ -61,32 +60,40 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
         public int IndexOf(object value)
         {
-            return ((IList)_customerAddressesList).IndexOf(value);
+            AddressDetail ad = (AddressDetail)value;
+            return _customerAddressesList.IndexOf(ad);
+            //return ((IList)_customerAddressesList).IndexOf(value);
         }
 
         public void Insert(int index, object value)
         {
-            ((IList)_customerAddressesList).Insert(index, value);
+            AddressDetail ad = (AddressDetail)value;
+            _customerAddressesList.Insert(index, ad);
+            //((IList)_customerAddressesList).Insert(index, value);
         }
 
         public void Remove(object value)
         {
-            ((IList)_customerAddressesList).Remove(value);
+            AddressDetail ad = (AddressDetail)value;
+            _customerAddressesList.Remove(ad);
+            //((IList)_customerAddressesList).Remove(value);
         }
 
         public void RemoveAt(int index)
         {
-            ((IList)_customerAddressesList).RemoveAt(index);
+            //AddressDetail ad = (AddressDetail)value;
+            _customerAddressesList.RemoveAt(index);
         }
 
         public void CopyTo(Array array, int index)
         {
-            ((ICollection)_customerAddressesList).CopyTo(array, index);
+           ((ICollection)_customerAddressesList).CopyTo(array, index);
         }
 
-        public bool Contains(AddressDetail ad)
+        public bool Contains(object ad)
         {
-            return _customerAddressesList.Contains(ad);
+            AddressDetail ade=(AddressDetail)ad;  
+            return _customerAddressesList.Contains(ade);
         }
 
         public bool IsReadOnly => ((IList)_customerAddressesList).IsReadOnly;
