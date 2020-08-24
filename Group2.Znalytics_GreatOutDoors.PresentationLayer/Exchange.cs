@@ -1,14 +1,14 @@
 ﻿using System;
 namespace ZnalyticsGreatOutDoors.PresentationLayer
 {
-
+    //class
     class Details
     {
         static void Main()
         {
+            int select;
             Details d = new Details();
             Console.WriteLine("GREAT OUTDOORS"); 
-            int select;
             Console.WriteLine("Enter Your Name:");
             string a = System.Console.ReadLine();
             Console.WriteLine("Enter Your Mobile Number");
@@ -39,7 +39,7 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
                     Console.WriteLine("Low Quality");
                     break;
             }
-            Console.WriteLine("Exchange the product");
+            Console.WriteLine("EXCHANGE THE PRODUCT");
 
 
 

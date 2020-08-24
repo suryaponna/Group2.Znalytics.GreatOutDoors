@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
-    public class Exchange
+    public class ExchangeDetails
     {
         //auto-impl properties
-        
-        public int _customerName { get; set; }
-        public string _mobileNumber { get; set; }
-        public int _address { get; set; }
-        public string _productId { get; set; }
-        public string _exchangeDelieveredProduct { get; set; }
+        private string _customerID { get; set; }
+        private int _customerName { get; set; }
+        private string _mobileNumber { get; set; }
+        private int _address { get; set; }
+        private string _productID { get; set; }
+        private string _exchangeDelieveredProduct { get; set; }
 
 
 
