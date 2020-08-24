@@ -49,12 +49,15 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// clearing the total List 
         /// </summary>
-
         public void Clear()
         {
             _customerAddressesList.Clear();
         }
-
+        /// <summary>
+        /// retriving index  customer Address 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public int IndexOf(object value)
         {
             AddressDetail ad = (AddressDetail)value;
