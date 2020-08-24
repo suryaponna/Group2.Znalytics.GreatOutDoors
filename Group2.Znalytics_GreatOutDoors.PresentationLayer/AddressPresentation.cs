@@ -1,6 +1,5 @@
 ﻿//-----------------------Surya----------------------------------------
 
-using Znalytics.Group2.GreatOutDoor.Entity;
 using System;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {

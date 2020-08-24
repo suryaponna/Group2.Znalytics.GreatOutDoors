@@ -1,10 +1,4 @@
-﻿
-
-
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
-using System;
-using System.CodeDom;
-using System.Runtime.InteropServices;
+﻿using System;
 
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
