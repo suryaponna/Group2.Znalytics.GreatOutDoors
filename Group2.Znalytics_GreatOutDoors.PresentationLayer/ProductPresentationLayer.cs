@@ -1,6 +1,4 @@
 ﻿//created by meghana
-using System;
-using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.Product.Entities;
 
 class Product

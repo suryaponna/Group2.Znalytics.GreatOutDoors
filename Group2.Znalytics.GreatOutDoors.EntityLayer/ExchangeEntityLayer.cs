@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Group2.Znalytics.GreatOutDoors.EntityLayer
+﻿namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     //class
     public class ExchangeEntityLayer

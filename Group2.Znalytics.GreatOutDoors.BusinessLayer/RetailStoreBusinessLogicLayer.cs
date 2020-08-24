@@ -2,11 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Group2.Znalytics.GreatOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
@@ -16,7 +11,7 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-   public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
+    public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
 
        private RetailStoreDataLayer _rdl;
@@ -25,10 +20,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
              _rdl = new RetailStoreDataLayer();
          }
 
-         
+         //Method to add retail store id list
          public void AddRetailStoreID(Retailstore rsid)
          {
-
+            //Retail store can't be null
              if (rsid.RetailStoreID != null)
              {
                  _rdl.AddRetailStoreID(rsid);
@@ -39,23 +34,39 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                  throw new Exception("Retail store ID can't be null");
              }
          }
-         //Get RetailStoreID
-        public List<RetailStoreID> GetRetailStoreID()
-         {
-             return _rdl.GetRetailStoreID();
-         }
-       /** RetailStoreDataLayer d = new RetailStoreDataLayer();
-        public void AddRetailStoreID(Retailstore rsid)
+
+       public Retailstore GetRetailstoreByRetailStoreID(int RetailStoreID)
         {
-            if(rsid.RetailStoreID!=null)
-            {
-                d.AddRetailStoreID(rsid);
-            }
+            throw new NotImplementedException();
         }
-        public List<RetailStoreID>GetRetailStoreIDs()
+
+        public List<Retailstore> GetRetailStoreID()
         {
-            return d.AddGetRetailStoreIDs();
-        }*/
+            throw new NotImplementedException();
+        }
+
+        //Get RetailStoreID
+        public List<Retailstore> GetRetailStoreIDs()
+         {
+             return _rdl.GetRetailStoreIDs();
+         }
+
+        public class RetailStoreID
+        {
+        }
+
+        /** RetailStoreDataLayer d = new RetailStoreDataLayer();
+public void AddRetailStoreID(Retailstore rsid)
+{
+    if(rsid.RetailStoreID!=null)
+    {
+        d.AddRetailStoreID(rsid);
+    }
+}
+public List<RetailStoreID>GetRetailStoreIDs()
+{
+    return d.AddGetRetailStoreIDs();
+}*/
 
     }
 
