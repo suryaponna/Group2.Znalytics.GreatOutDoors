@@ -65,7 +65,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             System.Console.WriteLine("Enter morethan 10 to exit");
             int b = int.Parse(System.Console.ReadLine());
 
-            while (b <= 9)
+            while (Choice!=9)
             {
                 switch (b)
                 {
