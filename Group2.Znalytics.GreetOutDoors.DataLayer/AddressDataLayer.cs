@@ -63,7 +63,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             return ((IList)_customerAddressesList).Add(value);
         }
 
-        
+        /// <summary>
+        /// clearing the total List 
+        /// </summary>
 
         public void Clear()
         {
@@ -95,14 +97,12 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             ((ICollection)_customerAddressesList).CopyTo(array, index);
         }
 
-        public bool Contains(object value)
+        public bool Contains(AddressDetail ad)
         {
-            return ((IList)_customerAddressesList).Contains(value);
+            return _customerAddressesList.Contains(ad);
         }
 
-        /// <summary>
-        /// clearing the total List 
-        /// </summary>
+        
 
     }
 }
