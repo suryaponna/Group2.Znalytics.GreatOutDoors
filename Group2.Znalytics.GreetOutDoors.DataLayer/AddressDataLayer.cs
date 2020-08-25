@@ -83,6 +83,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             //AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.RemoveAt(index);
+            foreach (var in _customerAddressesList) { 
+                
+            }
         }
 
         public void CopyTo(Array array, int index)

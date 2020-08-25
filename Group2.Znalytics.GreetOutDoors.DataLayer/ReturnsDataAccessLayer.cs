@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+using System.Runtime.InteropServices;
 //Created by K.Prasanna
 /// <summary>
 /// This class represents DataAccess Layer for Return
@@ -22,16 +24,24 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         
         public void AddReturn(Return rm)// 
         {
-            _return.AddReturn(rm);
+            _return.Add(rm);
         }
         public void ExchangeProduct(Return rm)// To Exchange a product
         {
-            _return.ExchangeProduct(rm);
+            //_return.ExchangeProduct(rm);
         }
-        public List<Return> GetReturnByProductID()// To get a product using ProductID
+        
+
+        public Return GetReturnByProductID(int Id)
         {
-            return _return;
+            foreach (var i in _return)
+            {
+                if (i.ProductID == Id) {
+                    yield return i;
+                }
+            }
         }
+
         public List<Return> GetReturns()
         {
            return  _return;
@@ -39,7 +49,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
         public void RemoveReturnByProductID(int id) //Removing a Product by using Product ID
         {
-            _return .RemoveAll(p => p.ProductID == id);
+            //_return.RemoveAll();
 
         }
 

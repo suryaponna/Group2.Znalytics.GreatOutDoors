@@ -7,14 +7,14 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
     public class Return
     {
         //private fields
-        private string _productID;
+        private int _productID;
         private string _productName;
         private string _productdate;
         private int _productQuantity;
         private string _producttype;
         private string _accepted;
         ///Property for ProductID details
-        public string ProductID
+        public int ProductID
         {
             set
             {
