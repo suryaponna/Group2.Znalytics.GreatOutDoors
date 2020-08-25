@@ -10,40 +10,60 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         static void Main()
         {
 
-            // public static void ReturnsPresentationLogic()
-
-            Return rm;
-            rm = new Return();
-
+            ReturnPresentation();
+            Console.ReadKey();
             
+        }
+        static void ReturnPresentation()
+        {
+            int choice = 0;
+            do
+            {
+                Console.WriteLine("Return and Exchange Module");
+                Console.WriteLine("1.ReturnProduct");
+                Console.WriteLine("2.ExchangeProduct");
+                Console.WriteLine("3.Exit");
+                Console.Write("Enter choice: ");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1: ReturnProduct(); break;
+                    case 2: ExchangeProduct(); break;
 
-            int choice;
+                }
+            } while (choice != 4);
+            }
+        static void ReturnProduct()
+        {
+            Return rm = new Return();
+
+            int ch;
             System.Console.WriteLine("Select your reason for returning");
             System.Console.WriteLine("______________________");
-            System.Console.WriteLine("1. Unsatisfactory Product");
-            System.Console.WriteLine("2. Defective Product");
-            System.Console.WriteLine("3. Incomplete Product");
-            System.Console.WriteLine("4. Wrong Product Ordered");
-            System.Console.WriteLine("5. Wrong Product Shipped");
+            System.Console.WriteLine("01. Unsatisfactory Product");
+            System.Console.WriteLine("02. Defective Product");
+            System.Console.WriteLine("03. Incomplete Product");
+            System.Console.WriteLine("04. Wrong Product Ordered");
+            System.Console.WriteLine("05. Wrong Product Shipped");
 
             System.Console.WriteLine(" Enter your Choice for returning the product");
-            choice = System.Convert.ToInt32(System.Console.ReadLine());
+            ch = System.Convert.ToInt32(System.Console.ReadLine());
             //switch case to select reasons for returning the product
-            switch (choice)
+            switch (ch)
             {
-                case 1:
+                case 01:
                     System.Console.WriteLine(" Unsatisfactory Product");
                     break;
-                case 2:
+                case 02:
                     System.Console.WriteLine("Defective Product");
                     break;
-                case 3:
+                case 03:
                     System.Console.WriteLine("Incomplete Product");
                     break;
-                case 4:
+                case 04:
                     System.Console.WriteLine("Wrong Product Ordered");
                     break;
-                case 5:
+                case 05:
                     System.Console.WriteLine(" Wrong Product Shipped");
                     break;
             }
@@ -112,15 +132,24 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                     break;
             }
-           System.Console.WriteLine(rm.Producttype);
-           
+
+            System.Console.WriteLine(rm.Producttype);
+        }
+        static void ExchangeProduct()
+        {
+            Return rm = new Return();
+            Console.WriteLine("14.Exchange with same type of product");
+            Console.WriteLine("15.Exchange with different type of product");
+            Console.ReadLine();
+
+        }
 
             void AddReturn()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                
+            Return rm = new Return();
 
-                Console.Write("Enter new Product Name: ");
+            Console.Write("Enter new Product Name: ");
                 rm.ProductName = Console.ReadLine();
 
                 rbl.AddReturn(rm);
@@ -130,7 +159,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             void GetReturnByProductID()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                rbl.GetReturnByProductID();
+                Return rm = new Return();
+            rbl.GetReturnByProductID();
             }
 
             
@@ -138,7 +168,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
            void GetReturns()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                rbl.GetReturns();
+                Return rm = new Return();
+             rbl.GetReturns();
 
                 List<Return> rets = rbl.GetReturns();
                 //Displays all the details 
@@ -153,7 +184,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             }
 
-        }
+        
 
     }
 }

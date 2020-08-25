@@ -19,7 +19,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         
         public void AddAddress(AddressDetail address)
         {
-            dll.AddAddress(address);
+            dll.Add(address);
         }
         
         
@@ -36,7 +36,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         public void AddFullAddres(AddressDetail ad)
         {
-            dll.AddAddress(ad);
+            dll.Add(ad);
         }
         public void UpdateExistingAddress(AddressDetail ad) { 
             
