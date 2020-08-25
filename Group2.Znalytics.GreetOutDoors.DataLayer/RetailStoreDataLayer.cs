@@ -1,5 +1,6 @@
 ﻿//---------Archana
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using System;
 using System.Collections.Generic;
 
 /// <summary>
@@ -23,6 +24,9 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             _retailstoreid.Add(rsid);
         }
 
-       
+        public List<Retailstore> GetRetailStoreIDs()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
