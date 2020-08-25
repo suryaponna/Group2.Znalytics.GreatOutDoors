@@ -43,6 +43,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         public List<Retailstore> GetRetailStoreID()
         {
             throw new NotImplementedException();
+           // return _rdl.GetRetailStoreIDs();
         }
 
         //Get RetailStoreID

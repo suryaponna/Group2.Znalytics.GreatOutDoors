@@ -1,5 +1,6 @@
 //---------Archana
 using System;
+using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
@@ -133,9 +134,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
             //Outlier Products
             //System.Console.WriteLine("================ Damaged Products ================");
-            // replace:
-            //System.Console.WriteLine("I ");
-
+            
+           // List<DamagedProducts > Dm = new List<DamagedProducts>();
 
 
 
