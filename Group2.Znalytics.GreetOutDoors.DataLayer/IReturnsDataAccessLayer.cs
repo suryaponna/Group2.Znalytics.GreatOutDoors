@@ -1,9 +1,9 @@
 ﻿using Group2.Znalytics.GreetOutDoors.EntityLayer;
 using System.Collections.Generic;
 
-namespace Group2.Znalytics.GreetOutDoors.DataLayer
+namespace Group2.Znalytics.GreetOutDoors.IDataLayer
 {
-    public interface IReturnsDataAccessLayer
+     interface IReturnsDataAccessLayer
     {
         
         void AddReturn(Return rm);

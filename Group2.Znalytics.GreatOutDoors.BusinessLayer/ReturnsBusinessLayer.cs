@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.IBusinessLayer;
 /// <summary>
 /// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
@@ -47,7 +48,20 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             return _rdl.GetReturnByProductID();
         }
-       
+        public void RemoveReturnByProductID(int id)
+        {
+            if (id != 0)
+            {
+                _rdl.RemoveReturnByProductID(id);
+            }
+        }
+        public void RemoveReturnByProductName(string name)
+        {
+            if (name != null)
+            {
+                _rdl.RemoveReturnByProductName(name);
+            }
+        }
 
 
     }
