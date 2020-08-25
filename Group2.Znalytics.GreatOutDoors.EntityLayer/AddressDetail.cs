@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     /// <summary>
