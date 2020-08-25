@@ -12,13 +12,13 @@ class Product
 
         int Choice;
         bool b;
-        while (true)
+        do
         {
 
             System.Console.WriteLine("PRODUCT DETAILS");
             System.Console.WriteLine("********************");
-            System.Console.WriteLine("1. Add Product")
-            Ssytem.Console.WriteLine("2. Add Product Categories");
+            System.Console.WriteLine("1. Add Product");
+            System.Console.WriteLine("2. Add Product Categories");
             System.Console.WriteLine("2. Show Product");
             System.Console.WriteLine("3. Remove Product");
             b = int.TryParse(System.Console.ReadLine(), out Choice);
@@ -47,15 +47,13 @@ class Product
             {
                 System.Console.WriteLine("invalid option");
             }
-        }
+        } while (Choice < 4);
 
-        while (Choice ! = 4) ;
 
+    
         void AddProduct()
         {
             // creating the object for ProductDetails class
-            ProductDetails p = new ProductDetails();
-            ProductBusiness pb = new ProductBusiness();
             System.Console.WriteLine("***PRODUCT DETAILS***");
             System.Console.WriteLine("enter the ProductName:");
             p.ProductName = System.Console.ReadLine();
@@ -69,21 +67,22 @@ class Product
             pb.AddProducts(p); //adding the products into the List
             System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
         }
-        void AddProductCategories()
+         void AddProductCategories()
         {
+            Categories subc = new Categories();
             System.Console.WriteLine("personal accessories ");
-            p.personal accessories = System.Console.ReadLine();
+            subc.PersonalAccesories = System.Console.ReadLine();
             System.Console.WriteLine("golf equipment");
-            p.golf equipment = System.Console.ReadLine();
+            subc.GolfEquipment = System.Console.ReadLine();
             System.Console.WriteLine("camping equipment");
-            p.camping equipment = System.Console.ReadLine();
+            subc.CampingEquipment = System.Console.ReadLine();
             System.Console.WriteLine("mountaineering equipment ");
-            p.mountaineering equipment = System.Console.ReadLine();
+            subc.MountaineeringEquipment = System.Console.ReadLine();
             System.Console.WriteLine("outdoor protection");
-            p.outdoor protection = System.Console.ReadLine();
+            subc.OutdoorProtection = System.Console.ReadLine();
 
         }
-        void DisplayProducts()
+         void DisplayProducts()
         {
 
             ///<summary>///
@@ -92,13 +91,13 @@ class Product
             System.Console.WriteLine("***Product Details***");
             System.Console.WriteLine("ProductName" + "   " + "ProductID" + "  " + "Number of Products Avalilable ");
             System.Console.WriteLine("-----------------------------------------------------------------------");
-            System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Price);
+            System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Productprice);
 
         }
-        void RemoveProduct()
+         void RemoveProduct()
         {
-            ProductEntity Product = new ProductEntity();// creating the object fro ProductDeatils class
-            ProductBusiness pb = new ProductBusiness();// Creating thhe object for ProductBusiness class
+            ProductDetails Product = new ProductDetails();// creating the object fro ProductDeatils class
+            ProductBusiness pbb = new ProductBusiness();// Creating thhe object for ProductBusiness class
             System.Console.WriteLine("select on which type you want to remove a product");
             System.Console.WriteLine("1.based on ProductId");
             System.Console.WriteLine("2.based on ProductName");
@@ -122,22 +121,22 @@ class Product
             {
                 System.Console.WriteLine("Please Enter Correct Option");
             }
-            void RemoveProductByID()
+             void RemoveProductByID()
             {
                 System.Console.Write("Enter the ProductID to be Deleted:");
                 int id = int.Parse(System.Console.ReadLine());
 
-                pb.RemoveProductByID(id);
+                pbb.RemoveProductByID(id);
                 System.Console.WriteLine("Product Removed");
 
 
             }
-            void RemoveProductByProductName()
+             void RemoveProductByProductName()
             {
                 System.Console.Write("Enter the ProductName:");
                 string name = System.Console.ReadLine();
 
-                pb.RemoveProductByName(name);
+                pbb.RemoveProductByName(name);
                 System.Console.WriteLine("Product Removed");
             }
 
