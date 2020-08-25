@@ -71,19 +71,18 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             System.Console.WriteLine("Enter ProductID");
             rm.ProductID = (System.Console.ReadLine());
-            System.Console.WriteLine(rm.ProductID);
+           
 
             System.Console.WriteLine("Enter ProductName");
             rm.ProductName = System.Console.ReadLine();
-            System.Console.WriteLine(rm.ProductName);
+           
 
             System.Console.WriteLine("Enter ProductDate");
             rm.Productdate = (System.Console.ReadLine());
-            System.Console.WriteLine(rm.Productdate);
-
+            
             System.Console.WriteLine("Enter ProductQuantity");
             rm.ProductQuantity = (System.Convert.ToInt32(System.Console.ReadLine()));
-            System.Console.WriteLine(rm.ProductQuantity);
+            
 
             System.Console.WriteLine("Enter the type of product you want to return");
             // Select the producttype 
@@ -137,10 +136,12 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         }
         static void ExchangeProduct()
         {
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
-            Console.WriteLine("14.Exchange with same type of product");
-            Console.WriteLine("15.Exchange with different type of product");
-            Console.ReadLine();
+            Console.WriteLine("Enter the product you want to Exchange");
+            rm.ProductName=Console.ReadLine();
+            Console.WriteLine("Enter with which product you want to exchange");
+           rm.ProductName= Console.ReadLine();
 
         }
 
@@ -162,10 +163,32 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Return rm = new Return();
             rbl.GetReturnByProductID();
             }
+        void RemoveReturnByProductID()
+        {
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            Return rm = new Return();
+            System.Console.Write("Enter the ProductID to be Deleted:");
+            int id = int.Parse(System.Console.ReadLine());
 
-            
+            rbl.RemoveReturnByProductID(int);
+            System.Console.WriteLine("ProductID Removed");
 
-           void GetReturns()
+
+        }
+        void RemoveReturnByProductName()
+        {
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            Return rm = new Return();
+            System.Console.Write("Enter the ProductName:");
+            string name = System.Console.ReadLine();
+
+            rbl.RemoveReturnByProductName(string);
+            System.Console.WriteLine("Product Removed");
+        }
+
+
+
+        void GetReturns()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
                 Return rm = new Return();
