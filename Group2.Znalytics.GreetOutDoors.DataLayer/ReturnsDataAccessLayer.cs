@@ -36,11 +36,13 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         public IEnumerator GetEnumerator()
         {
-            for(int i=0;i<_return.Count;i++)  
+            foreach (var i in _return)
             {
-
-                yield return _return[i];
-
+                int ID = 0;
+                if (i.ProductID == ID)
+                {
+                    yield return i;
+                }
             }
         }
 
@@ -61,11 +63,9 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
         public Return GetReturnByProductID(int ID)
         {
-            return _return.Find(temp => temp.ProductID == ID);
+            return _return.Find(temp=> temp.ProductID==ID);
 
         }
-
-
 
 
 
