@@ -41,11 +41,13 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                if(value.Length <= 10)
+                if (value.Length <= 10)
                 {
                     this._customerName = value;
-                    else
-                        throw new Exception("Your name exceeded the size that maximum characters are 14");
+                }
+                else
+                { 
+                    throw new Exception("Your name exceeded the size that maximum characters are 14");
                 }
             }
             get
