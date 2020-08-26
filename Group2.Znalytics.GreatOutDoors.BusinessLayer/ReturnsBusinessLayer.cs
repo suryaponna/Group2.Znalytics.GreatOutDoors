@@ -34,7 +34,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
         public void ExchangeProduct(Return rm)
         {
-            if (rm.ProductID == null)
+            if (rm.ProductID != 0)
             {
                 return;
             }
@@ -45,7 +45,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             return _rdl.GetReturns();
         }
         //Method to display Return  by ProductId
-        public List<Return> GetReturnByProductID() => _rdl.GetReturnByProductID();
+        public Return GetReturnByProductID(int Id)
+        {
+            return _rdl.GetReturnByProductID(Id);
+        }
+
         public void RemoveReturnByProductID(int id)
         {
             if (id != 0)
@@ -60,8 +64,8 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 _rdl.RemoveReturnByProductName(name);
             }
         }
-
        
+
     }
 
 }

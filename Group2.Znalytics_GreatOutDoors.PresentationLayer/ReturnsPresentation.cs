@@ -157,11 +157,11 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("Product  Added");
 
             }
-            void GetReturnByProductID()
+            void GetReturnByProductID(int Id)
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
                 Return rm = new Return();
-            rbl.GetReturnByProductID();
+            rbl.GetReturnByProductID(Id);
             }
         void RemoveReturnByProductID()
         {
@@ -170,7 +170,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.Write("Enter the ProductID to be Deleted:");
             int id = int.Parse(System.Console.ReadLine());
 
-            rbl.RemoveReturnByProductID(int);
+            rbl.RemoveReturnByProductID(id);
             System.Console.WriteLine("ProductID Removed");
 
 
@@ -182,7 +182,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.Write("Enter the ProductName:");
             string name = System.Console.ReadLine();
 
-            rbl.RemoveReturnByProductName(string);
+            rbl.RemoveReturnByProductName(name);
             System.Console.WriteLine("Product Removed");
         }
 
