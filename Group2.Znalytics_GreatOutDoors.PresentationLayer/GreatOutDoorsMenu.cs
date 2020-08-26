@@ -40,8 +40,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             BuyProducts();
         }
-        static void BuyProducts() { 
-            
+        static void BuyProducts() {
+            WriteLine("-----------------These are the Products Hope you find out what you want---------------");
+
         }
 
     }
