@@ -61,7 +61,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             _return .RemoveAll(p => p.ProductName == name);
         }
+        public Return GetReturnByProductID(int ID)
+        {
+            return _return.Find(temp=> temp.ProductID==ID);
 
+        }
 
 
 

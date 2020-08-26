@@ -32,15 +32,15 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
 
-            BuyProducts();
+            SelectProducts();
         }
         static void CustomerSignIn() {
 
 
 
-            BuyProducts();
+            SelectProducts();
         }
-        static void BuyProducts() {
+        static void SelectProducts() {
             WriteLine("-----------------These are the Products Hope you find out what you want---------------");
 
         }
