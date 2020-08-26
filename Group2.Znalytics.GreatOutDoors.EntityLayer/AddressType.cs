@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Group2.Znalytics.GreatOutDoors.EntityLayer
+namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public enum AddressType : int
     {

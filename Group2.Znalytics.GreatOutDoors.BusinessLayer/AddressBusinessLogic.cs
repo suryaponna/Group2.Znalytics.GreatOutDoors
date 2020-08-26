@@ -11,7 +11,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         AddressDataLayer dll;
         
 
-        public AddressBusinessLogic()
+        public  AddressBusinessLogic()
         {
             dll = new AddressDataLayer();
         }

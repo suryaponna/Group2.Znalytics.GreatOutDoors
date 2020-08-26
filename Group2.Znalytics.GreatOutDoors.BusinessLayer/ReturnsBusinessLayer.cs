@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.IBusinessLayer;
 /// <summary>
 /// Created by K.Prasanna
 /// This represents BusinessLogic Layer of Return
@@ -33,23 +34,34 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
         public void ExchangeProduct(Return rm)
         {
-            if(rm.ProductID!=null)
+            if (rm.ProductID == null)
             {
-                _rdl.ExchangeProduct(rm);
+                return;
             }
+            _rdl.ExchangeProduct(rm);
         }
         public List<Return> GetReturns()
         {
             return _rdl.GetReturns();
         }
         //Method to display Return  by ProductId
-        public List<Return> GetReturnByProductID()
+        //public List<Return> GetReturnByProductID() => _rdl.GetReturnByProductID();
+        
+        public void RemoveReturnByProductName(string name)
         {
-            return _rdl.GetReturnByProductID();
+            if (name != null)
+            {
+                _rdl.RemoveReturnByProductName(name);
+            }
         }
-       
+        public void RemoveReturnByProductID(int Id) { 
+            
+        }
 
-
+        public Return GetReturnByProductID(int Id)
+        {
+            return _rdl.GetReturnByProductID(Id);
+        }
     }
 
 }

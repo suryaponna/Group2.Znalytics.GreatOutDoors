@@ -27,9 +27,9 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         /// </summary>
         /// <param name="n">gets object of ProductDeatils</param>
 
-        public void DisplayProducts(ProductDetails n)
+        public void DisplayProductss(ProductDetails n)
         {
-            ProductDetails d = new ProductDetails();
+            productDataLayer d = new productDataLayer();
             d.DisplayProducts(n);
 
         }
