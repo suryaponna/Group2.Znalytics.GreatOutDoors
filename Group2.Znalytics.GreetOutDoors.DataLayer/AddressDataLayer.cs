@@ -10,7 +10,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class AddressDataLayer:IEnumerable,IList
     {
-
+        /// <summary>
+        /// Creating static list
+        /// </summary>
         private static List<AddressDetail> _customerAddressesList;
         //string[] Copy =(string[]) _customerAddressesList.ToArray();
 
@@ -19,7 +21,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
-        public AddressDataLayer()
+        static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
         }
