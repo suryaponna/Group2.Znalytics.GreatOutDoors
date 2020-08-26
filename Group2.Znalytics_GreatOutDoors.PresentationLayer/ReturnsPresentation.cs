@@ -70,7 +70,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
             System.Console.WriteLine("Enter ProductID");
-            rm.ProductID = (System.Console.ReadLine());
+            rm.ProductID = System.Convert.ToInt32(System.Console.ReadLine());
            
 
             System.Console.WriteLine("Enter ProductName");
