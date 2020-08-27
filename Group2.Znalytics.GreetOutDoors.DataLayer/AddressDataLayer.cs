@@ -25,6 +25,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             _customerAddressesList = new List<AddressDetail>();
         }
+        public List<AddressDetail> CustomerAddressList {
+            get {
+                return _customerAddressesList;
+            }
+            set {
+                _customerAddressesList = value;
+            }
+        }
         /// <summary>
         /// Inherinted from Ienumerable Generates Ienumerator which acts as Interator
         /// </summary>
@@ -118,7 +126,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void UpdateExistingAddressDataLayer(int Id,AddressDetail ad) {
             foreach (AddressDetail add in _customerAddressesList) {
                 if (add.CustomerId == Id) {
-                    _customerAddressesList[add] = ad;
+                    add = ad;
                 }   
             }
             

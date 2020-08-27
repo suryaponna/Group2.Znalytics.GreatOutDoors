@@ -61,6 +61,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             break;
                         case 3:
                             AddNewAddress(ad);
+                            break;
+                        default: Console.WriteLine("Enter 1 , 2 or 3");
+                                break;
                     }
 
                 } while (choice <= 4);
@@ -135,7 +138,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
                         case 11:
                             AddressBusinessLogic bd = new AddressBusinessLogic(ad);
-                            bd.AddFullAddres(ad);
+                            bd.AddAddress(ad);
                             System.Console.WriteLine("---------Mofification are finished-------");
                             
                             break;
@@ -153,11 +156,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
         }
         static void AddNewAddress(AddressDetail ad) {
-            goto Address;
+            
         }
         static void AddAddress(AddressDetail ad) {
             AddressBusinessLogic bd = new AddressBusinessLogic(ad);
-            bd.AddFullAddres(ad);
+            bd.AddAddress(ad);
         }
     
 

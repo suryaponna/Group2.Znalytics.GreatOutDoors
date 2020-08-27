@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 ///--------------------Surya 
 /// <summary>
 /// Business Logic for Address
@@ -49,7 +50,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         
         public void AddAddress(AddressDetail address)
         {
-            dll.Add(address);
+
+            var res = dll.CustomerAddressList.Where(temp =>temp.CustomerCountry in CountriesList);
+            //dll.Add(address);
         }
         
         
@@ -64,10 +67,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Adding Address to Data Layer
         /// </summary>
-        public void AddFullAddres(AddressDetail ad)
-        {
-            dll.Add(ad);
-        }
+        
         public void UpdateExistingAddressBusinessLayer(int Id,AddressDetail ad) {
             dll.UpdateExistingAddressDataLayer(Id,ad);
         }
