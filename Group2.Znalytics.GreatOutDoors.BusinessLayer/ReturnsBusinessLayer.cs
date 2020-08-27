@@ -13,6 +13,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     public class ReturnsBusinessLayer : IReturnsBusinessLayer
     {
         private ReturnsDataAccessLayer _rdl;
+        private DateTime Exchangedate;
 
         public ReturnsBusinessLayer()
         {
@@ -34,7 +35,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
         public void ExchangeProduct(Return rm)
         {
-            if (rm.ProductID == null)
+            if (rm.Productdate==Exchangedate)
             {
                 return;
             }
@@ -58,9 +59,9 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             
         }
 
-        public Return GetReturnByProductID(int Id)
+        public Return GetReturnsByProductID(int Id)
         {
-            return _rdl.GetReturnByProductID(Id);
+            return _rdl.GetReturnsByProductID(Id);
         }
     }
 
