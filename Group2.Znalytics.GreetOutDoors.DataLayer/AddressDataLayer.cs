@@ -115,7 +115,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             get => _customerAddressesList[index]; 
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
-
+        public void UpdateExistingAddressDataLayer(int Id,AddressDetail ad) {
+            foreach (AddressDetail item in _customerAddressesList) {
+                if (item.CustomerId == Id) {
+                    _customerAddressesList[item] = ad;
+                }   
+            }
+            
+        }
     }
 }
 

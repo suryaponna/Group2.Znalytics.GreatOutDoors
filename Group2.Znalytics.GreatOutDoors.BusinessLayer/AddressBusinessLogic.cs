@@ -68,8 +68,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             dll.Add(ad);
         }
-        public void UpdateExistingAddress(AddressDetail ad) { 
-            
+        public void UpdateExistingAddressBusinessLayer(int Id,AddressDetail ad) {
+            dll.UpdateExistingAddressDataLayer(Id,ad);
         }
 
     }
