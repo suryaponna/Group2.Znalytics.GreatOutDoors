@@ -1,5 +1,6 @@
-﻿/// <summary></summary>
-// Created by K.Prasanna
+﻿// Created by K.Prasanna
+using System;
+/// <summary></summary>
 /// This is Return Module
 /// </summary>
 namespace Group2.Znalytics.GreetOutDoors.EntityLayer
@@ -9,10 +10,11 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
         //private fields
         private int _productID;
         private string _productName;
-        private string _productdate;
+        private DateTime _productdate;
         private int _productQuantity;
         private string _producttype;
-        private string _accepted;
+        private DateTime _exchangedate;
+
         ///Property for ProductID details
         public int ProductID
         {
@@ -44,16 +46,10 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
         /// <summary>
         /// Productdate
         /// </summary>
-        public string Productdate
+        public DateTime Productdate
         {
-            set
-            {
-                _productdate = value;
-            }
-            get
-            {
-                return _productdate;
-            }
+             
+        set; get;
         }
         /// <summary>
         /// Product Quantity
@@ -90,24 +86,33 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
                 return _producttype;
             }
         }
-        public string Accepted
+
+        public DateTime ExchangeDate
+
         {
             set
             {
-                if ("Accepted" == value)
+                //get the eligible date (present date - 18 years)
+                DateTime exchangeDate = DateTime.Now;
+                exchangeDate = exchangeDate.AddDays(-30);
+
+                if (value < exchangeDate)
                 {
-                    _accepted = value;
+                    _exchangedate = value;
                 }
                 else
                 {
-                    throw new System.Exception(" Not Accepted");
+                    throw new Exception(nameof(ExchangeDate) + " should be less than " + Productdate.ToString("dd/M/yyyy"));
                 }
             }
             get
             {
-                return _accepted;
+                return _exchangedate;
+
+
+
             }
         }
-
     }
 }
+

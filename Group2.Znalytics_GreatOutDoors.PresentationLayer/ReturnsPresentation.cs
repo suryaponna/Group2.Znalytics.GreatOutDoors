@@ -3,13 +3,15 @@ using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using System.Reflection.Emit;
+
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class ReturnsPresentation
     {
         static void Main()
         {
-
+            // Application begins here
             ReturnPresentation();
             Console.ReadKey();
             
@@ -19,6 +21,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             int choice = 0;
             do
             {
+                // Small menu for Return and Exchange module
                 Console.WriteLine("Return and Exchange Module");
                 Console.WriteLine("1.ReturnProduct");
                 Console.WriteLine("2.ExchangeProduct");
@@ -35,10 +38,12 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
         static void ReturnProduct()
         {
+            // Method for Return Product
             Return rm = new Return();
-
+     
             int ch;
-            System.Console.WriteLine("Select your reason for returning");
+            // Reasons for Returning a product
+            System.Console.WriteLine("Select your reason for returning or Exchanging");
             System.Console.WriteLine("______________________");
             System.Console.WriteLine("01. Unsatisfactory Product");
             System.Console.WriteLine("02. Defective Product");
@@ -70,7 +75,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
             System.Console.WriteLine("Enter ProductID");
-            rm.ProductID =System.Console.ReadLine();
+            rm.ProductID = System.Convert.ToInt32(System.Console.ReadLine());
            
 
             System.Console.WriteLine("Enter ProductName");
@@ -78,14 +83,14 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
            
 
             System.Console.WriteLine("Enter ProductDate");
-            rm.Productdate = (System.Console.ReadLine());
-            
+            rm.Productdate = System.Convert.ToDateTime(System.Console.ReadLine());
+
             System.Console.WriteLine("Enter ProductQuantity");
             rm.ProductQuantity = (System.Convert.ToInt32(System.Console.ReadLine()));
             
 
             System.Console.WriteLine("Enter the type of product you want to return");
-            // Select the producttype 
+            //  Different types of Products 
             System.Console.WriteLine("******choice of choosing types of products******");
             System.Console.WriteLine("Enter 6 for Electrical Appliances");
             System.Console.WriteLine("Enter 7 for Grocery products");
@@ -107,7 +112,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     break;
                 case 8:
                     rm.Producttype = System.Console.ReadLine();
-                    rm.Producttype = " Medicical Products";
+                    rm.Producttype = " Medical Products";
                     break;
                 case 9:
                     rm.Producttype = System.Console.ReadLine();
@@ -134,17 +139,22 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             System.Console.WriteLine(rm.Producttype);
         }
+        //Method for Exchanging a product
+         
         static void ExchangeProduct()
         {
+            // Creating object for Business Layer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
-            Console.WriteLine("Enter the product you want to Exchange");
+
+            Console.WriteLine("Enter name of the product you want to exchange");
             rm.ProductName=Console.ReadLine();
             Console.WriteLine("Enter with which product you want to exchange");
            rm.ProductName= Console.ReadLine();
+            Console.WriteLine("Your Product will be Exchanged soon!!");
 
         }
-
+        //
             void AddReturn()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
@@ -155,14 +165,16 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                 rbl.AddReturn(rm);
                 Console.WriteLine("Product  Added");
-
             }
-            void GetReturnByProductID()
+        //
+
+            void GetReturnsByProductID(int Id)
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
                 Return rm = new Return();
-            rbl.GetReturnByProductID();
+            rbl.GetReturnsByProductID(Id);
             }
+        //
         void RemoveReturnByProductID()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
@@ -170,7 +182,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.Write("Enter the ProductID to be Deleted:");
             int id = int.Parse(System.Console.ReadLine());
 
-            rbl.RemoveReturnByProductID(int);
+            rbl.RemoveReturnByProductID(id);
             System.Console.WriteLine("ProductID Removed");
 
 
@@ -182,12 +194,12 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.Write("Enter the ProductName:");
             string name = System.Console.ReadLine();
 
-            rbl.RemoveReturnByProductName(string);
+            rbl.RemoveReturnByProductName(name);
             System.Console.WriteLine("Product Removed");
         }
 
 
-
+        //
         void GetReturns()
             {
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();

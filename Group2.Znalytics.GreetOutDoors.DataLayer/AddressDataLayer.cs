@@ -10,7 +10,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     public class AddressDataLayer:IEnumerable,IList
     {
-
+        /// <summary>
+        /// Creating static list
+        /// </summary>
         private static List<AddressDetail> _customerAddressesList;
         //string[] Copy =(string[]) _customerAddressesList.ToArray();
 
@@ -19,9 +21,17 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
-        public AddressDataLayer()
+        static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
+        }
+        public List<AddressDetail> CustomerAddressList {
+            get {
+                return _customerAddressesList;
+            }
+            set {
+                _customerAddressesList = value;
+            }
         }
         /// <summary>
         /// Inherinted from Ienumerable Generates Ienumerator which acts as Interator
@@ -107,11 +117,20 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
         public bool IsSynchronized => ((ICollection)_customerAddressesList).IsSynchronized;
 
-        int ICollection.Count => ((ICollection)_customerAddressesList).Count;
+        int ICollection.Count => _customerAddressesList.Count;
 
-        public object this[int index] { get => ((IList)_customerAddressesList)[index]; set => ((IList)_customerAddressesList)[index] = value; }
+        public object this[int index] { 
+            get => _customerAddressesList[index]; 
+            set => _customerAddressesList[index] = (AddressDetail)value; }
 
-
+        public void UpdateExistingAddressDataLayer(int Id,AddressDetail ad) {
+            foreach (AddressDetail add in _customerAddressesList) {
+                if (add.CustomerId == Id) {
+                    add = ad;
+                }   
+            }
+            
+        }
     }
 }
 

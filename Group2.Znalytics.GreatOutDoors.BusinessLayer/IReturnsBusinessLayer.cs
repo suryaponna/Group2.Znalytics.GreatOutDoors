@@ -5,8 +5,8 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
 {
     public interface IReturnsBusinessLayer
     {
-
-        List<Return> GetReturnByProductID(Return rm);
+        //Represents an interface for Returns BusinessLogic layer
+        Return GetReturnsByProductID(int ID);
         void AddReturn(Return rm);
         void RemoveReturnByProductID(int id);
         void RemoveReturnByProductName(string name);

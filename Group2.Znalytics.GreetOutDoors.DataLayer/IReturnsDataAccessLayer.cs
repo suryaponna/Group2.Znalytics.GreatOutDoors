@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Group2.Znalytics.GreetOutDoors.IDataLayer
 {
-     interface IReturnsDataAccessLayer
+    interface IReturnsDataAccessLayer
     {
-        
+
         void AddReturn(Return rm);
         Return GetReturnByProductID(int Id);
 

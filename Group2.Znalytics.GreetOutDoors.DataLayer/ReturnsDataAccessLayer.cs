@@ -6,10 +6,12 @@ using System.Runtime.InteropServices;
 /// This class represents DataAccess Layer for Return
 /// </summary>
 using Group2.Znalytics.GreetOutDoors.EntityLayer;
-using Group2.Znalytics.GreetOutDoors.IDataLayer;
+//using Group2.Znalytics.GreetOutDoors.IDataLayer;
+using System.Collections;
+
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer : IReturnsDataAccessLayer
+    public class ReturnsDataAccessLayer : IEnumerable
     {
         private static List<Return> _return;
         /// <summary>
@@ -30,15 +32,13 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             //_return.ExchangeProduct(rm);
         }
-        
 
-        public Return GetReturnByProductID(int Id)
+
+        public IEnumerator GetEnumerator()
         {
-            foreach (var i in _return)
+            for(int i=0;i<_return.Count;i++)
             {
-                if (i.ProductID == Id) {
-                    yield return i;
-                }
+                yield return _return[i];
             }
         }
 
@@ -57,7 +57,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             _return .RemoveAll(p => p.ProductName == name);
         }
+        public Return GetReturnsByProductID(int ID)
+        {
+            return _return.Find(temp=> temp.ProductID==ID);
 
+        }
 
 
 
