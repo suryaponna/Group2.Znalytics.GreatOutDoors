@@ -73,7 +73,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 13)
                     _customerCountry = value;
                 else
-                    throw new Exception("Entered Country Name is not in Range");
+                    throw new AddressException("Entered Country Name is not in Range");
             }
             get
             {
@@ -91,7 +91,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     _customerFullName = value;
                 else
-                    throw new Exception("Your name exceeded the size tha maximum characters are 14");
+                    throw new AddressException("Your name exceeded the size tha maximum characters are 14");
 
             }
             get
@@ -110,7 +110,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value <= 9999999999 && value > 1111111111)
                     this._mobileNumber = value;
                 else
-                    throw new Exception("Enter valid Phone number with 10 digits");
+                    throw new AddressException("Enter valid Phone number with 10 digits");
             }
             get
             {
@@ -128,7 +128,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length <= 6)
                     this._pinCode = value;
                 else
-                    throw new Exception("Enteres PinCode was not Valid");
+                    throw new AddressException("Enteres PinCode was not Valid");
             }
             get
             {
@@ -146,7 +146,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._flatDno = value;
                 else
-                    throw new Exception("Enter Your FlatNumber Or Door Number length was exceeded the size of 15");
+                    throw new AddressException("Enter Your FlatNumber Or Door Number length was exceeded the size of 15");
             }
             get
             {
@@ -163,7 +163,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._areaColony = value;
                 else
-                    throw new Exception("Entered Area was not in range exceeded tha maximum character of 15");
+                    throw new AddressException("Entered Area was not in range exceeded tha maximum character of 15");
             }
             get
             {
@@ -181,7 +181,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 20)
                     this._landMark = value;
                 else
-                    throw new Exception("Enter your Land Mark with in the range 20");
+                    throw new AddressException("Enter your Land Mark with in the range 20");
             }
             get
             {
@@ -200,7 +200,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._townCity = value;
                 else
-                    throw new Exception("Entere Valid Town of Size maximum is 15");
+                    throw new AddressException("Entere Valid Town of Size maximum is 15");
             }
             get
             {
@@ -218,7 +218,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._selState = value;
                 else
-                    throw new Exception("Enter State with in the Range");
+                    throw new AddressException("Enter State with in the Range");
             }
             get
             {
