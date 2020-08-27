@@ -109,9 +109,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
         public bool IsSynchronized => ((ICollection)_customerAddressesList).IsSynchronized;
 
-        int ICollection.Count => ((ICollection)_customerAddressesList).Count;
+        int ICollection.Count => _customerAddressesList.Count;
 
-        public object this[int index] { get => ((IList)_customerAddressesList)[index]; set => ((IList)_customerAddressesList)[index] = value; }
+        public object this[int index] { 
+            get => _customerAddressesList[index]; 
+            set => _customerAddressesList[index] = (AddressDetail)value; }
 
 
     }

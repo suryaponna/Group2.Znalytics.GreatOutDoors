@@ -9,9 +9,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             int choice;
             int Type;
-    Address:
             AddressDetail ad = new AddressDetail();
-            AddressBusinessLogic bd = new AddressBusinessLogic();
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
             System.Console.WriteLine("Enter Country:");
             ad.CustomerCountry = (System.Console.ReadLine());
@@ -33,13 +31,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             ad.State = (System.Console.ReadLine());
             System.Console.WriteLine("Enter your Address 0 for Type Home or 1 for Office");
             bool val=int.TryParse(System.Console.ReadLine(),out Type);
-            if (val)
-            {
-                bd.AddAddressType(ad,Type);
-            }
-            else
-                throw new Exception("Enter valid option 0 or 1");            
-        Add:
+            ad.AddressId = (AddressType)Type;
             System.Console.WriteLine("These are your Address Details");
             System.Console.WriteLine("Country: " + ad.CustomerCountry);
             System.Console.WriteLine("Name: " + ad.CustomerName);
@@ -50,7 +42,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             System.Console.WriteLine("LandMark: " + ad.LandMark);
             System.Console.WriteLine("Town/City: " + ad.Town);
             System.Console.WriteLine("State: " + ad.State);
-            System.Console.WriteLine("Address Type: " + ad.AddressType);
+            System.Console.WriteLine("Address Type: " + ad.AddressId);
             System.Console.WriteLine("Enter Folllowing Options for further process");
             System.Console.WriteLine("Enter 1 to to update existing Address");
             System.Console.WriteLine("Enter 2 to to add new Shipping Address");
@@ -68,18 +60,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             AddNewAddress(ad);
                             break;
                         case 3:
-                            goto Labb;
+                            AddNewAddress(ad);
                     }
 
                 } while (choice <= 4);
             }
 
 
-        Labb:
-            bd.AddFullAddres(ad);
-            System.Console.WriteLine("----------Thank You for For your Interest to Buy the Product----------------- ");
-            System.Console.ReadKey();
-
+        
         }
         static void UpdateAddress(AddressDetail ad) {
         Update:
@@ -138,9 +126,19 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                             System.Console.WriteLine("Enter your State:");
                             ad.State = (System.Console.ReadLine());
                             break;
+                        case 10:
+                            System.Console.WriteLine("Enter Your Address Type");
+                            int Type1;
+                            bool val = int.TryParse(System.Console.ReadLine(), out Type1);
+                            ad.AddressId = (AddressType)Type1;
+                            break;
+
                         case 11:
+                            AddressBusinessLogic bd = new AddressBusinessLogic(ad);
+                            bd.AddFullAddres(ad);
                             System.Console.WriteLine("---------Mofification are finished-------");
-                            goto Labb;
+                            
+                            break;
                             //break;
                         default:
                             System.Console.WriteLine("Enter valid Option");
@@ -156,6 +154,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         }
         static void AddNewAddress(AddressDetail ad) {
             goto Address;
+        }
+        static void AddAddress(AddressDetail ad) {
+            AddressBusinessLogic bd = new AddressBusinessLogic(ad);
+            bd.AddFullAddres(ad);
         }
     
 

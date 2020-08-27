@@ -8,6 +8,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
     public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
+        private int _addressId ;
         private string _customerCountry;
         private string _customerFullName;
         private long _mobileNumber;
@@ -59,14 +60,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             
 
         public int CustomerId {
-            set {
-                _customerId = value;
-            }
-            get
-            {
-
-                return _customerId;
-            }
+            set => _customerId = value;
+            get => _customerId;
         }
         /// <summary>
         /// PRoperty for CustomerCountry
@@ -233,6 +228,21 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public AddressType AddressTypee{
             set;
             get;
+        }
+        
+        public AddressType AddressId {
+            get {
+                return _addressType;
+            }
+            set {
+                if ((int)value == 1)
+                {
+                    _addressType = AddressType.Home;
+                }
+                else {
+                    _addressType = AddressType.Office;
+                }
+            }
         }
 
     }
