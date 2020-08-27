@@ -17,8 +17,8 @@ class Product
 
             System.Console.WriteLine("PRODUCT DETAILS");
             System.Console.WriteLine("********************");
-            System.Console.WriteLine("1. Add Product")
-            Ssytem.Console.WriteLine("2. Add Product Categories");
+            System.Console.WriteLine("1. Add Product");
+            System.Console.WriteLine("2. Add Product Categories");
             System.Console.WriteLine("2. Show Product");
             System.Console.WriteLine("3. Remove Product");
             b = int.TryParse(System.Console.ReadLine(), out Choice);
