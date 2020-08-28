@@ -3,7 +3,7 @@ using System;
 /// <summary></summary>
 /// This is Return Module
 /// </summary>
-namespace Group2.Znalytics.GreetOutDoors.EntityLayer
+namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     public class Return
     {
@@ -92,7 +92,7 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
         {
             set
             {
-                //get the eligible date (present date - 18 years)
+                
                 DateTime exchangeDate = DateTime.Now;
                 exchangeDate = exchangeDate.AddDays(-30);
 
@@ -102,7 +102,7 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
                 }
                 else
                 {
-                    throw new Exception(nameof(ExchangeDate) + " should be less than " + Productdate.ToString("dd/M/yyyy"));
+                    throw new Exception(nameof(ExchangeDate) + " should be within 1month of purchased date " + Productdate.ToString("dd/M/yyyy"));
                 }
             }
             get

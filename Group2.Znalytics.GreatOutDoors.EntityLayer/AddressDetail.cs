@@ -5,7 +5,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// <summary>
     /// Represents an address of Customer
     /// </summary>
-
+    [Serializable]
     public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
         private int _addressId ;
@@ -225,11 +225,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
-        public AddressType AddressTypee{
-            set;
-            get;
-        }
         
+        /// <summary>
+        /// Setting AddressType Of Customer
+        /// </summary>
         public AddressType AddressId {
             get {
                 return _addressType;

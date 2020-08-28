@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
 {
@@ -8,7 +8,8 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         //Represents an interface for Returns BusinessLogic layer
         Return GetReturnsByProductID(int ID);
         void AddReturn(Return rm);
-        void RemoveReturnByProductID(int id);
+        // Return GetReturnByProductID(string ProductID);
+
         void RemoveReturnByProductName(string name);
     }
 }

@@ -10,9 +10,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             int choice;
             int Type;
             AddressDetail ad = new AddressDetail();
+            AddressBusinessLogic bd = new AddressBusinessLogic();
             System.Console.WriteLine("------------------Enter Your Shipping Details ------------------");
             System.Console.WriteLine("Enter Country:");
             ad.CustomerCountry = (System.Console.ReadLine());
+            bd.IsCountryExists(ad.CustomerCountry);
             System.Console.WriteLine("Enter Your Name:");
             ad.CustomerName = (System.Console.ReadLine());
             System.Console.WriteLine("Enter Mobile Number:");

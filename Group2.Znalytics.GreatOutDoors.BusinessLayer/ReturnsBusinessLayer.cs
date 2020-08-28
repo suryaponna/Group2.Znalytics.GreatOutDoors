@@ -1,7 +1,7 @@
-﻿using Group2.Znalytics.GreetOutDoors.DataLayer;
+﻿using Group2.Znalytics.GreatOutDoors.DataLayer;
 using System;
 using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.IBusinessLayer;
 /// <summary>
 /// Created by K.Prasanna
@@ -12,21 +12,21 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
     public class ReturnsBusinessLayer : IReturnsBusinessLayer
     {
-        private ReturnsDataAccessLayer _rdl;
-        private DateTime Exchangedate;
+        ReturnsDataAccessLayer _rd;
 
         public ReturnsBusinessLayer()
         {
-            _rdl = new ReturnsDataAccessLayer();
+
+            _rd = new ReturnsDataAccessLayer();
         }
 
         // creating method for validating ProductID
-       
+
         public void AddReturn(Return rm)
         {
             if (rm.ProductName != null)
             {
-                _rdl.AddReturn(rm);
+                _rd.AddReturn(rm);
             }
             else
             {
@@ -35,34 +35,41 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
         public void ExchangeProduct(Return rm)
         {
-            if (rm.Productdate==Exchangedate)
+            try
             {
-                return;
+                _rd.ExchangeProduct(rm);
             }
-            _rdl.ExchangeProduct(rm);
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
         public List<Return> GetReturns()
         {
-            return _rdl.GetReturns();
+            return _rd.GetReturns();
         }
         //Method to display Return  by ProductId
-        //public List<Return> GetReturnByProductID() => _rdl.GetReturnByProductID();
-        
+        // public List<Return> GetReturnByProductID() => _rd.GetReturnByProductID();
+
         public void RemoveReturnByProductName(string name)
         {
             if (name != null)
             {
-                _rdl.RemoveReturnByProductName(name);
+                _rd.RemoveReturnByProductName(name);
             }
         }
-        public void RemoveReturnByProductID(int Id) { 
-            
+        public Return ReturnByProductID(int ProductID)
+        {
+            return _rd.GetReturnsByProductID(ProductID);
         }
 
         public Return GetReturnsByProductID(int Id)
         {
-            return _rdl.GetReturnsByProductID(Id);
+            return _rd.GetReturnsByProductID(Id);
         }
-    }
 
+    }
 }
+
+
