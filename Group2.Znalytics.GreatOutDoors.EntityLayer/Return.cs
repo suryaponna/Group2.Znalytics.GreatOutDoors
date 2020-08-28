@@ -3,7 +3,7 @@ using System;
 /// <summary></summary>
 /// This is Return Module
 /// </summary>
-namespace Group2.Znalytics.GreetOutDoors.EntityLayer
+namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     public class Return
     {

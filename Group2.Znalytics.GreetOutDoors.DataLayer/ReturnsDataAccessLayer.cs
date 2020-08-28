@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 /// <summary>
 /// This class represents DataAccess Layer for Return
 /// </summary>
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
-//using Group2.Znalytics.GreetOutDoors.IDataLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+//using Group2.Znalytics.GreatOutDoors.IDataLayer;
 using System.Collections;
 
-namespace Group2.Znalytics.GreetOutDoors.DataLayer
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
     public class ReturnsDataAccessLayer : IEnumerable
     {

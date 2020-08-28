@@ -2,7 +2,7 @@
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System;
 using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
@@ -14,7 +14,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             // Application begins here
             ReturnPresentation();
             Console.ReadKey();
-            
+
         }
         static void ReturnPresentation()
         {
@@ -25,22 +25,32 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("Return and Exchange Module");
                 Console.WriteLine("1.ReturnProduct");
                 Console.WriteLine("2.ExchangeProduct");
-                Console.WriteLine("3.Exit");
+                Console.WriteLine("3.AddReturn");
+                Console.WriteLine("4.GetReturnsByProductID");
+                Console.WriteLine("5. RemoveReturnByProductID");
+                Console.WriteLine("6.RemoveReturnByProductName");
+                Console.WriteLine("7.GetReturns");
+                Console.WriteLine("8.Exit");
+
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
                     case 1: ReturnProduct(); break;
                     case 2: ExchangeProduct(); break;
-
+                    case 3: AddReturn(); break;
+                    // case 4: GetReturnsByProductID(); break;
+                    case 5: RemoveReturnByProductID(); break;
+                    case 6: RemoveReturnByProductName(); break;
+                    case 7: GetReturns(); break;
                 }
-            } while (choice != 4);
-            }
+            } while (choice != 8);
+        }
         static void ReturnProduct()
         {
             // Method for Return Product
             Return rm = new Return();
-     
+
             int ch;
             // Reasons for Returning a product
             System.Console.WriteLine("Select your reason for returning or Exchanging");
@@ -76,18 +86,18 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             System.Console.WriteLine("Enter ProductID");
             rm.ProductID = System.Convert.ToInt32(System.Console.ReadLine());
-           
+
 
             System.Console.WriteLine("Enter ProductName");
             rm.ProductName = System.Console.ReadLine();
-           
+
 
             System.Console.WriteLine("Enter ProductDate");
             rm.Productdate = System.Convert.ToDateTime(System.Console.ReadLine());
 
             System.Console.WriteLine("Enter ProductQuantity");
             rm.ProductQuantity = (System.Convert.ToInt32(System.Console.ReadLine()));
-            
+
 
             System.Console.WriteLine("Enter the type of product you want to return");
             //  Different types of Products 
@@ -135,59 +145,70 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     rm.Producttype = "Kitchen products";
 
                     break;
-            }
 
+            }
             System.Console.WriteLine(rm.Producttype);
         }
+
+
+
         //Method for Exchanging a product
-         
+
         static void ExchangeProduct()
         {
             // Creating object for Business Layer
+            Return rm = new Return();
+            Console.WriteLine("Enter the product date");
+            rm.Productdate = System.Convert.ToDateTime(Console.ReadLine());
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+
+
+            Console.WriteLine("Enter name of the product you want to exchange");
+            rm.ProductName = Console.ReadLine();
+
+            Console.WriteLine("Enter with which product you want to exchange");
+            rm.ProductName = Console.ReadLine();
+            Console.WriteLine("Your Product will be Exchanged soon!!");
+            rbl.ExchangeProduct(rm);
+        }
+        static void Exit()
+        {
+            System.Console.WriteLine("----Thankyou----");
+        }
+        //
+        static void AddReturn()
+        {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
 
-            Console.WriteLine("Enter name of the product you want to exchange");
-            rm.ProductName=Console.ReadLine();
-            Console.WriteLine("Enter with which product you want to exchange");
-           rm.ProductName= Console.ReadLine();
-            Console.WriteLine("Your Product will be Exchanged soon!!");
+            Console.Write("Enter new Product Name: ");
+            rm.ProductName = Console.ReadLine();
 
+            rbl.AddReturn(rm);
+            Console.WriteLine("Product  Added");
         }
         //
-            void AddReturn()
-            {
-                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+
+        static void GetReturnsByProductID(int Id)
+        {
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
-
-            Console.Write("Enter new Product Name: ");
-                rm.ProductName = Console.ReadLine();
-
-                rbl.AddReturn(rm);
-                Console.WriteLine("Product  Added");
-            }
-        //
-
-            void GetReturnsByProductID(int Id)
-            {
-                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                Return rm = new Return();
             rbl.GetReturnsByProductID(Id);
-            }
+        }
         //
-        void RemoveReturnByProductID()
+        static void RemoveReturnByProductID()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             System.Console.Write("Enter the ProductID to be Deleted:");
             int id = int.Parse(System.Console.ReadLine());
 
-            rbl.RemoveReturnByProductID(id);
+            // rbl.RemoveReturnByProductID(id);
             System.Console.WriteLine("ProductID Removed");
 
 
         }
-        void RemoveReturnByProductName()
+        static void RemoveReturnByProductName()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
@@ -200,26 +221,26 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         //
-        void GetReturns()
-            {
-                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-                Return rm = new Return();
-             rbl.GetReturns();
+        static void GetReturns()
+        {
+            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            Return rm = new Return();
+            rbl.GetReturns();
 
-                List<Return> rets = rbl.GetReturns();
-                //Displays all the details 
-                System.Console.WriteLine("--------------- Detils are --------------");
-                System.Console.WriteLine("Product Id: " + rm.ProductID);
-                System.Console.WriteLine("Product Name: " + rm.ProductName);
-                System.Console.WriteLine("Product date is: " + rm.Productdate);
-                System.Console.WriteLine("Product Quantity is: " + rm.ProductQuantity);
-                System.Console.WriteLine("Product type is: " + rm.Producttype);
-                System.Console.WriteLine("ThankYou for your Response");
-                System.Console.ReadKey();
+            List<Return> rets = rbl.GetReturns();
+            //Displays all the details 
+            System.Console.WriteLine("--------------- Detils are --------------");
+            System.Console.WriteLine("Product Id: " + rm.ProductID);
+            System.Console.WriteLine("Product Name: " + rm.ProductName);
+            System.Console.WriteLine("Product date is: " + rm.Productdate);
+            System.Console.WriteLine("Product Quantity is: " + rm.ProductQuantity);
+            System.Console.WriteLine("Product type is: " + rm.Producttype);
+            System.Console.WriteLine("ThankYou for your Response");
+            System.Console.ReadKey();
 
-            }
+        }
 
-        
+
 
     }
 }
