@@ -15,8 +15,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             Retailstore r;
             r = new Retailstore();
             RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
-            
-            Console.WriteLine("================WELCOME TO RETAIL STORE================");
+
+            Console.WriteLine("------------------------\n |WELCOME TO RETAIL STORE |\n------------------------\n");
 
             //retail id
             System.Console.WriteLine("Enter The Retail store Id");
@@ -65,7 +65,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             System.Console.WriteLine("Enter morethan 10 to exit");
             int b = int.Parse(System.Console.ReadLine());
 
-            while (Choice!=9)
+            while (Choice != 9)
             {
                 switch (b)
                 {
@@ -134,12 +134,12 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
             //Outlier Products
             //System.Console.WriteLine("================ Damaged Products ================");
-            
-           // List<DamagedProducts > Dm = new List<DamagedProducts>();
+
+            // List<DamagedProducts > Dm = new List<DamagedProducts>();
 
 
 
-            System.Console.WriteLine("================ :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: ================");
+            System.Console.WriteLine("--------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n--------------------------\n");
             System.Console.ReadKey();
         }
     }
