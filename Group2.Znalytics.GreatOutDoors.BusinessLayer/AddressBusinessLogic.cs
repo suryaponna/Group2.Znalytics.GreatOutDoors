@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using System.Collections.Generic;
 using System.Linq;
 ///--------------------Surya 
 /// <summary>
@@ -6,7 +7,7 @@ using System.Linq;
 /// </summary>
 namespace Znalytics.Group2.GreatOutDoor.Entity
 {
-    public class AddressBusinessLogic
+    public class AddressBusinessLogic:IAddressBusinessLayer
     {
 
         //List<string> TotalAddresses = new List<string>();
@@ -67,21 +68,59 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             return CountriesList.Contains(countryName);
         }
         
-        AddressDetail ad = new AddressDetail();
-        string samplee = "";
-        int j = 1;
         /// <summary>
-        /// Method for Adding Customer Country
+        /// Updating Existing Customer Address
         /// </summary>
-        /// <param name="ad">parameter is of AddressDeatils</param>
-
-        /// <summary>
-        /// Adding Address to Data Layer
-        /// </summary>
-        
-        public void UpdateExistingAddressBusinessLayer(int Id,AddressDetail ad) {
-            dll.UpdateExistingAddressDataLayer(Id,ad);
+        /// <param name="Id"> AddressId</param>
+        /// <param name="ad">Cutomer Address Object </param>
+        public void UpdateExistingAddress(int Id,AddressDetail ad) {
+            dll.UpdateExistingAddress(Id,ad);
         }
-
+        /// <summary>
+        /// Retunrning Default Address
+        /// </summary>
+        /// <param name="ad">Customer Address Object</param>
+        /// <returns></returns>
+        public  AddressDetail RetunDefaultAddress(AddressDetail ad) { 
+            AddressDetail DeafultAddress=dll.RetunDefaultAddress(ad);
+            return DeafultAddress;
+        }
+        /// <summary>
+        /// Returning Particular Address Of a Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public AddressDetail ReturnAddress(AddressDetail ad, int Id) {
+            AddressDetail ReturnedAddress = dll.ReturnAddress(ad, Id);
+            return ReturnedAddress;
+        }
+        /// <summary>
+        /// Removing Particular Address Od A Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        public void RemoveAddress(AddressDetail ad, int Id) {
+            dll.RemoveAddress(ad, Id);
+        }
+        /// <summary>
+        /// Returning All Addresses Of the Customer
+        /// </summary>
+        /// <param name="ad">Customer Address Object</param>
+        /// <returns></returns>
+        public List<AddressDetail> CustomerAllAddress(AddressDetail ad) {
+            List<AddressDetail> AllAddresses = dll.CustomerAllAddress(ad);
+            return AllAddresses;
+        }
+        /// <summary>
+        /// Adding Another Address to Existing Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
+            dll.AddressAnotherAddressToCustomer(ad);
+        }
+        
+        
+    
     }
 }
