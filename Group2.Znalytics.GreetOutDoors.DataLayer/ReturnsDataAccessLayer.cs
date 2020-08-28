@@ -28,9 +28,17 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             _return.Add(rm);
         }
-        public void ExchangeProduct(Return rm)// To Exchange a product
+        /// <summary>
+        ///  To Exchange a product
+        /// </summary>
+        /// <param name="rm"></param>
+        public void ExchangeProduct(Return rm)
         {
-            //_return.ExchangeProduct(rm);
+            
+              _return.ExchangeProduct(rm);
+            throw new ReturnException("Product can be exchanged within 1 month of purchased date");
+
+            
         }
 
 
@@ -55,14 +63,19 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         public void RemoveReturnByProductName(string name)// Removing a Product By using Product Name
         {
-            _return .RemoveAll(p => p.ProductName == name);
+           
+            
+            if(_return.RemoveAll(p => p.ProductName == name))
+            {
+                 _return.RemoveAll(p => p.ProductName == name);
+            }
+            else
+            {
+                throw new ReturnException("Product name can't be null");
+            }
+            
         }
-        public Return GetReturnsByProductID(int ID)
-        {
-            return _return.Find(temp=> temp.ProductID==ID);
-
-        }
-
+       
 
 
     }
