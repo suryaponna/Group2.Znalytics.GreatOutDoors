@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
 namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
+    
     public class AddressDataLayer:IEnumerable,IList
     {
         /// <summary>
@@ -23,8 +25,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Creating List only once memory is allocated 
         /// </summary>
         StreamReader streamreader = new StreamReader(@"E:\project\myself.txt");
-        FileStream fs = new FileStream(@"E:\project\myself.txt",FileMode.Open,FileAccess.Read);
-        
+        //public FileStream fs = new FileStream(@"E:\project\myself.txt",FileMode.Open,FileAccess.Read);
+        string s = streamreader.ReadToEnd();
+        //BinaryFormatter bf = new BinaryFormatter();
+        //bf.Serialize(fs,AddressDetail);
+
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();

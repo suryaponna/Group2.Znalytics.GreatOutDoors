@@ -5,7 +5,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// <summary>
     /// Represents an address of Customer
     /// </summary>
-
+    [Serializable]
     public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
         private int _addressId ;
