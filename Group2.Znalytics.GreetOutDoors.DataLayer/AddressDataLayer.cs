@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.ComponentModel;
+using System.Diagnostics;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -194,7 +195,29 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == ad.CustomerId);
             return samp;
         }
-
+        /// <summary>
+        /// Add Another Address TO Existing Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
+            if (ad != null) {
+                foreach (var temp in _customerAddressesList) {
+                    if (temp.CustomerId == ad.CustomerId) {
+                        ad.AddressId += 1;
+                        _customerAddressesList.Add(ad);
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// Remove Particular Address Of The Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        public void RemoveAddress(AddressDetail ad,int Id) {
+            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && Id == (int)samp.AddressId);
+        }
+        
 
     }
 }
