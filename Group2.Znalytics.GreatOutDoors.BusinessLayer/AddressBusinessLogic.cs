@@ -41,20 +41,31 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         List<string> NumberCodes = new List<string>();
         
 
-        public  AddressBusinessLogic(AddressDetail ad)
+        public  AddressBusinessLogic()
         {
             dll = new AddressDataLayer();
 
         }
         
-        
+        /// <summary>
+        /// Validating Address and Calling Data Layer Method  
+        /// </summary>
+        /// <param name="address"></param>
         public void AddAddress(AddressDetail address)
         {
 
-            var res = dll.CustomerAddressList.Where(temp =>temp.CustomerCountry in CountriesList);
+            var b = CountriesList.Contains(address.CustomerCountry);
+            if (b == true)
+            {
+
+            }
             //dll.Add(address);
         }
         
+        public bool IsCountryExists(string countryName)
+        {
+            return CountriesList.Contains(countryName);
+        }
         
         AddressDetail ad = new AddressDetail();
         string samplee = "";

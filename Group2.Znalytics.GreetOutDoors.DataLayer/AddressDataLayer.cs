@@ -24,9 +24,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
-        StreamReader streamreader = new StreamReader(@"E:\project\myself.txt");
+        //StreamReader streamreader = new StreamReader(@"E:\project\myself.txt");
         //public FileStream fs = new FileStream(@"E:\project\myself.txt",FileMode.Open,FileAccess.Read);
-        string s = streamreader.ReadToEnd();
+        //string s = streamreader.ReadToEnd();
         //BinaryFormatter bf = new BinaryFormatter();
         //bf.Serialize(fs,AddressDetail);
 
