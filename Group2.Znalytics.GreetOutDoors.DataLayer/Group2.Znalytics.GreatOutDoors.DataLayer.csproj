@@ -47,6 +47,7 @@
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Exchange.cs" />
+    <Compile Include="IAddressDataLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="productDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
