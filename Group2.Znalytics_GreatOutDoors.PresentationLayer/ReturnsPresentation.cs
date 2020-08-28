@@ -157,19 +157,26 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         static void ExchangeProduct()
         {
             // Creating object for Business Layer
-            Return rm = new Return();
-            Console.WriteLine("Enter the product date");
-            rm.Productdate = System.Convert.ToDateTime(Console.ReadLine());
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            try
+            {
+                Return rm = new Return();
+                Console.WriteLine("Enter the product date");
+                rm.Productdate = System.Convert.ToDateTime(Console.ReadLine());
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
 
 
-            Console.WriteLine("Enter name of the product you want to exchange");
-            rm.ProductName = Console.ReadLine();
+                Console.WriteLine("Enter name of the product you want to exchange");
+                rm.ProductName = Console.ReadLine();
 
-            Console.WriteLine("Enter with which product you want to exchange");
-            rm.ProductName = Console.ReadLine();
-            Console.WriteLine("Your Product will be Exchanged soon!!");
-            rbl.ExchangeProduct(rm);
+                Console.WriteLine("Enter with which product you want to exchange");
+                rm.ProductName = Console.ReadLine();
+                Console.WriteLine("Your Product will be Exchanged soon!!");
+                rbl.ExchangeProduct(rm);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
         static void Exit()
         {
