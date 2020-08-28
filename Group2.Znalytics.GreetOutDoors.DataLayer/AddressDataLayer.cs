@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using System;
+using System.IO;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -21,6 +22,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
+        StreamReader streamreader = new StreamReader(@"E:\project\myself.txt");
+        FileStream fs = new FileStream(@"E:\project\myself.txt",FileMode.Open,FileAccess.Read);
+        
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
@@ -129,8 +133,16 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                     add = ad;
                 }   
             }
+            for (int i=0; i < _customerAddressesList.Count; i++){
+                if (_customerAddressesList[i].CustomerId == Id) {
+                    _customerAddressesList[i] = ad;
+                }   
+            }
             
         }
+        
+        
+        
     }
 }
 
