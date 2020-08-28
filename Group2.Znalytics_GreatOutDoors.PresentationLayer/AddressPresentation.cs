@@ -1,7 +1,7 @@
 ﻿//-----------------------Surya----------------------------------------
 
 using System;
-namespace Znalytics.Group2.GreatOutDoor.Entity
+namespace Znalytics.Group2.GreatOutDoors.Entity
 {
     public class Address
     {

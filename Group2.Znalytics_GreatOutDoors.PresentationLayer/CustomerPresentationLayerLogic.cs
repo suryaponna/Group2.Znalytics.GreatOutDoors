@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Znalytics.Group2.GreatOutdoors.BusinessLogicLayer;
-using Znalytics.GreatOutdoors.CustomerDetailModule.Entities;
+using Group2.Znalytics.GreatOutDoors.BusinessLogicLayer;
+namespace Znalytics.Group2.GreatOutDoors.Entity
 
-namespace Znalytics.GreatOutDoors.CustomerDetailModule.PresentationLayer
 {
     /// <summary>
     /// Represents Login information of the customer
