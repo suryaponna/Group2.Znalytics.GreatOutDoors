@@ -27,7 +27,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         }
         /// <summary>
-        /// Declared a method for ListOfReturn
+        /// Declared a method for ListOfReturn which contains serialization part
         /// </summary>
         public void ListOfReturn()
         {
@@ -54,6 +54,53 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
 
         }
+
+        public Return GetReturnByProductID(string Id)
+        {
+            //Condition to check whether the ProductId exists or not
+            if (_return.Exists(temp => temp.ProductID == Id))
+            {
+                return _return.Find(temp => temp.ProductID == Id);
+            }
+            else
+            {
+                throw new ReturnException("ProductId doesn't exist");
+            }
+
+        }
+
+        public Return GetReturnByProductName(string name)
+        {
+            //Condition to check whether the Productname exists or not
+            if (_return.Exists(temp => temp.ProductName == name))
+            {
+                return _return.Find(temp => temp.ProductName == name);
+            }
+            else
+            {
+                throw new Exception("ProductName doesn't exist");
+            }
+
+        }
+
+        public void UpdateReturns(Return rm)
+        {
+            //Condition to check whether the Productname and ID exists or not
+            Return rma = _return.Find(n => n.ProductName == rm.ProductName && n.ProductID==rm.ProductID);
+            if (rma != null)
+            {
+                rma.ProductName = rm.ProductName;
+            
+            }
+            else
+            {
+                throw new Exception("Product name doesn't exist");
+            }
+        }
+        /// <summary>
+        /// List for storing Returns
+        /// </summary>
+        /// <returns></returns>
         public List<Return> GetReturns()
         {
             return _return;
