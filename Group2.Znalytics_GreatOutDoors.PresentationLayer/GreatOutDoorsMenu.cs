@@ -50,6 +50,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
         }
         static void ChangeShippingAddress() {
+            
+
             int Type;
             WriteLine("Enter All The Details Below Showed");
             AddressDetail ad = new AddressDetail();
