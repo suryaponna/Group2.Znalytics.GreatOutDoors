@@ -32,6 +32,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             {
                 throw new ProductException(ex.Message);
             }
+
             return productAdded;
 
         }
