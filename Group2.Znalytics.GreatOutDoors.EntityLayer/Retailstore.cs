@@ -63,7 +63,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 }
                 catch
                 {
-                    throw new Exception("Ennter valid Retail Store ID");
+                    throw new Exception("Enter valid Retail Store ID");
                 }
 
             }
