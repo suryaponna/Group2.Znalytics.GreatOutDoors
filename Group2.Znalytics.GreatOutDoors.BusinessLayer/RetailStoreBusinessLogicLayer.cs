@@ -38,7 +38,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             }
          }
 
-       public Retailstore GetRetailstoreByRetailStoreID(int RetailStoreID)
+       public Retailstore GetRetailstoreByRetailStoreID(string RetailStoreID)
         {
             throw new RetailstoreException("Retail id cannot be null");
         }
