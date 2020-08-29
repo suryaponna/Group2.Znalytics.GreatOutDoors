@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Znalytics.Group2.GreatOutDoor.Entity
+
 {
     public class Customer
     {

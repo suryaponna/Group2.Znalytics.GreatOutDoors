@@ -9,7 +9,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataAccessLayer
     /// <summary>
     /// Represents interface for the customer Personal Detail DataAccessLayer
     /// </summary>
-    public interface ICustomerDetailDAL
+    public interface ICustomerDAL
     {
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();

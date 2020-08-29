@@ -1,7 +1,6 @@
 ﻿using System;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Znalytics.Group2.GreatOutDoors.BLL;
-using Znalytics.Group2.GreatOutDoors.DAL;
 
 
 /// <summary>
@@ -12,13 +11,13 @@ class CustomerPL
     //Execution starts from main method
     static void Main()
     {
-        CustomerDetailsPresentation();
+        CustomerPresentation();
         Console.ReadKey();
     }
 
     //Displaying Customers menu
     //static method is nothing but all instances of class share the same copy of the methoad and its data.
-    static void CustomerDetailsPresentation()
+    static void CustomerPresentation()
     {
         int choice = 0;
         //do while loop is known as exit controlled loop,it verifies the condition after execution of statements inside the loop
@@ -28,6 +27,7 @@ class CustomerPL
             Console.WriteLine("1. Add Customer");//if you choose an option '1' it shows to Add Customer
             Console.WriteLine("2. View Customer");
             Console.WriteLine("3. Update Customer");
+            Console.WriteLine("4.Delete Customer");
             Console.WriteLine("4. Exit");
             Console.Write("Enter choice: ");
             choice = int.Parse(Console.ReadLine());
@@ -38,16 +38,17 @@ class CustomerPL
                 case 1: AddCustomer(); break;
                 case 2: ViewCustomer(); break;
                 case 3: UpdateCustomer(); break;
+                case 4:DeleteCustomer();break;
             }
-        } while (choice != 4);//if neither of the above three methods
+        } while (choice != 5);//if neither of the above three methods
     }
 
-    CustomerBLL customerdetailBusinessLogicLayer = new CustomerBLL();
+    CustomerBLL customerBusinessLogicLayer = new CustomerBLL();
     //Add customer method
     public static void AddCustomer()
     {
         //Creating object for CustomerPersonalDetail class 
-        CustomerDetail customers = new CustomerDetail();
+        Customer customers = new Customer();
 
         //Reading customer name manually
         Console.Write("Enter customer name: ");
@@ -101,14 +102,14 @@ class CustomerPL
     //View existing Customer details
     static void ViewCustomer()
     {
-        // CustomerDetailBLL customerBusinessLogic = new CustomerDetailBLL();//creating object here.
+        CustomerBLL customerBusinessLogic = new CustomerBLL();//creating bussiness layer object here.
         //creating list
-        List<CustomerDetail> cust = customerBusinessLogic.GetCustomers();
+        List<Customer> cust = customerBusinessLogic.ViewCustomer();//It goes to bussinesslayer and then datalayer where list is present.
 
         //getting customerdetails 
-        foreach (CustomerDetail detail in cust)
+        foreach (Customer Item in cust)//foreach loop is to retrieve data 
         {
-            Console.WriteLine(detail);
+            Console.WriteLine(cust);//printing cust object.
         }
     }
 
@@ -116,63 +117,63 @@ class CustomerPL
     static void UpdateCustomer()
     {
         //Creating object for BusinessLogicLayer
-        // CustomerDetailBLL CustomerBusinessLogic = new CustomerDetailBLL();//creating object here.
+         CustomerBLL CustomerBusinessLogic = new CustomerBLL();//creating object here.
 
-        //Creating object for the CustomerPersonalDetail class
-        Customer customer = new Customer();
+        //Creating objectfor the Customer class
+        Customer customers = new Customer();
 
         //Updating name
         Console.Write("Enter Existing Customer Name: ");
-        customer.CustomerName = Console.ReadLine();
+        customers.CustomerName = Console.ReadLine();
         Console.Write("Enter New Customer Name: ");
-        customer.CustomerName = Console.ReadLine();
+        customers.CustomerName = Console.ReadLine();
 
-        //Updating Address
-        Console.Write("Enter Existing Customer Address: ");
-        customer.Address = Console.ReadLine();
-        Console.Write("Enter New Customer Address: ");
-        customer.Address = Console.ReadLine();
+       
 
-        //Updating Income
-        Console.Write("Enter Existing Customer Income: ");
-        customer.Income = double.Parse(Console.ReadLine());
-        Console.Write("Enter New Customer Income: ");
-        customer.Income = double.Parse(Console.ReadLine());
-
+      
         //Updating AadharcardNumber
         Console.Write("Enter Existing Customer Aadharcardnumber: ");
-        customer.AadharCardNumber = Console.ReadLine();
+        customers.AadharCardNumber = Console.ReadLine();
         Console.Write("Enter New Customer Aadharcardnumber: ");
-        customer.AadharCardNumber = Console.ReadLine();
+        customers.AadharCardNumber = Console.ReadLine();
 
         //Updating PanCardNumber
         Console.Write("Enter Existing Customer PancardNumber: ");
-        customer.PanCardNumber = Console.ReadLine();
+        customers.PanCardNumber = Console.ReadLine();
         Console.Write("Enter New Customer Pan card number: ");
-        customer.PanCardNumber = Console.ReadLine();
+        customers.PanCardNumber = Console.ReadLine();
 
         //Updating Phone number
         Console.Write("Enter Existing Customer Phone number: ");
-        customer.PhoneNumber = Console.ReadLine();
+        customers.PhoneNumber = Console.ReadLine();
         Console.Write("Enter New Customer Phone number: ");
-        customer.PhoneNumber = Console.ReadLine();
+        customers.PhoneNumber = Console.ReadLine();
 
         //Updating Age
         Console.Write("Enter Existing Customer Age: ");
-        customer.Age = int.Parse(Console.ReadLine());
+        customers.Age = int.Parse(Console.ReadLine());
         Console.Write("Enter New Customer date of birth: ");
-        customer.Age = int.Parse(Console.ReadLine());
+        customers.Age = int.Parse(Console.ReadLine());
 
         //Updating Mail id
         Console.Write("Enter Existing Customer Mail Id: ");
-        customer.CustomerMailId = Console.ReadLine();
+        customers.CustomerMailId = Console.ReadLine();
         Console.Write("Enter New Customer mail id: ");
-        customer.CustomerMailId = Console.ReadLine();
+        customers.CustomerMailId = Console.ReadLine();
 
 
-        CustomerBusinessLogic.UpdateCustomer(customer);
+        CustomerBusinessLogic.UpdateCustomer(customers);
         Console.WriteLine("Customer details Updated.\n");
     }
+
+
+}
+static void DeleteCustomer()
+{
+    Console.WriteLine("Entered Customer name to be deleted");
+    Console.WriteLine("Entered Customer ID to be deleted");
+
+
 
 
 }

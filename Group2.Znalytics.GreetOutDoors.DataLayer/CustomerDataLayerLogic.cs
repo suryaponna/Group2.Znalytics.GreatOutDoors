@@ -1,8 +1,11 @@
-﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+﻿using Znalytics.Group2.GreatOutDoor.Entity;
 using System;
+using System.IO;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreetOutDoors.DataAccessLayer;
+using System.CodeDom.Compiler;
 
 namespace Znalytics.Group2.GreatOutDoor.DAL
 
@@ -10,7 +13,7 @@ namespace Znalytics.Group2.GreatOutDoor.DAL
     /// <summary>
     /// Represents Data Access Layer of  the customer Personal details
     /// </summary>
-    public class CustomerDAL : ICustomerDetailDAL
+    public class CustomerDAL : ICustomerDAL
     {
         //private fields
         private static List<Customer> _customers;
@@ -50,10 +53,25 @@ namespace Znalytics.Group2.GreatOutDoor.DAL
         /// </summary>
         /// <param name="customerID">CustomerID to search</param>
         /// <returns>Returns matching customer</returns>
-        public Customer GetCustomerByID(string customerID)
+        public Customer GetCustomerByCustomerID(string customerID)
         {
-            Customer cust = _customers.Find(temp => temp.CustomerId == customerID);
+            Customer cust = _customers.Find(temp => temp.CustomerID == customerID);
             return cust;
+            ListOfCustomers();
+        }
+
+        public void ListOfCustomers()
+        {
+            List<Customer> _return = new List<Customer>();
+            //convert data into Json
+            string s = JsonConvert.SerializeObject(_customers);
+
+            //write data into file
+            StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop");
+            streamWriter.Write(s);
+            streamWriter.Close();
+
+
         }
 
         /// <summary>
@@ -65,7 +83,13 @@ namespace Znalytics.Group2.GreatOutDoor.DAL
         {
             List<Customer> cust = _customers.FindAll(temp => temp.CustomerName == customerName);
             return cust;
+            ListOfCustomers();
         }
+    }
+    public void DeleteCustomers(Customer customers)
+    {
+        _customers.Remove(temp=>CustomerName==Customers.CustomerName);
+       
     }
 }
 
