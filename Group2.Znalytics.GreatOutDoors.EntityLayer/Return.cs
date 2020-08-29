@@ -103,18 +103,8 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                
-                DateTime exchangeDate = DateTime.Now;
-                exchangeDate = exchangeDate.AddDays(-30);
 
-                if (value < exchangeDate)
-                {
-                    _exchangedate = value;
-                }
-                else
-                {
-                    throw new Exception(nameof(ExchangeDate) + " should be within 1month of purchased date " + Productdate.ToString("dd/M/yyyy"));
-                }
+                _exchangedate = value;
             }
             get
             {

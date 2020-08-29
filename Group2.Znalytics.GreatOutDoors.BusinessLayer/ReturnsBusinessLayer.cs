@@ -63,7 +63,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <returns></returns>
         public List<Return> GetReturns()
         {
-            return _rd.GetReturns();
+            return _rd;
         }
         //Method to display Return  by ProductId
         // public List<Return> GetReturnByProductID() => _rd.GetReturnByProductID();
