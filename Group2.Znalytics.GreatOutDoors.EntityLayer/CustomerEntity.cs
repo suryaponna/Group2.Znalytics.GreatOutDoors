@@ -219,7 +219,7 @@ public class CostumerDetail
         }
 
         /// <summary>
-        /// State of the Customer
+        /// State of the Customerr
         /// </summary>
         public string CustomerState
         {
