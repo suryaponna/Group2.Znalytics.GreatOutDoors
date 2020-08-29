@@ -23,16 +23,19 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
          //Method to add retail store id list
          public void AddRetailStoreID(Retailstore rsid)
          {
-            //Retail store can't be null
-             if (rsid.RetailStoreID != null)
-             {
-                 _rdl.AddRetailStoreID(rsid);
+            try
+            {
+                //Retail store can't be null
+                if (rsid.RetailStoreID != null)
+                {
+                    _rdl.AddRetailStoreID(rsid);
 
-             }
-             else
-             {
-                 throw new Exception("Retail store ID can't be null");
-             }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
          }
 
        public Retailstore GetRetailstoreByRetailStoreID(int RetailStoreID)
@@ -67,7 +70,22 @@ public void AddRetailStoreID(Retailstore rsid)
 public List<RetailStoreID>GetRetailStoreIDs()
 {
     return d.AddGetRetailStoreIDs();
-}*/
+}*/ public void AddProductQuantity(Retailstore p)
+        {
+            try
+            {
+                //quantity of products should not br null
+                if(p.QuantityOfProducts!=null)
+                {
+                    _rdl.AddProductQuantity(p);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+        }
+
 
     }
 
