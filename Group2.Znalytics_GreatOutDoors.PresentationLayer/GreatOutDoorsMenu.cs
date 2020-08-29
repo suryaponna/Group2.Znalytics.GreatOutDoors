@@ -23,7 +23,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                                 break;
                     case 2:     CustomerSignIn();
                                 break;
-                    case 3:     ShowProducts();
+                    case 3:     SelectProducts();
                                 break;
                     default:    WriteLine("Enter Valid Option");
                                 break;  
@@ -46,9 +46,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             WriteLine("-----------------These are the Products Hope you find out what you want---------------");
 
         }
-        static void ShowProducts() { 
-            
-        }
+        
 
     }
 }
