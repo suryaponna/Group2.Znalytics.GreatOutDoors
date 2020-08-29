@@ -45,6 +45,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             set {
                 _customerAddressesList = value;
+                _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
                 streamWriter.Write(_jsonAddresses);
                 streamWriter.Close();
 
