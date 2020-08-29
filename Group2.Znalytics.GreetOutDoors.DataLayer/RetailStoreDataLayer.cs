@@ -23,7 +23,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             _retailstoreid.Add(rsid);
         }
-
+        //GET retailstore id
         public List<Retailstore> GetRetailStoreIDs()
         {
             throw new NotImplementedException();

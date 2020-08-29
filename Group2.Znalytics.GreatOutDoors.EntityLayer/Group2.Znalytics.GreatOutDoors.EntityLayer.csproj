@@ -49,6 +49,7 @@
     <Compile Include="ProductEntityLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailstore.cs" />
+    <Compile Include="RetailstoreException.cs" />
     <Compile Include="Return.cs" />
     <Compile Include="ReturnException.cs" />
   </ItemGroup>
