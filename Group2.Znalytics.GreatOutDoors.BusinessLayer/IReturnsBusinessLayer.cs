@@ -8,8 +8,8 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         //Represents an interface for Returns BusinessLogic layer
        
         void AddReturns(Return rm);
-        Return RemoveReturnByProductName(string name);
-        Return RemoveReturnByProductID(string Id);
+        void RemoveReturnByProductName(string name);
+        void RemoveReturnByProductID(string Id);
         void ExchangeProduct(Return rm);
     }
 }
