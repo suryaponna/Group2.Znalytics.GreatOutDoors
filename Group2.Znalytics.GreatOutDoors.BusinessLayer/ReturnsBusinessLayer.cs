@@ -39,7 +39,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             {
                 _rd.ExchangeProduct(rm);
             }
-            catch (Exception ex)
+            catch (ReturnException ex)
             {
                 throw;
             }
@@ -54,21 +54,27 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
         public void RemoveReturnByProductName(string name)
         {
-            if (name != null)
+            try
             {
-                _rd.RemoveReturnByProductName(name);
+                if (name != null)
+                {
+                    _rd.RemoveReturnByProductName(name);
+                }
+                
+            }
+            catch (ReturnException ex)
+            {
+                throw;
             }
         }
-        public Return ReturnByProductID(int ProductID)
+        public void  RemoveReturnByProductID(int Id)
         {
-            return _rd.GetReturnsByProductID(ProductID);
-        }
 
-        public Return GetReturnsByProductID(int Id)
-        {
-            return _rd.GetReturnsByProductID(Id);
-        }
+            _rd.RemoveReturnByProductID(Id);
 
+        }
+           
+      
     }
 }
 

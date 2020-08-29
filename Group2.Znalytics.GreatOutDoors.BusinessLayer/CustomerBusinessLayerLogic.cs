@@ -4,12 +4,11 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
-using Znalytics.GreatOutdoors.CustomerDetailModule.Entities;
-using Znalytics.Group2.GreatOutdoors.DataAccessLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLogicLayer;
 using System.Collections.Generic;
 
 
-namespace Znalytics.Group2.GreatOutdoors.BusinessLogicLayer
+namespace Znalytics.Group2.GreatOutDoor.Entity
 {
     /// <summary>
     /// Represents Business logic layer of the customer personal details

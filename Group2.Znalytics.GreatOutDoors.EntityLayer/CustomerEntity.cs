@@ -1,7 +1,8 @@
 ﻿///// Apoorva///////
 //Customer Entity Layer
 using System;
-namespace Znalytics.GreatOutDoors.CustomerDetailModule.Entities
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+namespace Znalytics.Group2.GreatOutDoor.Entity
 { 
 public class CostumerDetail
 {
@@ -290,4 +291,4 @@ public class CostumerDetail
 }
 
 
-}
+
