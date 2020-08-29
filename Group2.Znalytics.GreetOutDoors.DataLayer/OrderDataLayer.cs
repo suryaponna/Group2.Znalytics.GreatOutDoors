@@ -8,10 +8,10 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
     public class OrderDataLayer
     {
-       /// <summary>
-       /// Creating List Collection for OrderProduct
-       /// </summary>
-        public static List<OrderProduct> orderList=new List<OrderProduct>();
+        /// <summary>
+        /// Creating List Collection for OrderProduct
+        /// </summary>
+        public static List<OrderProduct> orderList = new List<OrderProduct>();
         public bool AddOrderDataLayer(OrderProduct newOrder)
         {
             bool orderAdded = false;
@@ -37,12 +37,8 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
 
 
-        AddressDataLayer ad= new AddressDataLayer();  
+        AddressDataLayer ad = new AddressDataLayer();
     }
 
-        
-    }
-}
- 
-}
 
+}

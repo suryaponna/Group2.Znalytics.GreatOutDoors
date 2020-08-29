@@ -34,7 +34,6 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <param name="rm"></param>
         public void ExchangeProduct(Return rm)
         {
-            
               _return.ExchangeProduct(rm);
             throw new ReturnException("Product can be exchanged within 1 month of purchased date");
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using GreatOutdoorsProduct.Entities;
-using GreatOutdoorsProduct.Exceptions;
 /// <summary>
 /// data access layer
 /// </summary>

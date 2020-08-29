@@ -1,81 +1,19 @@
 ﻿///// Apoorva///////
 //Customer Entity Layer
 using System;
+using System.Text.RegularExpression;
+using System.Text.RegularExpressions;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
-namespace Znalytics.Group2.GreatOutDoor.Entity
-{ 
-public class CostumerDetail
-{
-    /// <summary>
-    /// fields for signup process
-    /// </summary>
-    private string _id;
-    private string _firstName;
-    private string _lastName;
-    private string _dateOfBirth;
-    private int _age;
-    private string _gender;
-    private long _aadharCard;
-    private string _password;
-    private string _confirmPassword;
-    
-    /// <summary>
-    /// fields for signin process
-    /// </summary>
-        private string _userId;
-        private string password;
 
-    public void SetId(String Id)
+namespace Znalytics.Group2.GreatOutDoor.Entity
+{
+    public class Customer
     {
-        this._id = id;
-    }
-    public string GetId()
-    {
-        return this._id;
-    }
-    public void setPassword(string Password)
-    {
-        this._password = Password;
-    }
-    public string GetPassword()
-    {
-        return this._password;
-    }
-    public void SetFirstName(string FirstName)
-    {
-        this._firstName = FirstName;
-    }
-    public string GetFirstName()
-    {
-        return this._firstName;
-    }
-    public void SetLastName(string LastName)
-    {
-        this._lastName = lastName;
-    }
-    public void SetAge(int Age)
-    {
-        this._age = Age;
-    }
-    public void SetGender(string Gender)
-    {
-        this._gender = Gender;
-    }
-    public void SetAadharCard(long AadharCard)
-    {
-        this._aadharcard = AadharCard;
-    }
-    public void SetPassword(double Password)
-    {
-        this._password = Password;
-    }
-    public void SetConfirmPassword(double ConfirmPassword)
-    {
-        this._confirmpassword = ConfirmPassword;
-    }
-/// <summary>
-/// Represents details of customer
-/// </summary>
+        
+
+        /// <summary>
+        /// Represents details of customer
+        /// </summary>
         // list of details
         private string _customerName;
         private string _customerId;
@@ -85,40 +23,71 @@ public class CostumerDetail
         private long _customerCity;
         private string _customerStreet;
         private string _customerState;
-        private DateTime _customerPinCode;
+        private string _customerPinCode;
         private string _customerCountry;
+        private string _password;
+        private string _gender;
+        private int _age;
+        private string _aadharCardNumber;
+        
 
-        CustomerDetail customer = new CustomerDetail();
-        // Creating constructor
-        public CustomerDetail() { }
-
-
+     
+            
         /// <summary>
-        /// Creating Constructor(which is used to initialize fields)
+        /// Property for Customer userId
         /// </summary>
-        /// <param name="CustomerName">Name of the customer</param>
-        /// <param name="CustomerId">Customer Id</param>
-        /// <param name="CustomerMailId">MailId of customer</param>
-        /// <param name="CustomerPhoneNumber">PhoneNumber of customer</param>
-        /// <param name="CustomerFlatNumber">FlatNumber of customer</param>
-        /// <param name="CustomerCity">City of customer</param>
-        /// <param name="CustomerStreet">Street of customer</param>
-        /// <param name="CustomerState">State of customer</param>
-        /// <param name="CustomerPinCode">Pincode of the customer</param>
-        /// <param name="CustomerCountry">Country of the customer</param>
-        CustomerDetail(string CustomerName, string CustomerId, string CustomerMailId, int CustomerPhoneNumber, int CustomerFlatNumber, string CustomerCity, string CustomerStreet, string CustomerState, int CustomerPinCode, string CustomerCountry)
+        public string user Id
         {
-            _customerName = CustomerName;
-            _customerId = CustomerId;
-            _customerMailId = CustomerMailId;
-            _customerPhoneNumber = CustomerPhoneNumber;
-            _customerFlatNumber = CustomerFlatNumber;
-            _customerCity = CustomerCity;
-            _customerStreet = CustomerStreet;
-            _customerState = CustomerState;
-            _customerPinCode = CustomerPinCode;
-            _customerCountry = CustomerCountry;
+            set
+            {
+                Regex r = new Regex("^[a-zA-Z\\d*]{8,20}$");//User ID cannot be all numeric
+                                                            // User ID cannot have special characters
+                                                            //Minimum length of 8 characters
+                                                            //Maximum length of 20 characters
+                                                            //Can be all alphabetic
+                                                            //Can be alphanumeric
+                if (r.IsMatch(value))
+                {
+                    _userId = value;
+                }
+                else
+                {
+                    throw new System.Exception("Cannot contain special characters and cannot be all numeric");
+                }
+            }
+            get
+            {
+                return _userId;
+            }
         }
+        /// <summary>
+        /// Property for password
+        /// </summary>
+        pubic string Password
+        {
+            set
+            {
+                Regex r = new Regex("?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$");
+                // conditions are string must be between 8 and 15 characters long. 
+                //string must contain at least one number. 
+                //string must contain at least one uppercase letter. 
+                //string must contain at least one lowercase letter.
+                if (r.IsMatchValue)
+                {
+                    _password = value;
+                }
+                else
+                {
+                    throw new System.Exception("It is invalid");
+                }
+                get
+                    {
+                    return _password;
+                }
+            }
+        }
+
+
 
         /// <summary>
         /// Name of the Customer
@@ -254,9 +223,9 @@ public class CostumerDetail
             }
             get
             {
-              return _customerPinCode;
+                return _customerPinCode;
             }
-            }
+        }
 
         /// <summary>
         /// City of the Country
