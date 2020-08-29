@@ -28,9 +28,13 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             Console.WriteLine("Enter The Retail store Id");
             r.RetailStoreID = Console.ReadLine();
             Console.WriteLine("The retail store Id is:" + r.RetailStoreID);
+            //customer name has to enter
             Console.WriteLine("Enter Customer Name");
+            r.CustomerName = Console.ReadLine();
+            Console.WriteLine("customer name is:" + r.CustomerName);
 
-            //choice of choosing reports to the amount
+
+            //choice of choosing reports for paying  the amount
             Console.WriteLine("================Select the choice  for payment choosing reports================");
             Console.WriteLine("Enter 1 for Monthly reports");
             Console.WriteLine("Enter 2 for Quaterly reports");
@@ -547,6 +551,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
             Console.ReadKey();
         }
+        /// <summary>
+        /// Method t add quantity of products
+        /// </summary>
         public static void AddProductQuantity()
         {
             Retailstore r = new Retailstore();
