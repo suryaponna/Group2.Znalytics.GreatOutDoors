@@ -15,6 +15,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         private string _producttype;
         private DateTime _exchangedate;
 
+
+        ///<param name = "productID" > Represents ID of the Product</param>
+        /// <param name="productname">Represents name of the Product</param>
+        /// <param name="productdate">Represents on which date the product has been purchased</param>
+        /// <param name="productQuantity">Represents the amount or number of a product is purchased</param>
+        /// <param name="producttype">Represents the type of product</param>
+        /// <param name="exchangedate">Represents on which date the product is exchanged</param>
+
         ///Property for ProductID details
         public int ProductID
         {
@@ -44,7 +52,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             }
         }
         /// <summary>
-        /// Productdate
+        /// Property for Productdate
         /// </summary>
         public DateTime Productdate
         {
@@ -52,7 +60,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         set; get;
         }
         /// <summary>
-        /// Product Quantity
+        ///Property for Product Quantity
         /// </summary>
 
         public int ProductQuantity
@@ -70,7 +78,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             }
         }
         /// <summary>
-        /// Product Type
+        ///Property for Product Type
         /// </summary>
         public string Producttype
         {
@@ -86,13 +94,16 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 return _producttype;
             }
         }
+        /// <summary>
+        /// Property for Exchangedate
+        /// </summary>
 
         public DateTime ExchangeDate
 
         {
             set
             {
-                //get the eligible date (present date - 18 years)
+                
                 DateTime exchangeDate = DateTime.Now;
                 exchangeDate = exchangeDate.AddDays(-30);
 
@@ -102,7 +113,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 }
                 else
                 {
-                    throw new Exception(nameof(ExchangeDate) + " should be less than " + Productdate.ToString("dd/M/yyyy"));
+                    throw new Exception(nameof(ExchangeDate) + " should be within 1month of purchased date " + Productdate.ToString("dd/M/yyyy"));
                 }
             }
             get

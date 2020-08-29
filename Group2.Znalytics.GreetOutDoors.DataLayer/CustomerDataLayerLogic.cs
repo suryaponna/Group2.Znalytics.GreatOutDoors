@@ -1,44 +1,47 @@
-﻿using System;
+﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
-using Znalytics.Group2.GreatOutdoors.Entities;
-namespace Znalytics.Group2.GreatOutdoors.DataAccessLayer
+using Group2.Znalytics.GreetOutDoors.DataLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+namespace Znalytics.Group2.GreatOutDoor.Entity
+
 {
-    public class CustDataLayer
+    /// <summary>
+    /// Represents Data Access Layer of  the customer Personal details
+    /// </summary>
+    public class CustomerDetailDAL : ICustomerDetailDAL
     {
-        static List<Customer> _customers = new List<Customer>();/// <summary>
-                                                                /// creating CustomersList///
-                                                                /// </summary>
-                                                                /// <param name="c"></param>
-        public void AddCustomer(Customer c) //calling Add Customer method from Business Logic Layer//
+        //private fields
+        //private static List<CustomerPersonalDetail> _customers;
+
+        List<CustomerDetail> customerdetail = new List<CustomerDetail>();
+
+        //Adding Customer Personal Details
+        public void AddCustomer(CustomerDetail customer)
         {
-            _customers.Add(c);///adding values to customers list///
+            customerdetail.Add(customer);
         }
 
-        public List<Customer> GetCustomers()
+        //Getting existing Customer details
+        public void ViewCustomer(CustomerDetail customer)
         {
-            return _customers;
-        }
-        public void UpdateCustomer(Customer c)
-        {
-            ///updating deatils based on cust id///
-            Customer cu = _customers.Find(temp => temp.CustomerId == c.CustomerId);
-            if (cu != null)
+            List<CustomerDetail> GetCustomers()
             {
-                cu.Country = c.Country;
+                return customerdetail;
             }
         }
-        public List<Customer> GetCust()
+
+        //Updation of customer details
+        public void UpdateCustomer(CustomerDetail customer)
         {
-            return _customers;
-        }
-        public void DeleteCustomer(Customer c)
-        {
-            Customer t = _customers.Find((temp => temp.CustomerName == c.CustomerName));
-            _customers.Clear();//deleting customers deatils based on given condition//
+            //Get matching customer based on CustomerId
+            CustomerDetail cust = customerdetail.Find(temp => temp.CustomerId == customer.CustomerId);
+            if (customer != null)
+            {
+                customer.CustomerName = customer.CustomerName;
+            }
         }
     }
+}
+
 }

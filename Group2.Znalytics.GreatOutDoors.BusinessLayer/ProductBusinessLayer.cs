@@ -4,13 +4,13 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
 {
 
     /// <summary>
-    /// refers tp Product BusinessLogic
+    /// refers to Product BusinessLogic
     /// </summary>
     public class ProductBusiness
     {
 
         /// <summary>
-        /// adding the products 
+        /// adding the products     
         /// </summary>
         /// <param name="n"> gets object of ProductDetails</param>
         public void AddProducts(ProductDetails n)

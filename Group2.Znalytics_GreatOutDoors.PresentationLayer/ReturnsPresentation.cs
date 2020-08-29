@@ -4,6 +4,9 @@ using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
+/// <summary>
+/// This is the Main method for the project
+/// </summary>
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -26,11 +29,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("1.ReturnProduct");
                 Console.WriteLine("2.ExchangeProduct");
                 Console.WriteLine("3.AddReturn");
-                Console.WriteLine("4.GetReturnsByProductID");
-                Console.WriteLine("5. RemoveReturnByProductID");
-                Console.WriteLine("6.RemoveReturnByProductName");
-                Console.WriteLine("7.GetReturns");
-                Console.WriteLine("8.Exit");
+                Console.WriteLine("4.RemoveReturnByProductID");
+                Console.WriteLine("5.RemoveReturnByProductName");
+                Console.WriteLine("6.GetReturns");
+                Console.WriteLine("7.Exit");
 
                 Console.Write("Enter choice: ");
                 choice = int.Parse(Console.ReadLine());
@@ -39,10 +41,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     case 1: ReturnProduct(); break;
                     case 2: ExchangeProduct(); break;
                     case 3: AddReturn(); break;
-                    // case 4: GetReturnsByProductID(); break;
-                    case 5: RemoveReturnByProductID(); break;
-                    case 6: RemoveReturnByProductName(); break;
-                    case 7: GetReturns(); break;
+                    case 4: RemoveReturnByProductID(); break;
+                    case 5: RemoveReturnByProductName(); break;
+                    case 6: GetReturns(); break;
+                    case 7: Exit();break;
                 }
             } while (choice != 8);
         }
@@ -86,7 +88,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             System.Console.WriteLine("Enter ProductID");
             rm.ProductID = System.Convert.ToInt32(System.Console.ReadLine());
-
+           
 
             System.Console.WriteLine("Enter ProductName");
             rm.ProductName = System.Console.ReadLine();
@@ -157,19 +159,26 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         static void ExchangeProduct()
         {
             // Creating object for Business Layer
-            Return rm = new Return();
-            Console.WriteLine("Enter the product date");
-            rm.Productdate = System.Convert.ToDateTime(Console.ReadLine());
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
+            try
+            {
+                Return rm = new Return();
+                Console.WriteLine("Enter the product date");
+                rm.Productdate = System.Convert.ToDateTime(Console.ReadLine());
+                ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
 
 
-            Console.WriteLine("Enter name of the product you want to exchange");
-            rm.ProductName = Console.ReadLine();
+                Console.WriteLine("Enter name of the product you want to exchange");
+                rm.ProductName = Console.ReadLine();
 
-            Console.WriteLine("Enter with which product you want to exchange");
-            rm.ProductName = Console.ReadLine();
-            Console.WriteLine("Your Product will be Exchanged soon!!");
-            rbl.ExchangeProduct(rm);
+                Console.WriteLine("Enter with which product you want to exchange");
+                rm.ProductName = Console.ReadLine();
+                Console.WriteLine("Your Product will be Exchanged soon!!");
+                rbl.ExchangeProduct(rm);
+            }
+            catch(ReturnException ex)
+            {
+                Console.WriteLine(ex.Message );
+            }
         }
         static void Exit()
         {
@@ -189,11 +198,6 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         }
         //
 
-        static void GetReturnsByProductID(int Id)
-        {
-            ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
-            Return rm = new Return();
-            rbl.GetReturnsByProductID(Id);
         }
         //
         static void RemoveReturnByProductID()
@@ -203,7 +207,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.Write("Enter the ProductID to be Deleted:");
             int id = int.Parse(System.Console.ReadLine());
 
-            // rbl.RemoveReturnByProductID(id);
+            rbl.RemoveReturnByProductID(id);
             System.Console.WriteLine("ProductID Removed");
 
 
@@ -218,26 +222,24 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             rbl.RemoveReturnByProductName(name);
             System.Console.WriteLine("Product Removed");
         }
+       
 
-
-        //
-        static void GetReturns()
-        {
+            //
+            static void GetReturns()
+            {   
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             rbl.GetReturns();
 
             List<Return> rets = rbl.GetReturns();
             //Displays all the details 
-            System.Console.WriteLine("--------------- Detils are --------------");
-            System.Console.WriteLine("Product Id: " + rm.ProductID);
-            System.Console.WriteLine("Product Name: " + rm.ProductName);
-            System.Console.WriteLine("Product date is: " + rm.Productdate);
-            System.Console.WriteLine("Product Quantity is: " + rm.ProductQuantity);
-            System.Console.WriteLine("Product type is: " + rm.Producttype);
-            System.Console.WriteLine("ThankYou for your Response");
-            System.Console.ReadKey();
+            foreach (Return item in rets)
+            {
 
+
+                System.Console.WriteLine("--------------- Detils are --------------");
+                Console.WriteLine(item.ProductID + "  " + item.ProductName + " , " + item.ProductQuantity + "  , " + item.Producttype + "  " + item.Productdate + "  ");
+            }
         }
 
 
