@@ -28,5 +28,12 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             throw new NotImplementedException();
         }
+
+        //Method to add product qunatity to the
+        public void AddProductQuantity(Retailstore p)
+        {
+            throw new NotImplementedException();
+            
+        }
     }
 }
