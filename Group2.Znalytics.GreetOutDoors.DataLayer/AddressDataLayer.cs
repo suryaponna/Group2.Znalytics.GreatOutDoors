@@ -190,10 +190,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <param name="ad"></param>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public AddressDetail ReturnAddress(AddressDetail ad,int Id) {
+        public AddressDetail ReturnAddress(AddressDetail ad) {
             AddressDetail samp=null;
             foreach (var temp in _customerAddressesList) {
-                if (temp.CustomerId == ad.CustomerId && Id == (int)temp.AddressId) {
+                if (temp.CustomerId == ad.CustomerId && temp.AddressId==ad.AddressId) {
                     samp = temp;
                 }
             }
