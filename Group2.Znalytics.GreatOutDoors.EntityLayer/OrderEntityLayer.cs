@@ -7,62 +7,54 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     /// <summary>
     /// Represents details of Order
     /// </summary>
-   public class OrderEntityLayer
+    public class OrderProduct
     {
         //private fields
-        private string _customerName;
         private string _productID;
-        private string _quantity;
-        private string _address;
-        private string _addToCart;
-        private string _paymentprocess;
-        /// <summary>
-        /// Constructor that initializes the details of Customer
-        /// </summary>
-        /// <param name="customerName"></param>
-        /// <param name="productID"></param>
-        /// <param name="address"></param>
-        /// <param name="quantity"></param>
-        /// <param name="addToCart"></param>
-        /// <param name="paymentprocess"></param>
-        public void Customer(string customerName,string productID,string address,string quantity,string addToCart,string paymentprocess)
+        private string _addToCart;   //one order id may have multiple product id
+        private string _quantity;     //each product has its own quantity
+        private string _sellingPrice;   //each product has a unique selling price
+        private string _totalAmount;    //_quantity*_sellingPrice
+        private string _amountPayable;  //total amount payable
+        private string _finalDelieveryAddress;
+        //private DateTime _timeOfSale;  //for time on shelf      
+        private string _orderID;
+
+        public OrderProduct()
         {
-            _customerName = customerName;
-            _productID = productID;
-            _address = address;
-            _quantity = quantity;
-            _addToCart = addToCart;
-            _paymentprocess = paymentprocess;
         }
+
         /// <summary>
-        /// Initializes the property of customerName
+        /// Constructor that initializes the details to order the product
         /// </summary>
-        public string CustomerName
+        /// <param name="ProductID"></param>
+        /// <param name="AddToCart"></param>
+        /// <param name="Quantity"></param>
+        /// <param name="SellingPrice"></param>
+        /// <param name="TotalAmount"></param>
+        /// <param name="AmountPayable"></param>
+        /// <param name="FinalDelieveryAddress"></param>
+        /// <param name="TimeOfSale"></param>
+        /// <param name="OrderID"></param>
+        public OrderProduct(string ProductID, string AddToCart, string Quantity, string SellingPrice, string TotalAmount, string AmountPayable, string FinalDelieveryAddress, string TimeOfSale, string OrderID)
+        {
+            _productID = ProductID;
+            _addToCart = AddToCart;
+            _quantity = Quantity;
+            _sellingPrice = SellingPrice;
+            _totalAmount = TotalAmount;
+            _amountPayable = AmountPayable;
+            _finalDelieveryAddress = FinalDelieveryAddress;
+            // _timeOfSale = TimeOfSale;
+            _orderID = OrderID;
+        }
+        public string ProductID
         {
             set
             {
                 if (value.Length <= 10)
                 {
-                    this._customerName = value;
-                }
-                else
-                { 
-                    throw new Exception("Your name exceeded the size that maximum characters are 14");
-                }
-            }
-            get
-            {
-                return _customerName;
-            }
-        }
-
-        public string ProductID
-        {
-            set
-            {
-                if(value.Length <=20)
-                {
-                    this._productID = value;
+                    _productID = value;
                 }
 
             }
@@ -71,27 +63,13 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 return _productID;
             }
         }
-        public string Address
-        {
-            set
-            {
-                if(value.Length<=50)
-                {
-                    this._address = value;
-                }
-            }
-            get
-            {
-                return _address;
-            }
-        }
         public string AddToCart
         {
             set
             {
-                if(value.Length<30)
+                if (value.Length <= 10)
                 {
-                    this._addToCart = value;
+                    _addToCart = value;
                 }
             }
             get
@@ -99,20 +77,92 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 return _addToCart;
             }
         }
-        public string PaymentProcess
+        public string Quantity
         {
             set
             {
-                if(value.Length<=30)
+                if (value.Length <= 10)
                 {
-                    this._paymentprocess = value;
+                    _quantity = value;
                 }
             }
             get
             {
-                return _paymentprocess;
+                return _quantity;
             }
         }
-    }
+        public string SellingPrice
+        {
+            set
+            {
+                if(value.Length<=10)
+                {
+                    _sellingPrice = value;
+                }
+            }
+            get
+            {
+                return _sellingPrice;
+            }
+        }
+        public string TotalAmount
+        {
+            set
+            {
+                if(value.Length<=10)
+                {
+                    _totalAmount = value;
+                }
+            }
+            get
+            {
+                return _totalAmount;
+            }
+        }
+        public string AmountPayable
+        {
+            set
+            {
+                if(value.Length<=10)
+                {
+                    _amountPayable = value;
+                }
+            }
+            get
+            {
+                return _amountPayable;
+            }
+        }
+        public string FinalDelieveryAddress
+        {
+            set
+            {
+                if(value.Length<=50)
+                {
+                    _finalDelieveryAddress = value;
+                }
+            }
+            get
+            {
+                return _finalDelieveryAddress;
+            }
+        }
+       public string OrderID
+        {
+            set
+            {
+                if(value.Length<=10)
+                {
+                    _orderID = value;
+                }
+            }
+            get
+            {
+                return _orderID;
+            }
+        }
 
+        public string ProductName { get; set; }
+    }
 }
+
