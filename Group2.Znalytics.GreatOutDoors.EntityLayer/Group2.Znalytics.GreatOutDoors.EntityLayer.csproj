@@ -50,6 +50,7 @@
     <Compile Include="Retailstore.cs" />
     <Compile Include="RetailstoreException.cs" />
     <Compile Include="Return.cs" />
+    <Compile Include="ReturnException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
