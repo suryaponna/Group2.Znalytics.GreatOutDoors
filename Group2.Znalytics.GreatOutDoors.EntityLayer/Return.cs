@@ -8,7 +8,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     public class Return
     {
         //private fields
-        private int _productID;
+        private string _productID;
         private string _productName;
         private DateTime _productdate;
         private int _productQuantity;
@@ -24,7 +24,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <param name="exchangedate">Represents on which date the product is exchanged</param>
 
         ///Property for ProductID details
-        public int ProductID
+        public string ProductID
         {
             set
             {
