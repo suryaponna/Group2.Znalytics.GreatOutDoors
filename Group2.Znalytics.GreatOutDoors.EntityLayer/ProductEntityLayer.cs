@@ -18,6 +18,7 @@ namespace Group2.Znalytics.GreetOutDoors.Product.Entities
         /// </summary>
         public string ProductName
         {
+
             set
             {
                 if (value != " ")
