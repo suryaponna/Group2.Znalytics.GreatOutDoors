@@ -25,7 +25,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         void RemoveAddress(AddressDetail ad,int Id);
         List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
         void AddressAnotherAddressToCustomer(AddressDetail ad);
-        void UpdateExistingAddress(int id,AddressDetail ad);
+        void UpdateExistingAddress(AddressDetail ad);
         
 
 

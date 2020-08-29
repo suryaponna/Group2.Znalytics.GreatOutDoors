@@ -156,9 +156,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             get => _customerAddressesList[index]; 
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
-        public void UpdateExistingAddress(int Id,AddressDetail ad) {
+        public void UpdateExistingAddress(AddressDetail ad) {
             for (int i=0; i < _customerAddressesList.Count; i++){
-                if (_customerAddressesList[i].CustomerId == Id) {
+                if (_customerAddressesList[i].CustomerId == ad.CustomerId) {
                     _customerAddressesList[i] = ad;
                 }   
             }
