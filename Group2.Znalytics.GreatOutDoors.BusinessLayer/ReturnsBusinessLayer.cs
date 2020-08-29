@@ -47,7 +47,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
                     if (rm.Productdate < exchangeDate)
                     {
-                        _rd.ExchangeProduct(rm);
+                        ExchangeProduct(rm);
                     }
                    
             }
@@ -63,10 +63,9 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <returns></returns>
         public List<Return> GetReturns()
         {
-            return _rd;
+            return _rd.GetReturns();
         }
-        //Method to display Return  by ProductId
-        // public List<Return> GetReturnByProductID() => _rd.GetReturnByProductID();
+        
         /// <summary>
         /// Method for Removing Return by productname
         /// </summary>
