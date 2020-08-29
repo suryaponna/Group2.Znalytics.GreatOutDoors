@@ -1,4 +1,5 @@
-﻿using System;
+﻿///-------------------Surya
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,9 @@ using Znalytics.Group2.GreatOutDoor.Entity;
 
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
+    /// <summary>
+    /// Interface For Data Layer
+    /// </summary>
     public interface IAddressDataLayer
     {
         /// <summary>
