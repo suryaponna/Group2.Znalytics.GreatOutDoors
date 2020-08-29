@@ -25,6 +25,9 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
 
         }
+        public RetailstoreException(string message,Exception innerException):base(message) { 
+            
+        }
     }
 
 
