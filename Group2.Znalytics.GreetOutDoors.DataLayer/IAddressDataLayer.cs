@@ -48,6 +48,12 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// </summary>
         /// <param name="ad"></param>
         void UpdateExistingAddress(AddressDetail ad);
+        /// <summary>
+        /// Changed Defalut Address of Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        void ChangeDefaultAddrees(AddressDetail ad);
+
         
 
 

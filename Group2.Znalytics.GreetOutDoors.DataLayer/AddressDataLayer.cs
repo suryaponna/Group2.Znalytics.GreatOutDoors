@@ -235,7 +235,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void RemoveAddress(AddressDetail ad) {
             _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
         }
-        
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+            sam.DefaultAddressOrNot = false;
+            ad.DefaultAddressOrNot = true;
+
+        }
+
+
 
     }
 }

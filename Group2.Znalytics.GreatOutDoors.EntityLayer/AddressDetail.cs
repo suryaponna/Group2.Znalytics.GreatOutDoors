@@ -254,6 +254,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                     _defaultAddress = false;
                 }
             }
+            get {
+                return _defaultAddress;
+            }
         }
 
     }
