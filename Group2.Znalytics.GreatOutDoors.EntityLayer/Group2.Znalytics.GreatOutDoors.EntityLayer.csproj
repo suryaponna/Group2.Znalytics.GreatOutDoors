@@ -46,6 +46,7 @@
     <Compile Include="AddressType.cs" />
     <Compile Include="ProductException.cs" />
     <Compile Include="ExchangeEntityLayer.cs" />
+    <Compile Include="OrderEntityLayer.cs" />
     <Compile Include="ProductEntityLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailstore.cs" />

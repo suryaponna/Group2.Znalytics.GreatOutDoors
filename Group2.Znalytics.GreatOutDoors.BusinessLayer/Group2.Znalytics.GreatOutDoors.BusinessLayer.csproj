@@ -49,6 +49,8 @@
     <Compile Include="IproductBusinessLogicLayer.cs" />
     <Compile Include="IRetailStoreBusinessLogicLayer.cs" />
     <Compile Include="IReturnsBusinessLayer.cs" />
+    <Compile Include="OrderBusinessLayer.cs" />
+    <Compile Include="OrderException.cs" />
     <Compile Include="ProductBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailStoreBusinessLogicLayer.cs" />
