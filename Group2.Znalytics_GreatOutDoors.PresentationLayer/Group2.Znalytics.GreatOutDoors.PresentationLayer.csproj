@@ -49,6 +49,7 @@
     <Compile Include="AddressPresentation.cs" />
     <Compile Include="CustomerPresentationLayerLogic.cs" />
     <Compile Include="Exchange.cs" />
+    <Compile Include="GreatOutDoorsMenu.cs" />
     <Compile Include="OrderPresentationLayer.cs" />
     <Compile Include="ProductPresentationLayer.cs" />
     <Compile Include="RetailstorePresentationLayer.cs" />
