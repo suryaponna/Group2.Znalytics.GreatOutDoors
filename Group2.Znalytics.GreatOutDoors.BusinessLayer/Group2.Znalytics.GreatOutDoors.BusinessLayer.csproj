@@ -61,10 +61,6 @@
       <Project>{eb5e0352-6c8c-4f46-8f9a-d9f688f99b06}</Project>
       <Name>Group2.Znalytics.GreatOutDoors.EntityLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Group2.Znalytics.GreetOutDoors.DataLayer\Group2.Znalytics.GreatOutDoors.DataLayer.csproj">
-      <Project>{172ea8de-6d94-415e-8e83-c2fa903e7a82}</Project>
-      <Name>Group2.Znalytics.GreatOutDoors.DataLayer</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
