@@ -119,8 +119,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void AddAnotherAddressToCustomer(AddressDetail ad) {
             dll.AddAnotherAddressToCustomer(ad);
         }
-        
-        
-    
+        /// <summary>
+        /// Changing Deafult Address method calling to Data Layer
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            dll.ChangeDefaultAddrees(ad);
+        }
+
+
     }
 }

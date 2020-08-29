@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
+using Newtonsoft.Json;
+using System.IO;
 /// <summary>
 /// This is the Main method for the project
 /// </summary>
@@ -195,6 +197,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             rbl.AddReturns(rm);
             Console.WriteLine("Product  Added");
+
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
+            string s2 = streamReader.ReadToEnd();
+            List<Return> _return = JsonConvert.DeserializeObject<List<Return>>(s2);
         }
         //
 
