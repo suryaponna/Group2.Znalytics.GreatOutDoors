@@ -234,8 +234,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="ad"></param>
         /// <param name="Id"></param>
-        public void RemoveAddress(AddressDetail ad,int Id) {
-            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && Id == (int)samp.AddressId);
+        public void RemoveAddress(AddressDetail ad) {
+            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
         }
         
 

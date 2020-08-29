@@ -8,11 +8,37 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
     public interface IAddressBusinessLayer
     {
+        /// <summary>
+        /// Method return Default address of Customer
+        /// </summary>
+        /// <param name="ad">Customer Adddress Object</param>
+        /// <returns></returns>
         AddressDetail RetunDefaultAddress(AddressDetail ad);
-        AddressDetail ReturnAddress(AddressDetail ad, int Id);
-        void RemoveAddress(AddressDetail ad, int Id);
-        List<AddressDetail> CustomerAllAddress(AddressDetail ad);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        AddressDetail ReturnAddress(AddressDetail ad);
+        /// <summary>
+        /// Removing Particular Address
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        void RemoveAddress(AddressDetail ad);
+        /// <summary>
+        /// Returns All Addresses OF Particular Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <returns></returns>
+        List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
+        /// <summary>
+        /// Adding Another Address To Customer
+        /// </summary>
+        /// <param name="ad">new Address Object</param>
         void AddressAnotherAddressToCustomer(AddressDetail ad);
-        void UpdateExistingAddress(int id, AddressDetail ad);
+        void UpdateExistingAddress(AddressDetail ad);
+
     }
 }
