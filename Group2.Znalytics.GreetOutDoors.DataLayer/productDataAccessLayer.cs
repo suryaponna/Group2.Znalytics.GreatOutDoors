@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 using System.Data;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
-
+/// <summary>
+/// data access layer
+/// </summary>
 namespace GreatOutdoorsProduct.DataAccessLayer
 {
     public class ProductDataAccessLayer
-    {
+    {   
+        //private fields
         public static List<Product> productList = new List<Product>();
-
+        /// <summary>
+        /// adding products
+        /// </summary>
+        /// <param name="newProduct"></param>
+        /// <returns></returns>
         public bool AddProductDataAccessLayer(Product newProduct)
         {
             bool productAdded = false;
@@ -28,7 +35,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             return productAdded;
 
         }
-
+        //getting productdetails
         public List<Product> GetAllProductsDataAccessLayer()
         {
             return productList;
