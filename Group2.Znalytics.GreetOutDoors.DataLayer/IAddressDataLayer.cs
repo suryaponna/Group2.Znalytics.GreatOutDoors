@@ -22,9 +22,23 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// <param name="Id"></param>
         /// <returns></returns>
         AddressDetail ReturnAddress(AddressDetail ad);
-        void RemoveAddress(AddressDetail ad,int Id);
+        /// <summary>
+        /// Removing Particular Address
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        void RemoveAddress(AddressDetail ad);
+        /// <summary>
+        /// Returns All Addresses OF Particular Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <returns></returns>
         List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
-        void AddressAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Adding Another Address To Customer
+        /// </summary>
+        /// <param name="ad">new Address Object</param>
+        void AddAnotherAddressToCustomer(AddressDetail ad);
         void UpdateExistingAddress(AddressDetail ad);
         
 
