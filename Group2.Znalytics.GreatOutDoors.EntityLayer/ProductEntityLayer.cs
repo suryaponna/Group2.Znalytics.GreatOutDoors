@@ -1,190 +1,132 @@
-namespace Group2.Znalytics.GreetOutDoors.Product.Entities
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace GreatOutdoorsProduct.Entities
 {
-    /// <summary>
-    /// referes to ProductDetails class in Entities 
-    /// </summary>
-    public class ProductDetails
+    public class Product
     {
-        //creating private feilds
-        public string _productName;
-        public int _productId;
-        public string _productColor;
-        public string _productType;
-        public double _productPrice;
-
-
+        
         /// <summary>
-        /// creating Property for ProductName
+        /// creating property for product id
         /// </summary>
-        public string ProductName
+        public int _productID
         {
             set
             {
-                if (value != " ")
-                    _productName = value;
+                _productID = value;
+            }
+            get
+            {
+                return _productID;
+            }
+
+        }
+        
+        /// <summary>
+        /// creating property for productName
+        /// </summary>
+        public string _productName
+        {
+            set
+            {
+              _productName = value;
             }
             get
             {
                 return _productName;
             }
+
         }
 
         /// <summary>
-        /// creating Property for ProductID
+        /// creating property for categoryid
         /// </summary>
-        public int ProductID
+        public int _categoryID
         {
+
             set
             {
-                _productId = value;
+                _categoryID = value;
             }
             get
             {
-                return _productId;
+                return _categoryID;
             }
         }
-
-
+        
         /// <summary>
-        /// creating property for product color///
+        /// creating property for specification id
         /// </summary>
-        public string ProductColor
+        public int _specificationID
         {
+
             set
             {
-                _productColor = value;
+                _specificationID = value;
             }
             get
             {
-                return _productColor;
+                return _specificationID;
             }
         }
 
+        
         /// <summary>
-        /// creating property for product Type///
+        /// creating property for costprice
         /// </summary>
-        public string ProductType
+        public double _costPrice
         {
+
             set
             {
-                _productType = value;
+                _costPrice = value;
             }
             get
             {
-                return _productType;
+                return _costPrice;
             }
         }
 
+        
         /// <summary>
-        /// creating Property for Price
+        /// creating property for selling price
         /// </summary>
-        public double Productprice
+        public double _sellingPrice
         {
+
             set
             {
-                _productPrice = value;
+                _sellingPrice = value;
             }
             get
             {
-                return _productPrice;
+                return _sellingPrice;
             }
         }
+
+        
+        /// <summary>
+        /// creating property for available products
+        /// </summary>
+        public Boolean _available
+        {
+
+            set
+            {
+                _available = value;
+            }
+            get
+            {
+                return _available;
+            }
+        }
+
+
 
     }
-
-    public class Categories
-    {
-        public string _personalAccessories;
-        public string _golfEquipment;
-        public string _campingEquipment;
-        public string _mountaineeringEquipment;
-        public string _outdoorProtection;
-
-        /// <summary>
-        /// creating property for personal accesories
-        /// </summary>
-        public string PersonalAccesories
-        {
-            set
-            {
-                _personalAccessories = value;
-            }
-            get
-            {
-                return _personalAccessories;
-            }
-        }
-        /// <summary>
-        /// creating property for golf equipment
-        /// </summary>
-        public string GolfEquipment
-        {
-            set
-            {
-                _golfEquipment = value;
-            }
-            get
-            {
-                return _golfEquipment;
-
-            }
-        }
-        /// <summary>
-        /// creating property for camping equipment
-        /// </summary>
-        public string CampingEquipment
-        {
-            set
-            {
-                _campingEquipment = value;
-
-            }
-            get
-            {
-                return _campingEquipment;
-            }
-        }
-        /// <summary>
-        /// craeting property for mountaineering equipment
-        /// </summary>
-        public string MountaineeringEquipment
-        {
-            set
-            {
-                _mountaineeringEquipment = value;
-
-            }
-            get
-            {
-                return _mountaineeringEquipment;
-            }
-        }
-        /// <summary>
-        /// creating property for outdoor protection
-        /// </summary>
-        public string OutdoorProtection
-        {
-            set
-            {
-                _outdoorProtection = value;
-
-            }
-            get
-            {
-                return _outdoorProtection;
-            }
-        }
-    }
- }
-
-
-
-
-
-
-
-
-
-
-
+}
 
