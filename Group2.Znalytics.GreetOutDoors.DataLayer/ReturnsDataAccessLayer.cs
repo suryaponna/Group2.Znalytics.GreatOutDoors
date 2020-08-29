@@ -42,6 +42,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
 
         }
+        /// <summary>
+        /// Method to AddReturns
+        /// </summary>
+        /// <param name="rm">Object of Returns in presentation layer</param>
 
         public void AddReturns(Return rm)// 
         {
@@ -50,25 +54,15 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
 
         }
-        /// <summary>
-        ///  To Exchange a product
-        /// </summary>
-        /// <param name="rm"></param>
-        public void ExchangeProduct(Return rm)
-        {
-
-             _return.ExchangeProduct(rm);
-            throw new ReturnException("Product can be exchanged within 1 month of purchased date");
-
-
-        }
-
-        public List<Return> ReturnList()
+        public List<Return> GetReturns()
         {
             return _return;
-            ListOfReturn();
-
         }
+       
+        
+        /// <summary>
+        /// Inherited from IEnumerable and Generates IEnumerator which acts as Iterator
+        /// </summary>
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < _return.Count; i++)
@@ -77,13 +71,19 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
         }
 
-        
+        /// <summary>
+        ///  Method for Removing Return by ProductID
+        /// </summary>
+        /// <param name="Id">Represents ProductID</param>
         public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
         {
              _return.RemoveAll(temp => temp.ProductID == Id);
 
         }
-
+        /// <summary>
+        /// Method for removing Return by product name
+        /// </summary>
+        /// <param name="name">Represents Productname</param>
         public void RemoveReturnByProductName(string name)// Removing a Product By using Product Name
         {
 
@@ -97,7 +97,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 throw new ReturnException("Product ID doesn't exists");
             }
 
-            ListOfReturn();
+           
 
         }   
     }
