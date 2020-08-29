@@ -109,7 +109,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <param name="ad">Customer Address Object</param>
         /// <returns></returns>
         public List<AddressDetail> CustomerAllAddress(AddressDetail ad) {
-            List<AddressDetail> AllAddresses = dll.CustomerAllAddress(ad);
+            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(ad);
             return AllAddresses;
         }
         /// <summary>

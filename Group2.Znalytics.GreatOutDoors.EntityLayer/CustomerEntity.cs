@@ -6,14 +6,24 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 { 
 public class CostumerDetail
 {
+    /// <summary>
+    /// fields for signup process
+    /// </summary>
     private string _id;
     private string _firstName;
     private string _lastName;
+    private string _dateOfBirth;
     private int _age;
     private string _gender;
     private long _aadharCard;
     private string _password;
     private string _confirmPassword;
+    
+    /// <summary>
+    /// fields for signin process
+    /// </summary>
+        private string _userId;
+        private string password;
 
     public void SetId(String Id)
     {
@@ -209,7 +219,7 @@ public class CostumerDetail
         }
 
         /// <summary>
-        /// State of the Customer
+        /// State of the Customerr
         /// </summary>
         public string CustomerState
         {
