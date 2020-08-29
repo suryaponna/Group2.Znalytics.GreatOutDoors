@@ -116,8 +116,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Adding Another Address to Existing Customer
         /// </summary>
         /// <param name="ad"></param>
-        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
-            dll.AddressAnotherAddressToCustomer(ad);
+        public void AddAnotherAddressToCustomer(AddressDetail ad) {
+            dll.AddAnotherAddressToCustomer(ad);
         }
         
         
