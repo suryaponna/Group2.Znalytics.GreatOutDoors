@@ -1,18 +1,28 @@
-﻿/// <summary></summary>
-// Created by K.Prasanna
+﻿// Created by K.Prasanna
+using System;
+/// <summary></summary>
 /// This is Return Module
 /// </summary>
-namespace Group2.Znalytics.GreetOutDoors.EntityLayer
+namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     public class Return
     {
         //private fields
         private int _productID;
         private string _productName;
-        private string _productdate;
+        private DateTime _productdate;
         private int _productQuantity;
         private string _producttype;
-        private string _accepted;
+        private DateTime _exchangedate;
+
+
+        ///<param name = "productID" > Represents ID of the Product</param>
+        /// <param name="productname">Represents name of the Product</param>
+        /// <param name="productdate">Represents on which date the product has been purchased</param>
+        /// <param name="productQuantity">Represents the amount or number of a product is purchased</param>
+        /// <param name="producttype">Represents the type of product</param>
+        /// <param name="exchangedate">Represents on which date the product is exchanged</param>
+
         ///Property for ProductID details
         public int ProductID
         {
@@ -42,21 +52,15 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
             }
         }
         /// <summary>
-        /// Productdate
+        /// Property for Productdate
         /// </summary>
-        public string Productdate
+        public DateTime Productdate
         {
-            set
-            {
-                _productdate = value;
-            }
-            get
-            {
-                return _productdate;
-            }
+             
+        set; get;
         }
         /// <summary>
-        /// Product Quantity
+        ///Property for Product Quantity
         /// </summary>
 
         public int ProductQuantity
@@ -74,7 +78,7 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
             }
         }
         /// <summary>
-        /// Product Type
+        ///Property for Product Type
         /// </summary>
         public string Producttype
         {
@@ -90,24 +94,36 @@ namespace Group2.Znalytics.GreetOutDoors.EntityLayer
                 return _producttype;
             }
         }
-        public string Accepted
+        /// <summary>
+        /// Property for Exchangedate
+        /// </summary>
+
+        public DateTime ExchangeDate
+
         {
             set
             {
-                if ("Accepted" == value)
+                
+                DateTime exchangeDate = DateTime.Now;
+                exchangeDate = exchangeDate.AddDays(-30);
+
+                if (value < exchangeDate)
                 {
-                    _accepted = value;
+                    _exchangedate = value;
                 }
                 else
                 {
-                    throw new System.Exception(" Not Accepted");
+                    throw new Exception(nameof(ExchangeDate) + " should be within 1month of purchased date " + Productdate.ToString("dd/M/yyyy"));
                 }
             }
             get
             {
-                return _accepted;
+                return _exchangedate;
+
+
+
             }
         }
-
     }
 }
+

@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics.GreatOutDoors.EntityLayer", "Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj", "{EB5E0352-6C8C-4F46-8F9A-D9F688F99B06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics.GreetOutDoors.DataLayer", "Group2.Znalytics.GreetOutDoors.DataLayer\Group2.Znalytics.GreetOutDoors.DataLayer.csproj", "{172EA8DE-6D94-415E-8E83-C2FA903E7A82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics.GreatOutDoors.DataLayer", "Group2.Znalytics.GreetOutDoors.DataLayer\Group2.Znalytics.GreatOutDoors.DataLayer.csproj", "{172EA8DE-6D94-415E-8E83-C2FA903E7A82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics.GreatOutDoors.BusinessLayer", "Group2.Znalytics.GreatOutDoors.BusinessLayer\Group2.Znalytics.GreatOutDoors.BusinessLayer.csproj", "{AD3E2949-6503-48D4-A6F9-74EEBE7131FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics_GreatOutDoors.PresentationLayer", "Group2.Znalytics_GreatOutDoors.PresentationLayer\Group2.Znalytics_GreatOutDoors.PresentationLayer.csproj", "{88916087-53ED-421E-BEA7-B35AF5BA30F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group2.Znalytics.GreatOutDoors.PresentationLayer", "Group2.Znalytics_GreatOutDoors.PresentationLayer\Group2.Znalytics.GreatOutDoors.PresentationLayer.csproj", "{88916087-53ED-421E-BEA7-B35AF5BA30F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

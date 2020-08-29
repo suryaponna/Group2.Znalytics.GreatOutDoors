@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
 {
     public interface IReturnsBusinessLayer
     {
-
-        Return GetReturnByProductID(int ID);
+        //Represents an interface for Returns BusinessLogic layer
+       
         void AddReturn(Return rm);
-        void RemoveReturnByProductID(int id);
         void RemoveReturnByProductName(string name);
+        Return RemoveReturnByProductID(int Id);
     }
 }

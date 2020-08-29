@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 /// <summary>
 /// This class represents DataAccess Layer for Return
 /// </summary>
-using Group2.Znalytics.GreetOutDoors.EntityLayer;
-//using Group2.Znalytics.GreetOutDoors.IDataLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+//using Group2.Znalytics.GreatOutDoors.IDataLayer;
 using System.Collections;
 
-namespace Group2.Znalytics.GreetOutDoors.DataLayer
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
     public class ReturnsDataAccessLayer : IEnumerable
     {
@@ -28,21 +28,25 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             _return.Add(rm);
         }
-        public void ExchangeProduct(Return rm)// To Exchange a product
+        /// <summary>
+        ///  To Exchange a product
+        /// </summary>
+        /// <param name="rm"></param>
+        public void ExchangeProduct(Return rm)
         {
-            //_return.ExchangeProduct(rm);
+            
+              _return.ExchangeProduct(rm);
+            throw new ReturnException("Product can be exchanged within 1 month of purchased date");
+
+            
         }
 
 
         public IEnumerator GetEnumerator()
         {
-            foreach (var i in _return)
+            for(int i=0;i<_return.Count;i++)
             {
-                int ID = 0;
-                if (i.ProductID == ID)
-                {
-                    yield return i;
-                }
+                yield return _return[i];
             }
         }
 
@@ -59,14 +63,19 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         public void RemoveReturnByProductName(string name)// Removing a Product By using Product Name
         {
-            _return .RemoveAll(p => p.ProductName == name);
+           
+            
+            if(_return.RemoveAll(p => p.ProductName == name))
+            {
+                 _return.RemoveAll(p => p.ProductName == name);
+            }
+            else
+            {
+                throw new ReturnException("Product name can't be null");
+            }
+            
         }
-        public Return GetReturnByProductID(int ID)
-        {
-            return _return.Find(temp=> temp.ProductID==ID);
-
-        }
-
+       
 
 
     }
