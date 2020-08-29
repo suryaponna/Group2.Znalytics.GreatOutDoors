@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,12 +12,17 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
     {
         static void Main()
         {
-            Customer c;
-            c = new Customer(); //Local variable
+           
+            int choice;
+            OrderProduct op;
+            op = new OrderProduct(); //Local variable
+            Console.WriteLine("ORDER THE PRODUCT");
+            Console.WriteLine("Person Login");
+            Console.WriteLine("Enter the UserName");
+            
 
-            Console.WriteLine("=========================ORDER THE PRODUCT========================");
-            Console.WriteLine("Enter Customer Name");
-            c.CustName = Console.ReadLine();
+
+            
         }
     }
 }

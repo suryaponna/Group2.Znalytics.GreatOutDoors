@@ -14,19 +14,20 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
         private OrderDataLayer orderDataLayer;
         private object _orderDataLayer;
+        private string FinalDelieveryAddress;
+        private int ProductID;
+        private int Quantity;
+        private int SellingPrice;
+        private int TotalAmount;
+        private int AmountPayable;
+        private int OrderID;
 
         public OrderBusinessLayer()
         {
             OrderDataLayer _orderDataLayer = new OrderDataLayer();
         }
 
-        public int OrderID { get; private set; }
-        public int Quantity { get; private set; }
-        public int SellingPrice { get; private set; }
-        public int TotalAmount { get; private set; }
-        public int AmountPayable { get; private set; }
-        public string FinalDelieveryAddress { get; private set; }
-        public int ProductID { get; private set; }
+       
 
         private static bool ValidateOrder(OrderBusinessLayer order)
         {
@@ -79,8 +80,8 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             try
             {
                 if (ValidateOrder(newOrder))
-                    OrderDataLayer guestDAL = new OrderDataLayer();
-                orderAdded = guestDAL.AddOrderDAL(newOrder);
+                    OrderDataLayer odl= new OrderDataLayer();
+                orderAdded = odl.AddOrderDataLayer(newOrder);
             }
             catch (OrderException)
             {

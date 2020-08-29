@@ -10,7 +10,7 @@ class Product
         ProductDetails p = new ProductDetails();
         ProductBusiness pb = new ProductBusiness();
 
-        int Choice;
+        int Choice=0;
         bool b;
         do
         {
