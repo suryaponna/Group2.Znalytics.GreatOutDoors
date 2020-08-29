@@ -41,7 +41,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     case 1: ReturnProduct(); break;
                     case 2: ExchangeProduct(); break;
                     case 3: AddReturn(); break;
-                    case 4: RemoveReturnByProductID(); break;
+                  case 4: RemoveReturnByProductID(); break;
                     case 5: RemoveReturnByProductName(); break;
                     case 6: GetReturns(); break;
                     case 7: Exit();break;
@@ -212,7 +212,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         }
-        static void RemoveReturnByProductName()
+       static void RemoveReturnByProductName()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
@@ -224,7 +224,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         }
        
 
-            //
+           
             static void GetReturns()
             {   
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();

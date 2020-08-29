@@ -18,17 +18,13 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 
         }
         /// <summary>
-        /// Exception is diaplayed
+        /// Exception is displayed
         /// </summary>
         /// <param name="message">Message to be displayed</param>
         public RetailstoreException(string message):base(message)
         {
 
         }
-        
-
-
-
     }
 
 
