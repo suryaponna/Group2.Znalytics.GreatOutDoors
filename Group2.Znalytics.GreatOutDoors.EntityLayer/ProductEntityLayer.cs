@@ -1,190 +1,131 @@
-namespace Group2.Znalytics.GreetOutDoors.Product.Entities
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GreatOutdoorsProduct.Entities
 {
-    /// <summary>
-    /// referes to ProductDetails class in Entities 
-    /// </summary>
-    public class ProductDetails
+    public class Product
     {
-        //creating private feilds
-        public string _productName;
-        public int _productId;
-        public string _productColor;
-        public string _productType;
-        public double _productPrice;
-
-
+        private int productID;
         /// <summary>
-        /// creating Property for ProductName
-        /// </summary>
-        public string ProductName
-        {
-            set
-            {
-                if (value != " ")
-                    _productName = value;
-            }
-            get
-            {
-                return _productName;
-            }
-        }
-
-        /// <summary>
-        /// creating Property for ProductID
+        /// creating property for product id
         /// </summary>
         public int ProductID
         {
             set
             {
-                _productId = value;
+                productID = value;
             }
             get
             {
-                return _productId;
+                return productID;
             }
+
         }
-
-
+        private string productName;
         /// <summary>
-        /// creating property for product color///
+        /// creating property for productName
         /// </summary>
-        public string ProductColor
+        public string ProductName
         {
             set
             {
-                _productColor = value;
+                ProductName = value;
             }
             get
             {
-                return _productColor;
+                return productName;
+            }
+
+        }
+
+        private int categoryID;
+        /// <summary>
+        /// creating property for categoryid
+        /// </summary>
+        public int CategoryID
+        {
+
+            set
+            {
+                categoryID = value;
+            }
+            get
+            {
+                return categoryID;
+            }
+        }
+        private int specificationID;
+        /// <summary>
+        /// creating property for specification id
+        /// </summary>
+        public int SpecificationID
+        {
+
+            set
+            {
+                specificationID = value;
+            }
+            get
+            {
+                return specificationID;
             }
         }
 
+        private double costPrice;
         /// <summary>
-        /// creating property for product Type///
+        /// creating property for costprice
         /// </summary>
-        public string ProductType
+        public double CostPrice
         {
+
             set
             {
-                _productType = value;
+                costPrice = value;
             }
             get
             {
-                return _productType;
+                return costPrice;
             }
         }
 
+        private double sellingPrice;
         /// <summary>
-        /// creating Property for Price
+        /// creating property for selling price
         /// </summary>
-        public double Productprice
+        public double SellingPrice
         {
+
             set
             {
-                _productPrice = value;
+                sellingPrice = value;
             }
             get
             {
-                return _productPrice;
+                return sellingPrice;
             }
         }
+
+        private Boolean available;
+        /// <summary>
+        /// creating property for available products
+        /// </summary>
+        public Boolean Available
+        {
+
+            set
+            {
+                available = value;
+            }
+            get
+            {
+                return available;
+            }
+        }
+
 
     }
-
-    public class Categories
-    {
-        public string _personalAccessories;
-        public string _golfEquipment;
-        public string _campingEquipment;
-        public string _mountaineeringEquipment;
-        public string _outdoorProtection;
-
-        /// <summary>
-        /// creating property for personal accesories
-        /// </summary>
-        public string PersonalAccesories
-        {
-            set
-            {
-                _personalAccessories = value;
-            }
-            get
-            {
-                return _personalAccessories;
-            }
-        }
-        /// <summary>
-        /// creating property for golf equipment
-        /// </summary>
-        public string GolfEquipment
-        {
-            set
-            {
-                _golfEquipment = value;
-            }
-            get
-            {
-                return _golfEquipment;
-
-            }
-        }
-        /// <summary>
-        /// creating property for camping equipment
-        /// </summary>
-        public string CampingEquipment
-        {
-            set
-            {
-                _campingEquipment = value;
-
-            }
-            get
-            {
-                return _campingEquipment;
-            }
-        }
-        /// <summary>
-        /// craeting property for mountaineering equipment
-        /// </summary>
-        public string MountaineeringEquipment
-        {
-            set
-            {
-                _mountaineeringEquipment = value;
-
-            }
-            get
-            {
-                return _mountaineeringEquipment;
-            }
-        }
-        /// <summary>
-        /// creating property for outdoor protection
-        /// </summary>
-        public string OutdoorProtection
-        {
-            set
-            {
-                _outdoorProtection = value;
-
-            }
-            get
-            {
-                return _outdoorProtection;
-            }
-        }
-    }
- }
-
-
-
-
-
-
-
-
-
-
-
+}
 

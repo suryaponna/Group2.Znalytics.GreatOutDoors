@@ -28,7 +28,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// </summary>
         /// <param name="message">base Exception message</param>
         /// <param name="innerException">Inner Exception Message</param>
-        public AddressException(string message, Exception innerException) : base(message) { 
+        public AddressException(string message, ProductException innerException) : base(message) { 
             
         }
     }

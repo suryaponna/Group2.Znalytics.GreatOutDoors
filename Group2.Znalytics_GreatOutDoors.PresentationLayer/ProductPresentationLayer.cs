@@ -1,147 +1,181 @@
 ﻿//created by meghana
-using Group2.Znalytics.GreetOutDoors.Product.Entities;
+using Group2.Znalytics.GreatOutDoors.Product.Entities;
 
 class Product
 {
 
     static void Main()
     {
-        // creating the object for ProductDeatils class
-        ProductDetails p = new ProductDetails();
-        ProductBusiness pb = new ProductBusiness();
+        // creating the object for ProductDetails class
+        Product p;
+        p = new Product();
+        //ProductBusinessLayer ProductBusinessLayer = new ProductBusinessLayer();
 
-        int Choice;
-        bool b;
+        System.Console.WriteLine("***\n |PRODUCTS|\n***\n");
+
+        //Product id
+        System.Console.WriteLine("Enter The ProductId");
+        p.Product Id= (System.Convert.ToInt32(System.Console.ReadLine()));
+        System.Console.WriteLine("The product is:" + p.productID);
+
+        //choice of choosing reports
+        System.Console.WriteLine("******select the option that you want******");
+        System.Console.WriteLine("Enter 1 for Product details");
+        System.Console.WriteLine("Enter 2 for Product Category");
+        System.Console.WriteLine("Enter 3 for Product subCategory");
+        System.Console.WriteLine("Enter 4 for exit");
+        int Choice = int.Parse(System.Console.ReadLine());
+        switch (Choice)
+        {
+            case 1:
+                System.Console.WriteLine("Product details");
+                p.Product details = "product details";
+                break;
+            case 2:
+                System.Console.WriteLine("Product category");
+                p.Product Category = "Product Category";
+                break;
+            case 3:
+                System.Console.WriteLine("Product subCategory");
+                p.Product SubCategory = "Product SubCategory ";
+                break;
+            default:
+                System.Console.WriteLine("Unknown choice");
+                break;
+        }
+        System.Console.WriteLine("Selected Products are:" + p.Productdetails);
+        System.Console.WriteLine("******");
+
+        //Catagories of Products 
+        System.Console.WriteLine("TYPES OF PRODUCTS");
+        System.Console.WriteLine("---------------------------------");
+        System.Console.WriteLine("1.Personal Accessories");
+        System.Console.WriteLine("2.Golf Equiment");
+        System.Console.WriteLine("3.Camping Euipment");
+        System.Console.WriteLine("4.Mountaineering Euipment");
+        System.Console.WriteLine("5.Outdoor Protection");
+        System.Console.WriteLine("Enter more than 6 to exit");
+        int ch = 1;
         do
         {
-
-            System.Console.WriteLine("PRODUCT DETAILS");
-            System.Console.WriteLine("********************");
-            System.Console.WriteLine("1. Add Product");
-            System.Console.WriteLine("2. Add Product Categories");
-            System.Console.WriteLine("2. Show Product");
-            System.Console.WriteLine("3. Remove Product");
-            b = int.TryParse(System.Console.ReadLine(), out Choice);
-
-            if (b == true)
-            {
-
-                switch (Choice)
-                {
-                    case 1:
-                        AddProduct();
-                        break;
-
-                    case 2:
-                        DisplayProducts();
-                        break;
-                    case 3:
-                        RemoveProduct();
-                        break;
-                    default:
-                        System.Console.WriteLine("enter the valid option");
-                        break;
-                }
-            }
-            else
-            {
-                System.Console.WriteLine("invalid option");
-            }
-        } while (Choice < 4);
-
-
-    
-        void AddProduct()
-        {
-            // creating the object for ProductDetails class
-            System.Console.WriteLine("***PRODUCT DETAILS***");
-            System.Console.WriteLine("enter the ProductName:");
-            p.ProductName = System.Console.ReadLine();
-            System.Console.WriteLine("enter the ProductId");
-            p.ProductID = int.Parse(System.Console.ReadLine());
-            System.Console.WriteLine("enter the ProductType");
-            p.ProductType = System.Console.ReadLine();
-            System.Console.WriteLine("enter the Produccolor");
-            p.ProductColor = System.Console.ReadLine();
-            System.Console.WriteLine("enter the Productprice:");
-            pb.AddProducts(p); //adding the products into the List
-            System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
-        }
-         void AddProductCategories()
-        {
-            Categories subc = new Categories();
-            System.Console.WriteLine("personal accessories ");
-            subc.PersonalAccesories = System.Console.ReadLine();
-            System.Console.WriteLine("golf equipment");
-            subc.GolfEquipment = System.Console.ReadLine();
-            System.Console.WriteLine("camping equipment");
-            subc.CampingEquipment = System.Console.ReadLine();
-            System.Console.WriteLine("mountaineering equipment ");
-            subc.MountaineeringEquipment = System.Console.ReadLine();
-            System.Console.WriteLine("outdoor protection");
-            subc.OutdoorProtection = System.Console.ReadLine();
-
-        }
-         void DisplayProducts()
-        {
-
-            ///<summary>///
-            ///Displaying the products which are added///
-            ///</summary>///
-            System.Console.WriteLine("***Product Details***");
-            System.Console.WriteLine("ProductName" + "   " + "ProductID" + "  " + "Number of Products Avalilable ");
-            System.Console.WriteLine("-----------------------------------------------------------------------");
-            System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.Productprice);
-
-        }
-         void RemoveProduct()
-        {
-            ProductDetails Product = new ProductDetails();// creating the object fro ProductDeatils class
-            ProductBusiness pbb = new ProductBusiness();// Creating thhe object for ProductBusiness class
-            System.Console.WriteLine("select on which type you want to remove a product");
-            System.Console.WriteLine("1.based on ProductId");
-            System.Console.WriteLine("2.based on ProductName");
-            int Option;
-            bool a;
-            a = int.TryParse(System.Console.ReadLine(), out Option);
-
+            bool a = int.TryParse(System.Console.ReadLine(), out ch);
             if (a == true)
             {
-                switch (Option)
+                switch (ch)
                 {
-                    case 1: RemoveProductByID(); break;
-                    case 2: RemoveProductByProductName(); break;
-                    default: System.Console.WriteLine("Please Choose enter correct Option"); 
-                    break;
+                    case 1:
+                        System.Console.WriteLine("Personal Accesories");
+                        Product p;
+                        p = new Product();
 
-                }
+                        //different types of personal accessories
+                        System.Console.WriteLine("----------Personal Accessories-----------");
+                        System.Console.WriteLine("\n 1.Jackets \n 2.Boots and Shoes \n 3.cravats \n 4.Ties" +
+                       "\n 5.Stockings \n 6.Shawls \n 7.necklaces \n 8.exit");
 
-            }
-            else
-            {
-                System.Console.WriteLine("Please Enter Correct Option");
-            }
-             void RemoveProductByID()
-            {
-                System.Console.Write("Enter the ProductID to be Deleted:");
-                int id = int.Parse(System.Console.ReadLine());
+                        // Switch Case statement to select the categories of personal accessories
+                        int choice1 = 1;
+                        do
+                        {
+                            bool b = int.TryParse(System.Console.ReadLine(), out choice1);
+                            if (b == true)
+                            {
+                                switch (choice1)
+                                {
+                                    case 1:
+                                        System.Console.WriteLine("Jackets");
+                                        //p.Product Category = "Jackets";
+                                        break;
+                                    case 2:
+                                        System.Console.WriteLine("Boots and Shoes");
+                                        //p.Product Category = "Boots and Shoes ";
+                                        break;
+                                    case 3:
+                                        System.Console.WriteLine("Cravats");
+                                        //p.Product Category = "Cravats";
+                                        break;
+                                    case 4:
+                                        System.Console.WriteLine(" ties");
+                                        //p.Product Category = "ties";
+                                        break;
+                                    case 5:
+                                        System.Console.WriteLine("stockings");
+                                        //p.Product Category = "stockings";
+                                        break;
+                                    case 6:
+                                        System.Console.WriteLine("Shawls");
+                                        //p.Product Category = "shawls";
+                                        break;
+                                    case 7:
+                                        System.Console.WriteLine("Necklaces");
+                                        //p.Product Category = "Necklaces";
+                                        break;
+                                    default:
+                                        System.Console.WriteLine("Exit");
+                                        break;
+                                }
+                            }
+                        } while (choice1 != 6);
+                        break;
 
-                pbb.RemoveProductByID(id);
-                System.Console.WriteLine("Product Removed");
+
+                    case 2:
+
+                        System.Console.WriteLine("Golf Equipment");
+                        Product p;
+                        p = new Product();
+
+                        //different types of personal accessories
+                        System.Console.WriteLine("----------Golf Euipment-----------");
+                        System.Console.WriteLine("\n 1.Golf wedges \n 2.Golf cart\n 3.Club head covers \n 4.Ball mark repair tool" +
+                       "\n 5.Ball markers \n 6.Shoes \n 7.Gloves \n 8.exit");
+
+                        // Switch Case statement to select the categories of Books
+                        int choice2 = 1;
+                        do
+                        {
+                            bool b = int.TryParse(System.Console.ReadLine(), out choice2);
+                            if (b == true)
+                            {
+                                switch (choice2)
+                                {
+                                    case 1:
+                                        System.Console.WriteLine("Golf wedges");
+                                        //p.Product Category = "Golf wedges";
+                                        break;
+                                    case 2:
+                                        System.Console.WriteLine("Golf cart");
+                                        //p.Product Category = "Golf cart ";
+                                        break;
+                                    case 3:
+                                        System.Console.WriteLine("Club head covers");
+                                        //p.Product Category = "Club head covers";
+                                        break;
+                                    case 4:
+                                        System.Console.WriteLine(" Ball mark repair tool");
+                                        //p.Product Category = "Ball mark repair tool";
+                                        break;
+                                    case 5:
+                                        System.Console.WriteLine("Ball markers");
+                                        //p.Product Category = "Ball markers";
+                                        break;
+                                    case 6:
+                                        System.Console.WriteLine("Shoes");
+                                        //p.Product Category = "Shoes";
+                                        break;
+                                    case 7:
+                                        System.Console.WriteLine("Gloves");
+                                        //p.Product Category = "Gloves";
+                                        break;
+                                    default:
+                                        System.Console.WriteLine("Exit");
+                                        break;
+                                }
+                            }
+                        } while (choice2 != 5);
+                        break;
 
 
-            }
-             void RemoveProductByProductName()
-            {
-                System.Console.Write("Enter the ProductName:");
-                string name = System.Console.ReadLine();
 
-                pbb.RemoveProductByName(name);
-                System.Console.WriteLine("Product Removed");
-            }
 
-        }
 
-    }
-
-}
