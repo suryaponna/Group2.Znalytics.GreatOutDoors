@@ -1,4 +1,5 @@
-﻿using System;
+﻿///-------------------Surya
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,9 @@ using Znalytics.Group2.GreatOutDoor.Entity;
 
 namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
+    /// <summary>
+    /// Interface For Data Layer
+    /// </summary>
     public interface IAddressDataLayer
     {
         /// <summary>
@@ -22,10 +26,34 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// <param name="Id"></param>
         /// <returns></returns>
         AddressDetail ReturnAddress(AddressDetail ad);
-        void RemoveAddress(AddressDetail ad,int Id);
+        /// <summary>
+        /// Removing Particular Address
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        void RemoveAddress(AddressDetail ad);
+        /// <summary>
+        /// Returns All Addresses OF Particular Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <returns></returns>
         List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
-        void AddressAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Adding Another Address To Customer
+        /// </summary>
+        /// <param name="ad">new Address Object</param>
+        void AddAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Updatig Existing method
+        /// </summary>
+        /// <param name="ad"></param>
         void UpdateExistingAddress(AddressDetail ad);
+        /// <summary>
+        /// Changed Defalut Address of Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        void ChangeDefaultAddrees(AddressDetail ad);
+
         
 
 

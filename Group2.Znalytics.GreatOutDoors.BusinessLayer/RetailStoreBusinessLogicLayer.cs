@@ -40,12 +40,12 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
        public Retailstore GetRetailstoreByRetailStoreID(int RetailStoreID)
         {
-            throw new NotImplementedException();
+            throw new RetailstoreException("Retail id cannot be null");
         }
 
         public List<Retailstore> GetRetailStoreID()
         {
-            throw new NotImplementedException();
+            throw new RetailstoreException();
            // return _rdl.GetRetailStoreIDs();
         }
 
@@ -86,7 +86,15 @@ public List<RetailStoreID>GetRetailStoreIDs()
             }
         }
 
+        public void AddProductQuantity()
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Retailstore> GetProductQuantity()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

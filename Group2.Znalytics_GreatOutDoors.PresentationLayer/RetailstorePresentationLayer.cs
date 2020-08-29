@@ -556,21 +556,28 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         /// </summary>
         public static void AddProductQuantity()
         {
-            Retailstore r = new Retailstore();
-            Console.WriteLine("Enter the quantity of products:");
-            r.QuantityOfProducts = int.Parse(Console.ReadLine());
-            Console.WriteLine("The quantity of your selected product is:" + r.QuantityOfProducts);
-            RetailStoreBusinessLogicLayer rdl = new RetailStoreBusinessLogicLayer();
-           // rdl.AddProductQuantity();
+           
+                 Retailstore r = new Retailstore();
+                RetailStoreBusinessLogicLayer rdl = new RetailStoreBusinessLogicLayer();
+                Console.WriteLine("Enter the quantity of products:");
+                r.QuantityOfProducts = int.Parse(Console.ReadLine());
+                Console.WriteLine("The quantity of product is:" + r.QuantityOfProducts);
+                 rdl.AddProductQuantity();
+        
         }
-        /** public static void GetProductQuantity()
+         public static void GetProductQuantity()
          {
-             Console.WriteLine("Enter product quantity");
-             int quantityofProducts = int.Parse(Console.ReadLine());
+            Retailstore r = new Retailstore();
              RetailStoreBusinessLogicLayer rdl = new RetailStoreBusinessLogicLayer();
-             Console.WriteLine("Product qunatity details");
+            rdl.GetProductQuantity();
+            List<Retailstore> rs = rdl.GetProductQuantity();
+            foreach(Retailstore item in rs)
+            {
+                Console.WriteLine("get the details of  quantity of products");
+                Console.WriteLine(item.QuantityOfProducts);
+            }
 
-         }*/
+        }
     }
 }
 
