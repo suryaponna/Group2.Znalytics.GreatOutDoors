@@ -1,112 +1,160 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.Product.Entities;
-
-namespace Group2.Znalytics.GreetOutDoors.DataLayer
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using GreatOutdoorsProduct.Entities;
+using GreatOutdoorsProduct.Exceptions;
+/// <summary>
+/// data access layer
+/// </summary>
+namespace GreatOutdoorsProduct.DataAccessLayer
 {
-    /// <summary>
-    /// referes to ProductData in Property class
-    /// </summary>
-    public class productDataLayer : IEnumerable, IList
+    public class ProductDataAccessLayer
     {
-
-        private List<ProductDetails> ProductsList  //creating a reference varibale for List
+        //private fields
+        public static List<Product> productList = new List<Product>();
+        /// <summary>
+        /// adding products
+        /// </summary>
+        /// <param name="newProduct"></param>
+        /// <returns></returns>
+        public bool AddProductDataAccessLayer(Product newProduct)
         {
-            set;
-            get;
-        }
-
-        public bool IsReadOnly => ((IList)ProductsList).IsReadOnly;
-
-        public bool IsFixedSize => ((IList)ProductsList).IsFixedSize;
-
-        public int Count => ((ICollection)ProductsList).Count;
-
-        public object SyncRoot => ((ICollection)ProductsList).SyncRoot;
-
-        public bool IsSynchronized => ((ICollection)ProductsList).IsSynchronized;
-
-        public object this[int index] { get => ((IList)ProductsList)[index]; set => ((IList)ProductsList)[index] = value; }
-
-        public productDataLayer() // creating a list object
-        {
-            ProductsList = new List<ProductDetails>();
-        }
-        public IEnumerator GetEnumerator()
-        {
-            for (int i = 0; i < ProductsList.Count; i++)
+            bool productAdded = false;
+            try
             {
-                yield return ProductsList[i];
-
+                productList.Add(newProduct);
+                productAdded = true;
             }
-        }
-       public void AddProduct(ProductDetails productDetails)
-       {
-                ProductsList.Add(productDetails);
-       }
-
-
-            /// <summary>
-            /// adding the products in the List
-            /// </summary>
-            /// <param name="productDetails"></param>
-
-
-            /// <summary>
-            /// displaying the products in the List
-            /// </summary>
-
-            public void DisplayProducts(ProductDetails product)
+            catch (SystemException ex)
             {
-                for (int i = 0; i < ProductsList.Count; i++)
+                throw new ProductException(ex.Message);
+            }
+            return productAdded;
+
+        }
+        //getting productdetails
+        public List<Product> GetAllProductsDataAccessLayer()
+        {
+            return productList;
+        }
+
+        public Product SearchProductDataAccessLayer(int searchProductID)
+        {
+            Product searchProduct = null;
+            try
+            {
+                foreach (Product item in productList)
                 {
-                    ProductDetails n = ProductsList[i];
-                    System.Console.WriteLine("Product Name ={0},Product Id ={1},Price= {3}", n.ProductName, n.ProductID, n.Productprice);
+                    if (item.ProductID == searchProductID)
+                    {
+                        searchProduct = item;
+                    }
+                }
+            }
+            catch (SystemException ex)
+            {
+                throw new ProductException(ex.Message);
+            }
+            return searchProduct;
+        }
+
+        public List<Product> GetProductsByNameDataAccessLayer(string productName)
+        {
+            List<Product> searchProduct = new List<Product>();
+            try
+            {
+                foreach (Product item in productList)
+                {
+                    if (item.ProductName == productName)
+                    {
+                        searchProduct.Add(item);
+                    }
+                }
+            }
+            catch (SystemException ex)
+            {
+                throw new ProductException(ex.Message);
+            }
+            return searchProduct;
+        }
+
+        public List<Product> GetProductsByCategoryDataAccessLayer(int categoryID)
+        {
+            List<Product> searchProduct = new List<Product>();
+            try
+            {
+                foreach (Product item in productList)
+                {
+                    if (item.CategoryID == categoryID)
+                    {
+                        searchProduct.Add(item);
+                    }
+                }
+            }
+            catch (SystemException ex)
+            {
+                throw new ProductException(ex.Message);
+            }
+            return searchProduct;
+        }
+
+        public bool UpdateProductDataAccessLayer(Product updateProduct)
+        {
+            bool productUpdated = false;
+            try
+            {
+                for (int i = 0; i < productList.Count; i++)
+                {
+                    if (productList[i].ProductID == updateProduct.ProductID)
+                    {
+                        updateProduct.ProductName = productList[i].ProductName;
+                        updateProduct.CategoryID = productList[i].CategoryID;
+                        updateProduct.SpecificationID = productList[i].SpecificationID;
+                        updateProduct.CostPrice = productList[i].CostPrice;
+                        updateProduct.SellingPrice = productList[i].SellingPrice;
+                        updateProduct.Available = productList[i].Available;
+                        productUpdated = true;
+                    }
+                }
+            }
+            catch (SystemException ex)
+            {
+                throw new ProductException(ex.Message);
+            }
+            return productUpdated;
+
+        }
+
+        public bool DeleteProductDataAccessLayer(int deleteProductID)
+        {
+            bool productDeleted = false;
+            try
+            {
+                Product deleteProduct = null;
+                foreach (Product item in productList)
+                {
+                    if (item.ProductID == deleteProductID)
+                    {
+                        deleteProduct = item;
+                    }
                 }
 
+                if (deleteProduct != null)
+                {
+                    productList.Remove(deleteProduct);
+                    productDeleted = true;
+                }
             }
+            catch (SystemException ex)
+            {
+                throw new ProductException(ex.Message);
+            }
+            return productDeleted;
 
-        public int Add(object value)
-        {
-            return ((IList)ProductsList).Add(value);
         }
 
-        public bool Contains(object value)
-        {
-            return ((IList)ProductsList).Contains(value);
-        }
-
-        public void Clear()
-        {
-            ((IList)ProductsList).Clear();
-        }
-
-        public int IndexOf(object value)
-        {
-            return ((IList)ProductsList).IndexOf(value);
-        }
-
-        public void Insert(int index, object value)
-        {
-            ((IList)ProductsList).Insert(index, value);
-        }
-
-        public void Remove(object value)
-        {
-            ((IList)ProductsList).Remove(value);
-        }
-
-        public void RemoveAt(int index)
-        {
-            ((IList)ProductsList).RemoveAt(index);
-        }
-
-        public void CopyTo(Array array, int index)
-        {
-            ((ICollection)ProductsList).CopyTo(array, index);
-        }
     }
-
- }
-
+}

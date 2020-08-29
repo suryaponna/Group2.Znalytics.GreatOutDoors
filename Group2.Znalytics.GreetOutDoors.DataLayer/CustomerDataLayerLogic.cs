@@ -1,7 +1,10 @@
 ﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
 using System.Collections.Generic;
-namespace Group2.Znalytics.GreatOutDoors.DataLayer
+using Group2.Znalytics.GreetOutDoors.DataLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+namespace Znalytics.Group2.GreatOutDoor.Entity
+
 {
     /// <summary>
     /// Represents Data Access Layer of  the customer Personal details

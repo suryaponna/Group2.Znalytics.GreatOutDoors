@@ -13,7 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             WriteLine("----------------WelCome TO GreatOutDoors hope you find your things here----------------");
             WriteLine();
             while (true) {
-                WriteLine("Enter 1 to to sign up");
+                WriteLine("Enter 1 to sign up");
                 WriteLine();
                 WriteLine("Enter 2 to sign in");
                 int option;
