@@ -40,7 +40,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         {
             return productList;
         }
-
+        //searching the products
         public Product SearchProductDataAccessLayer(int searchProductID)
         {
             Product searchProduct = null;
