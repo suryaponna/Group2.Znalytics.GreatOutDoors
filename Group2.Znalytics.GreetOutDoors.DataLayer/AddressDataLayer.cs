@@ -34,7 +34,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
-            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            List<AddressDetail> customers2 = JsonConvert.DeserializeObject<List<AddressDetail>>(_jsonAddresses);
             streamWriter.Write(_jsonAddresses);
             streamWriter.Close();
 
@@ -235,7 +235,28 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void RemoveAddress(AddressDetail ad) {
             _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
         }
-        
+        /// <summary>
+        /// changing customer Default Address
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            var s = _customerAddressesList.Where(temp => temp.CustomerId == ad.CustomerId).ToList();
+            if (s != null)
+            {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+            }
+            else {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+                _customerAddressesList.Add(ad);
+            }
+            
+        }
+
+
 
     }
 }

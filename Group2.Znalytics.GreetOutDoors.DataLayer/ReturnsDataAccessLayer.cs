@@ -63,7 +63,12 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         }
 
+        public List<Return> ReturnList()
+        {
+            return _return;
+            ListOfReturn();
 
+        }
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < _return.Count; i++)
@@ -72,12 +77,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
         }
 
-        public List<Return> GetReturns()
-        {
-            return _return;
-            ListOfReturn();
-
-        }
+        
         public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
         {
              _return.RemoveAll(temp => temp.ProductID == Id);
@@ -88,9 +88,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
 
 
-
-
-            if (_return.RemoveAll(p => p.ProductName == name))
+            if (name!=null)
             {
                 _return.RemoveAll(p => p.ProductName == name);
             }
