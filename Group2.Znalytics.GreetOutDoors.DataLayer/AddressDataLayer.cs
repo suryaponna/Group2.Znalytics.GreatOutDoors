@@ -24,16 +24,18 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         private static  string _jsonAddresses;
 
-
+        static StreamWriter streamWriter = new StreamWriter(@"E:\AddressesList");
 
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
-        
+
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
             _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
 
         }
         public List<AddressDetail> CustomerAddressList {
@@ -42,6 +44,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             set {
                 _customerAddressesList = value;
+                streamWriter.Write(_jsonAddresses);
+                streamWriter.Close();
+
             }
         }
         /// <summary>
@@ -65,6 +70,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             AddressDetail address = (AddressDetail)value;
             _customerAddressesList.Add(address);
             _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             return _customerAddressesList.Count - 1;
 
         }
@@ -74,8 +81,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         public void Clear()
         {
-            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
             _customerAddressesList.Clear();
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
+
         }
         /// <summary>
         /// retriving index  customer Address 
@@ -94,6 +104,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.Insert(index, ad);
             _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             //((IList)_customerAddressesList).Insert(index, value);
         }
 
@@ -102,6 +114,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.Remove(ad);
             _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             //((IList)_customerAddressesList).Remove(value);
         }
 
@@ -110,6 +124,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             //AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.RemoveAt(index);
             _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
 
         }
 
