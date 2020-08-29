@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 //using Group2.Znalytics.GreatOutDoors.IDataLayer;
 using System.Collections;
+using Newtonsoft.Json;
+using System.IO;
+using System.CodeDom.Compiler;
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
@@ -21,12 +24,31 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             //creating a list 
             _return = new List<Return>();
-            
+
         }
-        
-        public void AddReturn(Return rm)// 
+        /// <summary>
+        /// Declared a method for ListOfReturn
+        /// </summary>
+        public void ListOfReturn()
+        {
+            List<Return> _return = new List<Return>();
+            //convert data into Json
+            string s = JsonConvert.SerializeObject(_return);
+
+            //write data into file
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\Project.txt");
+            streamWriter.Write(s);
+            streamWriter.Close();
+
+
+        }
+
+        public void AddReturns(Return rm)// 
         {
             _return.Add(rm);
+            ListOfReturn();
+
+
         }
         /// <summary>
         ///  To Exchange a product
@@ -34,17 +56,17 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <param name="rm"></param>
         public void ExchangeProduct(Return rm)
         {
-            
-              _return.ExchangeProduct(rm);
+
+             _return.ExchangeProduct(rm);
             throw new ReturnException("Product can be exchanged within 1 month of purchased date");
 
-            
+
         }
 
 
         public IEnumerator GetEnumerator()
         {
-            for(int i=0;i<_return.Count;i++)
+            for (int i = 0; i < _return.Count; i++)
             {
                 yield return _return[i];
             }
@@ -52,32 +74,35 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         public List<Return> GetReturns()
         {
-           return  _return;
+            return _return;
+            ListOfReturn();
 
         }
-        public void RemoveReturnByProductID(int id) //Removing a Product by using Product ID
+        public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
         {
-            //_return.RemoveAll();
+             _return.RemoveAll(temp => temp.ProductID == Id);
 
         }
 
         public void RemoveReturnByProductName(string name)// Removing a Product By using Product Name
         {
-           
-            
-            if(_return.RemoveAll(p => p.ProductName == name))
+
+
+
+
+            if (_return.RemoveAll(p => p.ProductName == name))
             {
-                 _return.RemoveAll(p => p.ProductName == name);
+                _return.RemoveAll(p => p.ProductName == name);
             }
             else
             {
-                throw new ReturnException("Product name can't be null");
+                throw new ReturnException("Product ID doesn't exists");
             }
-            
-        }
-       
 
+            ListOfReturn();
 
+        }   
     }
+       
 
 }

@@ -6,9 +6,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// Represents an address of Customer
     /// </summary>
     [Serializable]
-    public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
+    public class AddressDetail : IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
-        private int _addressId ;
+        private int _addressId;
         private string _customerCountry;
         private string _customerFullName;
         private long _mobileNumber;
@@ -16,9 +16,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _flatDno;
         private string _areaColony;
         private string _landMark;
+        private bool _defaultAddress;
         private string _townCity;
         private string _selState;
-        private int _customerId=524;
+        private int _customerId = 524;
         private AddressType _addressType;
         /// <summary>
         /// IEquatable method for comparing two customer are same or not
@@ -42,8 +43,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public int CompareTo(AddressDetail other) {
             int compare;
             compare = this._addressType.CompareTo(other._addressType);
-            if (compare == 0) { 
-                
+            if (compare == 0) {
+
             }
             if (compare == 0) {
                 compare = this._customerFullName.CompareTo(other._customerFullName);
@@ -57,7 +58,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             //else { return compare; }
             return compare;
         }
-            
+
 
         public int CustomerId {
             set => _customerId = value;
@@ -225,7 +226,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
-        
+
         /// <summary>
         /// Setting AddressType Of Customer
         /// </summary>
@@ -240,6 +241,17 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 }
                 else {
                     _addressType = AddressType.Office;
+                }
+            }
+        }
+        public bool DefaultAddressOrNot{
+            set {
+                if (value == true)
+                {
+                    _defaultAddress = true;
+                }
+                else {
+                    _defaultAddress = false;
                 }
             }
         }
