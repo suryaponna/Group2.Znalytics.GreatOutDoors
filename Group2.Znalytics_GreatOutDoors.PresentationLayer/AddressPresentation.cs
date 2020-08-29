@@ -1,5 +1,5 @@
 ﻿//-----------------------Surya----------------------------------------
-
+/**
 using System;
 namespace Znalytics.Group2.GreatOutDoors.Entity
 {
@@ -169,7 +169,7 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
     }
     
 }
-
+*/
 
 
 

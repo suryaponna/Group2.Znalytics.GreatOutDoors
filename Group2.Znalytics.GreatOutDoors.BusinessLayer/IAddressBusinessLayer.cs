@@ -1,4 +1,5 @@
-﻿using System;
+﻿///--------------------Surya
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,9 @@ using System.Threading.Tasks;
 using Znalytics.Group2.GreatOutDoor.Entity;
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
+    /// <summary>
+    /// Inetrface for Business Layer
+    /// </summary>
     public interface IAddressBusinessLayer
     {
         /// <summary>
@@ -38,6 +42,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="ad">new Address Object</param>
         void AddAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Updating Existing Method
+        /// </summary>
+        /// <param name="ad"></param>
         void UpdateExistingAddress(AddressDetail ad);
 
     }

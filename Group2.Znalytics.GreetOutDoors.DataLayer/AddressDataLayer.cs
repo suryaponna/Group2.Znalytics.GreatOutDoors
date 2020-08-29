@@ -6,6 +6,7 @@ using System.IO;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Newtonsoft.Json;
+using System.Linq;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -44,6 +45,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             set {
                 _customerAddressesList = value;
+                _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
                 streamWriter.Write(_jsonAddresses);
                 streamWriter.Close();
 
@@ -192,11 +194,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <returns></returns>
         public AddressDetail ReturnAddress(AddressDetail ad) {
             AddressDetail samp=null;
-            foreach (var temp in _customerAddressesList) {
-                if (temp.CustomerId == ad.CustomerId && temp.AddressId==ad.AddressId) {
-                    samp = temp;
-                }
-            }
+            samp = _customerAddressesList.Find(temp=> temp.AddressId==ad.AddressId && temp.CustomerId==ad.CustomerId);
             if (samp != null)
             {
                 return samp;
