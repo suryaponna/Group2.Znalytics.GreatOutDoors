@@ -39,6 +39,10 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// </summary>
         /// <param name="ad">new Address Object</param>
         void AddAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Updatig Existing method
+        /// </summary>
+        /// <param name="ad"></param>
         void UpdateExistingAddress(AddressDetail ad);
         
 

@@ -38,6 +38,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="ad">new Address Object</param>
         void AddAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Updating Existing Method
+        /// </summary>
+        /// <param name="ad"></param>
         void UpdateExistingAddress(AddressDetail ad);
 
     }
