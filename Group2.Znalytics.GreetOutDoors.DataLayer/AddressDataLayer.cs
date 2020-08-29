@@ -6,6 +6,7 @@ using System.IO;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Newtonsoft.Json;
+using System.Linq;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -13,7 +14,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
     
-    public class AddressDataLayer:IEnumerable,IList,IAddressDataLayer
+    public class AddressDataLayer:IEnumerable,IList,IAddressInterface
     {
         /// <summary>
         /// Creating static list
@@ -24,7 +25,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         private static  string _jsonAddresses;
 
-        static StreamWriter streamWriter = new StreamWriter(@"E:\AddressesList");
+        static StreamWriter streamWriter = new StreamWriter(@"E:\AddressesList.txt");
 
         /// <summary>
         /// Creating List only once memory is allocated 
@@ -33,7 +34,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
-            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            List<AddressDetail> customers2 = JsonConvert.DeserializeObject<List<AddressDetail>>(_jsonAddresses);
             streamWriter.Write(_jsonAddresses);
             streamWriter.Close();
 
@@ -44,6 +45,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             set {
                 _customerAddressesList = value;
+                _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
                 streamWriter.Write(_jsonAddresses);
                 streamWriter.Close();
 
@@ -192,11 +194,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <returns></returns>
         public AddressDetail ReturnAddress(AddressDetail ad) {
             AddressDetail samp=null;
-            foreach (var temp in _customerAddressesList) {
-                if (temp.CustomerId == ad.CustomerId && temp.AddressId==ad.AddressId) {
-                    samp = temp;
-                }
-            }
+            samp = _customerAddressesList.Find(temp=> temp.AddressId==ad.AddressId && temp.CustomerId==ad.CustomerId);
             if (samp != null)
             {
                 return samp;
@@ -219,7 +217,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Add Another Address TO Existing Customer
         /// </summary>
         /// <param name="ad"></param>
-        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
+        public void AddAnotherAddressToCustomer(AddressDetail ad) {
             if (ad != null) {
                 foreach (var temp in _customerAddressesList) {
                     if (temp.CustomerId == ad.CustomerId) {
@@ -234,10 +232,31 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="ad"></param>
         /// <param name="Id"></param>
-        public void RemoveAddress(AddressDetail ad,int Id) {
-            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && Id == (int)samp.AddressId);
+        public void RemoveAddress(AddressDetail ad) {
+            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
         }
-        
+        /// <summary>
+        /// changing customer Default Address
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            var s = _customerAddressesList.Where(temp => temp.CustomerId == ad.CustomerId).ToList();
+            if (s != null)
+            {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+            }
+            else {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+                _customerAddressesList.Add(ad);
+            }
+            
+        }
+
+
 
     }
 }

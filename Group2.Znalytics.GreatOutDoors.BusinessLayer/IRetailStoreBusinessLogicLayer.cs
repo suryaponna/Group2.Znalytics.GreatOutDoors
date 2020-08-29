@@ -8,6 +8,6 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     {
         void AddRetailStoreID(Retailstore rsid);
         List<Retailstore> GetRetailStoreIDs();
-        Retailstore GetRetailstoreByRetailStoreID(int RetailStoreID);
+        Retailstore GetRetailstoreByRetailStoreID(string RetailStoreID);
     }
 }

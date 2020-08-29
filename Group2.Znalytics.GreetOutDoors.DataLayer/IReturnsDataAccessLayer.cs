@@ -8,7 +8,7 @@ namespace Group2.Znalytics.GreetOutDoors.IDataLayer
     {
 
         void AddReturn(Return rm);
-        Return GetReturnsByProductID(int Id);
+       
 
     }
 }

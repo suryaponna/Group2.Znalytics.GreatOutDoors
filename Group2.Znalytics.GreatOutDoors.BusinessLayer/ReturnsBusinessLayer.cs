@@ -13,31 +13,43 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     public class ReturnsBusinessLayer : IReturnsBusinessLayer
     {
         ReturnsDataAccessLayer _rd;
-
+        // Constructor for Returns Business layer 
         public ReturnsBusinessLayer()
         {
-
+            // Creating object for Returns DataAccess Layer
             _rd = new ReturnsDataAccessLayer();
         }
 
         // creating method for validating ProductID
 
-        public void AddReturn(Return rm)
+        public void AddReturns(Return rm)
         {
             if (rm.ProductName != null)
             {
-                _rd.AddReturn(rm);
+                _rd.AddReturns(rm);
             }
             else
             {
                 throw new Exception("Add valid Product Name");
             }
         }
+        /// <summary>
+        /// Method for Exchanging a product
+        /// </summary>
+        /// <param name="rm">Represents object of ReturnModule</param>
         public void ExchangeProduct(Return rm)
         {
             try
             {
-                _rd.ExchangeProduct(rm);
+                
+                    DateTime exchangeDate = DateTime.Now;
+                    exchangeDate = exchangeDate.AddDays(-30);
+
+                    if (rm.Productdate < exchangeDate)
+                    {
+                        ExchangeProduct(rm);
+                    }
+                   
             }
             catch (ReturnException ex)
             {
@@ -45,13 +57,19 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             }
 
         }
+        /// <summary>
+        /// Represents GetReturns through list
+        /// </summary>
+        /// <returns></returns>
         public List<Return> GetReturns()
         {
             return _rd.GetReturns();
         }
-        //Method to display Return  by ProductId
-        // public List<Return> GetReturnByProductID() => _rd.GetReturnByProductID();
-
+        
+        /// <summary>
+        /// Method for Removing Return by productname
+        /// </summary>
+        /// <param name="name">Represents name of the product</param>
         public void RemoveReturnByProductName(string name)
         {
             try
@@ -67,7 +85,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw;
             }
         }
-        public void  RemoveReturnByProductID(int Id)
+        /// <summary>
+        /// Method for Removing Return by ProductID
+        /// </summary>
+        /// <param name="Id">Its ProductID</param>
+        public void  RemoveReturnByProductID(string Id)
         {
 
             _rd.RemoveReturnByProductID(Id);

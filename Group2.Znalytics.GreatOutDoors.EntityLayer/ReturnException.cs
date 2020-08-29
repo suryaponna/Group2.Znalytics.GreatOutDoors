@@ -17,6 +17,10 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
 
         }
+        public ReturnException(string message, Exception innerException) : base(message)
+        {
+
+        }
 
     }
 }
