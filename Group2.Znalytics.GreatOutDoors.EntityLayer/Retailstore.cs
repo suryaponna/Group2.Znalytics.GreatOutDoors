@@ -81,7 +81,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!atFound && !commaFound && value.Length <= 30)
+                    if (!atFound && !commaFound && value.Length <= 20)
                     {
                         _customerName = value;
                     }
