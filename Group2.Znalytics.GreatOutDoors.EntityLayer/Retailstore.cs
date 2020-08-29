@@ -63,7 +63,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 }
                 catch
                 {
-                    throw new Exception("Enter valid Retail Store ID");
+                    throw new RetailstoreException("Enter valid Retail Store ID");
                 }
 
             }
@@ -89,7 +89,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 }
                 catch
                 {
-                    throw new Exception("Manager name is invalid");
+                    throw new RetailstoreException("customer name is invalid");
                 }
             }
             get
