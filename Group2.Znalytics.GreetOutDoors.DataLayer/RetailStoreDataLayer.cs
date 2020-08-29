@@ -26,14 +26,14 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         //GET retailstore id
         public List<Retailstore> GetRetailStoreIDs()
         {
-            throw new NotImplementedException();
+            throw new Exception("Enter valid retailId");
         }
 
         //Method to add product qunatity to the
         public void AddProductQuantity(Retailstore p)
         {
-            throw new NotImplementedException();
-            
+            throw new Exception("Enter product quantity");
+
         }
     }
 }

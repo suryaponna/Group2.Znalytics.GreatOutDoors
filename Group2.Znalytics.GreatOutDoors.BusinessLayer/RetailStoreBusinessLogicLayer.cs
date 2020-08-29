@@ -86,7 +86,15 @@ public List<RetailStoreID>GetRetailStoreIDs()
             }
         }
 
+        public void AddProductQuantity()
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Retailstore> GetProductQuantity()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

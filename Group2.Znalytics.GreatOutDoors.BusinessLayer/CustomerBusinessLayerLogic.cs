@@ -48,6 +48,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 throw new Exception("Phone number can't be null,Please enter 10digit Phonenumber");
             }
         }
+        //Checking Aadharcard
+        
       
         //Validation of Mail Id
         public void ValidateMailId(CustomerDetail customer)
