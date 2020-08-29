@@ -12,7 +12,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         AddressDetail RetunDefaultAddress(AddressDetail ad);
         AddressDetail ReturnAddress(AddressDetail ad,int Id);
         void RemoveAddress(AddressDetail ad,int Id);
-        List<AddressDetail> CustomerAllAddress(AddressDetail ad);
+        List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
         void AddressAnotherAddressToCustomer(AddressDetail ad);
         void UpdateExistingAddress(int id,AddressDetail ad);
         
