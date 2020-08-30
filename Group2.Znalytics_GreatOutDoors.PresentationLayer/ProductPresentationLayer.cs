@@ -51,8 +51,8 @@ class Product
         System.Console.WriteLine("---------------------------------");
         System.Console.WriteLine("1.Personal Accessories");
         System.Console.WriteLine("2.Golf Equiment");
-        System.Console.WriteLine("3.Camping Euipment");
-        System.Console.WriteLine("4.Mountaineering Euipment");
+        System.Console.WriteLine("3.Camping Eqipment");
+        System.Console.WriteLine("4.Mountaineering Equipment");
         System.Console.WriteLine("5.Outdoor Protection");
         System.Console.WriteLine("Enter more than 6 to exit");
         int ch = 1;
