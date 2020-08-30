@@ -96,8 +96,8 @@ class Product
         }
          void RemoveProduct()
         {
-            ProductDetails Product = new ProductDetails();// creating the object fro ProductDeatils class
-            ProductBusiness pbb = new ProductBusiness();// Creating thhe object for ProductBusiness class
+            Product Product = new Product();// creating the object fro ProductDeatils class
+            ProductBusiness pb = new ProductBusiness();// Creating thhe object for ProductBusiness class
             System.Console.WriteLine("select on which type you want to remove a product");
             System.Console.WriteLine("1.based on ProductId");
             System.Console.WriteLine("2.based on ProductName");
