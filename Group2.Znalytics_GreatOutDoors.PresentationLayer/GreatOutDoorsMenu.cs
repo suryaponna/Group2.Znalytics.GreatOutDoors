@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using Znalytics.Group2.GreatOutDoor.Entity;
-
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class GreatOutDoorsMenu

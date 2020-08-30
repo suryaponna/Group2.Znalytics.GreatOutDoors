@@ -11,8 +11,7 @@ using System.Linq;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
-namespace Znalytics.Group2.GreatOutDoor.DataLayer
-
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
     
     public class AddressDataLayer:IEnumerable,IList,IAddressInterface
