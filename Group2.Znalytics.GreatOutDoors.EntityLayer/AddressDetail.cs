@@ -11,7 +11,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private int _addressId ;
         private string _customerCountry;
         private string _customerFullName;
-        private long _mobileNumber;
+        private string _mobileNumber;
         private string _pinCode;
         private string _flatDno;
         private string _areaColony;
@@ -74,7 +74,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 13)
                     _customerCountry = value;
                 else
-                    throw new AddOrderDetails("Entered Country Name is not in Range");
+                    throw new AddressException("Entered Country Name is not in Range");
             }
             get
             {
@@ -92,7 +92,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     _customerFullName = value;
                 else
-                    throw new AddOrderDetails("Your name exceeded the size tha maximum characters are 14");
+                    throw new AddressException("Your name exceeded the size tha maximum characters are 14");
 
             }
             get
@@ -104,14 +104,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Property for MobileNumber
         /// </summary>
 
-        public long MobileNumber
+        public string MobileNumber
         {
             set
             {
-                if (value <= 9999999999 && value > 1111111111)
+                if (value.Length==14 &&string.IsNullOrEmpty(value))
                     this._mobileNumber = value;
                 else
-                    throw new AddOrderDetails("Enter valid Phone number with 10 digits");
+                    throw new AddressException("Enter valid Phone number with country w=starts with + and space 10 digits ");
             }
             get
             {
@@ -129,7 +129,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length <= 6)
                     this._pinCode = value;
                 else
-                    throw new AddOrderDetails("Enteres PinCode was not Valid");
+                    throw new AddressException("Enteres PinCode was not Valid");
             }
             get
             {
@@ -147,7 +147,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._flatDno = value;
                 else
-                    throw new AddOrderDetails("Enter Your FlatNumber Or Door Number length was exceeded the size of 15");
+                    throw new AddressException("Enter Your FlatNumber Or Door Number length was exceeded the size of 15");
             }
             get
             {
@@ -164,7 +164,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._areaColony = value;
                 else
-                    throw new AddOrderDetails("Entered Area was not in range exceeded tha maximum character of 15");
+                    throw new AddressException("Entered Area was not in range exceeded tha maximum character of 15");
             }
             get
             {
@@ -182,7 +182,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 20)
                     this._landMark = value;
                 else
-                    throw new AddOrderDetails("Enter your Land Mark with in the range 20");
+                    throw new AddressException("Enter your Land Mark with in the range 20");
             }
             get
             {
@@ -201,7 +201,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._townCity = value;
                 else
-                    throw new AddOrderDetails("Entere Valid Town of Size maximum is 15");
+                    throw new AddressException("Entere Valid Town of Size maximum is 15");
             }
             get
             {
@@ -219,7 +219,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 if (value.Length < 15)
                     this._selState = value;
                 else
-                    throw new AddOrderDetails("Enter State with in the Range");
+                    throw new AddressException("Enter State with in the Range");
             }
             get
             {
