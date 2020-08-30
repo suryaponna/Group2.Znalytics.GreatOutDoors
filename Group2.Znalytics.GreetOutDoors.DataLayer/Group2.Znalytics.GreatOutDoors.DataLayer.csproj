@@ -45,14 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressDataLayer.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="Exchange.cs" />
+    <Compile Include="CustomerDataLayerLogic.cs" />
     <Compile Include="IAddressDataLayer.cs" />
-    <Compile Include="IOrderDataLayer.cs" />
+    <Compile Include="IAddressInterface.cs" />
+    <Compile Include="ICustomerDataAccessLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />
-    <Compile Include="OrderProductException.cs" />
-    <Compile Include="orderProducts.cs" />
+    <Compile Include="OrderException.cs" />
     <Compile Include="productDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailStoreDataLayer.cs" />

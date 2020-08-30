@@ -14,7 +14,7 @@ using System.CodeDom.Compiler;
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer : IEnumerable
+    public class ReturnsDataAccessLayer 
     {
         private static List<Return> _return;
         /// <summary>
@@ -23,9 +23,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         static ReturnsDataAccessLayer()
         {
             //creating a list 
-            _return = new List<Return>();
-
+            _return = new List<Return>()
+            {
+                new Return{ProductID="23869J",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
+            };
+            _return = LoadDetailsToList();
         }
+        
         /// <summary>
         /// Declared a method for ListOfReturn which contains serialization part
         /// </summary>
@@ -40,6 +44,18 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             streamWriter.Write(s);
             streamWriter.Close();
 
+        }
+        /// <summary>
+        /// Deserialization method to load details into list
+        /// </summary>
+        /// <returns></returns>
+        public static List<Return> LoadDetailsToList()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
+            string s2 = streamReader.ReadToEnd();
+            List<Return> customers2 = JsonConvert.DeserializeObject<List<Return>>(s2);
+            streamReader.Close();
+            return customers2;
 
         }
         /// <summary>
@@ -61,6 +77,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             if (_return.Exists(temp => temp.ProductID == Id))
             {
                 return _return.Find(temp => temp.ProductID == Id);
+                
             }
             else
             {
@@ -90,7 +107,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             if (rma != null)
             {
                 rma.ProductName = rm.ProductName;
-            
+                ListOfReturn();
             }
             else
             {
@@ -107,16 +124,6 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
        
         
-        /// <summary>
-        /// Inherited from IEnumerable and Generates IEnumerator which acts as Iterator
-        /// </summary>
-        public IEnumerator GetEnumerator()
-        {
-            for (int i = 0; i < _return.Count; i++)
-            {
-                yield return _return[i];
-            }
-        }
 
         /// <summary>
         ///  Method for Removing Return by ProductID
@@ -125,7 +132,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
         {
              _return.RemoveAll(temp => temp.ProductID == Id);
-
+            ListOfReturn();
         }
         /// <summary>
         /// Method for removing Return by product name
@@ -141,7 +148,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
             else
             {
-                throw new ReturnException("Product ID doesn't exists");
+                throw new ReturnException("Product name doesn't exists");
             }
 
            

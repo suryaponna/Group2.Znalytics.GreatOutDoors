@@ -184,8 +184,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                 Console.WriteLine("Enter with which product you want to exchange");
                 rm.ProductName = Console.ReadLine();
-                Console.WriteLine("Your Product will be Exchanged soon!!");
                 rbl.ExchangeProduct(rm);
+                Console.WriteLine("Your Product will be Exchanged soon!!");
+                
             }
             catch (ReturnException ex)
             {
@@ -210,13 +211,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             rbl.AddReturns(rm);
             Console.WriteLine("Product  Added");
 
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
-            string s2 = streamReader.ReadToEnd();
-            List<Return> _return = JsonConvert.DeserializeObject<List<Return>>(s2);
+           
         }
-        //
-
-
+        
         /// <summary>
         /// Method to remove Return details by ProductId
         /// </summary>
