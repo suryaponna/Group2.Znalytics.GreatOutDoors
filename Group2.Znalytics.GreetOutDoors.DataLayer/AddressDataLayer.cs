@@ -183,7 +183,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return sample;
             }
             else {
-                throw new AddressException("No default Address you Might not enteres your address while singup");
+                throw new AddOrderDetails("No default Address you Might not enteres your address while singup");
             }
         }
         /// <summary>
@@ -200,7 +200,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return samp;
             }
             else {
-                throw new AddressException("Requested Address Not Found");
+                throw new AddOrderDetails("Requested Address Not Found");
             }
         }
 

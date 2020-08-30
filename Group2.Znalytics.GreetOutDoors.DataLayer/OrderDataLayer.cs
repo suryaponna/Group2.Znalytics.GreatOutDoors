@@ -1,6 +1,7 @@
 ﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using Znalytics.Group2.GreatOutDoor.Entity;
 
 
@@ -11,34 +12,69 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// <summary>
         /// Creating List Collection for OrderProduct
         /// </summary>
-        public static List<OrderProduct> orderList = new List<OrderProduct>();
-        public bool AddOrderDataLayer(OrderProduct newOrder)
+        private static List<OrderProduct> orderProducts = new List<OrderProduct>();
+        public bool AddOrder(OrderProduct order)
         {
             bool orderAdded = false;
             try
             {
-                orderList.Add(newOrder);
+                orderProducts.Add(item: OrderProduct);
                 orderAdded = true;
             }
-            catch (SystemException ex)
+            catch(FormatException ex)
             {
-                throw new OrderException(ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new OrderProductException(ex.Message);
             }
             return orderAdded;
 
         }
 
-
-        //Constructor
-        public OrderDataLayer()
+        //get the orders
+        public List<OrderProduct> GetOrderProducts;
         {
-            _productID = new List<OrderProduct>();
+        return orderProducts;
+            }
 
-        }                        
+        public void SearchOrder(string SearchOrderID)
+        {
+            OrderProduct searchOrder = null;
+            try
+            {
+                foreach (OrderProduct item in orderProducts)
+                {
+                    if (item.OrderID == SearchOrderID)
+                    {
+                        searchOrder = item;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new OrderProductException(ex.Message);
+            }
+
+            
+        }
+        public void 
 
 
-        AddressDataLayer ad = new AddressDataLayer();
+               
+            }
+
+        }
+
+   
+
+    AddressDataLayer ad= new AddressDataLayer();  
     }
 
-
+        
+    }
 }
+ 
+}
+

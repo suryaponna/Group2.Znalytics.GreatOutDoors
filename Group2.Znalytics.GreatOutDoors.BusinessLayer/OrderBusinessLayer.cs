@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.Remoting;
+using System.Runtime.Serialization;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
@@ -11,106 +13,66 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
     public class OrderBusinessLayer
     {
+        OrderDataLayer _od;
+        private int searchOrderBusinessLayer;
 
-        private OrderDataLayer orderDataLayer;
-        private object _orderDataLayer;
 
+
+        /// <summary>
+        /// Constructor for Order Business Layer
+        /// </summary>
         public OrderBusinessLayer()
         {
-            OrderDataLayer _orderDataLayer = new OrderDataLayer();
+            //Creating Object for DataLayer
+            _od = new OrderDataLayer();
         }
-
-        public int OrderID { get; private set; }
-        public int Quantity { get; private set; }
-        public int SellingPrice { get; private set; }
-        public int TotalAmount { get; private set; }
-        public int AmountPayable { get; private set; }
-        public string FinalDelieveryAddress { get; private set; }
-        public int ProductID { get; private set; }
-
-        private static bool ValidateOrder(OrderBusinessLayer order)
+        /// <summary>
+        /// Method For Adding the Product
+        /// </summary>
+        /// <param name="order"></param>
+        public void AddOrder(OrderProduct order)
         {
-            StringBuilder sb = new StringBuilder();
-            bool ValidOrder = true;
-            if (order.ProductID < = 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "InvalidID");
-            }
-            if (order.Quantity <= 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Name Required");
-            }
-            if (order.SellingPrice <= 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Name Required");
-            }
-            if (order.TotalAmount < = 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Name Required");
-            }
-            if (order.AmountPayable < = 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Name Required");
-            }
-            if (order.FinalDelieveryAddress == string.Empty)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Name Required");
-            }
-            if (order.OrderID < = 0)
-            {
-                ValidOrder = false;
-                sb.Append(Environment.NewLine + "Invalid Guest ID");
-            }
-            if (ValidOrder == false)
-            {
-                throw new OrderException(sb.ToString());
-                return ValidOrder;
-            }
-        }
-        public static bool AddOrderBusinessLayer(OrderBusinessLayer newOrder)
-        {
-            bool orderAdded = false;
+            bool orderadded = false;
             try
             {
-                if (ValidateOrder(newOrder))
-                    OrderDataLayer guestDAL = new OrderDataLayer();
-                orderAdded = guestDAL.AddOrderDAL(newOrder);
+                if (validorder(order) == null)
+                {
+                    AddOrder(order);
+                }
             }
-            catch (OrderException)
+            catch (OrderProductException)
             {
                 throw;
             }
-            catch(ApplicationException ex)
+
+        
+
+        }
+        public static SearchOrderBusinessLayer( int searchOrderID)
+        {
+            searchOrderID = null;
+            try
+            {
+                searchOrderBusinessLayer = searchOrderID;
+            }
+            catch (OrderException ex)
             {
                 throw ex;
             }
-            return orderAdded;
-        }
-        public 
-
-
-
+            catch (ApplicationException ex)
+            {
+                throw ex;
             }
+            return searchOrderBusinessLayer;
+
         }
-
-
 
     }
+
+    
+    }
 }
-
-
-
-
-
-
-
-
+      
 
 
 DateTime eligibleDate = DateTime.Now;
