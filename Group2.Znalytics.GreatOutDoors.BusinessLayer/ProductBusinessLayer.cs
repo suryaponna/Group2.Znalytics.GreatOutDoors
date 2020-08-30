@@ -9,7 +9,7 @@ using GreatOutdoorsProduct.DataAccessLayer;
 
 namespace GreatOutdoorsProduct.BusinessLayer
 {
-    public class ProductBusinessLayer 
+    public class ProductBusinessLayer : IProductBusinessLayer
     {
         private static bool Product(Product product)
 

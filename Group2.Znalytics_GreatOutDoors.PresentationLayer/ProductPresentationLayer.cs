@@ -174,6 +174,61 @@ class Product
                             }
                         } while (choice2 != 5);
                         break;
+                    case 2:
+
+                        System.Console.WriteLine("Camping  Equipment");
+                        Product p;
+                        p = new Product();
+
+                        //types of camping equpment
+                        System.Console.WriteLine("----------Camping Euipment-----------");
+                        System.Console.WriteLine("\n 1.Golf wedges \n 2.Golf cart\n 3.Club head covers \n 4.Ball mark repair tool" +
+                       "\n 5.Ball markers \n 6.Shoes \n 7.Gloves \n 8.exit");
+
+                        // Switch Case statement to select the categories of Books
+                        int choice3 = 1;
+                        do
+                        {
+                            bool b = int.TryParse(System.Console.ReadLine(), out choice2);
+                            if (b == true)
+                            {
+                                switch (choice2)
+                                {
+                                    case 1:
+                                        System.Console.WriteLine("Golf wedges");
+                                        //p.Product Category = "Golf wedges";
+                                        break;
+                                    case 2:
+                                        System.Console.WriteLine("Golf cart");
+                                        //p.Product Category = "Golf cart ";
+                                        break;
+                                    case 3:
+                                        System.Console.WriteLine("Club head covers");
+                                        //p.Product Category = "Club head covers";
+                                        break;
+                                    case 4:
+                                        System.Console.WriteLine(" Ball mark repair tool");
+                                        //p.Product Category = "Ball mark repair tool";
+                                        break;
+                                    case 5:
+                                        System.Console.WriteLine("Ball markers");
+                                        //p.Product Category = "Ball markers";
+                                        break;
+                                    case 6:
+                                        System.Console.WriteLine("Shoes");
+                                        //p.Product Category = "Shoes";
+                                        break;
+                                    case 7:
+                                        System.Console.WriteLine("Gloves");
+                                        //p.Product Category = "Gloves";
+                                        break;
+                                    default:
+                                        System.Console.WriteLine("Exit");
+                                        break;
+                                }
+                            }
+                        } while (choice2 != 5);
+                        break;
 
 
 
