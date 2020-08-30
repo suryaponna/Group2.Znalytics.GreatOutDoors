@@ -88,7 +88,7 @@ class CustomerPL
 
         //Reading Phone number of customer manually
         Console.Write("Enter customer Phone number: ");
-        customers.PhoneNumber = Console.ReadLine();
+        customers.CustomerPhoneNumber = Console.ReadLine();
 
         //Reading Customer's State PinCode manually
         Console.Write("Enter customer State Pincode");
@@ -143,12 +143,6 @@ class CustomerPL
         customers.AadharCardNumber = Console.ReadLine();
         Console.Write("Enter New Customer Aadharcardnumber: ");
         customers.AadharCardNumber = Console.ReadLine();
-
-        //Updating PanCardNumber
-        Console.Write("Enter Existing Customer PancardNumber: ");
-        customers.PanCardNumber = Console.ReadLine();
-        Console.Write("Enter New Customer Pan card number: ");
-        customers.PanCardNumber = Console.ReadLine();
 
         //Updating Phone number
         Console.Write("Enter Existing Customer Phone number: ");

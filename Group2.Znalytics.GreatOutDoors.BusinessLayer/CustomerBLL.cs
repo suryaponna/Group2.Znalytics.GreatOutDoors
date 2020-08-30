@@ -25,7 +25,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             cdal = new CustomerDAL();//object creation for dataacesslayer
         }
-
+        /// <summary>
+        /// Adding cutomer
+        /// </summary>
+        /// <param name="customers"></param>
 
         public void AddCustomer(Customer customers)
         {
@@ -52,7 +55,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             }
         }
         //checking age of the customer
-        public int Age(Customer customers)
+        public void Age(Customer customers)
         {
             try {
 
@@ -61,9 +64,6 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 {
                     cdal.(customers);
                 }
-                else
-
-                { return 0; }
 
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
 
             //Validation of Mail Id
-            public void ValidateMailId(Customer customers)
+            public void MailId(Customer customers)
             {
             /*Email validation:
             * 1. No space

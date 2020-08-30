@@ -1,6 +1,6 @@
 /////////////////////CREATED BY APOORVA //////////////////////
 
-
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Collections.Generic;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLogicLayer
