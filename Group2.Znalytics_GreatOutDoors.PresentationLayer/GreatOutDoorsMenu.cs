@@ -60,7 +60,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.WriteLine("Enter Your Name:");
             ad.CustomerName = (System.Console.ReadLine());
             System.Console.WriteLine("Enter Mobile Number:");
-            ad.MobileNumber = (System.Convert.ToInt64(System.Console.ReadLine()));
+            ad.MobileNumber = System.Console.ReadLine();
             System.Console.WriteLine("Enter Your Pincode:");
             ad.PinCode = (System.Console.ReadLine());
             System.Console.WriteLine("Enter Flat/DoorNumber:");

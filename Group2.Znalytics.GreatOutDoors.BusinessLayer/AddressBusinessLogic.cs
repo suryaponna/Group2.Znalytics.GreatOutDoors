@@ -98,8 +98,12 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
             }
         }
         public void ValidatingPhoneNumber(AddressDetail ad) {
-            string[] PhoneNumber = ad.MobileNumber.Split('+');
-            if (PhoneNumber[0].Length == 2 && PhoneNumber[1].Length == 10) { 
+            string[] PhoneNumber = ad.MobileNumber.Split(' ');
+            if (PhoneNumber[0].Length == 2 && PhoneNumber[1].Length == 10) {
+                string[] NumberCode = PhoneNumber[0].Split('+');
+                if (!NumberCodes.Contains(NumberCode[1]){
+                    throw new AddressException("The enteres Number code doent belongs to any country please check once");
+                }
                 
             }
         }
@@ -165,4 +169,4 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
 
 
     }
-}...
+}
