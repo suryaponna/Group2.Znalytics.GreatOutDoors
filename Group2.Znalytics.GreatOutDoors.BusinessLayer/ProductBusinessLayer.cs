@@ -11,7 +11,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
 {
     public class ProductBusinessLayer : IProductBusinessLayer
     {
-        private static bool Product(Product product)
+        private static void Product(Product product)
 
     /// <summary>
     /// refers tp Product BusinessLogic
