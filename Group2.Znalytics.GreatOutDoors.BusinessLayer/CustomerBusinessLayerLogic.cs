@@ -27,7 +27,7 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
         }
 
 
-        public void AddCustomer(Customer customer)
+        public void AddCustomer(Customer customers)
         {
             //Validating customer name
             if (customers.CustomerName != null)
@@ -70,43 +70,71 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
             {
                 throw new Exception("Age must be above 18");
             }
+        }
 
-            //validation for firstname(for signup process)
-            public void AddCustomer(Customer customer)
+            //validation for CustomerName(for signup process)
+            public void AddCustomer(Customer customers)
             {
                 //Validating customer first name
-                if (customer.FirstName != null)
+                if (customer.CustomerName != null)
                 {
                     cdal.AddCustomer(customer);
 
                 }
                 else
                 {
-                    throw new Exception("First name can't be null");
+                    throw new Exception("Customer name can't be null");
                 }
             }
+
+
+        }
 
             //Validation of Mail Id
             public void ValidateMailId(Customer customers)
             {
+            /*Email validation:
+            * 1. No space
+            * 2. @ symbol should be present
+            * 3. @ should be present only once
+            * 4. Some special characters like : , not allowed
+            * 5. Ends with .com or .co.in etc.
+            */
 
-                string mail = customer.CustomerMailId;
-                //searching for space
-                bool spaceFound = mail.Contains(" ");
 
-                //searching for @
-                bool AtFound = mail.Contains("@");
+            //reading email from keyboard
+            string email;
+            Console.WriteLine("Email: ");
+            email = Console.ReadLine();
 
-                char[] ch = mail.ToCharArray();
-                int AtCharCount = 0;
-                for (int i = 0; i < ch.Length; i++)
+            //searching for space
+            bool spaceFound = email.Contains(" ");
+
+            //searching for @
+            bool AtFound = email.Contains("@");
+
+            char[] ch = email.ToCharArray();
+            int AtCharCount = 0;
+            for (int i = 0; i < ch.Length; i++)
+            {
+                if (ch[i] == '@')
                 {
-                    if (ch[i] == '@')
-                    {
-                        AtCharCount++;
-                    }
+                    AtCharCount++;
                 }
-                cdal.AddCustomer(customers);
+            }
+
+            if (!spaceFound && AtFound && AtCharCount == 1 && (email.EndsWith(".com") || email.EndsWith(".co.in"))
+            {
+                Console.WriteLine("Valid Email address");
+            }
+            else
+            {
+                Console.WriteLine("Email should contain only one @ symbol; no space and also end with .com");
+            }
+
+
+        }
+        cdal.AddCustomer(customers);
             }
 
             //View customer personal details

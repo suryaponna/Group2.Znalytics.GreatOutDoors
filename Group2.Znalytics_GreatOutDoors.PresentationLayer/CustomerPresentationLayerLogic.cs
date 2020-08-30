@@ -35,10 +35,10 @@ class CustomerPL
             //switch statement is a selection control mechanism which executes one case after the another till break statement appears.
             switch (choice)
             {
-                case 1: AddCustomer(); break;
-                case 2: ViewCustomer(); break;
-                case 3: UpdateCustomer(); break;
-                case 4:DeleteCustomer();break;
+                case 1: AddCustomer(); break;//for adding customer
+                case 2: ViewCustomer(); break;//for viewing customer
+                case 3: UpdateCustomer(); break;//for updating customer
+                case 4:DeleteCustomer();break;//for deleting customer
             }
         } while (choice != 5);//if neither of the above three methods
     }
@@ -58,9 +58,17 @@ class CustomerPL
         Console.Write("Enter customer Id: ");
         customers.CustomerId = Console.ReadLine();
 
+        //Reading customer password manually
+        Console.Write("Enter your password: ");
+        customers.Password = Console.ReadLine();
+
         //Reading mailId of customer manually
         Console.Write("Enter emailId: ");
         customers.CustomerMailId = Console.ReadLine();
+
+        //Reading customer gender manually
+        Console.Write("Enter your gender: ");
+        customers.Gender = Console.ReadLine();
 
         //Reading flatnumber of customer manually
         Console.Write("Enter customer FlatNumber:");
@@ -87,9 +95,8 @@ class CustomerPL
         customers.CustomerPinCode = int.Parse(Console.ReadLine());
 
         //Reading Customer'Country manually
-        Console.WriteLine("Enter customer Country:);
-
-        customers.CustomerState = Console.ReadLine());
+        Console.WriteLine("Enter customer Country");
+        customers.CustomerCountry = Console.ReadLine();
 
 
 
@@ -165,10 +172,7 @@ class CustomerPL
         CustomerBusinessLogic.UpdateCustomer(customers);
         Console.WriteLine("Customer details Updated.\n");
     }
-
-
-}
-static void DeleteCustomer()
+    static void DeleteCustomer()
 {
     Console.WriteLine("Entered Customer name to be deleted");
     Console.WriteLine("Entered Customer ID to be deleted");
