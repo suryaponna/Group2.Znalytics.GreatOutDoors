@@ -1,9 +1,9 @@
 ﻿///// Apoorva///////
 //Customer Entity Layer
-using System;
-using System.Text.RegularExpression;
+
+
 using System.Text.RegularExpressions;
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
+
 
 namespace Znalytics.Group2.GreatOutDoor.Entity
 
@@ -30,14 +30,14 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _gender;
         private int _age;
         private string _aadharCardNumber;
-        
+        private string _pinCode;
 
      
             
         /// <summary>
         /// Property for Customer userId
         /// </summary>
-        public string user Id
+        public string CustomerId
         {
             set
             {
@@ -49,7 +49,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                                                             //Can be alphanumeric
                 if (r.IsMatch(value))
                 {
-                    _userId = value;
+                    _customerId = value;
                 }
                 else
                 {
@@ -58,7 +58,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             get
             {
-                return _userId;
+                return _customerId;
             }
         }
         /// <summary>
@@ -69,10 +69,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             set
             {
                 Regex r = new Regex("?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$");
-                // conditions are string must be between 8 and 15 characters long. 
-                //string must contain at least one number. 
-                //string must contain at least one uppercase letter. 
-                //string must contain at least one lowercase letter.
+                // password must be between 8 and 15 characters long. 
+                //password must contain at least one number. 
+                //password must contain at least one uppercase letter. 
+                //password must contain at least one lowercase letter.
                 if (r.IsMatchValue)
                 {
                     _password = value;
@@ -81,12 +81,13 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 {
                     throw new System.Exception("It is invalid");
                 }
+            }
                 get
                     {
                     return _password;
                 }
             }
-        }
+        
 
 
 
@@ -109,27 +110,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         }
 
         /// <summary>
-        /// Id of the Customer
-        /// </summary>
-        public string CustomerId
-        {
-            set
-            {
-                if (value >= 0 && value <= 9)
-                {
-                    _customerId = value;
-                }
-
-            }
-            get
-            {
-                return _customerId;
-            }
-        }
-        /// <summary>
         /// Mail Id of the Customer
         /// </summary>
-        public string MailId
+        public string CustomerMailId
         {
             set
             {
@@ -173,7 +156,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <summary>
         /// City of the Customer
         /// </summary>
-        public long CustomerCity
+        public string CustomerCity
         {
             set
             {
@@ -189,17 +172,17 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         }
 
         /// <summary>
-        /// State of the Customerr
+        /// State of the Customer
         /// </summary>
         public string CustomerState
         {
             set
             {
-                _address = value;
+                _customerState = value;
             }
             get
             {
-                return _address;
+                return _customerState;
             }
         }
 
@@ -217,21 +200,21 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                     {
                         if (value[i] > 0 || value[i] < 9)
                         {
-                            _CustomerPinNumber = value;
+                            _pinCode = value;
                         }
                     }
                 }
             }
             get
             {
-                return _customerPinCode;
+                return _pinCode;
             }
         }
 
         /// <summary>
         /// City of the Country
         /// </summary>
-        public long CustomerCountry
+        public string CustomerCountry
         {
             set
             {
@@ -262,6 +245,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return _customerPhoneNumber;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
 
 
 
