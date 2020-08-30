@@ -51,7 +51,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                     }
                    
             }
-            catch (ReturnException ex)
+            catch 
             {
                 throw;
             }
@@ -131,7 +131,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 }
                 
             }
-            catch (ReturnException ex)
+            catch 
             {
                 throw;
             }

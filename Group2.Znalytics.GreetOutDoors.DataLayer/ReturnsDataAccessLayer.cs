@@ -23,9 +23,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         static ReturnsDataAccessLayer()
         {
             //creating a list 
-            _return = new List<Return>();
-
+            _return = new List<Return>()
+            {
+                new Return{ProductID="23869J",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
+            };
+            _return = LoadDetailsToList();
         }
+        
         /// <summary>
         /// Declared a method for ListOfReturn which contains serialization part
         /// </summary>
@@ -40,6 +44,18 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             streamWriter.Write(s);
             streamWriter.Close();
 
+        }
+        /// <summary>
+        /// Deserialization method to load details into list
+        /// </summary>
+        /// <returns></returns>
+        public static List<Return> LoadDetailsToList()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\RawMaterial\RawMaterials.txt");
+            string s2 = streamReader.ReadToEnd();
+            List<Return> customers2 = JsonConvert.DeserializeObject<List<Return>>(s2);
+            streamReader.Close();
+            return customers2;
 
         }
         /// <summary>
@@ -61,6 +77,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             if (_return.Exists(temp => temp.ProductID == Id))
             {
                 return _return.Find(temp => temp.ProductID == Id);
+                
             }
             else
             {
@@ -90,7 +107,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             if (rma != null)
             {
                 rma.ProductName = rm.ProductName;
-            
+                ListOfReturn();
             }
             else
             {
@@ -125,7 +142,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
         {
              _return.RemoveAll(temp => temp.ProductID == Id);
-
+            ListOfReturn();
         }
         /// <summary>
         /// Method for removing Return by product name

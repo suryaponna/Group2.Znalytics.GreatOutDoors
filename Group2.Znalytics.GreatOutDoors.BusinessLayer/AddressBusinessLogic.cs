@@ -1,11 +1,13 @@
 ﻿using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System.Collections.Generic;
 using System.Linq;
+using Znalytics.Group2.GreatOutDoor.Entity;  
+
 ///--------------------Surya 
 /// <summary>
 /// Business Logic for Address
 /// </summary>
-namespace Znalytics.Group2.GreatOutDoor.Entity
+namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
 {
     public class AddressBusinessLogic:IAddressBusinessLayer
     {

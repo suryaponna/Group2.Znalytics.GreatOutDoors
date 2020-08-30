@@ -5,20 +5,20 @@ using System.Linq;
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     /// <summary>
-    /// Represents details of Order
+    /// Represents details of Order and IEquatable is for comparing two customers are same or not
     /// </summary>
-    public class OrderProduct
+    public class OrderProduct: IEquatable<OrderProduct>
     {
         //private fields
         private string _productID;
-        private string _addToCart;   //one order id may have multiple product id
-        private string _quantity;     //each product has its own quantity
-        private string _sellingPrice;   //each product has a unique selling price
-        private string _totalAmount;    //_quantity*_sellingPrice
-        private string _amountPayable;  //total amount payable
+        private string _productName;
+        private string _price;
+        private string _quantity;     //each product has its own 
         private string _finalDelieveryAddress;
         //private DateTime _timeOfSale;  //for time on shelf      
         private string _orderID;
+        private string _totalAmount;    //_quantity*_sellingPrice
+        private string _amountPayable;  //total amount payable
 
         public OrderProduct()
         {
@@ -52,9 +52,15 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                if (value.Length <= 10)
+                bool spaceFound = value.Contains(" ");
+                bool atFound = value.Contains("@");
+                if(!spaceFound && !atFound && value.Length<=10)
+                { 
+                   this._productID = value;
+                }
+                else
                 {
-                    _productID = value;
+                    throw new OrderProductEXception("Enter the Valid ProductID  ");
                 }
 
             }
@@ -67,11 +73,17 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                if (value.Length <= 10)
+                if(value.Length<=10)
                 {
-                    _addToCart = value;
+                   this._addToCart = value;
+                }
+                
+                else
+                {
+                    throw new OrderProductEXception("")
                 }
             }
+
             get
             {
                 return _addToCart;
@@ -163,6 +175,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         }
 
         public string ProductName { get; set; }
+
+        public bool Equals(OrderProduct other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

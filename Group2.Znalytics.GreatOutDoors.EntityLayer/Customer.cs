@@ -2,15 +2,15 @@
 //Customer Entity Layer
 
 
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;//directory involved for using regularexpressions in the code
 
 
-namespace Znalytics.Group2.GreatOutDoor.Entity
+namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collection of classes
 
 {
     public class Customer
     {
-        
+
 
         /// <summary>
         /// Represents details of customer
@@ -32,8 +32,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _aadharCardNumber;
         private string _pinCode;
 
-     
-            
+
+
         /// <summary>
         /// Property for Customer userId
         /// </summary>
@@ -61,6 +61,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return _customerId;
             }
         }
+    }
         /// <summary>
         /// Property for password
         /// </summary>
@@ -98,7 +99,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length <= 30)
+                if (value.Length <= 30) // length of the customer name should contain lessthan or equal to 30 characters.
                 {
                     _customerName = value;
                 }
@@ -246,15 +247,26 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
         }
         /// <summary>
-        /// 
+        /// property of gender
         /// </summary>
-
-
-
-
+        public string Gender
+    {
+        set
+        {
+            if (value == Male || value == Female)
+            {
+                _gender = value;
+            }
+        }
+        get
+        {
+            return _gender;
+        }
     }
 
-}
+
+ }
+
 
 
 
