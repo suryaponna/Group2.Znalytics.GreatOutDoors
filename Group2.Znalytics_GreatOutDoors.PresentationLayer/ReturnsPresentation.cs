@@ -184,8 +184,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                 Console.WriteLine("Enter with which product you want to exchange");
                 rm.ProductName = Console.ReadLine();
-                Console.WriteLine("Your Product will be Exchanged soon!!");
                 rbl.ExchangeProduct(rm);
+                Console.WriteLine("Your Product will be Exchanged soon!!");
+                
             }
             catch (ReturnException ex)
             {
@@ -221,9 +222,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             System.Console.Write("Enter the ProductID to be Deleted:");
-            string id = (System.Console.ReadLine());
+            rm.ProductID = (System.Console.ReadLine());
 
-            rbl.RemoveReturnByProductID(id);
+            rbl.RemoveReturnByProductID(rm);
             System.Console.WriteLine("ProductID Removed");
 
 
@@ -236,9 +237,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             System.Console.Write("Enter the ProductName:");
-            string name = System.Console.ReadLine();
+            rm.ProductName = System.Console.ReadLine();
 
-            rbl.RemoveReturnByProductName(name);
+            rbl.RemoveReturnByProductName(rm);
             System.Console.WriteLine("Product Removed");
         }
 
@@ -258,8 +259,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             {
 
 
-                System.Console.WriteLine("--------------- Detils are --------------");
-                Console.WriteLine(item.ProductID + "  " + item.ProductName + " , " + item.ProductQuantity + "  , " + item.Producttype + "  " + item.Productdate + "  ");
+                System.Console.WriteLine("--------------- Details are --------------");
+                Console.WriteLine("ProductID :"+item.ProductID + " ProductName is: " + item.ProductName + " ProductQuantity is: " + item.ProductQuantity + " ProductType " + item.Producttype + "  Productdate :" + item.Productdate + "  ");
             }
 
         }
@@ -271,9 +272,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             Console.WriteLine("Enter ProductID");
-            string id = Console.ReadLine();
+            rm.ProductID = Console.ReadLine();
 
-            rbl.GetReturnByProductID(id);
+            rbl.GetReturnByProductID(rm);
             Console.WriteLine("Your Product ID is:");
         }
         /// <summary>
@@ -284,9 +285,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             Console.WriteLine("Enter Productname");
-            string name = Console.ReadLine();
+            rm.ProductName = Console.ReadLine();
 
-            rbl.GetReturnByProductName(name);
+            rbl.GetReturnByProductName(rm);
             Console.WriteLine("Your Product name is:");
         }
         /// <summary>
@@ -297,7 +298,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             Console.WriteLine("Enter existing Product name to update");
-            string name = Console.ReadLine();
+            rm.ProductName = Console.ReadLine();
 
             if (rm != null)
             {

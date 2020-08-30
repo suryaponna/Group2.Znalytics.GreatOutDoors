@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GreatOutdoorsProduct.Entities
 {
-    public class Product
+    public class Product : IEquatable<Product>
     {
         private int productID;
         /// <summary>

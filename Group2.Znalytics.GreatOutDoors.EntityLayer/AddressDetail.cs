@@ -19,6 +19,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _townCity;
         private string _selState;
         private int _customerId=524;
+        private bool _defaultAddress;
         private AddressType _addressType;
         /// <summary>
         /// IEquatable method for comparing two customer are same or not
@@ -241,6 +242,17 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 else {
                     _addressType = AddressType.Office;
                 }
+            }
+        }
+        public bool DefaultAddressOrNot {
+            set {
+                string s = System.Convert.ToString(value);
+                if (string.IsNullOrEmpty(s)) {
+                    _defaultAddress = System.Convert.ToBoolean(s);
+                }
+            }
+            get {
+                return _defaultAddress;
             }
         }
 

@@ -14,7 +14,7 @@ using System.CodeDom.Compiler;
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer : IEnumerable
+    public class ReturnsDataAccessLayer 
     {
         private static List<Return> _return;
         /// <summary>
@@ -25,7 +25,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             //creating a list 
             _return = new List<Return>()
             {
-                new Return{ProductID="23869J",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
+                new Return{ProductID="23869",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
             };
             _return = LoadDetailsToList();
         }
@@ -51,11 +51,11 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <returns></returns>
         public static List<Return> LoadDetailsToList()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\RawMaterial\RawMaterials.txt");
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
             string s2 = streamReader.ReadToEnd();
-            List<Return> customers2 = JsonConvert.DeserializeObject<List<Return>>(s2);
+            List<Return> _return = JsonConvert.DeserializeObject<List<Return>>(s2);
             streamReader.Close();
-            return customers2;
+            return _return;
 
         }
         /// <summary>
@@ -71,33 +71,25 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         }
 
-        public Return GetReturnByProductID(string Id)
+        public Return GetReturnByProductID(Return rm)
         {
-            //Condition to check whether the ProductId exists or not
-            if (_return.Exists(temp => temp.ProductID == Id))
+            //Condition to check whether the ProductId finds or not
+            Return asm = _return.Find(temp => temp.ProductID == rm.ProductID);
             {
-                return _return.Find(temp => temp.ProductID == Id);
-                
-            }
-            else
-            {
-                throw new ReturnException("ProductId doesn't exist");
+                return asm;
+
             }
 
         }
 
-        public Return GetReturnByProductName(string name)
+        public Return GetReturnByProductName(Return rm)
         {
-            //Condition to check whether the Productname exists or not
-            if (_return.Exists(temp => temp.ProductName == name))
+            //Condition to check whether the Productname finds or not
+            Return rmd = _return.Find(temp => temp.ProductName == rm.ProductName);
             {
-                return _return.Find(temp => temp.ProductName == name);
-            }
-            else
-            {
-                throw new Exception("ProductName doesn't exist");
-            }
+                return rmd;
 
+            }
         }
 
         public void UpdateReturns(Return rm)
@@ -124,45 +116,22 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
        
         
-        /// <summary>
-        /// Inherited from IEnumerable and Generates IEnumerator which acts as Iterator
-        /// </summary>
-        public IEnumerator GetEnumerator()
-        {
-            for (int i = 0; i < _return.Count; i++)
-            {
-                yield return _return[i];
-            }
-        }
 
         /// <summary>
         ///  Method for Removing Return by ProductID
         /// </summary>
-        /// <param name="Id">Represents ProductID</param>
-        public void RemoveReturnByProductID(string Id) //Removing a Product by using Product ID
+        public void RemoveReturnByProductID(Return rm) //Removing a Product by using Product ID
         {
-             _return.RemoveAll(temp => temp.ProductID == Id);
+             _return.Remove(rm);
             ListOfReturn();
         }
         /// <summary>
         /// Method for removing Return by product name
         /// </summary>
-        /// <param name="name">Represents Productname</param>
-        public void RemoveReturnByProductName(string name)// Removing a Product By using Product Name
+        public void RemoveReturnByProductName(Return rm)// Removing a Product By using Product Name
         {
 
-
-            if (name!=null)
-            {
-                _return.RemoveAll(p => p.ProductName == name);
-            }
-            else
-            {
-                throw new ReturnException("Product ID doesn't exists");
-            }
-
-           
-
+            _return.Remove(rm);
         }   
     }
        

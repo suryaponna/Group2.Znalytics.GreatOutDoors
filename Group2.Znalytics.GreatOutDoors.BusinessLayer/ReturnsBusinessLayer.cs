@@ -39,24 +39,23 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <param name="rm">Represents object of ReturnModule</param>
         public void ExchangeProduct(Return rm)
         {
-            try
-            {
+           
                 //Date time 
-                    DateTime exchangeDate = DateTime.Now;
-                    exchangeDate = exchangeDate.AddDays(-30);
+                    
 
-                    if (rm.Productdate < exchangeDate)
+                    if (rm.Productdate < rm.ExchangeDate)
                     {
                         ExchangeProduct(rm);
                     }
-                   
-            }
-            catch 
+            else
             {
-                throw;
+                throw new Exception("Exchange should be within one month of purchased date");
             }
-
+           
+            
         }
+
+
         /// <summary>
         /// Represents GetReturns through list
         /// </summary>
@@ -71,13 +70,13 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="Id">It is Product ID</param>
         /// <returns></returns>
-        public Return GetReturnByProductID(string Id)
+        public Return GetReturnByProductID(Return rm)
         {
 
             //ProductId should not be null
-            if (Id != null)
+            if (rm.ProductID!= null)
             {
-                return _rd.GetReturnByProductID(Id);
+                return _rd.GetReturnByProductID(rm);
             }
             else
             {
@@ -88,15 +87,14 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <summary>
         /// This Method represents Get details of returns by Product name
         /// </summary>
-        /// <param name="name">Represents Product ID</param>
         /// <returns></returns>
-        public Return GetReturnByProductName(string name)
+        public Return GetReturnByProductName(Return rm)
         {
 
             //ProductId should not be null
-            if (name != null)
+            if (rm.ProductName != null)
             {
-                return _rd.GetReturnByProductName(name);
+                return _rd.GetReturnByProductName(rm);
             }
             else
             {
@@ -120,16 +118,21 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <summary>
         /// Method for Removing Return by productname
         /// </summary>
-        /// <param name="name">Represents name of the product</param>
-        public void RemoveReturnByProductName(string name)
+        public void RemoveReturnByProductName(Return rm)
         {
             try
             {
-                if (name != null)
+                if (rm.ProductName != null)
                 {
-                    _rd.RemoveReturnByProductName(name);
+
+                    _rd.RemoveReturnByProductID(rm);
                 }
-                
+                else
+                {
+                    throw new ReturnException("Product id doesn't exists");
+                }
+
+
             }
             catch 
             {
@@ -139,15 +142,22 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <summary>
         /// Method for Removing Return by ProductID
         /// </summary>
-        /// <param name="Id">Its ProductID</param>
-        public void  RemoveReturnByProductID(string Id)
+        public void  RemoveReturnByProductID(Return rm)
         {
 
-            _rd.RemoveReturnByProductID(Id);
+            if (rm.ProductID != null)
+            {
+                _rd.RemoveReturnByProductID(rm);
+            }
+            else
+            {
+                throw new ReturnException("Product id doesn't exists");
+            }
+
 
         }
-           
-      
+
+
     }
 }
 
