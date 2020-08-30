@@ -66,6 +66,7 @@
     <Compile Include="Exchange.cs" />
     <Compile Include="GreatOutDoorsMenu.cs" />
     <Compile Include="OrderPresentationLayer.cs" />
+    <Compile Include="OrderProduct.cs" />
     <Compile Include="ProductPresentationLayer.cs" />
     <Compile Include="RetailstorePresentationLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
