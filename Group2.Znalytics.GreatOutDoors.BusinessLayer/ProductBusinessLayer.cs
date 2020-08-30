@@ -50,6 +50,8 @@ namespace GreatOutdoorsProduct.BusinessLayer
 
 
 
+
+
         public static void UpdateProduct(Product updateProduct)
         {
             bool productUpdated = false;

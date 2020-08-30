@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
@@ -89,11 +90,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     {
                         case 1:
                             Console.WriteLine("Personal Accessories");
-                            p.Products = "PersonalAccessories";
+                            p.Product = "PersonalAccessories";
                             //categories  of Personal accessories
                             Console.WriteLine("----------Categories of personal accessories-----------");
-                            Console.WriteLine("\n 1.Comic \n 2.Aptitude \n 3.Historical Fiction \n 4.Educational Books" +
-                           "\n 5.Literary Fiction \n 6.Dective and Mystery \n 7.Exit");
+                            Console.WriteLine("\n 1.jackets \n 2.cravats \n 3.ties \n 4.hats" +
+                           "\n 5.boots and shoes  \n  6.Exit");
                             //Switch Case statement to select the categories of Books
                             int choice1 = 1;
                             do
@@ -104,36 +105,31 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice1)
                                     {
                                         case 1:
-                                            Console.WriteLine("Comic Books");
-                                            r.RetailProducts = "Comic Books";
+                                            Console.WriteLine("jackets");
+                                            p.Product = "jackets";
                                             AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Aptitude Books");
-                                            r.RetailProducts = "Aptitude ";
+                                            Console.WriteLine("cravats");
+                                            p.Product = "cravats ";
                                             AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Historical Fiction");
-                                            r.RetailProducts = "Historical Fiction";
+                                            Console.WriteLine("ties");
+                                            p.Product = "ties";
                                             AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Educational Books");
-                                            r.RetailProducts = "Educational Books";
+                                            Console.WriteLine("hats");
+                                            p.Product = "hats";
                                             AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Literary Fiction");
-                                            r.RetailProducts = "Literary Fiction";
+                                            Console.WriteLine("boots and shoes");
+                                            p.Product = "boots and shoes";
                                             AddProductQuantity();
                                             break;
-                                        case 6:
-                                            Console.WriteLine("Dective and Mystery");
-                                            r.RetailProducts = "Dective and Mystery";
-                                            AddProductQuantity();
-                                            break;
-                                        default:
+                                         default:
                                             Console.WriteLine("Exit");
                                             break;
                                     }
@@ -142,9 +138,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             break;
 
                         case 2:
-                            r.RetailProducts = "Camping Euipment";
+                            p.Product = "Camping Euipment";
                             Console.WriteLine("--------Catagories of Camping Equipment---------");
-                            Console.WriteLine("\n 1.Iron Box \n 2.Water Purifiers \n 3.Air Purifiers \n 4.Refridgerators \n 5.Washing Machines \n 6.Exit");
+                            Console.WriteLine("\n 1.Tent  \n 2.Sleeping bags \n 3.Camping pillow \n 4.Headlamps \n 5.Camp table \n 6.Exit");
 
                             //Switch Case statement to select the catagorie of camping
                             int choice2 = 1;
@@ -156,28 +152,28 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice2)
                                     {
                                         case 1:
-                                            Console.WriteLine("Iron Box");
-                                            r.RetailProducts = "Iron Box";
+                                            Console.WriteLine("Tent");
+                                            p.Product = "Tent";
                                             AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Water Purifiers");
-                                            r.RetailProducts = "Water Purifiers";
+                                            Console.WriteLine("sleeping bags");
+                                            p.Product = "sleeping bags";
                                             AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Air Purifiers");
-                                            r.RetailProducts = "Air Purifiers";
+                                            Console.WriteLine("camping pillow");
+                                            p.Product = "camping pillow";
                                             AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Refridgerators");
-                                            r.RetailProducts = "Refridgerators";
+                                            Console.WriteLine("headlamps");
+                                            p.Product = "headlamps";
                                             AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Washing Machines");
-                                            r.RetailProducts = "Washing Machines";
+                                            Console.WriteLine("camp table");
+                                            p.Product = "camp table";
                                             AddProductQuantity();
                                             break;
                                         default:
@@ -188,11 +184,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             } while (choice3 != 4);
                             break;
                         case 3:
-                            r.RetailProducts = "Golf Equipment";
+                            p.Product = "Golf Equipment";
                             //Choice of choosing Catagories of Golf Equipment
                             Console.WriteLine("---------------Catagories of golf equipment---------------");
-                            Console.WriteLine("\n 1.Beverages \n 2.Dairy products \n 3.Frozen foods\n 4.Meat" +
-                                " \n 5.Cleaner products \n 6.Vegetables \n 7.Exit");
+                            Console.WriteLine("\n 1.Balls \n 2.Golf clubs \n 3.Ball markers\n 4.Tees" +
+                                " \n 5.Golf bag \n 6.Exit");
 
                             //Switch Case statement to select the catagories of Golf euipment
                             int choice3 = 2;
@@ -204,33 +200,28 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice3)
                                     {
                                         case 1:
-                                            Console.WriteLine("Beverages");
-                                            r.RetailProducts = "Beverages";
+                                            Console.WriteLine("Balls");
+                                            p.Product = "Balls";
                                             AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Dairy products");
-                                            r.RetailProducts = "Dairy products";
+                                            Console.WriteLine("Golf clubs");
+                                            p.Product = "Golf clubs";
                                             AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Frozen foods");
-                                            r.RetailProducts = "Frozen foods";
+                                            Console.WriteLine("Ball markers");
+                                            p.Product = "Ball markers";
                                             AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Meat");
-                                            r.RetailProducts = "Meat";
+                                            Console.WriteLine("Tees");
+                                            p.Product = "Tees";
                                             AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Cleaner products");
-                                            r.RetailProducts = "Cleaner products";
-                                            AddProductQuantity();
-                                            break;
-                                        case 6:
-                                            Console.WriteLine("Vegeatables");
-                                            r.RetailProducts = "Vegeatables";
+                                            Console.WriteLine("Golf bag");
+                                            p.Product = "Golf bag";
                                             AddProductQuantity();
                                             break;
                                         case 7:
@@ -241,11 +232,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             } while (choice3 != 4);
                             break;
                         case 4:
-                            r.RetailProducts = " Mountaineering Equipment";
+                            p.Product = " Mountaineering Equipment";
                             //Choice of choosing Catagories of Mountaineering Equipment
                             Console.WriteLine("---------------Catagories of Mountainering euipment---------------");
-                            Console.WriteLine("\n 1.Surgical Products\n 2.First Aid kit\n 3.Dialysis Machine\n 4.All types medical drugs" +
-                                " \n 5.Exit");
+                            Console.WriteLine("\n 1.Climbing pack\n 2.Rope\n 3.Helmet\n 4.Crampons" +
+                                " \n 5.Ice axe \n 6.Exit");
                             //Switch Case statement to select the catagories of Mountaineering equipment
                             int choice4 = 1;
                             do
@@ -256,26 +247,31 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice4)
                                     {
                                         case 1:
-                                            Console.WriteLine("Surgical Products");
-                                            r.RetailProducts = "Surgical Products";
+                                            Console.WriteLine("Climbing pack");
+                                            p.Product = "Climbing pack";
                                             AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("First Aid kit");
-                                            r.RetailProducts = "First Aid kit";
+                                            Console.WriteLine("Rope");
+                                            p.Product = "Rope";
                                             AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Dialysis Machine");
-                                            r.RetailProducts = "Dialysis Machine";
+                                            Console.WriteLine("Helmet");
+                                            p.Product = "Helmet";
                                             AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("All types medical drugs");
-                                            r.RetailProducts = "All types medical drugs";
+                                            Console.WriteLine("Crampons");
+                                            p.Product = "Crampons";
                                             AddProductQuantity();
                                             break;
                                         case 5:
+                                            Console.WriteLine("Ice axe");
+                                            p.Product = "Ice axe";
+                                            AddProductQuantity();
+                                            break;
+                                        case 6:
                                             Console.WriteLine("Exit");
                                             break;
                                     }
@@ -285,9 +281,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                         case 5:
                             p.Product = "Outdoor Protection";
                             Console.WriteLine("---------------Categories of Outdoor Protection---------------");
-                            Console.WriteLine("\n 1.FootWear  \n 2.Sportswear \n 3.Traditioal \n 4.Accessories " +
+                            Console.WriteLine("\n 1.Mask  \n 2.solar powered light \n 3.Traditioal \n 4.Accessories " +
                                 " \n 5.Jewelry \n 6.Watches \n 7.Formal Wear \n 8.Exit");
-                            //Switch Case statement to select the catagories of Fashion products
+                            //Switch Case statement to select the catagories of outdoor protection
                             int choice5 = 1;
                             do
                             {
@@ -297,39 +293,39 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice3)
                                     {
                                         case 1:
-                                            Console.WriteLine("Footwear");
-                                            r.RetailProducts = "Footwear";
+                                            Console.WriteLine("Mask");
+                                            p.Product = "Mask";
                                             AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("Sportswear");
-                                            r.RetailProducts = "Sportswear";
+                                            p.Product = "Sportswear";
                                             AddProductQuantity();
-                                            r.Cost = 3060;
+                                            //r.Cost = 3060;
                                             break;
                                         case 3:
                                             Console.WriteLine("Traditional wear");
-                                            r.RetailProducts = "Traditional wear";
+                                            p.Product = "Traditional wear";
                                             AddProductQuantity();
                                             break;
                                         case 4:
                                             Console.WriteLine("Accessories");
-                                            r.RetailProducts = "Accessories";
+                                            p.Product = "Accessories";
                                             AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("Watches");
-                                            r.RetailProducts = "Watches";
+                                            p.Product = "Watches";
                                             AddProductQuantity();
                                             break;
                                         case 6:
                                             Console.WriteLine("Jewelry");
-                                            r.RetailProducts = "Jewelry";
+                                            p.Product = "Jewelry";
                                             AddProductQuantity();
                                             break;
                                         case 7:
                                             Console.WriteLine("Formal Wear");
-                                            r.RetailProducts = "Formal Wear";
+                                            p.Product = "Formal Wear";
                                             AddProductQuantity();
                                             break;
                                         case 8:
@@ -337,7 +333,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                             break;
                                     }
                                 }
-                            }
+                            } while (choice5 != 5);
                             break;
                     }
                 }
@@ -369,7 +365,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         {
 
             Product p = new Product();
-            ProductBusinessLogicLayer pbll = new ProductBusinessLogicLayer();
+            ProductBusinessLayer pbl = new ProductBusinessLayer();
             Console.WriteLine("Enter the quantity of products:");
             p.QuantityOfProducts = int.Parse(Console.ReadLine());
             Console.WriteLine("The quantity of product is:" + p.QuantityOfProducts);
@@ -381,7 +377,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
             Product p = new Product();
             ProductBusinessLogicLayer pbll = new ProductBusinessLogicLayer();
-            rdl.GetProductQuantity();
+            pdl.GetProductQuantity();
             List<Product> p = pdl.GetProductQuantity();
             foreach (Retailstore item in rs)
             {
