@@ -137,7 +137,7 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
         cdal.AddCustomer(customers);
             }
 
-            //View customer personal details
+            //View customer personal detailss
             public List<Customer> GetCustomers()
             {
                 return cdal.GetCustomers();
