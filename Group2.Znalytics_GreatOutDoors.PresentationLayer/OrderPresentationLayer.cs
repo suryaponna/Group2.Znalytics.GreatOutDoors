@@ -36,6 +36,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 {
                     case 1: AddOrderDetails();break;
                     case2: UpdateOrderDetails; break;
+                    case 3:
                         
 
                        
