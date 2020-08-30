@@ -174,7 +174,7 @@ class Product
                             }
                         } while (choice2 != 5);
                         break;
-                    case 2:
+                    case 3:
 
                         System.Console.WriteLine("Camping  Equipment");
                         Product p;
@@ -182,8 +182,8 @@ class Product
 
                         //types of camping equpment
                         System.Console.WriteLine("----------Camping Euipment-----------");
-                        System.Console.WriteLine("\n 1.Golf wedges \n 2.Golf cart\n 3.Club head covers \n 4.Ball mark repair tool" +
-                       "\n 5.Ball markers \n 6.Shoes \n 7.Gloves \n 8.exit");
+                        System.Console.WriteLine("\n 1.Camping pillow \n 2.Lantern \n 3.Headlamps \n 4.Camp table " +
+                       "\n 5.Hammock \n 6.Cots \n 7.Camp rug \n 8.exit");
 
                         // Switch Case statement to select the categories of Books
                         int choice3 = 1;
@@ -192,34 +192,34 @@ class Product
                             bool b = int.TryParse(System.Console.ReadLine(), out choice2);
                             if (b == true)
                             {
-                                switch (choice2)
+                                switch (choice3)
                                 {
                                     case 1:
-                                        System.Console.WriteLine("Golf wedges");
+                                        System.Console.WriteLine("Camping Pillow");
                                         //p.Product Category = "Golf wedges";
                                         break;
                                     case 2:
-                                        System.Console.WriteLine("Golf cart");
+                                        System.Console.WriteLine("Lantern");
                                         //p.Product Category = "Golf cart ";
                                         break;
                                     case 3:
-                                        System.Console.WriteLine("Club head covers");
+                                        System.Console.WriteLine("Headlamps");
                                         //p.Product Category = "Club head covers";
                                         break;
                                     case 4:
-                                        System.Console.WriteLine(" Ball mark repair tool");
+                                        System.Console.WriteLine("camp table");
                                         //p.Product Category = "Ball mark repair tool";
                                         break;
                                     case 5:
-                                        System.Console.WriteLine("Ball markers");
+                                        System.Console.WriteLine("hammock");
                                         //p.Product Category = "Ball markers";
                                         break;
                                     case 6:
-                                        System.Console.WriteLine("Shoes");
+                                        System.Console.WriteLine("cots");
                                         //p.Product Category = "Shoes";
                                         break;
                                     case 7:
-                                        System.Console.WriteLine("Gloves");
+                                        System.Console.WriteLine("camp rug");
                                         //p.Product Category = "Gloves";
                                         break;
                                     default:

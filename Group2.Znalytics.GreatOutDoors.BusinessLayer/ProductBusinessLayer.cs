@@ -35,12 +35,12 @@ namespace GreatOutdoorsProduct.BusinessLayer
 
 
 
-        public static bool UpdateProductBL(Product updateProduct)
+        public static void UpdateProduct(Product updateProduct)
         {
             bool productUpdated = false;
             try
             {
-                if (ValidateProduct(updateProduct))
+                if (Product(updateProduct))
                 {
                     ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
                     productUpdated = productDataAccessLayer.UpdateProductDataAccessLayer(updateProduct);
@@ -58,7 +58,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             return productUpdated;
         }
 
-        public static bool DeleteProductBL(int deleteProductID)
+        public static void DeleteProductBL(int deleteProductID)
         {
             bool productDeleted = false;
             try
