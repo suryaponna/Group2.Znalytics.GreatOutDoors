@@ -51,7 +51,8 @@
     <Compile Include="IOrderDataLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />
-    <Compile Include="OrderException.cs" />
+    <Compile Include="OrderProductException.cs" />
+    <Compile Include="orderProducts.cs" />
     <Compile Include="productDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailStoreDataLayer.cs" />

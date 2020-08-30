@@ -12,7 +12,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// <summary>
         /// Creating List Collection for OrderProduct
         /// </summary>
-        private static List<OrderProduct> orderProducts=new List<OrderProduct>();
+        private static List<OrderProduct> orderProducts = new List<OrderProduct>();
         public bool AddOrder(OrderProduct order)
         {
             bool orderAdded = false;
@@ -21,13 +21,23 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
                 orderProducts.Add(item: OrderProduct);
                 orderAdded = true;
             }
+            catch(FormatException ex)
+            {
+                throw;
+            }
             catch (Exception ex)
             {
-                throw new OrderException(ex.Message);
+                throw new OrderProductException(ex.Message);
             }
             return orderAdded;
 
         }
+
+        //get the orders
+        public List<OrderProduct> GetOrderProducts;
+        {
+        return orderProducts;
+            }
 
         public void SearchOrder(string SearchOrderID)
         {

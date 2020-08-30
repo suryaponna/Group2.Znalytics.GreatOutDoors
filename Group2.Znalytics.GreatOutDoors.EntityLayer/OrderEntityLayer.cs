@@ -11,14 +11,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     {
         //private fields
         private string _productID;
-        private string _addToCart;   //one order id may have multiple product id
-        private string _quantity;     //each product has its own quantity
-        private string _sellingPrice;   //each product has a unique selling price
-        private string _totalAmount;    //_quantity*_sellingPrice
-        private string _amountPayable;  //total amount payable
+        private string _productName;
+        private string _price;
+        private string _quantity;     //each product has its own 
         private string _finalDelieveryAddress;
         //private DateTime _timeOfSale;  //for time on shelf      
         private string _orderID;
+        private string _totalAmount;    //_quantity*_sellingPrice
+        private string _amountPayable;  //total amount payable
 
         public OrderProduct()
         {
