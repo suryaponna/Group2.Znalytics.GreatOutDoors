@@ -3,9 +3,8 @@ using System;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using Group2.Znalytics.GreetOutDoors.DataLayer;
+
 using Group2.Znalytics.GreetOutDoors.DataAccessLayer;
-using System.CodeDom.Compiler;
 
 namespace Znalytics.Group2.GreatOutDoor.DAL
 
@@ -26,7 +25,7 @@ namespace Znalytics.Group2.GreatOutDoor.DAL
         //Adding Customer Personal Details
         public void AddCustomer(Customer customer)
         {
-            //gerneate new customer id
+            //generate new customer id
             //customer.CustomerId = ??
             _customers.Add(customer);
         }

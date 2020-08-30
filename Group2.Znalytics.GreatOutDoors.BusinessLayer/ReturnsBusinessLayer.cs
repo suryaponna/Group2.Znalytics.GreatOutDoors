@@ -41,7 +41,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             try
             {
-                
+                //Date time 
                     DateTime exchangeDate = DateTime.Now;
                     exchangeDate = exchangeDate.AddDays(-30);
 
@@ -51,7 +51,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                     }
                    
             }
-            catch (ReturnException ex)
+            catch 
             {
                 throw;
             }
@@ -65,7 +65,58 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             return _rd.GetReturns();
         }
-        
+
+        /// <summary>
+        /// Method represents Get details of Returns using ProductID
+        /// </summary>
+        /// <param name="Id">It is Product ID</param>
+        /// <returns></returns>
+        public Return GetReturnByProductID(string Id)
+        {
+
+            //ProductId should not be null
+            if (Id != null)
+            {
+                return _rd.GetReturnByProductID(Id);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// This Method represents Get details of returns by Product name
+        /// </summary>
+        /// <param name="name">Represents Product ID</param>
+        /// <returns></returns>
+        public Return GetReturnByProductName(string name)
+        {
+
+            //ProductId should not be null
+            if (name != null)
+            {
+                return _rd.GetReturnByProductName(name);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// This method represents to update returns
+        /// </summary>
+        /// <param name="rm">Reference variable of return in presentation layer</param>
+        public void UpdateReturns(Return rm)
+        {
+
+            //ProductId should not be null
+            if (rm.ProductID!= null)
+            {
+                 _rd.UpdateReturns(rm);
+            }
+        }
+
         /// <summary>
         /// Method for Removing Return by productname
         /// </summary>
@@ -80,7 +131,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 }
                 
             }
-            catch (ReturnException ex)
+            catch 
             {
                 throw;
             }

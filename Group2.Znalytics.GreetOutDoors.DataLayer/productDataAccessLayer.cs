@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using GreatOutdoorsProduct.Entities;
+using GreatOutdoorsProduct.Exceptions;
 /// <summary>
 /// data access layer
 /// </summary>
 namespace GreatOutdoorsProduct.DataAccessLayer
 {
     public class ProductDataAccessLayer
-    {
+    {   
         //private fields
         public static List<Product> productList = new List<Product>();
         /// <summary>
@@ -31,7 +32,6 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             {
                 throw new ProductException(ex.Message);
             }
-
             return productAdded;
 
         }
@@ -40,12 +40,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         {
             return productList;
         }
-        //searching the products
-        /// <summary>
-        /// searching products
-        /// </summary>
-        /// <param name="searchProductID"></param>
-        /// <returns></returns>
+
         public Product SearchProductDataAccessLayer(int searchProductID)
         {
             Product searchProduct = null;
@@ -65,12 +60,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             return searchProduct;
         }
-        // getting products by name
-        /// <summary>
-        /// products by name
-        /// </summary>
-        /// <param name="productName"></param>
-        /// <returns></returns>
+
         public List<Product> GetProductsByNameDataAccessLayer(string productName)
         {
             List<Product> searchProduct = new List<Product>();
@@ -90,12 +80,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             return searchProduct;
         }
-        //getting products by category
-        /// <summary>
-        /// products by category id
-        /// </summary>
-        /// <param name="categoryID"></param>
-        /// <returns></returns>
+
         public List<Product> GetProductsByCategoryDataAccessLayer(int categoryID)
         {
             List<Product> searchProduct = new List<Product>();
@@ -115,12 +100,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             return searchProduct;
         }
-        //updating the products
-        /// <summary>
-        /// updating 
-        /// </summary>
-        /// <param name="updateProduct"></param>
-        /// <returns></returns>
+
         public bool UpdateProductDataAccessLayer(Product updateProduct)
         {
             bool productUpdated = false;
@@ -147,11 +127,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             return productUpdated;
 
         }
-        /// <summary>
-        /// deleting the products
-        /// </summary>
-        /// <param name="deleteProductID"></param>
-        /// <returns></returns>
+
         public bool DeleteProductDataAccessLayer(int deleteProductID)
         {
             bool productDeleted = false;
