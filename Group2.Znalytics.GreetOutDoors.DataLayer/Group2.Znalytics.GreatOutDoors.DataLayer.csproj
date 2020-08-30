@@ -47,6 +47,7 @@
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="CustomerDataLayerLogic.cs" />
     <Compile Include="IAddressDataLayer.cs" />
+    <Compile Include="IAddressInterface.cs" />
     <Compile Include="ICustomerDataAccessLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />
