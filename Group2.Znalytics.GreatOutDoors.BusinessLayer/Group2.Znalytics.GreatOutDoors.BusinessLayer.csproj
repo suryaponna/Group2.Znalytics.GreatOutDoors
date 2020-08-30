@@ -46,6 +46,7 @@
     <Compile Include="Exchange.cs" />
     <Compile Include="ExchangeBusinessLogicLayer.cs" />
     <Compile Include="IAddressBusinessLayer.cs" />
+    <Compile Include="IProductBusinessLayer.cs" />
     <Compile Include="IRetailStoreBusinessLogicLayer.cs" />
     <Compile Include="IReturnsBusinessLayer.cs" />
     <Compile Include="OrderBusinessLayer.cs" />
@@ -55,7 +56,6 @@
     <Compile Include="ProductBusinessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailStoreBusinessLogicLayer.cs" />
-    <Compile Include="RetailStoreID.cs" />
     <Compile Include="ReturnsBusinessLayer.cs" />
   </ItemGroup>
   <ItemGroup>

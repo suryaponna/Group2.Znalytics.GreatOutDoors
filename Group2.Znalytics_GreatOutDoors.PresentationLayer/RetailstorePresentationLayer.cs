@@ -22,7 +22,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             //
             RetailStoreBusinessLogicLayer retailStoreBusinessLogic = new RetailStoreBusinessLogicLayer();
 
-            Console.WriteLine("----------------------------WELCOME TO ZNALYTICS RETAIL STORE----------------------------");
+            Console.WriteLine("----------------------------:) WELCOME TO ZNALYTICS RETAIL STORE (:----------------------------");
 
             //retail id
             Console.WriteLine("Enter The Retail store Id");

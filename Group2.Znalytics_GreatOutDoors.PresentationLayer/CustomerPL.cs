@@ -1,6 +1,6 @@
 ﻿using System;
-using Znalytics.Group2.GreatOutDoor.Entity;
-using Znalytics.Group2.GreatOutDoors.BLL;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 
 /// <summary>
@@ -12,7 +12,7 @@ class CustomerPL
     static void Main()
     {
         CustomerPresentation();
-        Console.ReadKey();
+        Console.ReadKey();//reads from keyboard
     }
 
     //Displaying Customers menu
@@ -88,7 +88,7 @@ class CustomerPL
 
         //Reading Phone number of customer manually
         Console.Write("Enter customer Phone number: ");
-        customers.PhoneNumber = Console.ReadLine();
+        customers.CustomerPhoneNumber = Console.ReadLine();
 
         //Reading Customer's State PinCode manually
         Console.Write("Enter customer State Pincode");
@@ -102,7 +102,7 @@ class CustomerPL
 
 
         // CustomerDetailBLL customerPersonaldetailBusinessLogicLayer = new CustomerDetailBLL();
-        customerdetailBusinessLogicLayer.AddCustomer(customers); //call BusinessLogicLayer
+        customerBLL.AddCustomer(customers); //call BusinessLogicLayer
 
         Console.WriteLine("Customer details added successfully.\n");
     }
@@ -143,12 +143,6 @@ class CustomerPL
         customers.AadharCardNumber = Console.ReadLine();
         Console.Write("Enter New Customer Aadharcardnumber: ");
         customers.AadharCardNumber = Console.ReadLine();
-
-        //Updating PanCardNumber
-        Console.Write("Enter Existing Customer PancardNumber: ");
-        customers.PanCardNumber = Console.ReadLine();
-        Console.Write("Enter New Customer Pan card number: ");
-        customers.PanCardNumber = Console.ReadLine();
 
         //Updating Phone number
         Console.Write("Enter Existing Customer Phone number: ");

@@ -8,7 +8,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
     class GreatOutDoorsMenu
     {
         static void Main() {
-            WriteLine("----------------WelCome TO GreatOutDoors hope you find your things here----------------");
+            WriteLine("----------------Welcome to GreatOutDoors hope you find your things here----------------");
             WriteLine();
             while (true) {
                 WriteLine("Enter 1 to sign up");
