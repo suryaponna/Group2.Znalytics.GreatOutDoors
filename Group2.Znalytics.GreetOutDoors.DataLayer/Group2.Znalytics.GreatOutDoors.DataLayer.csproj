@@ -10,6 +10,7 @@
     <RootNamespace>Group2.Znalytics.GreetOutDoors.DataLayer</RootNamespace>
     <AssemblyName>Group2.Znalytics.GreetOutDoors.DataLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -46,8 +47,10 @@
   <ItemGroup>
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CustomerDAL.cs" />
     <Compile Include="Exchange.cs" />
     <Compile Include="IAddressDataLayer.cs" />
+    <Compile Include="ICustomerDAL.cs" />
     <Compile Include="IOrderDataLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />

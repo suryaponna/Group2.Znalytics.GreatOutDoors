@@ -1,6 +1,6 @@
 ﻿using System;
-using Znalytics.Group2.GreatOutDoor.Entity;
-using Znalytics.Group2.GreatOutDoors.BLL;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 
 
 /// <summary>
@@ -12,7 +12,7 @@ class CustomerPL
     static void Main()
     {
         CustomerPresentation();
-        Console.ReadKey();
+        Console.ReadKey();//reads from keyboard
     }
 
     //Displaying Customers menu
@@ -102,7 +102,7 @@ class CustomerPL
 
 
         // CustomerDetailBLL customerPersonaldetailBusinessLogicLayer = new CustomerDetailBLL();
-        customerdetailBusinessLogicLayer.AddCustomer(customers); //call BusinessLogicLayer
+        customerBLL.AddCustomer(customers); //call BusinessLogicLayer
 
         Console.WriteLine("Customer details added successfully.\n");
     }

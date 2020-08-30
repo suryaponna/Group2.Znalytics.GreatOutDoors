@@ -1,12 +1,11 @@
-﻿using Znalytics.Group2.GreatOutDoor.Entity;
-using System;
+﻿using Group2.Znalytics.GreatOutDoor.EntityLayer;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-using Group2.Znalytics.GreetOutDoors.DataAccessLayer;
+//using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
-namespace Znalytics.Group2.GreatOutDoor.DAL
+namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
 {
     /// <summary>

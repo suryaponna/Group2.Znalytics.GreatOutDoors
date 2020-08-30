@@ -6,12 +6,12 @@ using System;
 
 using System.Collections.Generic;
 
-using Znalytics.Group2.GreatOutDoor.Entity;
-using Znalytics.Group2.GreatOutDoor.DAL;
-using System.CodeDom.Compiler;
-using System.Linq.Expressions;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+//using Group2.Znalytics.GreatOutDoors.DataLayer;
 
-namespace Znalytics.Group2.GreatOutDoors.BLL
+
+
+namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
     /// <summary>
     /// Represents Business logic layer of the customer personal details
@@ -52,12 +52,12 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
             }
         }
         //checking age of the customer
-        public int ValidateAge(Customer customers)
+        public int Age(Customer customers)
         {
             try {
 
 
-                if (customers.age >= 18)
+                if (customers.Age >= 18)
                 {
                     cdal.(customers);
                 }
@@ -123,7 +123,7 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
                 }
             }
 
-            if (!spaceFound && AtFound && AtCharCount == 1 && (email.EndsWith(".com") || email.EndsWith(".co.in"))
+            if (!spaceFound && AtFound && AtCharCount == 1 && (email.EndsWith(".com") || email.EndsWith(".co.in")))
             {
                 Console.WriteLine("Valid Email address");
             }
