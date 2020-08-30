@@ -5,12 +5,13 @@ using System;
 using System.IO;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using Znalytics.Group2.GreatOutDoor.Entity;
 using Newtonsoft.Json;
 using System.Linq;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
-namespace Znalytics.Group2.GreatOutDoor.Entity
+namespace Znalytics.Group2.GreatOutDoor.DataLayer
 
 {
     
