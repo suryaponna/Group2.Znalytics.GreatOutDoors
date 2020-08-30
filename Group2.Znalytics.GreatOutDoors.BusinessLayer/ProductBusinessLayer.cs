@@ -5,31 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
-using GreatOutdoorsProduct.DataAccessLayer;
+using Znalytics.Group2.GreatOutDoors.DataLayer;
 
 namespace GreatOutdoorsProduct.BusinessLayer
 {
     public class ProductBusinessLayer : IProductBusinessLayer
     {
-        private static void Product(Product product)
+        public void AddProducts()
+        {
+            throw new NotImplementedException();
+        }
 
-    /// <summary>
-    /// refers tp Product BusinessLogic
-    /// </summary>
-    public class ProductBusiness
+        public void DeleteProductBl()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProduct()
+        {
+            throw new NotImplementedException();
+        }
+
+        // private static void Product(Product product);
+
+        /// <summary>
+        /// refers tp Product BusinessLogic
+        /// </summary>
+        public class ProductBusiness
     {
 
         /// <summary>
         /// adding the products 
         /// </summary>
         /// <param name="n"> gets object of ProductDetails</param>
-        public void AddProducts(ProductDetails n)
+        public void AddProducts(Product n) 
         {
             if (n.ProductName != null)
             {
                 throw ex;
             }
-            return searchProduct;
+            return Product;
 
         }
 
@@ -40,7 +55,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             bool productUpdated = false;
             try
             {
-                if (Product(updateProduct))
+                if (Product.updateProduct)
                 {
                     ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
                     productUpdated = productDataAccessLayer.UpdateProductDataAccessLayer(updateProduct);
@@ -55,7 +70,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
                 throw ex;
             }
 
-            return productUpdated;
+            return _roductUpdated;
         }
 
         public static void DeleteProductBL(int deleteProductID)
@@ -88,3 +103,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
     }
 
 }
+
+    public interface IProductBusinessLayer
+    {
+    }

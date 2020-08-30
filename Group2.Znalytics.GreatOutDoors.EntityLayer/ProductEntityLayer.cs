@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace GreatOutdoorsProduct.Entities
 {
-    public class Product : IEquatable<Product>
+    public class Product 
     {
-        private int productID;
+        private int _productId;
+        private string _productName;
+        private int _categoryName;
+        private int _specificationId;
+        private int _costPrice;
+        private double _sellingPrice;
+        private bool _available;
         /// <summary>
         /// creating property for product id
         /// </summary>
@@ -17,11 +23,11 @@ namespace GreatOutdoorsProduct.Entities
         {
             set
             {
-                productID = value;
+                ProductID = value;
             }
             get
             {
-                return productID;
+                return ProductID;
             }
 
         }
@@ -42,7 +48,7 @@ namespace GreatOutdoorsProduct.Entities
 
         }
 
-        private int categoryID;
+        
         /// <summary>
         /// creating property for categoryid
         /// </summary>
@@ -58,7 +64,7 @@ namespace GreatOutdoorsProduct.Entities
                 return categoryID;
             }
         }
-        private int specificationID;
+       
         /// <summary>
         /// creating property for specification id
         /// </summary>
@@ -75,7 +81,7 @@ namespace GreatOutdoorsProduct.Entities
             }
         }
 
-        private double costPrice;
+    
         /// <summary>
         /// creating property for costprice
         /// </summary>
@@ -84,15 +90,15 @@ namespace GreatOutdoorsProduct.Entities
 
             set
             {
-                costPrice = value;
+                CostPrice = value;
             }
             get
             {
-                return costPrice;
+                return CostPrice;
             }
         }
 
-        private double sellingPrice;
+     
         /// <summary>
         /// creating property for selling price
         /// </summary>
@@ -101,28 +107,28 @@ namespace GreatOutdoorsProduct.Entities
 
             set
             {
-                sellingPrice = value;
+                SellingPrice = value;
             }
             get
             {
-                return sellingPrice;
+                return SellingPrice;
             }
         }
 
-        private Boolean available;
+    
         /// <summary>
         /// creating property for available products
         /// </summary>
-        public Boolean Available
+        public bool Available
         {
 
             set
             {
-                available = value;
+                Available = value;
             }
             get
             {
-                return available;
+                return Available;
             }
         }
 
