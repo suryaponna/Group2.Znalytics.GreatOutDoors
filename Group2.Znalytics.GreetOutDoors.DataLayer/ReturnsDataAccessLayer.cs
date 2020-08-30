@@ -14,7 +14,7 @@ using System.CodeDom.Compiler;
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 {
-    public class ReturnsDataAccessLayer : IEnumerable
+    public class ReturnsDataAccessLayer 
     {
         private static List<Return> _return;
         /// <summary>
@@ -51,7 +51,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <returns></returns>
         public static List<Return> LoadDetailsToList()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\RawMaterial\RawMaterials.txt");
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
             string s2 = streamReader.ReadToEnd();
             List<Return> customers2 = JsonConvert.DeserializeObject<List<Return>>(s2);
             streamReader.Close();
@@ -124,16 +124,6 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
        
         
-        /// <summary>
-        /// Inherited from IEnumerable and Generates IEnumerator which acts as Iterator
-        /// </summary>
-        public IEnumerator GetEnumerator()
-        {
-            for (int i = 0; i < _return.Count; i++)
-            {
-                yield return _return[i];
-            }
-        }
 
         /// <summary>
         ///  Method for Removing Return by ProductID
@@ -158,7 +148,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
             else
             {
-                throw new ReturnException("Product ID doesn't exists");
+                throw new ReturnException("Product name doesn't exists");
             }
 
            

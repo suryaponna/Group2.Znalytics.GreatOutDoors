@@ -184,8 +184,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
                 Console.WriteLine("Enter with which product you want to exchange");
                 rm.ProductName = Console.ReadLine();
-                Console.WriteLine("Your Product will be Exchanged soon!!");
                 rbl.ExchangeProduct(rm);
+                Console.WriteLine("Your Product will be Exchanged soon!!");
+                
             }
             catch (ReturnException ex)
             {

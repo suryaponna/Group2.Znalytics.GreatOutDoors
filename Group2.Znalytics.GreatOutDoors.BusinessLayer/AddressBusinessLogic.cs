@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group2.GreatOutDoor.Entity;
-using Group2.Znalytics.GreatOutDoors.DataLayer;
+using Znalytics.Group2.GreatOutDoor.DataLayer;
 
 ///--------------------Surya 
 /// <summary>
@@ -20,7 +20,7 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
 	"Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory",
 	"Brunei Darussalam","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central African Republic",
 	"Chad","Chile","China","Christmas Island","Cocos (Keeling) Islands","Colombia","Comoros","Congo","Congo, the Democratic Republic of the","Cook Islands","Costa Rica",
-	"Cote D'Ivoire","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt",
+	"Cote D'Ivoire","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","csminican", "Republic","Ecuador","Egypt",
 	"El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands (Malvinas)","Faroe Islands","Fiji","Finland","France",
 	"French Guiana","French Polynesia","French Southern Territories","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar",
 	"Greece","Greenland","Grenada","Guadeloupe","Guam","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Heard Island and Mcdonald Islands","Holy See (Vatican City State)",

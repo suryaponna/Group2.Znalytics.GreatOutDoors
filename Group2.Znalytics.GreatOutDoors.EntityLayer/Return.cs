@@ -8,7 +8,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     public class Return
     {
         //private fields
-        private int _productID;
+        private string _productID;
         private string _productName;
         private DateTime _productdate;
         private int _productQuantity;
@@ -24,7 +24,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <param name="exchangedate">Represents on which date the product is exchanged</param>
 
         ///Property for ProductID details
-        public int ProductID
+        public string ProductID
         {
             set
             {
@@ -56,8 +56,16 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// </summary>
         public DateTime Productdate
         {
-             
-        set; get;
+
+
+            set
+            {
+                _productdate = value.AddDays(30);
+            }
+            get
+            {
+                return _productdate;
+            }
         }
         /// <summary>
         ///Property for Product Quantity
@@ -103,18 +111,8 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                
-                DateTime exchangeDate = DateTime.Now;
-                exchangeDate = exchangeDate.AddDays(-30);
 
-                if (value < exchangeDate)
-                {
-                    _exchangedate = value;
-                }
-                else
-                {
-                    throw new ProductException(nameof(ExchangeDate) + " should be within 1month of purchased date " + Productdate.ToString("dd/M/yyyy"));
-                }
+                _exchangedate = value;
             }
             get
             {

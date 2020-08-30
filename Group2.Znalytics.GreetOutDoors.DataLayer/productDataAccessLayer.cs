@@ -7,7 +7,7 @@ using System.Data;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
 /// <summary>
-/// data access layer
+/// data access layer for products
 /// </summary>
 namespace GreatOutdoorsProduct.DataAccessLayer
 {
@@ -20,7 +20,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         /// </summary>
         /// <param name="newProduct"></param>
         /// <returns></returns>
-        public bool AddProductDataAccessLayer(Product newProduct)
+        public void AddProductDataAccessLayer(Product newProduct)
         {
             bool productAdded = false;
             try
