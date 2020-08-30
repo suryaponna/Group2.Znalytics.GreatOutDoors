@@ -1,47 +1,95 @@
-﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+﻿using Znalytics.Group2.GreatOutDoor.Entity;
 using System;
+using System.IO;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
-namespace Znalytics.Group2.GreatOutDoor.Entity
+using Group2.Znalytics.GreetOutDoors.DataAccessLayer;
+using System.CodeDom.Compiler;
+
+namespace Znalytics.Group2.GreatOutDoor.DAL
 
 {
     /// <summary>
     /// Represents Data Access Layer of  the customer Personal details
     /// </summary>
-    public class CustomerDetailDAL : ICustomerDetailDAL
+    public class CustomerDAL : ICustomerDAL
     {
         //private fields
-        //private static List<CustomerPersonalDetail> _customers;
+        private static List<Customer> _customers;
 
-        List<CustomerDetail> customerdetail = new List<CustomerDetail>();
+        static CustomerDAL()
+        {
+            _customers = new List<Customer>();
+        }
 
         //Adding Customer Personal Details
-        public void AddCustomer(CustomerDetail customer)
+        public void AddCustomer(Customer customer)
         {
-            customerdetail.Add(customer);
+            //gerneate new customer id
+            //customer.CustomerId = ??
+            _customers.Add(customer);
         }
 
         //Getting existing Customer details
-        public void ViewCustomer(CustomerDetail customer)
+        public List<Customer> GetCustomers()
         {
-            List<CustomerDetail> GetCustomers()
-            {
-                return customerdetail;
-            }
+            return _customers;
         }
 
         //Updation of customer details
-        public void UpdateCustomer(CustomerDetail customer)
+        public void UpdateCustomer(Customer customer)
         {
             //Get matching customer based on CustomerId
-            CustomerDetail cust = customerdetail.Find(temp => temp.CustomerId == customer.CustomerId);
+            Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
             if (customer != null)
             {
                 customer.CustomerName = customer.CustomerName;
             }
         }
+
+        /// <summary>
+        /// Get customer based on specified ID
+        /// </summary>
+        /// <param name="customerID">CustomerID to search</param>
+        /// <returns>Returns matching customer</returns>
+        public Customer GetCustomerByCustomerID(string customerID)
+        {
+            Customer cust = _customers.Find(temp => temp.CustomerID == customerID);
+            return cust;
+            ListOfCustomers();
+        }
+
+        public void ListOfCustomers()
+        {
+            List<Customer> _return = new List<Customer>();
+            //convert data into Json
+            string s = JsonConvert.SerializeObject(_customers);
+
+            //write data into file
+            StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop");
+            streamWriter.Write(s);
+            streamWriter.Close();
+
+
+        }
+
+        /// <summary>
+        /// Returns list of customers based on given customer name
+        /// </summary>
+        /// <param name="customerName">Customer name to search</param>
+        /// <returns>List of matching customers</returns>
+        public List<Customer> GetCustomersByName(string customerName)
+        {
+            List<Customer> cust = _customers.FindAll(temp => temp.CustomerName == customerName);
+            return cust;
+            ListOfCustomers();
+        }
+    }
+    public void DeleteCustomers(Customer customers)
+    {
+        _customers.Remove(temp=>CustomerName==Customers.CustomerName);
+       
     }
 }
 
-}

@@ -10,24 +10,45 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     public interface IAddressInterface
     {
         /// <summary>
-        /// Interface for Address of Customer consists of  methods to be
+        /// Method return Default address of Customer
         /// </summary>
-        /// <param name="ad">object of AddressDetail which consists of total information should pass</param>
-        void AddNewAddress(AddressDetail ad);
+        /// <param name="ad">Customer Adddress Object</param>
+        /// <returns></returns>
+        AddressDetail RetunDefaultAddress(AddressDetail ad);
         /// <summary>
-        /// Update existig address of particular customer
-        /// </summary>
-        /// <param name="ad">object of AddressDetail which consists of total information should pass</param>
-        void UpdateAddress(AddressDetail ad);
-        /// <summary>
-        /// Deleting existing Customer Address 
-        /// </summary>
-        /// <param name="ad">object of AddressDetail which consists of total information should pass</param>
-        void DeleteAddress(AddressDetail ad);
-        /// <summary>
-        /// Returns total Addresses of the Customer
+        /// 
         /// </summary>
         /// <param name="ad"></param>
-        void GetAllAddresses(AddressDetail ad);
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        AddressDetail ReturnAddress(AddressDetail ad);
+        /// <summary>
+        /// Removing Particular Address
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <param name="Id"></param>
+        void RemoveAddress(AddressDetail ad);
+        /// <summary>
+        /// Returns All Addresses OF Particular Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        /// <returns></returns>
+        List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
+        /// <summary>
+        /// Adding Another Address To Customer
+        /// </summary>
+        /// <param name="ad">new Address Object</param>
+        void AddAnotherAddressToCustomer(AddressDetail ad);
+        /// <summary>
+        /// Updating Existing Method
+        /// </summary>
+        /// <param name="ad"></param>
+        void UpdateExistingAddress(AddressDetail ad);
+        /// <summary>
+        /// Changed Defalut Address of Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        void ChangeDefaultAddrees(AddressDetail ad);
+
     }
 }

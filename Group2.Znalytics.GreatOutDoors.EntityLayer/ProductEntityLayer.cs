@@ -9,122 +9,122 @@ namespace GreatOutdoorsProduct.Entities
 {
     public class Product
     {
-        
+        private int productID;
         /// <summary>
         /// creating property for product id
         /// </summary>
-        public int _productID
+        public int ProductID
         {
             set
             {
-                _productID = value;
+                productID = value;
             }
             get
             {
-                return _productID;
+                return productID;
             }
 
         }
-        
+        private string productName;
         /// <summary>
         /// creating property for productName
         /// </summary>
-        public string _productName
+        public string ProductName
         {
             set
             {
-              _productName = value;
+                ProductName = value;
             }
             get
             {
-                return _productName;
+                return productName;
             }
 
         }
 
+        private int categoryID;
         /// <summary>
         /// creating property for categoryid
         /// </summary>
-        public int _categoryID
+        public int CategoryID
         {
 
             set
             {
-                _categoryID = value;
+                categoryID = value;
             }
             get
             {
-                return _categoryID;
+                return categoryID;
             }
         }
-        
+        private int specificationID;
         /// <summary>
         /// creating property for specification id
         /// </summary>
-        public int _specificationID
+        public int SpecificationID
         {
 
             set
             {
-                _specificationID = value;
+                specificationID = value;
             }
             get
             {
-                return _specificationID;
+                return specificationID;
             }
         }
 
-        
+        private double costPrice;
         /// <summary>
         /// creating property for costprice
         /// </summary>
-        public double _costPrice
+        public double CostPrice
         {
 
             set
             {
-                _costPrice = value;
+                costPrice = value;
             }
             get
             {
-                return _costPrice;
+                return costPrice;
             }
         }
 
-        
+        private double sellingPrice;
         /// <summary>
         /// creating property for selling price
         /// </summary>
-        public double _sellingPrice
+        public double SellingPrice
         {
 
             set
             {
-                _sellingPrice = value;
+                sellingPrice = value;
             }
             get
             {
-                return _sellingPrice;
+                return sellingPrice;
             }
         }
 
-        
+        private Boolean available;
         /// <summary>
         /// creating property for available products
         /// </summary>
-        public Boolean _available
+        public Boolean Available
         {
 
             set
             {
-                _available = value;
+                available = value;
             }
             get
             {
-                return _available;
+                return available;
             }
         }
-
 
 
     }

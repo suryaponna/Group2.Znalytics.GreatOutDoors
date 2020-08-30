@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +64,7 @@
     <Compile Include="AddressPresentation.cs" />
     <Compile Include="CustomerPresentationLayerLogic.cs" />
     <Compile Include="Exchange.cs" />
+    <Compile Include="GreatOutDoorsMenu.cs" />
     <Compile Include="OrderPresentationLayer.cs" />
     <Compile Include="ProductPresentationLayer.cs" />
     <Compile Include="RetailstorePresentationLayer.cs" />
@@ -60,14 +76,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.BusinessLayer\Group2.Znalytics.GreatOutDoors.BusinessLayer.csproj">
-      <Project>{ad3e2949-6503-48d4-a6f9-74eebe7131fd}</Project>
-      <Name>Group2.Znalytics.GreatOutDoors.BusinessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj">
-      <Project>{eb5e0352-6c8c-4f46-8f9a-d9f688f99b06}</Project>
-      <Name>Group2.Znalytics.GreatOutDoors.EntityLayer</Name>
-    </ProjectReference>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

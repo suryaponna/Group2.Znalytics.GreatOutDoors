@@ -14,7 +14,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
     
-    public class AddressDataLayer:IEnumerable,IList,IAddressDataLayer
+    public class AddressDataLayer:IEnumerable,IList,IAddressInterface
     {
         /// <summary>
         /// Creating static list
