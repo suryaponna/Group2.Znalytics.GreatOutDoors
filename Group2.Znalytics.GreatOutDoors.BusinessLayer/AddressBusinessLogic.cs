@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group2.GreatOutDoor.Entity;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 using Group2.Znalytics.GreatOutDoors.DataLayer;
 
@@ -60,16 +61,47 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         {
 
             var b = CountriesList.Contains(address.CustomerCountry);
-            if (b == true)
+            if (b != true)
             {
-
+                throw new AddressException("Enteres Country was not valid please check once"); 
             }
             //dll.Add(address);
         }
-        
+        /// <summary>
+        /// checking entered country was in list or not
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ValidatingCountry(AddressDetail ad) {
+            var b = CountriesList.Contains(ad.CustomerCountry);
+            if (b != true)
+            {
+                throw new AddressException("Enteres Country was not valid please check once");
+            }
+        } 
+        /// <summary>
+        /// another way of checking entered country is in list or not
+        /// </summary>
+        /// <param name="countryName"></param>
+        /// <returns></returns>
         public bool IsCountryExists(string countryName)
         {
             return CountriesList.Contains(countryName);
+        }
+        /// <summary>
+        /// checking enteres state was in list or not
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ValidatingState(AddressDetail ad) {
+            var b = StatesList.Contains(ad.State);
+            if (b != true) {
+                throw new AddressException("Enteres State was not valid please check once");
+            }
+        }
+        public void ValidatingPhoneNumber(AddressDetail ad) {
+            string[] PhoneNumber = ad.MobileNumber.Split('+');
+            if (PhoneNumber[0].Length == 2 && PhoneNumber[1].Length == 10) { 
+                
+            }
         }
         
         /// <summary>
@@ -133,4 +165,4 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
 
 
     }
-}
+}...
