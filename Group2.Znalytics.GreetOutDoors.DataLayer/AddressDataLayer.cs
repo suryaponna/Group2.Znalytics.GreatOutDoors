@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
-using System.ComponentModel;
-using System.Diagnostics;
+using Newtonsoft.Json;
+using System.Linq;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -15,28 +14,30 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
 
 {
     
-    public class AddressDataLayer:IEnumerable,IList,IAddressDataLayer
+    public class AddressDataLayer:IEnumerable,IList,IAddressInterface
     {
         /// <summary>
         /// Creating static list
         /// </summary>
         private static List<AddressDetail> _customerAddressesList;
-        //string[] Copy =(string[]) _customerAddressesList.ToArray();
+        /// <summary>
+        /// Declaring Json variable to store 
+        /// </summary>
+        private static  string _jsonAddresses;
 
-
+        static StreamWriter streamWriter = new StreamWriter(@"E:\AddressesList.txt");
 
         /// <summary>
         /// Creating List only once memory is allocated 
         /// </summary>
-        //StreamReader streamreader = new StreamReader(@"E:\project\myself.txt");
-        //public FileStream fs = new FileStream(@"E:\project\myself.txt",FileMode.Open,FileAccess.Read);
-        //string s = streamreader.ReadToEnd();
-        //BinaryFormatter bf = new BinaryFormatter();
-        //bf.Serialize(fs,AddressDetail);
 
         static AddressDataLayer()
         {
             _customerAddressesList = new List<AddressDetail>();
+            List<AddressDetail> customers2 = JsonConvert.DeserializeObject<List<AddressDetail>>(_jsonAddresses);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
+
         }
         public List<AddressDetail> CustomerAddressList {
             get {
@@ -44,6 +45,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             }
             set {
                 _customerAddressesList = value;
+                _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+                streamWriter.Write(_jsonAddresses);
+                streamWriter.Close();
+
             }
         }
         /// <summary>
@@ -66,7 +71,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             AddressDetail address = (AddressDetail)value;
             _customerAddressesList.Add(address);
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             return _customerAddressesList.Count - 1;
+
         }
 
         /// <summary>
@@ -75,6 +84,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public void Clear()
         {
             _customerAddressesList.Clear();
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
+
         }
         /// <summary>
         /// retriving index  customer Address 
@@ -92,6 +105,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.Insert(index, ad);
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             //((IList)_customerAddressesList).Insert(index, value);
         }
 
@@ -99,6 +115,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.Remove(ad);
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
             //((IList)_customerAddressesList).Remove(value);
         }
 
@@ -106,7 +125,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             //AddressDetail ad = (AddressDetail)value;
             _customerAddressesList.RemoveAt(index);
-            
+            _jsonAddresses = JsonConvert.SerializeObject(_customerAddressesList);
+            streamWriter.Write(_jsonAddresses);
+            streamWriter.Close();
+
         }
 
         public void CopyTo(Array array, int index)
@@ -136,9 +158,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             get => _customerAddressesList[index]; 
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
-        public void UpdateExistingAddress(int Id,AddressDetail ad) {
+        public void UpdateExistingAddress(AddressDetail ad) {
             for (int i=0; i < _customerAddressesList.Count; i++){
-                if (_customerAddressesList[i].CustomerId == Id) {
+                if (_customerAddressesList[i].CustomerId == ad.CustomerId) {
                     _customerAddressesList[i] = ad;
                 }   
             }
@@ -170,13 +192,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <param name="ad"></param>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public AddressDetail ReturnAddress(AddressDetail ad,int Id) {
+        public AddressDetail ReturnAddress(AddressDetail ad) {
             AddressDetail samp=null;
-            foreach (var temp in _customerAddressesList) {
-                if (temp.CustomerId == ad.CustomerId && Id == (int)temp.AddressId) {
-                    samp = temp;
-                }
-            }
+            samp = _customerAddressesList.Find(temp=> temp.AddressId==ad.AddressId && temp.CustomerId==ad.CustomerId);
             if (samp != null)
             {
                 return samp;
@@ -191,7 +209,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="ad"></param>
         /// <returns></returns>
-        public List<AddressDetail> CustomerAllAddress(AddressDetail ad) {
+        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
             List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == ad.CustomerId);
             return samp;
         }
@@ -199,7 +217,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// Add Another Address TO Existing Customer
         /// </summary>
         /// <param name="ad"></param>
-        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
+        public void AddAnotherAddressToCustomer(AddressDetail ad) {
             if (ad != null) {
                 foreach (var temp in _customerAddressesList) {
                     if (temp.CustomerId == ad.CustomerId) {
@@ -214,10 +232,31 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="ad"></param>
         /// <param name="Id"></param>
-        public void RemoveAddress(AddressDetail ad,int Id) {
-            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && Id == (int)samp.AddressId);
+        public void RemoveAddress(AddressDetail ad) {
+            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
         }
-        
+        /// <summary>
+        /// changing customer Default Address
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            var s = _customerAddressesList.Where(temp => temp.CustomerId == ad.CustomerId).ToList();
+            if (s != null)
+            {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+            }
+            else {
+                AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
+                sam.DefaultAddressOrNot = false;
+                ad.DefaultAddressOrNot = true;
+                _customerAddressesList.Add(ad);
+            }
+            
+        }
+
+
 
     }
 }

@@ -73,8 +73,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="Id"> AddressId</param>
         /// <param name="ad">Cutomer Address Object </param>
-        public void UpdateExistingAddress(int Id,AddressDetail ad) {
-            dll.UpdateExistingAddress(Id,ad);
+        public void UpdateExistingAddress(AddressDetail ad) {
+            dll.UpdateExistingAddress(ad);
         }
         /// <summary>
         /// Retunrning Default Address
@@ -91,8 +91,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// <param name="ad"></param>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public AddressDetail ReturnAddress(AddressDetail ad, int Id) {
-            AddressDetail ReturnedAddress = dll.ReturnAddress(ad, Id);
+        public AddressDetail ReturnAddress(AddressDetail ad) {
+            AddressDetail ReturnedAddress = dll.ReturnAddress(ad);
             return ReturnedAddress;
         }
         /// <summary>
@@ -100,27 +100,33 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         /// </summary>
         /// <param name="ad"></param>
         /// <param name="Id"></param>
-        public void RemoveAddress(AddressDetail ad, int Id) {
-            dll.RemoveAddress(ad, Id);
+        public void RemoveAddress(AddressDetail ad) {
+            dll.RemoveAddress(ad);
         }
         /// <summary>
         /// Returning All Addresses Of the Customer
         /// </summary>
         /// <param name="ad">Customer Address Object</param>
         /// <returns></returns>
-        public List<AddressDetail> CustomerAllAddress(AddressDetail ad) {
-            List<AddressDetail> AllAddresses = dll.CustomerAllAddress(ad);
+        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
+            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(ad);
             return AllAddresses;
         }
         /// <summary>
         /// Adding Another Address to Existing Customer
         /// </summary>
         /// <param name="ad"></param>
-        public void AddressAnotherAddressToCustomer(AddressDetail ad) {
-            dll.AddressAnotherAddressToCustomer(ad);
+        public void AddAnotherAddressToCustomer(AddressDetail ad) {
+            dll.AddAnotherAddressToCustomer(ad);
         }
-        
-        
-    
+        /// <summary>
+        /// Changing Deafult Address method calling to Data Layer
+        /// </summary>
+        /// <param name="ad"></param>
+        public void ChangeDefaultAddrees(AddressDetail ad) {
+            dll.ChangeDefaultAddrees(ad);
+        }
+
+
     }
 }

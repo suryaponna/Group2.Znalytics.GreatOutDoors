@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
-    public class RetailstoreException:ApplicationException
+    public class RetailstoreException : ApplicationException
 
     {
       /// <summary>
@@ -17,8 +17,17 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
 
         }
-       
+        /// <summary>
+        /// Exception is displayed
+        /// </summary>
+        /// <param name="message">Message to be displayed</param>
+        public RetailstoreException(string message):base(message)
+        {
 
+        }
+        public RetailstoreException(string message,Exception innerException):base(message) { 
+            
+        }
     }
 
 

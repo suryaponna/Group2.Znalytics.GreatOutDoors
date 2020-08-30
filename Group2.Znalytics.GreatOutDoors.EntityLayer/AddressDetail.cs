@@ -6,9 +6,9 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
     /// Represents an address of Customer
     /// </summary>
     [Serializable]
-    public class AddressDetail:IEquatable<AddressDetail>, IComparable<AddressDetail>
+    public class AddressDetail : IEquatable<AddressDetail>, IComparable<AddressDetail>
     {
-        private int _addressId ;
+        private int _addressId;
         private string _customerCountry;
         private string _customerFullName;
         private long _mobileNumber;
@@ -16,9 +16,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         private string _flatDno;
         private string _areaColony;
         private string _landMark;
+        private bool _defaultAddress;
         private string _townCity;
         private string _selState;
-        private int _customerId=524;
+        private int _customerId = 524;
         private AddressType _addressType;
         /// <summary>
         /// IEquatable method for comparing two customer are same or not
@@ -42,8 +43,8 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         public int CompareTo(AddressDetail other) {
             int compare;
             compare = this._addressType.CompareTo(other._addressType);
-            if (compare == 0) { 
-                
+            if (compare == 0) {
+
             }
             if (compare == 0) {
                 compare = this._customerFullName.CompareTo(other._customerFullName);
@@ -57,7 +58,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
             //else { return compare; }
             return compare;
         }
-            
+
 
         public int CustomerId {
             set => _customerId = value;
@@ -70,7 +71,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 13)
+                if (value.Length < 13 && string.IsNullOrEmpty(value))
                     _customerCountry = value;
                 else
                     throw new AddressException("Entered Country Name is not in Range");
@@ -88,7 +89,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 15)
+                if (value.Length < 15 && string.IsNullOrEmpty(value))
                     _customerFullName = value;
                 else
                     throw new AddressException("Your name exceeded the size tha maximum characters are 14");
@@ -125,7 +126,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length <= 6)
+                if (value.Length <= 6 && string.IsNullOrEmpty(value))
                     this._pinCode = value;
                 else
                     throw new AddressException("Enteres PinCode was not Valid");
@@ -143,7 +144,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 15)
+                if (value.Length < 15 && string.IsNullOrEmpty(value))
                     this._flatDno = value;
                 else
                     throw new AddressException("Enter Your FlatNumber Or Door Number length was exceeded the size of 15");
@@ -160,7 +161,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 15)
+                if (value.Length < 15 && string.IsNullOrEmpty(value))
                     this._areaColony = value;
                 else
                     throw new AddressException("Entered Area was not in range exceeded tha maximum character of 15");
@@ -178,7 +179,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 20)
+                if (value.Length < 20 && string.IsNullOrEmpty(value))
                     this._landMark = value;
                 else
                     throw new AddressException("Enter your Land Mark with in the range 20");
@@ -197,7 +198,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 15)
+                if (value.Length < 15 && string.IsNullOrEmpty(value))
                     this._townCity = value;
                 else
                     throw new AddressException("Entere Valid Town of Size maximum is 15");
@@ -215,7 +216,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
         {
             set
             {
-                if (value.Length < 15)
+                if (value.Length < 15 && string.IsNullOrEmpty(value))
                     this._selState = value;
                 else
                     throw new AddressException("Enter State with in the Range");
@@ -225,7 +226,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 return this._selState;
             }
         }
-        
+
         /// <summary>
         /// Setting AddressType Of Customer
         /// </summary>
@@ -241,6 +242,24 @@ namespace Znalytics.Group2.GreatOutDoor.Entity
                 else {
                     _addressType = AddressType.Office;
                 }
+            }
+        }
+        /// <summary>
+        /// Setting Default Address yes or not
+        /// </summary>
+        public bool DefaultAddressOrNot{
+            set {
+                string s = System.Convert.ToString(value);
+                if (value == true && string.IsNullOrEmpty(s))
+                {
+                    _defaultAddress = true;
+                }
+                else {
+                    _defaultAddress = false;
+                }
+            }
+            get {
+                return _defaultAddress;
             }
         }
 
