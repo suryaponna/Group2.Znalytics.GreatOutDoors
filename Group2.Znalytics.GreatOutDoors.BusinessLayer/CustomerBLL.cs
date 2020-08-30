@@ -6,12 +6,12 @@ using System;
 
 using System.Collections.Generic;
 
-using Znalytics.Group2.GreatOutDoor.Entity;
-using Znalytics.Group2.GreatOutDoor.DAL;
-using System.CodeDom.Compiler;
-using System.Linq.Expressions;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+//using Group2.Znalytics.GreatOutDoors.DataLayer;
 
-namespace Znalytics.Group2.GreatOutDoors.BLL
+
+
+namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
     /// <summary>
     /// Represents Business logic layer of the customer personal details
@@ -25,7 +25,10 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
         {
             cdal = new CustomerDAL();//object creation for dataacesslayer
         }
-
+        /// <summary>
+        /// Adding cutomer
+        /// </summary>
+        /// <param name="customers"></param>
 
         public void AddCustomer(Customer customers)
         {
@@ -52,18 +55,15 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
             }
         }
         //checking age of the customer
-        public int ValidateAge(Customer customers)
+        public void Age(Customer customers)
         {
             try {
 
 
-                if (customers.age >= 18)
+                if (customers.Age >= 18)
                 {
                     cdal.(customers);
                 }
-                else
-
-                { return 0; }
 
             }
             catch (Exception ex)
@@ -91,7 +91,7 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
         }
 
             //Validation of Mail Id
-            public void ValidateMailId(Customer customers)
+            public void MailId(Customer customers)
             {
             /*Email validation:
             * 1. No space
@@ -123,7 +123,7 @@ namespace Znalytics.Group2.GreatOutDoors.BLL
                 }
             }
 
-            if (!spaceFound && AtFound && AtCharCount == 1 && (email.EndsWith(".com") || email.EndsWith(".co.in"))
+            if (!spaceFound && AtFound && AtCharCount == 1 && (email.EndsWith(".com") || email.EndsWith(".co.in")))
             {
                 Console.WriteLine("Valid Email address");
             }

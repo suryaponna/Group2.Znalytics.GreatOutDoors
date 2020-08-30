@@ -17,8 +17,8 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         /// Method for removing Return by using productID
         /// </summary>
         /// <param name="name">Represents name of product</param>
-        void RemoveReturnByProductName(string name);
-        void RemoveReturnByProductID(string Id);
+        void RemoveReturnByProductName(Return rm);
+        void RemoveReturnByProductID(Return rm);
         /// <summary>
         /// Method for exchange product
         /// </summary>
@@ -29,7 +29,7 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         /// </summary>
         /// <param name="name">Represents product name</param>
         /// <returns></returns>
-        Return GetReturnByProductName(string name);
-        Return GetReturnByProductID(string Id);
+        Return GetReturnByProductName(Return rm);
+        Return GetReturnByProductID(Return rm);
     }
 }

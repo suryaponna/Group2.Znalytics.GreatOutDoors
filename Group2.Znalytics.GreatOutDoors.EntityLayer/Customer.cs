@@ -3,9 +3,9 @@
 
 
 using System.Text.RegularExpressions;//directory involved for using regularexpressions in the code
+using System.Windows.Markup;
 
-
-namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collection of classes
+namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but collection of classes
 
 {
     public class Customer
@@ -18,10 +18,10 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         // list of details
         private string _customerName;
         private string _customerId;
-        private string _customermailId;
+        private string _customerMailId;
         private string _customerPhoneNumber;
         private double _customerFlatNumber;
-        private long _customerCity;
+        private string _customerCity;
         private string _customerStreet;
         private string _customerState;
         private string _customerPinCode;
@@ -41,12 +41,12 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         {
             set
             {
-                Regex r = new Regex("^[a-zA-Z\\d*]{8,20}$");//User ID cannot be all numeric
-                                                            // User ID cannot have special characters
-                                                            //Minimum length of 8 characters
-                                                            //Maximum length of 20 characters
-                                                            //Can be all alphabetic
-                                                            //Can be alphanumeric
+                Regex r = new Regex(@"^[a-zA-Z\\d*]{8,20}$");//User ID cannot be all numeric
+                                                             // User ID cannot have special characters
+                                                             //Minimum length of 8 characters
+                                                             //Maximum length of 20 characters
+                                                             //Can be all alphabetic
+                                                             //Can be alphanumeric
                 if (r.IsMatch(value))
                 {
                     _customerId = value;
@@ -61,20 +61,20 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
                 return _customerId;
             }
         }
-    }
+
         /// <summary>
         /// Property for password
         /// </summary>
-        pubic string Password
+        public string Password
         {
             set
             {
-                Regex r = new Regex("?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$");
+                Regex r = new Regex(@"?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,15})$");
                 // password must be between 8 and 15 characters long. 
                 //password must contain at least one number. 
                 //password must contain at least one uppercase letter. 
                 //password must contain at least one lowercase letter.
-                if (r.IsMatchValue)
+                if (r.IsMatch(value))
                 {
                     _password = value;
                 }
@@ -83,12 +83,12 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
                     throw new System.Exception("It is invalid");
                 }
             }
-                get
-                    {
-                    return _password;
-                }
+            get
+            {
+                return _password;
             }
-        
+        }
+
 
 
 
@@ -109,6 +109,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
                 return _customerName;
             }
         }
+    }
 
         /// <summary>
         /// Mail Id of the Customer
@@ -125,9 +126,27 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
             }
         }
         /// <summary>
+        /// Aadhar CardNumber of the Customer
+        /// </summary>
+        public string AadharCardNumber
+        {
+            set
+            {
+                if (value.Length == 12)
+                {
+                    _aadharCardNumber = value;
+                }
+            }
+            get
+            {
+                return _aadharCardNumber;
+
+            }
+        }
+        /// <summary>
         /// FlatNumber of the Customer
         /// </summary>
-        public int CustomerFlatNumber
+        public double CustomerFlatNumber
         {
             set
             {
@@ -161,7 +180,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         {
             set
             {
-                if (value.Length = 12)
+                if (value.Length == 12)
                 {
                     _customerCity = value;
                 }
@@ -219,7 +238,7 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         {
             set
             {
-                if (value.Length = 12)
+                if (value.Length <= 12)
                 {
                     _customerCountry = value;
                 }
@@ -232,11 +251,11 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         /// <summary>
         /// Phone number of the Customer
         /// </summary>
-        public long CustomerPhoneNumber
+        public string CustomerPhoneNumber
         {
             set
             {
-                if (value.Length = 10)
+                if (value.Length == 10)
                 {
                     _customerPhoneNumber = value;
                 }
@@ -250,23 +269,20 @@ namespace Znalytics.Group2.GreatOutDoor.Entity//namespace is nothing but collect
         /// property of gender
         /// </summary>
         public string Gender
-    {
-        set
         {
-            if (value == Male || value == Female)
+            set
             {
-                _gender = value;
+                if (value == "Male" || value == "Female")
+                {
+                    _gender = value;
+                }
+            }
+            get
+            {
+                return _gender;
             }
         }
-        get
-        {
-            return _gender;
-        }
+
+
     }
-
-
- }
-
-
-
-
+}
