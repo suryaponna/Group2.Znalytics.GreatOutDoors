@@ -45,6 +45,7 @@
     <Compile Include="AddressException.cs" />
     <Compile Include="AddressType.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="OrderException.cs" />
     <Compile Include="ProductException.cs" />
     <Compile Include="ExchangeEntityLayer.cs" />
     <Compile Include="OrderEntityLayer.cs" />

@@ -92,10 +92,9 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                if (value.Length <= 30)
-                {
+               
                     _producttype = value;
-                }
+                
             }
             get
             {

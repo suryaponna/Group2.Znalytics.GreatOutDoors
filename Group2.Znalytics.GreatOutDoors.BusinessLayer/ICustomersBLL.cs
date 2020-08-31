@@ -12,10 +12,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLogicLayer
     {
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();
-        Customer GetCustomerByID(string customerID);
+        Customer GetCustomerByID(int customerID);
         List<Customer> GetCustomersByName(string customerName);
-
+        void ViewCustomer(Customer customer);
         void UpdateCustomer(Customer customer);
+        void DeleteCustomer(Customer customer);
     }
 
 }

@@ -21,7 +21,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// </summary>
         /// <param name="customerID"></param>
         /// <returns></returns>
-        Customer GetCustomerByCustomerId(int customerID);
+        
         List<Customer> GetCustomersByName(string customerName);
         /// <summary>
         /// updating detail of customer by using customerid 

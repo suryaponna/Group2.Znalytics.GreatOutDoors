@@ -11,10 +11,10 @@ using Microsoft.Win32;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
-    public class OrderBusinessLayer
+    public class OrderBusinessLayer : IOrderBusinessLayer
     {
         OrderDataLayer _od;
-        private int searchOrderBusinessLayer;
+
 
 
 
@@ -26,53 +26,102 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             //Creating Object for DataLayer
             _od = new OrderDataLayer();
         }
+
         /// <summary>
-        /// Method For Adding the Product
+        /// Adding orderDetails 
         /// </summary>
         /// <param name="order"></param>
-        public void AddOrder(OrderProduct order)
+        public void AddOrderDetails(OrderProduct order)
         {
-            bool orderadded = false;
+            List<OrderProduct> orderProducts = new List<OrderProduct>();
             try
             {
-                if (validorder(order) == null)
-                {
-                    AddOrder(order);
-                }
+                _od.AddOrderDetails(order);
             }
-            catch (OrderProductException)
+            catch (Exception ex)
             {
                 throw;
             }
-
-        
-
         }
-        public static SearchOrderBusinessLayer( int searchOrderID)
+        /// <summary>
+        /// Get OrderDetails
+        /// </summary>
+        /// <returns></returns>
+        public List<OrderProduct> GetOrderDetails()
         {
-            searchOrderID = null;
-            try
-            {
-                searchOrderBusinessLayer = searchOrderID;
-            }
-            catch (OrderException ex)
-            {
-                throw ex;
-            }
-            catch (ApplicationException ex)
-            {
-                throw ex;
-            }
-            return searchOrderBusinessLayer;
+            List<OrderProduct> orderDetails = _od.GetOrderDetails();
+            return orderDetails;
+        }
+
+        public void CancelOrderDetails(int value)
+        {
+            _od.CancelOrder(value);
+        }
+
+        /// <summary>
+        /// Getting Product Details by AddressID
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public List<OrderProduct> GetOrderDetailsByAddressID(string value)
+        {
+            List<OrderProduct> orders = _od.GetOrderDetailsByAddressID(value);
+            return orders;
 
         }
 
-    }
+        /// <summary>
+        /// Get order Details by Product Id 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public List<OrderProduct> GetOrderDetailsByProductID(string value)
+        {
+            return _od.GetOrderDetailsByProductID(value);
+        }
 
-    
+
+
+        /// <summary>
+        /// Get order details by Customer ID
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public List<OrderProduct> GetOrderDetailsByEmployeeID(int value)
+        {
+            return _od.GetOrderDetailsByCustomerID(value);
+        }
+        public int OrderID()
+        {
+            return _od.GetOrder();
+        }
+
+        /// <summary>
+        /// Update the Product Details
+        /// </summary>
+        /// <param name="OrderID"></param>
+        /// <param name="value"></param>
+        public void UpdateProductDetails(int OrderID, List<OrderProduct> value)
+        {
+            _od.UpdateProductDetails(OrderID, value);
+        }
+        public void UpdateCustomerAddressDetails(int OrderID, Customer value)
+        {
+            _od.UpdateCustomerAddressDetails(OrderID, value);
+        }
+
+        public List<OrderProduct> GetOrderProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderProduct> GetOrderDetailsByEMployeeID(int value)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
-      
+          
 
 
-DateTime eligibleDate = DateTime.Now;
+//DateTime eligibleDate = DateTime.Now;

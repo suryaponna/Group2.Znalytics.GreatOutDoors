@@ -76,7 +76,15 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
                             string Number = PhoneNumber[1].ToString();
                             if (Number.All(char.IsDigit))
                             {
-                                dll.Add(address);
+                                if (dll.CustomerAddressList.Contains(address))
+                                {
+                                    AddressDetail samp = dll.CustomerAddressList.Find(temp => temp.CustomerId == address.CustomerId);
+                                    address.AddressId = samp.AddressId + 1;
+                                    dll.Add(address);
+                                }
+                                else {
+                                    dll.Add(address);
+                                }
                             }
                             else {
                                 throw new AddressException("Enter only digits");
@@ -186,8 +194,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// </summary>
         /// <param name="ad">Customer Address Object</param>
         /// <returns></returns>
-        public List<AddressDetail> GetAllCustomerAddresses(int Id) {
-            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(Id);
+        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
+            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(ad.CustomerId);
             return AllAddresses;
         }
         /// <summary>

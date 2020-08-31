@@ -173,7 +173,7 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
             Customer.UpdateCustomer(customers);
             Console.WriteLine("Customer details Updated.\n");
         }
-        static void DeleteCustomer()
+        static void DeleteCustomer()//delete method for customer
         {
             Console.WriteLine("Entered Customer name to be deleted");
             Console.WriteLine("Entered Customer ID to be deleted");
