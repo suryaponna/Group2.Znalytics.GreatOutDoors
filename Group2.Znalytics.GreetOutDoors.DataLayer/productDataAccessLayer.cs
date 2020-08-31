@@ -15,7 +15,9 @@ namespace GreatOutdoorsProduct.DataAccessLayer
 {
     public class ProductDataAccessLayer
     {
+
         //private fields
+
         private static List<Product> productList = new List<Product>();
         /// <summary>
         /// method to add products into the list
@@ -37,7 +39,6 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             return productAdded;
 
         }
-
 
         //getting productdetails
         public List<Product> GetAllProductsDataAccessLayer()

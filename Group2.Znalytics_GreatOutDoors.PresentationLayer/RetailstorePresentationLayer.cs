@@ -13,7 +13,7 @@ using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;
-
+/*
 //Created a namespace for PresentationLayer of RETAILSTORE module
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
@@ -51,7 +51,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine("9. Remove products");
                 Console.WriteLine("10. Update Products");
                 Console.WriteLine("11. Add quantity of products");
-                Console.WriteLine("11. Exit");
+                Console.WriteLine("12. SuppliersForTransporting");
+                Console.WriteLine("13. Exit");
 
                 bool b = int.TryParse(Console.ReadLine(), out choice);
                 if (b == true)
@@ -69,11 +70,12 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                         case 9: RemoveProduct(); break;
                         case 10: UpdateProducts(); break;
                         case 11: AddQuantityOfProducts(); break;
+                        case 12: SuppliersForTransporting(); break;
                         default: break;
 
                     }
                 }
-            } while (choice != 12);
+            } while (choice != 13);
         }
         /// <summary>
         /// AddRetailStore is a static method
@@ -879,41 +881,51 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             Console.WriteLine("The quantity of product is:" + p.QuantityOfProducts);
             rp.AddQuantityOfProducts(p);
 
-            Console.WriteLine("================ Suppliers For Transporting================");
-            Console.WriteLine("Enter true for if you want suppliers else enter false");
-            //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-            bool k;
-            bool s = bool.Parse(Console.ReadLine());
-            if (s == true)
-            {
-                Console.WriteLine("Yes I want suppliers" + p.Suppliers);
-            }
-            else
-            {
-                k = false;
-                Console.WriteLine("No i doesn't want suppliers");
-            }
-            Console.WriteLine("--------------------------------------------------------------");
-            System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
-            Console.ReadKey();
-        }
-        /// <summary>
-        /// Checking the product ID
-        /// </summary>
-        /// <param name="productID"></param>
-        /// <returns></returns>
-        public bool CheckProductID(string productID)
-        {
-            RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
-            bool res = rp.CheckProductID(productID);
-            if (res == true)
-            {
-                Console.WriteLine("Product ID Exists");
-                return res;
-            }
-            return res;
-        }
+            //p.Cost = double.Parse(Console.ReadLine());
+            Console.WriteLine("TOTAL COST IS:" + p.Cost * p.QuantityOfProducts);
+            /** if(p.QuantityOfProducts<=10)
+             {
+                 Console.WriteLine("cost is 10000");
+             }
+//
+public static void SuppliersForTransporting()
+  {
+      RProducts p = new RProducts();
+      Console.WriteLine("================ Suppliers For Transporting================");
+      Console.WriteLine("Enter true for if you want suppliers else enter false");
+      //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
+      bool k = true;
+      bool s = bool.Parse(Console.ReadLine());
+      if (s == true)
+      {
+          Console.WriteLine("Yes I want suppliers" + p.Suppliers);
+      }
+      else
+      {
+          k = false;
+          Console.WriteLine("No");
+      }
+      Console.WriteLine("--------------------------------------------------------------");
+      System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
+      Console.ReadKey();
+  }
 
-    }
+  /// <summary>
+  /// Checking the product ID
+  /// </summary>
+  /// <param name="productID"></param>
+  public bool CheckProductID(string productID)
+  {
+      RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
+      bool res = rp.CheckProductID(productID);
+      if (res == true)
+      {
+          Console.WriteLine("Product ID Exists");
+          return res;
+      }
+      return res;
+  }
+
 }
-
+}
+*/
