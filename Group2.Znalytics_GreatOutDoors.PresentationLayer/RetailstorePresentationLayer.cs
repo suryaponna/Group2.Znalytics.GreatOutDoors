@@ -13,7 +13,7 @@ using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;
-/*
+
 //Created a namespace for PresentationLayer of RETAILSTORE module
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
@@ -92,10 +92,6 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine("Enter the Retail Store Details");
                 Console.WriteLine("Enter Retail store ID starts with ZRS and length of 8");
                 r.RetailCustomerID = Console.ReadLine();
-                //if(rbl.CheckRetailCustomerID(r.RetailCustomerID)==true)
-
-                Console.WriteLine("Enter Customer name");
-                r.CustomerName = Console.ReadLine();
                 Console.WriteLine("Enter choice of reports for the Choosing for the payment method");
                 //choice of choosing reports for paying  the amount
                 Console.WriteLine("================Select the choice  for payment choosing reports================");
@@ -141,7 +137,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         {
             //created an object for Retailstore business class is stored in a reference variable
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
-           //Retailstore list is stored in reference variable
+            //Retailstore list is stored in reference variable
             List<Retailstore> retailstoreList = rbl.GetRetailstores();
             Console.WriteLine("---------------------------------WELCOME TO GREAT OUTDOOR DETAIL RETAIL STORE---------------------------------");
             Console.WriteLine("------------------- RETAILSTORE DETAILS ---------------");
@@ -150,7 +146,6 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             foreach (Retailstore var in retailstoreList)
             {
                 Console.WriteLine("Customer Retail store id is:" + var.RetailCustomerID);
-                Console.WriteLine("customer name is:" + var.CustomerName);
                 Console.WriteLine("Choice of choosing payments reports are:" + var.Reports);
             }
         }
@@ -169,8 +164,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Retailstore rs = rbl.GetRetailstoreByRetailstoreID(rcID);
                 if (rs != null)
                 {
-                    Console.WriteLine("RetailCustomerID" + "  " + "RetailCustomerName" + " " + "Reports");
-                    Console.WriteLine(rs.RetailCustomerID + "  " + rs.CustomerName + " " + rs.Reports);
+                    Console.WriteLine("RetailCustomerID" + " " + "Reports");
+                    Console.WriteLine(rs.RetailCustomerID + " " + rs.Reports);
 
                 }
                 else
@@ -222,7 +217,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             Console.WriteLine("1.Update By id");
             //method to update customer name 
             void UpdateRetailstoreByRetailCustomerID()
-    {
+            {
                 try
                 {
                     Console.WriteLine("Enter existing Retailcustomer Id");
@@ -835,45 +830,47 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
              {
                  Console.WriteLine("cost is 10000");
              }
-//
-public static void SuppliersForTransporting()
-  {
-      RProducts p = new RProducts();
-      Console.WriteLine("================ Suppliers For Transporting================");
-      Console.WriteLine("Enter true for if you want suppliers else enter false");
-      //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-      bool k = true;
-      bool s = bool.Parse(Console.ReadLine());
-      if (s == true)
-      {
-          Console.WriteLine("Yes I want suppliers" + p.Suppliers);
-      }
-      else
-      {
-          k = false;
-          Console.WriteLine("No");
-      }
-      Console.WriteLine("--------------------------------------------------------------");
-      System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
-      Console.ReadKey();
-  }
+            */
+            public static void SuppliersForTransporting()
+            {
+                RProducts p = new RProducts();
+                Console.WriteLine("================ Suppliers For Transporting================");
+                Console.WriteLine("Enter true for if you want suppliers else enter false");
+                //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
+                bool k = true;
+                bool s = bool.Parse(Console.ReadLine());
+                if (s == true)
+                {
+                    Console.WriteLine("Yes I want suppliers" + p.Suppliers);
+                }
+                else
+                {
+                    k = false;
+                    Console.WriteLine("No");
+                }
+                Console.WriteLine("--------------------------------------------------------------");
+                System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
+                Console.ReadKey();
+            }
+            /// <summary>
+            /// Checking the product ID
+            /// </summary>
+            /// <param name="productID"></param>
+            public bool CheckProductID(string productID)
+            {
+                RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
+                bool res = rp.CheckProductID(productID);
+                if (res == true)
+                {
+                    Console.WriteLine("Product ID Exists");
+                    return res;
+                }
+                return res;
+            }
 
-  /// <summary>
-  /// Checking the product ID
-  /// </summary>
-  /// <param name="productID"></param>
-  public bool CheckProductID(string productID)
-  {
-      RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
-      bool res = rp.CheckProductID(productID);
-      if (res == true)
-      {
-          Console.WriteLine("Product ID Exists");
-          return res;
-      }
-      return res;
-  }
 
+
+        }
+    }
 }
-}
-*/
+

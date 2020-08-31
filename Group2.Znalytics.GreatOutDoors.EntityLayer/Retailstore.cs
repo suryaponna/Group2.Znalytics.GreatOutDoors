@@ -12,7 +12,6 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     {
         //Private field
         private string _retailCustomerID;
-        private string _customerName;
         private string _reports;
 
 
@@ -32,7 +31,6 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         public Retailstore(string RetailCustomerID, string CustomerName, string Reports)
         {
             this._retailCustomerID = RetailCustomerID;
-            this._customerName = CustomerName;
             this._reports = Reports;
 
         }
@@ -68,31 +66,6 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <summary>
         /// Property for Customer name
         /// </summary>
-        public string CustomerName
-        {
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    bool spaceFound = value.Contains(" ");
-                    bool atFound = value.Contains("@");
-                    bool commaFound = value.Contains(",");
-                    bool dotFound = value.Contains(".");
-                    if (!spaceFound && !atFound && !commaFound && !dotFound && value.Length <= 25)
-                    {
-                        _customerName = value;
-                    }
-                }
-                else
-                {
-                    throw new RetailstoreException("Customer name is invalid should not contain spaces and length should be 625");
-                }
-            }
-            get
-            {
-                return _customerName;
-            }
-        }
         /// <summary>
         /// Property for Reports 
         /// </summary>
