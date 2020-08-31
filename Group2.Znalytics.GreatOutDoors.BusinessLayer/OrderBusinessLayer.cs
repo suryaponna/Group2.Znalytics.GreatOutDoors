@@ -38,7 +38,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             {
                 _od.AddOrderDetails(order);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -117,15 +117,18 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             throw new NotImplementedException();
         }
+
+        public List<OrderProduct> GetOrderDetailsByEMployeeID(int value)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         ///Getting Order details from CustomerId
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public List<OrderProduct> GetOrderDetailsByEMployeeID(int value)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
           
