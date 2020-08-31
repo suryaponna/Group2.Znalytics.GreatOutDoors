@@ -148,7 +148,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 WriteLine(ex.Message);
             }
         }
-
+        static void ReturnPresentation()
+        {
+            Return rm = new Return();
+        }
 
 
          
