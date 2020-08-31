@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections;
 
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
+
+
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class GreatOutDoorsMenu
@@ -28,8 +31,6 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     case 3:     SelectProducts();
                                 break;
                     case 4:     ChangeShippingAddress();
-                                break;
-                    case 5:     ChangeDefaultAddress();
                                 break;
                     default:    WriteLine("Enter Valid Option");
                                 break;  
@@ -64,6 +65,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             WriteLine("Enter All The Details Below Showed");
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic bd = new AddressBusinessLogic();
+
             try
             {
                 WriteLine("------------------Enter Your Shipping Details ------------------");
@@ -114,7 +116,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             AddressBusinessLogic ab = new AddressBusinessLogic();
             AddressDetail ad = new AddressDetail();
             int Id = ad.CustomerId;
-            List<AddressDetail> AllAddresses=ab.GetAllCustomerAddresses(Id);
+            List<AddressDetail> AllAddresses = ab.GetAllCustomerAddresses(Id);
             WriteLine("From Below Addresses choose One");
             foreach (var i in AllAddresses) {
                 WriteLine("Address Type: " + i.AddressId);
@@ -142,9 +144,11 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             catch (Exception ex) {
                 WriteLine(ex.Message);
             }
-
-
         }
+
+
+
+         
 
 
 
