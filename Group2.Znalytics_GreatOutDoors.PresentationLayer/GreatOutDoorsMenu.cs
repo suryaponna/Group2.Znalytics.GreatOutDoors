@@ -147,7 +147,12 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             catch (Exception ex) {
                 WriteLine(ex.Message);
             }
+            List<AddressDetail> aaa = new List<AddressDetail>();
+            foreach (var i in aaa) { 
+                
+            }
         }
+
 
 
 
