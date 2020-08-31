@@ -80,7 +80,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 
                 else
                 {
-                    throw new OrderProductEXception("")
+                    throw new OrderProductEXception("");
                 }
             }
 
