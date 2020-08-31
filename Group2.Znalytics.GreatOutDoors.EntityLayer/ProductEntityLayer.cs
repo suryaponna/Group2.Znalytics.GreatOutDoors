@@ -48,7 +48,7 @@ namespace GreatOutdoorsProduct.Entities
             _productName = ProductName;
             _categoryName = categoryName;
             _specificationId = SpecificationId;
-            _costPrice = CostPrice;
+            _costPrice = (int)CostPrice;
             _sellingPrice = SellingPrice;
             _available = Available;
         }
@@ -68,109 +68,84 @@ namespace GreatOutdoorsProduct.Entities
 
         }
         private string productName;
+        public static bool updateProduct;
+
         /// <summary>
         /// creating property for productName
         /// </summary>
         public string ProductName
         {
-            set
-            {
-               ProductID = value;
-                  
-            }
-            get
-            {
-                return productName;
-            }
+            set => ProductID = value;
+
+            get => productName;
 
         }
 
-        
+
         /// <summary>
         /// creating property for categoryid
         /// </summary>
         public int CategoryID
         {
 
-            set
-            {
-                CategoryID = value;
-              
-            }
-            get
-            {
-                return CategoryID;
-            }
+            set => CategoryID = value;
+            get => CategoryID;
         }
-       
+
         /// <summary>
         /// creating property for specification id
         /// </summary>
         public int SpecificationID
         {
 
-            set
-            {
-                SpecificationID = value;
-            }
-            get
-            {
-                return SpecificationID;
-            }
+            set => SpecificationID = value;
+            get => SpecificationID;
         }
 
-    
+
         /// <summary>
         /// creating property for costprice
         /// </summary>
         public double CostPrice
         {
 
-            set
-            {
-                CostPrice = value;
-            }
-            get
-            {
-                return CostPrice;
-            }
+            set => CostPrice = value;
+            get => CostPrice;
         }
 
-     
+
         /// <summary>
         /// creating property for selling price
         /// </summary>
         public double SellingPrice
         {
 
-            set
-            {
-                SellingPrice = value;
-            }
-            get
-            {
-                return SellingPrice;
-            }
+            set => SellingPrice = value;
+            get => SellingPrice;
         }
 
-    
+
         /// <summary>
         /// creating property for available products
         /// </summary>
         public bool Available
         {
 
-            set
-            {
-                Available = value;
-            }
-            get
-            {
-                return Available;
-            }
+            set => Available = value;
+            get => Available;
         }
 
+        private string product;
 
+        public string GetProduct()
+        {
+            return product;
+        }
+
+        public void SetProduct(string value)
+        {
+            product = value;
+        }
     }
 }
 

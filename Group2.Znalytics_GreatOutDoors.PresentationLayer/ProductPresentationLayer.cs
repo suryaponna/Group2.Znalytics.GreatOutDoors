@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
-
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 {
@@ -18,9 +12,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             //creating object for productcategories
             Product p;
             p = new Product();
-            ProductBusinessLayer ProductBusinessLayer = new ProductBusinessLayer();
+            //ProductBusinessLayer ProductBusinessLayer = new ProductBusinessLayer();
 
-            Console.WriteLine("----------------------------WELCOME TO ZNALYTICS STORE----------------------------");
+            Console.WriteLine("----------------------------WELCOME TO ZNALYTICS PRODUCTS STORE----------------------------");
 
             //Product id
             Console.WriteLine("Enter The Product Id");
@@ -45,23 +39,23 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             {
                 case 1:
                     Console.WriteLine("Personal Accessories");
-                    p.Product = "Personal Accessories";
+                    p.SetProduct("Personal Accessories");
                     break;
                 case 2:
                     Console.WriteLine("Camping Equipment");
-                    p.Product = "Camping Equipment";
+                    p.SetProduct("Camping Equipment");
                     break;
                 case 3:
                     Console.WriteLine("Golf Equipment");
-                    p.Product = "Golf Equipment";
+                    p.SetProduct("Golf Equipment");
                     break;
                 case 4:
                     Console.WriteLine("Mountaineering Equipment");
-                    p.Product = "Mountaineering equipment";
+                    p.SetProduct("Mountaineering equipment");
                     break;
                 case 5:
                     Console.WriteLine("OutDoor Protection");
-                    p.Product = "Outdoor Protection";
+                    p.SetProduct("Outdoor Protection");
                     break;
                 default:
                     Console.WriteLine("Unknown choice");
@@ -90,7 +84,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     {
                         case 1:
                             Console.WriteLine("Personal Accessories");
-                            p.Product = "PersonalAccessories";
+                            p.SetProduct("PersonalAccessories");
                             //categories  of Personal accessories
                             Console.WriteLine("----------Categories of personal accessories-----------");
                             Console.WriteLine("\n 1.jackets \n 2.cravats \n 3.ties \n 4.hats" +
@@ -106,30 +100,30 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     {
                                         case 1:
                                             Console.WriteLine("jackets");
-                                            p.Product = "jackets";
-                                            AddProductQuantity();
+                                            p.SetProduct("jackets");
+                                            //AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("cravats");
-                                            p.Product = "cravats ";
-                                            AddProductQuantity();
+                                            p.SetProduct("cravats ");
+                                            //AddProductQuantity();
                                             break;
                                         case 3:
                                             Console.WriteLine("ties");
-                                            p.Product = "ties";
-                                            AddProductQuantity();
+                                            p.SetProduct("ties");
+                                            //AddProductQuantity();
                                             break;
                                         case 4:
                                             Console.WriteLine("hats");
-                                            p.Product = "hats";
-                                            AddProductQuantity();
+                                            p.SetProduct("hats");
+                                            //AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("boots and shoes");
-                                            p.Product = "boots and shoes";
-                                            AddProductQuantity();
+                                            p.SetProduct("boots and shoes");
+                                            //AddProductQuantity();
                                             break;
-                                         default:
+                                        default:
                                             Console.WriteLine("Exit");
                                             break;
                                     }
@@ -138,7 +132,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             break;
 
                         case 2:
-                            p.Product = "Camping Euipment";
+                            p.SetProduct("Camping Euipment");
                             Console.WriteLine("--------Catagories of Camping Equipment---------");
                             Console.WriteLine("\n 1.Tent  \n 2.Sleeping bags \n 3.Camping pillow \n 4.Headlamps \n 5.Camp table \n 6.Exit");
 
@@ -153,28 +147,27 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     {
                                         case 1:
                                             Console.WriteLine("Tent");
-                                            p.Product = "Tent";
-                                            AddProductQuantity();
+                                            p.SetProduct("Tent");
+                                            //AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("sleeping bags");
-                                            p.Product = "sleeping bags";
-                                            AddProductQuantity();
+                                            p.SetProduct("sleeping bags");
+                                            //AddProductQuantity();
                                             break;
                                         case 3:
                                             Console.WriteLine("camping pillow");
-                                            p.Product = "camping pillow";
-                                            AddProductQuantity();
-                                            break;
+                                            p.SetProduct("camping pillow");
+                                             break;
                                         case 4:
                                             Console.WriteLine("headlamps");
-                                            p.Product = "headlamps";
-                                            AddProductQuantity();
+                                            p.SetProduct("headlamps");
+                                            //AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("camp table");
-                                            p.Product = "camp table";
-                                            AddProductQuantity();
+                                            p.SetProduct("camp table");
+                                            //AddProductQuantity();
                                             break;
                                         default:
                                             Console.WriteLine("Exit");
@@ -184,7 +177,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             } while (choice3 != 4);
                             break;
                         case 3:
-                            p.Product = "Golf Equipment";
+                            p.SetProduct("Golf Equipment");
                             //Choice of choosing Catagories of Golf Equipment
                             Console.WriteLine("---------------Catagories of golf equipment---------------");
                             Console.WriteLine("\n 1.Balls \n 2.Golf clubs \n 3.Ball markers\n 4.Tees" +
@@ -201,28 +194,28 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     {
                                         case 1:
                                             Console.WriteLine("Balls");
-                                            p.Product = "Balls";
-                                            AddProductQuantity();
+                                            p.SetProduct("Balls");
+                                            //AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("Golf clubs");
-                                            p.Product = "Golf clubs";
-                                            AddProductQuantity();
+                                            p.SetProduct("Golf clubs");
+                                            //AddProductQuantity();
                                             break;
                                         case 3:
                                             Console.WriteLine("Ball markers");
-                                            p.Product = "Ball markers";
-                                            AddProductQuantity();
+                                            p.SetProduct("Ball markers");
+                                            //AddProductQuantity();
                                             break;
                                         case 4:
                                             Console.WriteLine("Tees");
-                                            p.Product = "Tees";
-                                            AddProductQuantity();
+                                            p.SetProduct("Tees");
+                                            //AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("Golf bag");
-                                            p.Product = "Golf bag";
-                                            AddProductQuantity();
+                                            p.SetProduct("Golf bag");
+                                            //AddProductQuantity();
                                             break;
                                         case 7:
                                             Console.WriteLine("Exit");
@@ -232,7 +225,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             } while (choice3 != 4);
                             break;
                         case 4:
-                            p.Product = " Mountaineering Equipment";
+                            p.SetProduct(" Mountaineering Equipment");
                             //Choice of choosing Catagories of Mountaineering Equipment
                             Console.WriteLine("---------------Catagories of Mountainering euipment---------------");
                             Console.WriteLine("\n 1.Climbing pack\n 2.Rope\n 3.Helmet\n 4.Crampons" +
@@ -248,28 +241,28 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     {
                                         case 1:
                                             Console.WriteLine("Climbing pack");
-                                            p.Product = "Climbing pack";
-                                            AddProductQuantity();
+                                            p.SetProduct("Climbing pack");
+                                            //AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("Rope");
-                                            p.Product = "Rope";
-                                            AddProductQuantity();
+                                            p.SetProduct("Rope");
+                                            //AddProductQuantity();
                                             break;
                                         case 3:
                                             Console.WriteLine("Helmet");
-                                            p.Product = "Helmet";
-                                            AddProductQuantity();
+                                            p.SetProduct("Helmet");
+                                            //AddProductQuantity();
                                             break;
                                         case 4:
                                             Console.WriteLine("Crampons");
-                                            p.Product = "Crampons";
-                                            AddProductQuantity();
+                                            p.SetProduct("Crampons");
+                                            //AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("Ice axe");
-                                            p.Product = "Ice axe";
-                                            AddProductQuantity();
+                                            p.SetProduct("Ice axe");
+                                            //AddProductQuantity();
                                             break;
                                         case 6:
                                             Console.WriteLine("Exit");
@@ -279,7 +272,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             } while (choice4 != 5);
                             break;
                         case 5:
-                            p.Product = "Outdoor Protection";
+                            p.SetProduct("Outdoor Protection");
                             Console.WriteLine("---------------Categories of Outdoor Protection---------------");
                             Console.WriteLine("\n 1.Mask  \n 2.solar powered light \n 3.Traditioal \n 4.Accessories " +
                                 " \n 5.Jewelry \n 6.Watches \n 7.Formal Wear \n 8.Exit");
@@ -294,39 +287,39 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     {
                                         case 1:
                                             Console.WriteLine("Mask");
-                                            p.Product = "Mask";
-                                            AddProductQuantity();
+                                            p.SetProduct("Mask");
+                                            //AddProductQuantity();
                                             break;
                                         case 2:
                                             Console.WriteLine("Sportswear");
-                                            p.Product = "Sportswear";
-                                            AddProductQuantity();
+                                            p.SetProduct("Sportswear");
+                                            //AddProductQuantity();
                                             //r.Cost = 3060;
                                             break;
                                         case 3:
                                             Console.WriteLine("Traditional wear");
-                                            p.Product = "Traditional wear";
-                                            AddProductQuantity();
+                                            p.SetProduct("Traditional wear");
+                                            //AddProductQuantity();
                                             break;
                                         case 4:
                                             Console.WriteLine("Accessories");
-                                            p.Product = "Accessories";
-                                            AddProductQuantity();
+                                            p.SetProduct("Accessories");
+                                            //AddProductQuantity();
                                             break;
                                         case 5:
                                             Console.WriteLine("Watches");
-                                            p.Product = "Watches";
-                                            AddProductQuantity();
+                                            p.SetProduct("Watches");
+                                            //AddProductQuantity();
                                             break;
                                         case 6:
                                             Console.WriteLine("Jewelry");
-                                            p.Product = "Jewelry";
-                                            AddProductQuantity();
+                                            p.SetProduct("Jewelry");
+                                            //AddProductQuantity();
                                             break;
                                         case 7:
                                             Console.WriteLine("Formal Wear");
-                                            p.Product = "Formal Wear";
-                                            AddProductQuantity();
+                                            p.SetProduct("Formal Wear");
+                                            //AddProductQuantity();
                                             break;
                                         case 8:
                                             Console.WriteLine("Exit");
@@ -339,52 +332,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
             } while (ch != 6);
             Console.WriteLine("--------------------------------------------------------------");
-            // Suppliers for transporting
-            Console.WriteLine("================ Suppliers For Transporting================");
-            Console.WriteLine("Enter true for if you want suppliers else enter false");
-            //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-            bool k = true;
-            bool s = bool.Parse(Console.ReadLine());
-            if (s == true)
-            {
-                Console.WriteLine("Yes I want suppliers" + r.Suppliers);
-            }
-            else
-            {
-                k = false;
-                Console.WriteLine("No i doesn't want suppliers");
-            }
-            Console.WriteLine("--------------------------------------------------------------");
-            System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING THE PRODUCTS (: |\n----------------------------------------------------\n");
-            Console.ReadKey();
-        }
-        /// <summary>
-        /// Method to add quantity of products
-        /// </summary>
-        public static void AddProductQuantity()
-        {
-
-            Product p = new Product();
-            ProductBusinessLayer pbl = new ProductBusinessLayer();
-            Console.WriteLine("Enter the quantity of products:");
-            p.QuantityOfProducts = int.Parse(Console.ReadLine());
-            Console.WriteLine("The quantity of product is:" + p.QuantityOfProducts);
-            pdl.AddProductQuantity();
-
-        }
-        public static void GetProductQuantity()
-        {
-
-            Product p = new Product();
-            ProductBusinessLogicLayer pbll = new ProductBusinessLogicLayer();
-            pdl.GetProductQuantity();
-            List<Product> p = pdl.GetProductQuantity();
-            foreach (Retailstore item in rs)
-            {
-                Console.WriteLine("get the details of  quantity of products");
-                Console.WriteLine(item.QuantityOfProducts);
-            }
-
         }
     }
 }
+            

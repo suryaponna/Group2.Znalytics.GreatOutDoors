@@ -27,7 +27,6 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         /// <summary>
         /// Method to get return details by using productname
         /// </summary>
-        /// <param name="name">Represents product name</param>
         /// <returns></returns>
         Return GetReturnByProductName(Return rm);
         Return GetReturnByProductID(Return rm);

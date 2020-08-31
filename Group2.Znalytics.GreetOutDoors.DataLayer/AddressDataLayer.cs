@@ -159,10 +159,15 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
         public void UpdateExistingAddress(AddressDetail ad) {
-            for (int i=0; i < _customerAddressesList.Count; i++){
-                if (_customerAddressesList[i].CustomerId == ad.CustomerId) {
-                    _customerAddressesList[i] = ad;
-                }   
+            AddressDetail res = (from i in _customerAddressesList
+                                    where i.AddressId==ad.AddressId
+                                    select i).FirstOrDefault();
+            if (res != null) {
+                int AddressIndex=_customerAddressesList.IndexOf(res);
+                _customerAddressesList[AddressIndex] = ad;
+            }
+            else {
+                throw new AddressException("Address Not Found, add this address as a new one");
             }
             
         }
@@ -183,7 +188,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 return sample;
             }
             else {
-                throw new AddOrderDetails("No default Address you Might not enteres your address while singup");
+                throw new AddressException("No default Address you Might not enteres your address while singup");
             }
         }
         /// <summary>
@@ -200,7 +205,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 return samp;
             }
             else {
-                throw new AddOrderDetails("Requested Address Not Found");
+                throw new AddressException("Requested Address Not Found");
             }
         }
 
