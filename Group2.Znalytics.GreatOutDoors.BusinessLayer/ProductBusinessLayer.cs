@@ -92,6 +92,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             /// <returns></returns>
             public void RemoveProductByProductID(int ProductId)
             {
+
                 try
                 {
                     if (ProductId != 0)
