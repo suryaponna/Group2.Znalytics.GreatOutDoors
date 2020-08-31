@@ -7,9 +7,8 @@ using System;
 using System.Collections.Generic;
 
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
-//using Group2.Znalytics.GreatOutDoors.DataLayer;
-
-
+using Group2.Znalytics.GreatOutDoors.DataLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLogicLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
@@ -30,12 +29,12 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="customers"></param>
 
-        public void AddCustomer(Customer customers)
+        public void AddCustomer(Customer customer)
         {
             //Validating customer name
-            if (customers.CustomerName != null)
+            if (customer.CustomerName != null && customer.CustomerPhoneNumber != null)
             {
-                cdal.Add(customers);
+                cdal.AddCustomer(customer);
 
             }
             else
@@ -43,56 +42,16 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw new Exception("Name can't be null,Please Mention your name");
             }
 
-            //Checking Phone number
-
-            if (customers.CustomerPhoneNumber != null)
-            {
-                cdal.AddCustomer(customers);
-            }
-            else
-            {
-                throw new Exception("Phone number can't be null,Please enter 10digit Phonenumber");
-            }
+            
         }
-        //checking age of the customer
-        public void Age(Customer customers)
+        
+      
+
+
+
+        //Validation of Mail Id
+        public void CustomerMailId(Customer customers)
         {
-            try {
-
-
-                if (customers.Age >= 18)
-                {
-                    cdal.(customers);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Age must be above 18");
-            }
-        }
-
-            //validation for CustomerName(for signup process)
-            public void AddCustomer(Customer customers)
-            {
-                //Validating customer first name
-                if (customer.CustomerName != null)
-                {
-                    cdal.AddCustomer(customer);
-
-                }
-                else
-                {
-                    throw new Exception("Customer name can't be null");
-                }
-            }
-
-
-        }
-
-            //Validation of Mail Id
-            public void MailId(Customer customers)
-            {
             /*Email validation:
             * 1. No space
             * 2. @ symbol should be present
@@ -131,39 +90,41 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             {
                 Console.WriteLine("Email should contain only one @ symbol; no space and also end with .com");
             }
-
-
         }
-        cdal.AddCustomer(customers);
-            }
 
-            //View customer personal detailss
-            public List<Customer> GetCustomers()
+
+
+
+        //View customer personal details
+        public List<Customer> GetCustomers()
+        {
+            return cdal.GetCustomers();
+        }
+
+        //Update customer details
+
+        public void UpdateCustomer(Customer customers)
+        {
+
+            cdal.UpdateCustomer(customers);
+        }
+        public void DeleteCustomer(Customer customers)
+        {
+            //using Exception handling concept(using try and catch).
+            try
             {
-                return cdal.GetCustomers();
-            }
-
-            //Update customer details
-
-            public void UpdateCustomer(Customer customers)
-            {
-
-                cdal.UpdateCustomer(customers);
-            }
-            public void DeleteCustomer(Customer customers)
-            {
-                try
+                if (customers.CustomerName != null && customers.CustomerId != null)
                 {
-                    if (CustomerName != null) && (CustomerID != null)
-                   {
-                        cdal.DeleteCustomer(customers);
-                    }
-                    catch (Exception ex)
-                {
-                    throw new Exception("Customer Name and ID cannot be null);
+                    cdal.DeleteCustomer(customers);
                 }
+
+            }
+            catch (Exception ex)//catching Exception
+            { 
+                throw new Exception("Customer Name and ID cannot be null");
             }
         }
     }
 }
+   
 

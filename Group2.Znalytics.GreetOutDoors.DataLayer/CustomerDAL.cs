@@ -86,8 +86,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
     }
     public void DeleteCustomers(Customer customers)
     {
-        _customers.Remove(temp=>CustomerName==Customers.CustomerName);
-       
+        _customers.Remove(temp => CustomerName == Customers.CustomerName);
+
     }
 }
 

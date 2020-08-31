@@ -51,7 +51,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine("9. Remove products");
                 Console.WriteLine("10. Update Products");
                 Console.WriteLine("11. Add quantity of products");
-                Console.WriteLine("11. Exit");
+                Console.WriteLine("12. SuppliersForTransporting");
+                Console.WriteLine("13. Exit");
 
                 bool b = int.TryParse(Console.ReadLine(), out choice);
                 if (b == true)
@@ -69,15 +70,19 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                         case 9: RemoveProduct(); break;
                         case 10: UpdateProducts(); break;
                         case 11: AddQuantityOfProducts(); break;
+                        case 12: SuppliersForTransporting(); break;
                         default: break;
 
                     }
                 }
-            } while (choice != 12);
+            } while (choice != 13);
         }
         /// <summary>
-        /// Method to Add Retailstore details to the list
+        /// AddRetailStore is a static method
         /// </summary>
+        /// <param name="RetailCustomerID">Represents ID of Retail customer id</param>
+        /// <param name="CustomerName">Represents retail customer name</param>
+        /// <param name="Reports">Reprsents payment choice</param>
         public static void AddRetailstore()
         {
             try
@@ -206,7 +211,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             {
                 Console.WriteLine("please enter the correct option");
             }
-            //Method to remove retailer customer id
+            ///<summary>
+            ///Method to remove retailer customer id
+            /// </summary>
             void RemoveRetailCustomerByID()
             {
                 Retailstore r = new Retailstore();
@@ -226,6 +233,10 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
 
             }
+            ///<summary>
+            ///Method to remove retailer customer name
+            /// </summary>
+
             void RemoveRetailstoreByCustomerName()
             {
                 Retailstore r = new Retailstore();
@@ -287,6 +298,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
             }
         }
+        /// <summary>
+        /// AddProducts is a static method  
+        /// </summary>
         public static void AddProducts()
         {
             try
@@ -763,6 +777,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// GetProducts method represents get the products from the lsit
+        /// </summary>
         public static void GetRProducts()
         {
             RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
@@ -774,6 +791,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine(item.RetailProducts + " " + item.ProductID);
             }
         }
+        /// <summary>
+        /// Removeproduct method which removes the products from the list if ProductId doesnot match
+        /// </summary>
         public static void RemoveProduct()
         {
             //creating the object for Product details class
@@ -792,6 +812,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             }
 
         }
+        /// <summary>
+        /// GetProductBYID is a static method represents the details of products presents in the list
+        /// </summary>
         public static void GetProductsByID()
         {
             //RProducts p = new RProducts();
@@ -811,6 +834,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
         }
+        /// <summary>
+        /// Update products method represents based on ProductId we can change the products
+        /// </summary>
         public static void UpdateProducts()
         {
             RProducts p = new RProducts();
@@ -837,12 +863,14 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             }
 
         }
-
         private static bool ValidateRetailProducts(List<string> retailProducts)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Add quantity represents that customer has to add the products the based on his choice
+        /// </summary>
         public static void AddQuantityOfProducts()
         {
 
@@ -853,10 +881,20 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             Console.WriteLine("The quantity of product is:" + p.QuantityOfProducts);
             rp.AddQuantityOfProducts(p);
 
+            //p.Cost = double.Parse(Console.ReadLine());
+            Console.WriteLine("TOTAL COST IS:" + p.Cost * p.QuantityOfProducts);
+            /** if(p.QuantityOfProducts<=10)
+             {
+                 Console.WriteLine("cost is 10000");
+             }*/         
+        }
+        public static void SuppliersForTransporting()
+        {
+            RProducts p = new RProducts();
             Console.WriteLine("================ Suppliers For Transporting================");
             Console.WriteLine("Enter true for if you want suppliers else enter false");
             //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-            bool k;
+            bool k = true;
             bool s = bool.Parse(Console.ReadLine());
             if (s == true)
             {
@@ -865,12 +903,17 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             else
             {
                 k = false;
-                Console.WriteLine("No i doesn't want suppliers");
+                Console.WriteLine("No");
             }
             Console.WriteLine("--------------------------------------------------------------");
             System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
             Console.ReadKey();
         }
+
+        /// <summary>
+        /// Checking the product ID
+        /// </summary>
+        /// <param name="productID"></param>
         public bool CheckProductID(string productID)
         {
             RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();

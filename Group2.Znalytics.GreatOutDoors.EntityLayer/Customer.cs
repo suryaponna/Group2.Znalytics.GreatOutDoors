@@ -2,22 +2,18 @@
 //Customer Entity Layer
 
 
+using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;//directory involved for using regularexpressions in the code
-using System.Windows.Markup;
+
 
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but collection of classes
-
 {
     public class Customer
     {
-
-
-        /// <summary>
-        /// Represents details of customer
-        /// </summary>
-        // list of details
+        //private fields of customer
         private string _customerName;
-        private string _customerId;
+        private int _customerId;
         private string _customerMailId;
         private string _customerPhoneNumber;
         private double _customerFlatNumber;
@@ -28,26 +24,20 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
         private string _customerCountry;
         private string _password;
         private string _gender;
-        private int _age;
+        private int _customerAge;
         private string _aadharCardNumber;
         private string _pinCode;
 
 
 
         /// <summary>
-        /// Property for Customer userId
+        /// Id of the Customer based on which customer can login
         /// </summary>
-        public string CustomerId
+        public int CustomerId
         {
             set
             {
-                Regex r = new Regex(@"^[a-zA-Z\\d*]{8,20}$");//User ID cannot be all numeric
-                                                             // User ID cannot have special characters
-                                                             //Minimum length of 8 characters
-                                                             //Maximum length of 20 characters
-                                                             //Can be all alphabetic
-                                                             //Can be alphanumeric
-                if (r.IsMatch(value))
+                if (value >= 0 && value <= 9)
                 {
                     _customerId = value;
                 }
@@ -56,14 +46,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                     throw new System.Exception("Cannot contain special characters and cannot be all numeric");
                 }
             }
-            get
+             get
             {
                 return _customerId;
             }
         }
 
         /// <summary>
-        /// Property for password
+        /// Password of the Customer based on which the customer can login
         /// </summary>
         public string Password
         {
@@ -93,7 +83,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// Name of the Customer
+        /// Name of the Customer based on which customer can signin
         /// </summary>
         public string CustomerName
         {
@@ -109,10 +99,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerName;
             }
         }
-    }
+
+
 
         /// <summary>
-        /// Mail Id of the Customer
+        /// Mailid of the customer based on which customer can signup
         /// </summary>
         public string CustomerMailId
         {
@@ -125,8 +116,10 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerMailId;
             }
         }
+
+
         /// <summary>
-        /// Aadhar CardNumber of the Customer
+        /// Aadhar CardNumber of the  Customer based on customer can signin
         /// </summary>
         public string AadharCardNumber
         {
@@ -143,8 +136,10 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
             }
         }
+
+
         /// <summary>
-        /// FlatNumber of the Customer
+        /// FlatNumber of the Customer.It represents default flat number(address) of the customer
         /// </summary>
         public double CustomerFlatNumber
         {
@@ -157,6 +152,8 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerFlatNumber;
             }
         }
+
+
         /// <summary>
         /// Street of the Customer
         /// </summary>
@@ -172,6 +169,12 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerStreet;
             }
         }
+
+        public void AddCustomer(Customer customer)
+        {
+            throw new Exception();
+        }
+
 
         /// <summary>
         /// City of the Customer
@@ -190,6 +193,12 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerCity;
             }
         }
+
+        public List<Customer> ViewCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
         /// State of the Customer
@@ -248,6 +257,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerCountry;
             }
         }
+
         /// <summary>
         /// Phone number of the Customer
         /// </summary>
@@ -265,6 +275,12 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
                 return _customerPhoneNumber;
             }
         }
+
+        public static void UpdateCustomer(Customer customers)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// property of gender
         /// </summary>
@@ -272,7 +288,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
         {
             set
             {
-                if (value == "Male" || value == "Female")
+                if (value == "Male" || value == "Female" || value == "Others")
                 {
                     _gender = value;
                 }
@@ -280,6 +296,21 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
             get
             {
                 return _gender;
+            }
+        }
+
+        ///<summary>
+        ///Property for Customer Age
+        ///</summary>
+        public int CustomerAge
+        {
+            set
+            {
+                _customerAge = value;
+            }
+            get
+            {
+                return _customerAge;
             }
         }
 

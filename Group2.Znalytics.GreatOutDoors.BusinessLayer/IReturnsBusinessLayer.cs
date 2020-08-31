@@ -12,13 +12,13 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLayer
         ///Method to add details of return
         /// </summary>
         /// <param name="rm">Object for Return</param>
-        void AddReturns(Return rm);
+        void AddReturn(Return rm);
         /// <summary>
         /// Method for removing Return by using productID
         /// </summary>
         /// <param name="name">Represents name of product</param>
-        void RemoveReturnByProductName(Return rm);
-        void RemoveReturnByProductID(Return rm);
+        void RemoveReturnByProductName(string ProductId);
+        void RemoveReturnByProductID(string ProductName);
         /// <summary>
         /// Method for exchange product
         /// </summary>

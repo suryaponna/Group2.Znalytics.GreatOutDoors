@@ -72,18 +72,26 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
         {
             string s = JsonConvert.SerializeObject(_productList);
             //write data into the file
-            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\source\repos\RetailStoreData.txt");
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\source\repos\RetailStoreData");
             streamWriter.Write(s);
             streamWriter.Close();
         }
+        /// <summary>
+        /// Reading the data from Json file and return the data on the file into list format
+        /// </summary>
+        /// <returns>Returns the list of products available in Retailstoredata</returns>
         public static List<RProducts> GetFiledata()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\source\repos\RetailStoreData.txt");
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\source\repos\RetailStoreData");
             string s2 = streamReader.ReadToEnd();
             List<RProducts> rProducts = JsonConvert.DeserializeObject<List<RProducts>>(s2);
             streamReader.Close();
             return rProducts;
         }
+        /// <summary>
+        /// Update the products based on product Id
+        /// </summary>
+        /// <param name="rProducts">Represents product oject</param>
         public void UpdateProduct(RProducts rProducts)
         {
             RProducts p = _productList.Find(r => r.ProductID == rProducts.ProductID);
@@ -93,6 +101,10 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
                 SaveIntoFile();
             }
         }
+        /// <summary>
+        /// Addquantity of products represents to add quantity based on user choice
+        /// </summary>
+
         public void AddQuantityOfProducts(RProducts retailProducts)
         {
             _productList.Add(retailProducts);

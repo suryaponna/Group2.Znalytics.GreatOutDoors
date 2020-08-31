@@ -27,6 +27,10 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer
             _rpdl = new RetailProductsDataAccessLayer();
         }
         //RetailProductsDataAccessLayer rpdl = new RetailProductsDataAccessLayer();
+        /// <summary>
+        /// Method to add products into the list
+        /// </summary>
+        /// <param name="n">Represents the products object</param>
         public void AddProducts(RProducts n)
         {
             try
@@ -42,13 +46,17 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer
             }
         }
         /// <summary>
-        /// displaying products
+        /// Method to get added details
         /// </summary>
-        /// <returns>gets the products details</returns>
+        /// <returns>it returns the list products details</returns>
         public List<RProducts> GetRProducts()
         {
             return _rpdl.GetRProducts();
         }
+        /// <summary>
+        /// Method to remove product based on productID
+        /// </summary>
+        /// <param name="productID">Represents productID</param>
         public void RemoveProduct(string productID)
         {
             if (productID != null)
@@ -60,6 +68,11 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer
                 throw new RetailstoreException();
             }
         }
+        /// <summary>
+        /// Method to get products by productID
+        /// </summary>
+        /// <param name="ProductID">Represents the productID</param>
+        /// <returns>Returns the productID</returns>
         public RProducts GetProductsByID(string ProductID)
         {
             return _rpdl.GetProductsByID(ProductID);
@@ -76,6 +89,10 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer
             }
 
         }
+        /// <summary>
+        /// Add quantity of products into the list
+        /// </summary>
+        /// <param name="rProducts">Reprsents product object</param>
         public void AddQuantityOfProducts(RProducts rProducts)
         {
             if (rProducts.RetailProducts != null)
