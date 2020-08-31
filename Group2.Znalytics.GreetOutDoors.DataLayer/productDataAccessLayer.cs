@@ -69,18 +69,14 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             return searchProduct;
         }
-        /* public ListOfProducts
-             {
-
-         List<Product> productsList = new List<Product>();
-         //convert data into Json
-         string s = JsonConvert.SerializeObject(productsList);
-
-         //write data into file
-         StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop");
-         streamWriter.Write(s);
-             streamWriter.Close();
-             }*/
+        private static void SaveIntoFile()
+        {
+            string s = JsonConvert.SerializeObject(productList);
+            //write the data into the file
+            StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop\aa");
+            streamWriter.Write(s);
+            streamWriter.Close();
+        }
 
 
         /// <summary>
