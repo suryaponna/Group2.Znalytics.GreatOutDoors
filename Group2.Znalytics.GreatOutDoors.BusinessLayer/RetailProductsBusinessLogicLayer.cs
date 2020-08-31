@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer;
+using Group2.Znalytics.GreatOutDoors.DataAccessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 

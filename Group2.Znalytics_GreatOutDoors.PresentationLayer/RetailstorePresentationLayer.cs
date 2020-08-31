@@ -7,11 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Linq.Expressions;
-using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.EntityLayer;
-using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;
 
 //Created a namespace for PresentationLayer of RETAILSTORE module
