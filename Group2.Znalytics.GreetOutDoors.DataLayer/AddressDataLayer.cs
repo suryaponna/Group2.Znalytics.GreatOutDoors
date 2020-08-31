@@ -214,8 +214,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="ad"></param>
         /// <returns></returns>
-        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
-            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == ad.CustomerId);
+        public List<AddressDetail> GetAllCustomerAddresses(int Id) {
+            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == Id);
             return samp;
         }
         /// <summary>

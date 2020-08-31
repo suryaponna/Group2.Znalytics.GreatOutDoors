@@ -3,6 +3,8 @@ using static System.Console;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Znalytics.Group2.GreatOutDoor.BusinessLayer;
 using System;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -11,6 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         static void Main() {
             WriteLine("----------------Welcome to GreatOutDoors hope you find your things here----------------");
             WriteLine();
+            AddressDetail ad = new AddressDetail();
             while (true) {
                 WriteLine("Enter 1 to sign up");
                 WriteLine();
@@ -34,10 +37,15 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
         }
         static void CustomerSignUp() {
-
-
-
             SelectProducts();
+
+
+
+
+
+
+
+
         }
         static void CustomerSignIn() {
 
@@ -60,29 +68,29 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             {
                 WriteLine("------------------Enter Your Shipping Details ------------------");
                 WriteLine("Enter Country:");
-                ad.CustomerCountry = (System.Console.ReadLine());
+                ad.CustomerCountry = ReadLine();
                 bd.ValidatingCountry(ad);
                 //bd.IsCountryExists(ad.CustomerCountry);
                 WriteLine("Enter Your Name:");
-                ad.CustomerName = (System.Console.ReadLine());
+                ad.CustomerName = ReadLine();
                 bd.ValidatingState(ad);
                 WriteLine("Enter Mobile Number:");
-                ad.MobileNumber = System.Console.ReadLine();
+                ad.MobileNumber = ReadLine();
                 bd.ValidatingPhoneNumber(ad);
                 WriteLine("Enter Your Pincode:");
-                ad.PinCode = (System.Console.ReadLine());
+                ad.PinCode = ReadLine();
                 WriteLine("Enter Flat/DoorNumber:");
-                ad.FlatNo = (System.Console.ReadLine());
+                ad.FlatNo = ReadLine();
                 WriteLine("Enter Your Area");
-                ad.AreaColony = (System.Console.ReadLine());
+                ad.AreaColony = ReadLine();
                 WriteLine("Enter your LandMark:");
-                ad.LandMark = (System.Console.ReadLine());
+                ad.LandMark = ReadLine();
                 WriteLine("Enter your Town/City:");
-                ad.Town = (System.Console.ReadLine());
+                ad.Town = ReadLine();
                 WriteLine("Enter your State");
-                ad.State = (System.Console.ReadLine());
+                ad.State = ReadLine();
                 WriteLine("Enter your Address 0 for Type Home or 1 for Office");
-                bool val = int.TryParse(System.Console.ReadLine(), out Type);
+                bool val = int.TryParse(ReadLine(), out Type);
                 ad.AddressId = (AddressType)Type;
             }
             catch (Exception ex) {
@@ -102,8 +110,40 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         }
-        static void ChangeDefaultAddress() { 
-            
+        static void ChangeDefaultAddress() {
+            AddressBusinessLogic ab = new AddressBusinessLogic();
+            AddressDetail ad = new AddressDetail();
+            int Id = ad.CustomerId;
+            List<AddressDetail> AllAddresses=ab.GetAllCustomerAddresses(Id);
+            WriteLine("From Below Addresses choose One");
+            foreach (var i in AllAddresses) {
+                WriteLine("Address Type: " + i.AddressId);
+                WriteLine("Country: " + i.CustomerCountry);
+                WriteLine("Name: " + i.CustomerName);
+                WriteLine("Mobile Number: " + i.MobileNumber);
+                WriteLine("PinCode: " + i.PinCode);
+                WriteLine("FlatNo " + i.FlatNo);
+                WriteLine("Area: " + i.AreaColony);
+                WriteLine("LandMark: " + i.LandMark);
+                WriteLine("Town/City: " + i.Town);
+                WriteLine("State: " + i.State);
+            }
+            WriteLine("Enter Your Address Id which is to be changes as default address");
+            try
+            {
+                int AddressId;
+                bool b = int.TryParse(ReadLine(), out AddressId);
+                if (b)
+                {
+                    AddressDetail samp = AllAddresses[AddressId];
+                    ab.ChangeDefaultAddrees(samp);
+                }
+            }
+            catch (Exception ex) {
+                WriteLine(ex.Message);
+            }
+
+
         }
 
 

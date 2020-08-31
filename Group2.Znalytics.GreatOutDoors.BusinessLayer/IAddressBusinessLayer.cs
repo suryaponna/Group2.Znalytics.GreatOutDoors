@@ -36,7 +36,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="ad"></param>
         /// <returns></returns>
-        List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad);
+        List<AddressDetail> GetAllCustomerAddresses(int Id);
         /// <summary>
         /// Adding Another Address To Customer
         /// </summary>
