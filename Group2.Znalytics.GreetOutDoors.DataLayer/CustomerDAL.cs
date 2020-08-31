@@ -86,7 +86,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             return cust;
 
         }
-        //JSON is used for converting object to text format
+        ///JSON is used for converting object to text format
         public void ListOfCustomers()
         {
             List<Customer> _return = new List<Customer>();
@@ -113,6 +113,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
         }
         //method for deleting customer
+        /// <summary>
+        /// deleting customer based on customerId
+        /// </summary>
+        /// <param name="customerID"></param>
         public void DeleteCustomer(int customerID)
         {
             _customers.RemoveAll(temp => temp.CustomerId == customerID);
@@ -130,6 +134,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
 
        
+    }
+
+    public interface ICustomerDAL
+    {
     }
 }
 

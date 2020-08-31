@@ -20,11 +20,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <summary>
         /// Default Constructor
         /// </summary>
-       //private RetailStoreDataAccessLayer _retailStoreDataAccessLayer;
+      RetailStoreDataAccessLayer _retailStoreDataAccessLayer;
 
         public RetailStoreBusinessLogicLayer()
         {
-            //_retailStoreDataAccessLayer = new RetailStoreDataAccessLayer();
+            _retailStoreDataAccessLayer = new RetailStoreDataAccessLayer();
         }
 
 
@@ -54,7 +54,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         public List<Retailstore> GetRetailstores()
         {
-            return RetailStoreDataAccessLayer.GetRetailstores();
+            return _retailStoreDataAccessLayer.GetRetailstores();
         }
         /// <summary>
         /// Method to Get retail store details by retail store id
@@ -69,7 +69,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
                 if (retailCustomerID != null)
                 {
-                    return RetailStoreDataAccessLayer.GetRetailstoreByRetailstoreCustomerID(retailCustomerID);
+                    return _retailStoreDataAccessLayer.GetRetailstoreByRetailstoreCustomerID(retailCustomerID);
 
                 }
                 else
@@ -94,25 +94,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             {
                 if (retailCustomerID != null)
                 {
-                    RetailStoreDataAccessLayer.RemoveRetailCustomerByID(retailCustomerID);
-                }
-            }
-            catch (RetailstoreException ex)
-            {
-                throw new RetailstoreException(ex.Message);
-            }
-        }
-        /// <summary>
-        /// Remove the details based on customer name
-        /// </summary>
-        /// <param name="retailCustomerName">represents the customer name</param>
-        public void RemoveRetailstoreByCustomerName(string retailCustomerName)
-        {
-            try
-            {
-                if (retailCustomerName != null)
-                {
-                    RetailStoreDataAccessLayer.RemoveRetailstoreByCustomerName(retailCustomerName);
+                    _retailStoreDataAccessLayer.RemoveRetailCustomerByID(retailCustomerID);
                 }
             }
             catch (RetailstoreException ex)
@@ -124,13 +106,13 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// method to Update the customername
         /// </summary>
         /// <param name="retailstore">represents retailstore object</param>
-        public void UpdateRetailstoreCustomerName(Retailstore retailstore)
+        public void UpdateRetailstoreByRetailCustomerID(Retailstore retailstore)
         {
             try
             {
                 if (retailstore.RetailCustomerID != null)
                 {
-                    RetailStoreDataAccessLayer.UpdateRetailstoreCustomerName(retailstore);
+                    _retailStoreDataAccessLayer.UpdateRetailstoreByRetailCustomerID(retailstore);
                 }
             }
             catch (RetailstoreException ex)
