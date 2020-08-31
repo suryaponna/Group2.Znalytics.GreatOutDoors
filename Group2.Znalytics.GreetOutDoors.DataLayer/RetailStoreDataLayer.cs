@@ -18,13 +18,17 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
     /// </summary>
     public class RetailStoreDataAccessLayer
     {
-        //Create a list of RetailStore
+        /// <summary>
+        /// Create a list of RetailStore
+        /// </summary>
         private static List<Retailstore> _retailStoreList
         {
             set;
             get;
         }
-        //Static Constructor
+        /// <summary>
+        /// Static Constructor
+        /// </summary>
         static RetailStoreDataAccessLayer()
         {
             _retailStoreList = new List<Retailstore>();
@@ -40,7 +44,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
                 _retailStoreList = GetFileData();
             }
         }
-        //Method to add retailstore details to the list
+        /// <summary>
+        /// Method to add retailstore details to the list
+        /// </summary>
+        /// <param name="retailstoreDetails">represents the details of retailstore eg</param>
         public static void AddRetailStore(Retailstore retailstoreDetails)
         {
             //condtion for checking wheather the retailstore id exists or not
@@ -61,14 +68,17 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         {
             string s = JsonConvert.SerializeObject(_retailStoreList);
             //write the data into the file
-            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\source\repos\RetailStoreData.txt");
+            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\source\repos\RetailStoreData");
             streamWriter.Write(s);
             streamWriter.Close();
         }
-        //Method to get the added details 
+        /// <summary>
+        /// Reading the data from json file and return data in the file in the form List format
+        /// </summary>
+        /// <returns>returns list of details present in Retailstoredata </returns>
         public static List<Retailstore> GetFileData()
         {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\source\repos\RetailStoreData.txt");
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\source\repos\RetailStoreData");
             string s1 = streamReader.ReadToEnd();
             List<Retailstore> rs = JsonConvert.DeserializeObject<List<Retailstore>>(s1);
             streamReader.Close();
@@ -135,6 +145,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
                 throw new RetailstoreException("retail store doesn't exist");
             }
         }
+        /// <summary>
+        /// Method to update the customername
+        /// </summary>
+        /// <param name="retailstore">Reprsents the retailstore object</param>
         public static void UpdateRetailstoreCustomerName(Retailstore retailstore)
         {
             if (_retailStoreList.Exists(r => r.RetailCustomerID == retailstore.RetailCustomerID))
@@ -150,7 +164,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
             {
                 throw new RetailstoreException("Retailstore doesn't exist");
             }
-        }
+        }/// <summary>
+        /// Method to check customerid exists or not
+        /// </summary>
+        /// <param name="id">reprsensts customerid</param>
         public static bool CheckRetailCustomerID(string id)
         {
             bool res = _retailStoreList.Exists(temp => temp.RetailCustomerID == id);

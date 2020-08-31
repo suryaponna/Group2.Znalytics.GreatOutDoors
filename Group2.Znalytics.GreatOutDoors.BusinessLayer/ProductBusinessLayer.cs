@@ -13,7 +13,8 @@ namespace GreatOutdoorsProduct.BusinessLayer
 {
     public class ProductBusinessLayer : IProductBusinessLayer
     {
-        ProductBusinessLayer _pb = new ProductBusinessLayer();
+      //  ProductBusinessLayer _pb = new ProductBusinessLayer();
+       
         public void AddProducts()
         {
             throw new NotImplementedException();

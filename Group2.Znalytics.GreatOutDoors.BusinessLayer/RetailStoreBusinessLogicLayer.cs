@@ -49,12 +49,18 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
             }
         }
-
+        /// <summary>
+        /// Method to get the added details
+        /// </summary>
         public List<Retailstore> GetRetailstores()
         {
             return RetailStoreDataAccessLayer.GetRetailstores();
         }
-        //Method to Get retail store details by retail store id
+        /// <summary>
+        /// Method to Get retail store details by retail store id
+        /// </summary>
+        /// <param name="retailCustomerID">Reprsensts retail customerid</param>
+        /// <returns>Returns the customerID</returns>
         public Retailstore GetRetailstoreByRetailstoreCustomerID(string retailCustomerID)
         {
             try
@@ -96,6 +102,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw new RetailstoreException(ex.Message);
             }
         }
+        /// <summary>
+        /// Remove the details based on customer name
+        /// </summary>
+        /// <param name="retailCustomerName">represents the customer name</param>
         public void RemoveRetailstoreByCustomerName(string retailCustomerName)
         {
             try
@@ -110,6 +120,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 throw new RetailstoreException(ex.Message);
             }
         }
+        /// <summary>
+        /// method to Update the customername
+        /// </summary>
+        /// <param name="retailstore">represents retailstore object</param>
         public void UpdateRetailstoreCustomerName(Retailstore retailstore)
         {
             try

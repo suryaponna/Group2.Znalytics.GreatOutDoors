@@ -25,6 +25,11 @@ namespace Group2.Znalytics.GreatOutDoors.IBusinessLogicLayer
         /// </summary>
         /// <returns></returns>
         List<Retailstore> GetRetailstores();
+        /// <summary>
+        /// Method to get retail customerID
+        /// </summary>
+        /// <param name="RetailCustomerID"></param>
+        /// <returns></returns>
         Retailstore GetRetailstoreByRetailstoreID(string RetailCustomerID);
     }
 }
