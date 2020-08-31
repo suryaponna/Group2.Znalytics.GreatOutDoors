@@ -13,13 +13,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
 {
     public class ProductBusinessLayer : IProductBusinessLayer
     {
-
-        ProductDataAccessLayer _pdl;
-        public ProductBusinessLayer()
-        {
-            _pdl = new ProductDataAccessLayer();
-        }
-
+        ProductBusinessLayer _pb = new ProductBusinessLayer();
         public void AddProducts()
         {
             throw new NotImplementedException();

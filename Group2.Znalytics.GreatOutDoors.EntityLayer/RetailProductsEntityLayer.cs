@@ -14,20 +14,18 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.EntityLayer
         private double _cost;
         private int _quantityofProducts;
         private string _suppliers;
-        private string _damagedProducts;
         /// <summary>
         /// AutoImplemented property for 
         /// </summary>
         public RProducts()
         {
         }
-        public RProducts(List<string> RetailProducts, string ProductID, int QuantityOfProducts, double Cost, string Suppliers, string DamagedProducts)
+        public RProducts(List<string> RetailProducts, string ProductID, int QuantityOfProducts, double Cost, string Suppliers)
         {
             _products = RetailProducts;
             _productID = ProductID;
             _cost = Cost;
             _suppliers = Suppliers;
-            _damagedProducts = DamagedProducts;
         }
         /// <summary>
         /// property for RetailProducts
@@ -51,6 +49,9 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.EntityLayer
                 return _products;
             }
         }
+        /// <summary>
+        /// Presents unique ProductID
+        /// </summary>
         public string ProductID
         {
             set
@@ -127,18 +128,6 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.EntityLayer
         /// <summary>
         ///property for Damaged Products
         /// </summary>
-        public string DamagedProducts
-        {
-            set
-            {
-                _damagedProducts = value;
-            }
-            get
-            {
-                return _damagedProducts;
-            }
-        }
-
         public void RemoveProduct(string productID)
         {
             throw new NotImplementedException();
