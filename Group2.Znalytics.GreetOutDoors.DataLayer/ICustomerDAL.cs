@@ -17,7 +17,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();
         /// <summary>
-        /// getting details of customer by using customerid
+        /// getting details of customer by using customerId
         /// </summary>
         /// <param name="customerID"></param>
         /// <returns></returns>
