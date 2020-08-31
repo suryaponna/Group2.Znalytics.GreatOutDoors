@@ -70,6 +70,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             /// <summary>
             /// Method to Add Product details to the list
             /// </summary>
+            
 
              void AddProduct()
             {
