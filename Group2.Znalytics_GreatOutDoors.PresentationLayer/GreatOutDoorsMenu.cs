@@ -26,6 +26,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                                 break;
                     case 4:     ChangeShippingAddress();
                                 break;
+                    case 5:     ChangeDefaultAddress();
+                                break;
                     default:    WriteLine("Enter Valid Option");
                                 break;  
                 }
@@ -99,6 +101,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             WriteLine("Address Type: " + ad.AddressId);
 
 
+        }
+        static void ChangeDefaultAddress() { 
+            
         }
 
 
