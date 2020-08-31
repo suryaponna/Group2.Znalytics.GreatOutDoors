@@ -191,26 +191,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         {
             Retailstore e = new Retailstore();//Creating object for retail store class
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();//creating object for retail storebusinesslogic layer
-            Console.WriteLine("Select the type you want to remove the retailstore details ");
+            //Console.WriteLine("Select the type you want to remove the retailstore details ");
             Console.WriteLine("1. RetailCustomerID");
-            Console.WriteLine("2. Customer Name");
-            int choice;
-            bool b;
-            b = int.TryParse(Console.ReadLine(), out choice);
-            if (b == true)
-            {
-                switch (choice)
-                {
-                    case 1: RemoveRetailCustomerByID(); break;
-                    case 2: RemoveRetailstoreByCustomerName(); break;
-                    default: Console.WriteLine("Enter  the correct option"); break;
-                }
-
-            }
-            else
-            {
-                Console.WriteLine("please enter the correct option");
-            }
             ///<summary>
             ///Method to remove retailer customer id
             /// </summary>
@@ -233,58 +215,24 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
 
             }
-            ///<summary>
-            ///Method to remove retailer customer name
-            /// </summary>
-
-            void RemoveRetailstoreByCustomerName()
-            {
-                Retailstore r = new Retailstore();
-                Console.WriteLine("Enter customer name");
-                string name = Console.ReadLine();
-                try
-                {
-                    if (rbl.GetRetailstoreByRetailstoreCustomerID(r.CustomerName) == null)
-                    {
-                        rbl.RemoveRetailstoreByCustomerName(name);
-                    }
-                }
-                catch (RetailstoreException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
-            }
         }
         public static void UpdateRetailstore()
         {
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
-            Console.WriteLine("1.Update Customer name");
-            int option;
-            bool a;
-            a = int.TryParse(Console.ReadLine(), out option);
-            if (a == true)
-            {
-                switch (option)
-                {
-                    //case 1:UpdateRetailstoreByRetailCustomerID();break;
-                    case 1: UpdateRetailstoreCustomerName(); break;
-                    default: Console.WriteLine("Enter 1st option"); break;
-                }
-            }
+            Console.WriteLine("1.Update By id");
             //method to update customer name 
-            void UpdateRetailstoreCustomerName()
-            {
+            void UpdateRetailstoreByRetailCustomerID()
+    {
                 try
                 {
                     Console.WriteLine("Enter existing Retailcustomer Id");
-                    String rsCN = Console.ReadLine();
-                    Retailstore rs = rbl.GetRetailstoreByRetailstoreCustomerID(rsCN);
+                    String rsID = Console.ReadLine();
+                    Retailstore rs = rbl.GetRetailstoreByRetailstoreCustomerID(rsID);
                     if (rs != null)
                     {
-                        Console.WriteLine("Enter customer name");
-                        rs.CustomerName = Console.ReadLine();
-                        rbl.UpdateRetailstoreCustomerName(rs);
+                        Console.WriteLine("Enter customer ID");
+                        rs.RetailCustomerID = Console.ReadLine();
+                        rbl.UpdateRetailstoreByRetailCustomerID(rs);
                         Console.WriteLine(" Customer Name is updated successfully!!!!");
                     }
                     else

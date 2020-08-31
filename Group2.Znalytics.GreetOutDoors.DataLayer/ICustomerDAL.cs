@@ -1,5 +1,5 @@
 ///////Apoorva////////////
-
+/**
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
@@ -36,5 +36,5 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         void DeleteCustomer(int customerID);
     }
 }
-
+*/
 
