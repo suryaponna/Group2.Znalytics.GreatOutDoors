@@ -40,7 +40,6 @@ namespace GreatOutdoorsProduct.DataAccessLayer
 
         }
 
-
         //getting productdetails
         public List<Product> GetAllProductsDataAccessLayer()
         {
