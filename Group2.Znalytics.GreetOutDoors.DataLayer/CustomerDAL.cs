@@ -114,7 +114,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         }
         //method for deleting customer
         /// <summary>
-        /// 
+        /// deleting customer based on customerId
         /// </summary>
         /// <param name="customerID"></param>
         public void DeleteCustomer(int customerID)
