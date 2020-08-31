@@ -10,14 +10,30 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     /// Represents interface for the customer Personal Detail DataAccessLayer
     /// </summary>
     public interface ICustomerDAL
-    {
+    {/// <summary>
+    ///method for adding customer
+    /// </summary>
+    /// <param name="customer"></param>
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();
-        Customer GetCustomerByCustomerID(string customerID);
+        /// <summary>
+        /// getting details of customer by using customerid
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <returns></returns>
+        Customer GetCustomerByCustomerId(int customerID);
         List<Customer> GetCustomersByName(string customerName);
-
+        /// <summary>
+        /// updating detail of customer by using customerid 
+        /// </summary>
+        /// <param name="customers"></param>
         void UpdateCustomer(Customer customers);
-        void DeleteCustomer(string customerID);
+
+        /// <summary>
+        /// deleting detail of customer by using customerid
+        /// </summary>
+        /// <param name="customerID"></param>
+        void DeleteCustomer(int customerID);
     }
 }
 

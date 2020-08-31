@@ -33,7 +33,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
             else
             {
-                customer.CustomerId = _customers.Max(temp => temp.CustomerId) + 1;
+                customer.CustomerId = _customers.Max(temp => temp.CustomerId) + 1;//using LINQ
             }
 
             //add customer object to the collection
@@ -62,7 +62,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="customerID">CustomerID to search</param>
         /// <returns>Returns matching customer</returns>
-        public Customer GetCustomerByCustomerID(string CustomerId)
+        public Customer GetCustomerByCustomerID(int CustomerId)
         {
             Customer cust = _customers.Find(temp => temp.CustomerId == CustomerId);
             return cust;
@@ -95,12 +95,16 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             
         }
 
-        public void DeleteCustomer(string customerID)
+        public void DeleteCustomer(int customerID)
         {
             _customers.RemoveAll(temp => temp.CustomerId == customerID);
         }
 
-     }
+        public Customer GetCustomerByCustomerId(int customerID)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
 
 
