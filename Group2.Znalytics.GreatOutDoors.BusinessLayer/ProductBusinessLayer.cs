@@ -11,8 +11,12 @@ using Group2.Znalytics.GreatOutDoors.DataLayer;
 
 namespace GreatOutdoorsProduct.BusinessLayer
 {
+    /// <summary>
+    /// refers to Product BusinessLogic
+    /// </summary>
     public class ProductBusinessLayer : IProductBusinessLayer
     {
+        //creating object for businesslayer
         ProductBusinessLayer _pb = new ProductBusinessLayer();
         public void AddProducts()
         {
@@ -28,12 +32,6 @@ namespace GreatOutdoorsProduct.BusinessLayer
         {
             throw new NotImplementedException();
         }
-
-
-        /// <summary>
-        /// refers to Product BusinessLogic
-        /// </summary>
-        
 
             /// <summary>
             /// adding the products 

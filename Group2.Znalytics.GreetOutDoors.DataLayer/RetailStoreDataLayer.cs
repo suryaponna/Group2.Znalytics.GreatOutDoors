@@ -18,6 +18,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
     /// </summary>
     public class RetailStoreDataAccessLayer
     {
+
         /// <summary>
         /// Create a list of RetailStore
         /// </summary>
@@ -31,7 +32,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         /// </summary>
         static RetailStoreDataAccessLayer()
         {
-            _retailStoreList = new List<Retailstore>();
+           /** _retailStoreList = new List<Retailstore>();
             {
                 //Mock data
                 new Retailstore() { RetailCustomerID = "ZRS12345", CustomerName = "Archana", Reports = "Monthly Reports" };
@@ -42,7 +43,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
             if (_retailStoreList.Count == 0)
             {
                 _retailStoreList = GetFileData();
-            }
+            }*/
         }
         /// <summary>
         /// Method to add retailstore details to the list
@@ -54,7 +55,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
             if (retailstoreDetails.RetailCustomerID != null)
             {
                 _retailStoreList.Add(retailstoreDetails);
-                SaveIntoFile();
+               // SaveIntoFile();
             }
             else
             {
@@ -64,7 +65,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         /// <summary>
         /// Here we are saving the data into Json file        
         /// </summary>
-        private static void SaveIntoFile()
+       /** private static void SaveIntoFile()
         {
             string s = JsonConvert.SerializeObject(_retailStoreList);
             //write the data into the file
@@ -87,8 +88,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         /// <summary>
         /// Method to get the added details
         /// </summary>
-        /// <returns>returns the list of retailstores</returns>
-        public static List<Retailstore> GetRetailstores()
+        /// <returns>returns the list of retailstores</returns>*/
+        public  List<Retailstore> GetRetailstores()
         {
             return _retailStoreList;
         }
@@ -97,7 +98,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         /// </summary>
         /// <param name="retailCustomerID">it represents the customer of id</param>
         /// <returns>returns the list of customerid</returns>
-        public static Retailstore GetRetailstoreByRetailstoreCustomerID(string retailCustomerID)
+        public  Retailstore GetRetailstoreByRetailstoreCustomerID(string retailCustomerID)
         {
             //Condition to check wheather the id exists or not
             if (_retailStoreList.Exists(r => r.RetailCustomerID == retailCustomerID))
@@ -118,7 +119,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
         /// Method to remmove retail by customerid
         /// </summary>
         /// <param name="retailCustomerID">Represents Customerid</param>
-        public static void RemoveRetailCustomerByID(string retailCustomerID)
+        public  void RemoveRetailCustomerByID(string retailCustomerID)
         {
             if (_retailStoreList.Exists(r => r.RetailCustomerID == retailCustomerID))
             {
@@ -130,45 +131,30 @@ namespace Group2.Znalytics.GreatOutDoors.DataAccessLayer
             }
         }
         /// <summary>
-        /// Method to remove retailstore by customer name
-        /// </summary>
-        /// <param name="customerName"></param>
-        public static void RemoveRetailstoreByCustomerName(string customerName)
-        {
-            //check weather name exist or not
-            if (_retailStoreList.Exists(r => r.CustomerName == customerName))
-            {
-                _retailStoreList.RemoveAll(r => r.CustomerName == customerName);
-            }
-            else
-            {
-                throw new RetailstoreException("retail store doesn't exist");
-            }
-        }
-        /// <summary>
         /// Method to update the customername
         /// </summary>
         /// <param name="retailstore">Reprsents the retailstore object</param>
-        public static void UpdateRetailstoreCustomerName(Retailstore retailstore)
+        public  void UpdateRetailstoreByRetailCustomerID(Retailstore retailstore)
         {
-            if (_retailStoreList.Exists(r => r.RetailCustomerID == retailstore.RetailCustomerID))
-            {
+            //if (_retailStoreList.Exists(r => r.RetailCustomerID == retailstore.RetailCustomerID))
+            
                 Retailstore u = _retailStoreList.Find(r => r.RetailCustomerID == retailstore.RetailCustomerID);
                 if (u != null)
                 {
                     u.CustomerName = retailstore.CustomerName;
-                    SaveIntoFile();
+                   // SaveIntoFile();
                 }
-            }
+            
             else
             {
                 throw new RetailstoreException("Retailstore doesn't exist");
             }
-        }/// <summary>
+        }
+        /// <summary>
         /// Method to check customerid exists or not
         /// </summary>
         /// <param name="id">reprsensts customerid</param>
-        public static bool CheckRetailCustomerID(string id)
+        public bool CheckRetailCustomerID(string id)
         {
             bool res = _retailStoreList.Exists(temp => temp.RetailCustomerID == id);
             return res;

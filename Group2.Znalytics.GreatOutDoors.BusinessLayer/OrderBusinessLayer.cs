@@ -38,7 +38,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             {
                 _od.AddOrderDetails(order);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -77,7 +77,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <returns></returns>
         public List<OrderProduct> GetOrderDetailsByProductID(string value)
         {
-            return _od.GetOrderDetailsByProductID(value);
+            return _od.GetOrderDetails(value);
         }
 
 
@@ -87,9 +87,9 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public List<OrderProduct> GetOrderDetailsByEmployeeID(int value)
+        public List<OrderProduct> GetOrderDetailsByCustomerID(int value)
         {
-            return _od.GetOrderDetailsByCustomerID(value);
+            return _od.GetOrderDetails(value);
         }
         public int OrderID()
         {
@@ -109,7 +109,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             _od.UpdateCustomerAddressDetails(OrderID, value);
         }
-
+        /// <summary>
+        /// Get the Order of Products
+        /// </summary>
+        /// <returns></returns>
         public List<OrderProduct> GetOrderProducts()
         {
             throw new NotImplementedException();
@@ -119,6 +122,13 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        ///Getting Order details from CustomerId
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+
     }
 }
           
