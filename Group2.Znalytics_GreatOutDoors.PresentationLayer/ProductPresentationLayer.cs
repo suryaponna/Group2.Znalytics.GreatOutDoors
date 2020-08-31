@@ -38,35 +38,36 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             switch (Choice)
             {
                 case 1:
-                    Console.WriteLine("Personal Accessories");
+                    System.Console.WriteLine("Personal Accessories");
                     p.SetProduct("Personal Accessories");
                     break;
                 case 2:
-                    Console.WriteLine("Camping Equipment");
+                    System.Console.WriteLine("Camping Equipment");
                     p.SetProduct("Camping Equipment");
                     break;
                 case 3:
-                    Console.WriteLine("Golf Equipment");
+                    System.Console.WriteLine("Golf Equipment");
                     p.SetProduct("Golf Equipment");
                     break;
                 case 4:
-                    Console.WriteLine("Mountaineering Equipment");
+                    System.Console.WriteLine("Mountaineering Equipment");
                     p.SetProduct("Mountaineering equipment");
                     break;
                 case 5:
-                    Console.WriteLine("OutDoor Protection");
+                    System.Console.WriteLine("OutDoor Protection");
                     p.SetProduct("Outdoor Protection");
                     break;
                 default:
-                    Console.WriteLine("Unknown choice");
+                    System.Console.WriteLine("Unknown choice");
                     break;
             }
-            Console.WriteLine("Selected product categories are:" + p.product);
-            Console.WriteLine("--------------------------------------------------------------");
+            System.Console.WriteLine("Selected product categories are:" + p.product);
+            
+            System.Console.WriteLine("--------------------------------------------------------------");
 
 
             //Catagories of Products in retail store
-            Console.WriteLine("------------------------------Types of product and their categories ,cost ranges from------------------------------");
+            System.Console.WriteLine("------------------------------Types of product and their categories ,cost ranges from------------------------------");
 
             System.Console.WriteLine("Enter 1. for Personal Accessories and cost range is  1500-3499");
             System.Console.WriteLine("Enter 2. for Camping equipment and cost range is  500-4000");
@@ -83,11 +84,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     switch (ch)
                     {
                         case 1:
-                            Console.WriteLine("Personal Accessories");
+                            System.Console.WriteLine("Personal Accessories");
                             p.SetProduct("PersonalAccessories");
                             //categories  of Personal accessories
-                            Console.WriteLine("----------Categories of personal accessories-----------");
-                            Console.WriteLine("\n 1.jackets \n 2.cravats \n 3.ties \n 4.hats" +
+                            System.Console.WriteLine("----------Categories of personal accessories-----------");
+                            System.Console.WriteLine("\n 1.jackets \n 2.cravats \n 3.ties \n 4.hats" +
                            "\n 5.boots and shoes  \n  6.Exit");
                             //Switch Case statement to select the categories of Books
                             int choice1 = 1;
@@ -99,42 +100,42 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice1)
                                     {
                                         case 1:
-                                            Console.WriteLine("jackets");
+                                            System.Console.WriteLine("jackets");
                                             p.SetProduct("jackets");
                                             //AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("cravats");
+                                            System.Console.WriteLine("cravats");
                                             p.SetProduct("cravats ");
                                             //AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("ties");
+                                            System.Console.WriteLine("ties");
                                             p.SetProduct("ties");
                                             //AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("hats");
+                                            System.Console.WriteLine("hats");
                                             p.SetProduct("hats");
                                             //AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("boots and shoes");
+                                            System.Console.WriteLine("boots and shoes");
                                             p.SetProduct("boots and shoes");
                                             //AddProductQuantity();
                                             break;
                                         default:
-                                            Console.WriteLine("Exit");
+                                            System.Console.WriteLine("Exit");
                                             break;
                                     }
                                 }
-                            } while (choice2 != 5);
+                            } while (choice1 != 5);
                             break;
 
                         case 2:
                             p.SetProduct("Camping Euipment");
-                            Console.WriteLine("--------Catagories of Camping Equipment---------");
-                            Console.WriteLine("\n 1.Tent  \n 2.Sleeping bags \n 3.Camping pillow \n 4.Headlamps \n 5.Camp table \n 6.Exit");
+                            System.Console.WriteLine("--------Catagories of Camping Equipment---------");
+                            System.Console.WriteLine("\n 1.Tent  \n 2.Sleeping bags \n 3.Camping pillow \n 4.Headlamps \n 5.Camp table \n 6.Exit");
 
                             //Switch Case statement to select the catagorie of camping
                             int choice2 = 1;
@@ -146,35 +147,35 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice2)
                                     {
                                         case 1:
-                                            Console.WriteLine("Tent");
+                                            System.Console.WriteLine("Tent");
                                             p.SetProduct("Tent");
                                             //AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("sleeping bags");
+                                            System.Console.WriteLine("sleeping bags");
                                             p.SetProduct("sleeping bags");
                                             //AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("camping pillow");
+                                            System.Console.WriteLine("camping pillow");
                                             p.SetProduct("camping pillow");
                                              break;
                                         case 4:
-                                            Console.WriteLine("headlamps");
+                                            System.Console.WriteLine("headlamps");
                                             p.SetProduct("headlamps");
                                             //AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("camp table");
+                                            System.Console.WriteLine("camp table");
                                             p.SetProduct("camp table");
                                             //AddProductQuantity();
                                             break;
                                         default:
-                                            Console.WriteLine("Exit");
+                                            System.Console.WriteLine("Exit");
                                             break;
                                     }
                                 }
-                            } while (choice3 != 4);
+                            } while(choice2 != 3);
                             break;
                         case 3:
                             p.SetProduct("Golf Equipment");
@@ -193,32 +194,32 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice3)
                                     {
                                         case 1:
-                                            Console.WriteLine("Balls");
+                                            System.Console.WriteLine("Balls");
                                             p.SetProduct("Balls");
                                             //AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Golf clubs");
+                                            System.Console.WriteLine("Golf clubs");
                                             p.SetProduct("Golf clubs");
                                             //AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Ball markers");
+                                            System.Console.WriteLine("Ball markers");
                                             p.SetProduct("Ball markers");
                                             //AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Tees");
+                                            System.Console.WriteLine("Tees");
                                             p.SetProduct("Tees");
                                             //AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Golf bag");
+                                            System.Console.WriteLine("Golf bag");
                                             p.SetProduct("Golf bag");
                                             //AddProductQuantity();
                                             break;
                                         case 7:
-                                            Console.WriteLine("Exit");
+                                            System.Console.WriteLine("Exit");
                                             break;
                                     }
                                 }
@@ -227,8 +228,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                         case 4:
                             p.SetProduct(" Mountaineering Equipment");
                             //Choice of choosing Catagories of Mountaineering Equipment
-                            Console.WriteLine("---------------Catagories of Mountainering euipment---------------");
-                            Console.WriteLine("\n 1.Climbing pack\n 2.Rope\n 3.Helmet\n 4.Crampons" +
+                            System.Console.WriteLine("---------------Catagories of Mountainering euipment---------------");
+                            System.Console.WriteLine("\n 1.Climbing pack\n 2.Rope\n 3.Helmet\n 4.Crampons" +
                                 " \n 5.Ice axe \n 6.Exit");
                             //Switch Case statement to select the catagories of Mountaineering equipment
                             int choice4 = 1;
@@ -240,32 +241,32 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice4)
                                     {
                                         case 1:
-                                            Console.WriteLine("Climbing pack");
+                                            System.Console.WriteLine("Climbing pack");
                                             p.SetProduct("Climbing pack");
                                             //AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Rope");
+                                            System.Console.WriteLine("Rope");
                                             p.SetProduct("Rope");
                                             //AddProductQuantity();
                                             break;
                                         case 3:
-                                            Console.WriteLine("Helmet");
+                                            System.Console.WriteLine("Helmet");
                                             p.SetProduct("Helmet");
                                             //AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Crampons");
+                                            System.Console.WriteLine("Crampons");
                                             p.SetProduct("Crampons");
                                             //AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Ice axe");
+                                            System.Console.WriteLine("Ice axe");
                                             p.SetProduct("Ice axe");
                                             //AddProductQuantity();
                                             break;
                                         case 6:
-                                            Console.WriteLine("Exit");
+                                            System.Console.WriteLine("Exit");
                                             break;
                                     }
                                 }
@@ -273,8 +274,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                             break;
                         case 5:
                             p.SetProduct("Outdoor Protection");
-                            Console.WriteLine("---------------Categories of Outdoor Protection---------------");
-                            Console.WriteLine("\n 1.Mask  \n 2.solar powered light \n 3.Traditioal \n 4.Accessories " +
+                            System.Console.WriteLine("---------------Categories of Outdoor Protection---------------");
+                            System.Console.WriteLine("\n 1.Mask  \n 2.solar powered light \n 3.Traditioal \n 4.Accessories " +
                                 " \n 5.Jewelry \n 6.Watches \n 7.Formal Wear \n 8.Exit");
                             //Switch Case statement to select the catagories of outdoor protection
                             int choice5 = 1;
@@ -286,43 +287,42 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                     switch (choice3)
                                     {
                                         case 1:
-                                            Console.WriteLine("Mask");
+                                            System.Console.WriteLine("Mask");
                                             p.SetProduct("Mask");
                                             //AddProductQuantity();
                                             break;
                                         case 2:
-                                            Console.WriteLine("Sportswear");
+                                            System.Console.WriteLine("Sportswear");
                                             p.SetProduct("Sportswear");
                                             //AddProductQuantity();
                                             //r.Cost = 3060;
                                             break;
                                         case 3:
-                                            Console.WriteLine("Traditional wear");
-                                            p.SetProduct("Traditional wear");
+                                            System.Console.WriteLine("Traditional wear");
                                             //AddProductQuantity();
                                             break;
                                         case 4:
-                                            Console.WriteLine("Accessories");
+                                            System.Console.WriteLine("Accessories");
                                             p.SetProduct("Accessories");
                                             //AddProductQuantity();
                                             break;
                                         case 5:
-                                            Console.WriteLine("Watches");
+                                            System.Console.WriteLine("Watches");
                                             p.SetProduct("Watches");
                                             //AddProductQuantity();
                                             break;
                                         case 6:
-                                            Console.WriteLine("Jewelry");
+                                            System.Console.WriteLine("Jewelry");
                                             p.SetProduct("Jewelry");
                                             //AddProductQuantity();
                                             break;
                                         case 7:
-                                            Console.WriteLine("Formal Wear");
+                                            System.Console.WriteLine("Formal Wear");
                                             p.SetProduct("Formal Wear");
                                             //AddProductQuantity();
                                             break;
                                         case 8:
-                                            Console.WriteLine("Exit");
+                                            System.Console.WriteLine("Exit");
                                             break;
                                     }
                                 }
@@ -331,7 +331,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     }
                 }
             } while (ch != 6);
-            Console.WriteLine("--------------------------------------------------------------");
+            System.Console.WriteLine("--------------------------------------------------------------");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
     public class ProductBusinessLayer : IProductBusinessLayer
     {
         ProductBusinessLayer _pb = new ProductBusinessLayer();
+
         public void AddProducts()
         {
             throw new NotImplementedException();
@@ -35,6 +36,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
         /// </summary>
         public class ProductBusiness
         {
+            private object _pb;
 
             /// <summary>
             /// adding the products 
@@ -44,7 +46,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             {
                 if (n.ProductName != null)
                 {
-                    _pb.AddProducts(n);
+                 _pb.AddProducts(n);
                 }
                 else
                 {
@@ -54,7 +56,10 @@ namespace GreatOutdoorsProduct.BusinessLayer
 
             }
 
-
+            /// <summary>
+            /// updating the products
+            /// </summary>
+            /// <param name="updateProduct"></param>
             public static void UpdateProduct(Product updateProduct)
             {
                 bool productUpdated = false;
@@ -75,10 +80,14 @@ namespace GreatOutdoorsProduct.BusinessLayer
                     throw ex;
                 }
 
-                // return productUpdated;
+              
             }
-
-            public static bool DeleteProduct(int deleteProductID)
+            /// <summary>
+            /// deleting the products
+            /// </summary>
+            /// <param name="deleteProductID"></param>
+            /// <returns></returns>
+            public static void DeleteProduct(int deleteProductID)
             {
                 bool productDeleted = false;
                 try
@@ -102,7 +111,6 @@ namespace GreatOutdoorsProduct.BusinessLayer
                     throw ex;
                 }
 
-                //return productDeleted;
             }
 
         }
