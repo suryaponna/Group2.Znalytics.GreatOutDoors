@@ -15,6 +15,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
 {
     public class ProductDataAccessLayer
     {
+
         //private fields
         private static List<Product> productList = new List<Product>();
         /// <summary>
