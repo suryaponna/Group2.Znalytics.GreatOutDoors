@@ -294,14 +294,19 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             Return rm = new Return();
             Console.WriteLine("Enter existing Product name to update");
             rm.ProductName = Console.ReadLine();
+            Console.WriteLine("Enter existing Product Id to update");
+            rm.ProductID = Console.ReadLine();
 
             if (rm != null)
             {
                Console.WriteLine("Enter the new Productname ");
                rm.ProductName= Console.ReadLine();
+                Console.WriteLine("Enter the new ProductId ");
+                rm.ProductName = Console.ReadLine();
 
                 rbl.UpdateReturn(rm);
                 Console.WriteLine("ProductName Updated Sucessfully!!!");
+                Console.WriteLine("ProductId updated Successfully!!!");
 
             }
             else
