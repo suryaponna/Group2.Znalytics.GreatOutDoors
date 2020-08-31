@@ -2,6 +2,7 @@
 using static System.Console;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Znalytics.Group2.GreatOutDoor.BusinessLayer;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
@@ -89,6 +90,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             System.Console.WriteLine("Address Type: " + ad.AddressId);
 
 
+        }
+        static void ReturnPresentation()
+        {
+            Return rm = new Return();
         }
 
 
