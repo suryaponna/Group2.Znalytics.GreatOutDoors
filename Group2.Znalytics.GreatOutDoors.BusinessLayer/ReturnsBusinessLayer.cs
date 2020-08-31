@@ -22,11 +22,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
         // creating method for validating ProductID
 
-        public void AddReturns(Return rm)
+        public void AddReturn(Return rm)
         {
             if (rm.ProductName != null)
             {
-                _rd.AddReturns(rm);
+                _rd.AddReturn(rm);
             }
             else
             {
@@ -108,27 +108,27 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// This method represents to update returns
         /// </summary>
         /// <param name="rm">Reference variable of return in presentation layer</param>
-        public void UpdateReturns(Return rm)
+        public void UpdateReturn(Return rm)
         {
 
             //Product name should not be null
-            if ( rm.ProductName!=null)
+            if (rm.ProductName != null && rm.ProductID != null)
             {
-                 _rd.UpdateReturns(rm);
+                 _rd.UpdateReturn(rm);
             }
         }
 
         /// <summary>
         /// Method for Removing Return by productname
         /// </summary>
-        public void RemoveReturnByProductName(Return rm)
+        public void RemoveReturnByProductName(string ProductName)
         {
             try
             {
-                if (rm.ProductName != null)
+                if (ProductName != null)
                 {
 
-                    _rd.RemoveReturnByProductID(rm);
+                    _rd.RemoveReturnByProductID(ProductName);
                 }
                 else
                 {
@@ -145,18 +145,10 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <summary>
         /// Method for Removing Return by ProductID
         /// </summary>
-        public void  RemoveReturnByProductID(Return rm)
+        public void  RemoveReturnByProductID(string ProductId)
         {
 
-            if (rm.ProductID != null)
-            {
-                _rd.RemoveReturnByProductID(rm);
-            }
-            else
-            {
-                throw new ReturnException("Product id doesn't exists");
-            }
-
+            _rd.RemoveReturnByProductID(ProductId);
 
         }
 

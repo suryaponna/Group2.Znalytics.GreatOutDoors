@@ -29,7 +29,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("6.GetReturns");
                 Console.WriteLine("7.GetReturnByProductName");
                 Console.WriteLine("8.GetReturnByProductID");
-                Console.WriteLine("9.Update Returns");
+                Console.WriteLine("9.Update Return");
                 Console.WriteLine("10.Exit");
 
                 Console.Write("Enter choice: ");
@@ -38,13 +38,13 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 {
                     case 1: ReturnProduct(); break;
                     case 2: ExchangeProduct(); break;
-                    case 3: AddReturns(); break;
+                    case 3: AddReturn(); break;
                     case 4: RemoveReturnByProductID(); break;
                     case 5: RemoveReturnByProductName(); break;
                     case 6: GetReturns(); break;
                     case 7: GetReturnByProductName();break;
                     case 8: GetReturnByProductID(); break;
-                    case 9: UpdateReturns(); break;
+                    case 9: UpdateReturn(); break;
                     case 10: Exit(); break;
                 }
             } while (choice != 11);
@@ -195,7 +195,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         /// <summary>
         /// Method for Add details into returns
         /// </summary>
-        static void AddReturns()
+        static void AddReturn()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
@@ -203,7 +203,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             Console.Write("Enter new Product Name: ");
             rm.ProductName = Console.ReadLine();
 
-            rbl.AddReturns(rm);
+            rbl.AddReturn(rm);
             Console.WriteLine("Product  Added");
 
            
@@ -217,9 +217,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             System.Console.Write("Enter the ProductID to be Deleted:");
-            rm.ProductID = (System.Console.ReadLine());
+            string ProductId = (System.Console.ReadLine());
 
-            rbl.RemoveReturnByProductID(rm);
+            rbl.RemoveReturnByProductID(ProductId);
             System.Console.WriteLine("ProductID Removed");
 
 
@@ -232,9 +232,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
             System.Console.Write("Enter the ProductName:");
-            rm.ProductName = System.Console.ReadLine();
+            string ProductName = System.Console.ReadLine();
 
-            rbl.RemoveReturnByProductName(rm);
+            rbl.RemoveReturnByProductName(ProductName);
             System.Console.WriteLine("Product Removed");
         }
 
@@ -288,7 +288,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         /// <summary>
         /// Method to update Returns
         /// </summary>
-        static void UpdateReturns()
+        static void UpdateReturn()
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
@@ -300,7 +300,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                Console.WriteLine("Enter the new Productname ");
                rm.ProductName= Console.ReadLine();
 
-                rbl.UpdateReturns(rm);
+                rbl.UpdateReturn(rm);
                 Console.WriteLine("ProductName Updated Sucessfully!!!");
 
             }
