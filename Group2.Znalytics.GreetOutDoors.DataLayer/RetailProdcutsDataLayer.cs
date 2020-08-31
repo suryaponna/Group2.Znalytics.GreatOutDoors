@@ -26,7 +26,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
         /// </summary>
         static RetailProductsDataAccessLayer()
         {
-            _productList = new List<RProducts>()
+           /** _productList = new List<RProducts>()
             {
                 new RProducts(){ProductID="ZRSPID10"}
             };
@@ -34,6 +34,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
             {
                 _productList = GetFiledata();
             }
+           */
 
         }
         /// <summary>
@@ -43,7 +44,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
         public void AddProducts(RProducts rProducts)
         {
             _productList.Add(rProducts);
-            SaveIntoFile();
+           // SaveIntoFile();
         }
         /// <summary>
         /// Displaying the products in the list
@@ -68,7 +69,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
         /// <summary>
         /// Saving the data into the Json file
         /// </summary>
-        public void SaveIntoFile()
+       /** public void SaveIntoFile()
         {
             string s = JsonConvert.SerializeObject(_productList);
             //write data into the file
@@ -87,7 +88,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
             List<RProducts> rProducts = JsonConvert.DeserializeObject<List<RProducts>>(s2);
             streamReader.Close();
             return rProducts;
-        }
+        }*/
         /// <summary>
         /// Update the products based on product Id
         /// </summary>
@@ -98,7 +99,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
             if (p != null)
             {
                 p.RetailProducts = rProducts.RetailProducts;
-                SaveIntoFile();
+                //SaveIntoFile();
             }
         }
         /// <summary>
@@ -108,7 +109,7 @@ namespace Group2.Znalytics.GreatOutDoors.RetailProducts.DataAccessLayer
         public void AddQuantityOfProducts(RProducts retailProducts)
         {
             _productList.Add(retailProducts);
-            SaveIntoFile();
+          //  SaveIntoFile();
         }
     }
 }

@@ -67,7 +67,7 @@ namespace GreatOutdoorsProduct.Entities
             }
 
         }
-        private string productName;
+       
         public static bool updateProduct;
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace GreatOutdoorsProduct.Entities
         {
             set => ProductName = value;
 
-            get => productName;
+            get => _productName;
 
         }
 
