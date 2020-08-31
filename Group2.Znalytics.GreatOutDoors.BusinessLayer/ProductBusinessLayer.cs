@@ -43,7 +43,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             {
                 if (p.ProductName != null)
                 {
-                 _pdl.AddProducts(p);
+                 _pb.AddProducts(p);
                 }
                 else
                 {
@@ -92,7 +92,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
                     if (ProductId != 0)
                     {
 
-                        _pdl.RemoveProductByProductID(ProductId);
+                        _pb.RemoveProductByProductID(ProductId);
                     }
                     else
                     {
@@ -114,7 +114,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
 
                 if (ProductName != null)
                 {
-                    _pdl.RemoveProductByProductName(ProductName);
+                    _pb.RemoveProductByProductName(ProductName);
                 }
                 else
                 {
