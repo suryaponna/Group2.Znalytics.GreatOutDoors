@@ -4,8 +4,7 @@ using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
-using Newtonsoft.Json;
-using System.IO;
+
 /// <summary>
 /// This is the Main method for the project
 /// </summary>
@@ -14,13 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class ReturnsPresentation
     {
-        static void Main()
-        {
-            // Application begins here
-            ReturnPresentation();
-            Console.ReadKey();
-
-        }
+       
         static void ReturnPresentation()
         {
             int choice = 0;
@@ -174,8 +167,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             try
             {
                 Return rm = new Return();
-                Console.WriteLine("Enter the product date");
+                Console.WriteLine("Enter the product purchased date");
                 rm.Productdate = Convert.ToDateTime(Console.ReadLine());
+                Console.WriteLine("Enter the product exchange date");
+                rm.ExchangeDate = Convert.ToDateTime(Console.ReadLine());
                 ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
 
 

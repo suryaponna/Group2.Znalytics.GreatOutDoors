@@ -25,7 +25,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             //creating a list 
             _return = new List<Return>()
             {
-                new Return{ProductID="23869",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
+                new Return{ProductID="12345",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
             };
             _return = LoadDetailsToList();
         }
@@ -67,10 +67,11 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             _return.Add(rm);
             ListOfReturn();
-
-
         }
-
+       public void ExchangeProduct(Return rm)
+        {
+            _return.Add(rm);
+        }
         public Return GetReturnByProductID(Return rm)
         {
             //Condition to check whether the ProductId finds or not
