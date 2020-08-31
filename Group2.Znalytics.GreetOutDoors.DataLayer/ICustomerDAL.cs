@@ -1,18 +1,15 @@
-/////////////////////CREATED BY APOORVA //////////////////////
+///////Apoorva////////////
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Znalytics.Group2.GreatOutDoor.Entity;
+using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
-namespace Group2.Znalytics.GreatOutDoors.BusinessLogicLayer
+namespace Group2.Znalytics.GreetOutDoors.DataLayer
 {
     /// <summary>
-    /// Represents interface for Customer Personal Detail Businesslogiclayer
+    /// Represents interface for the customer Personal Detail DataAccessLayer
     /// </summary>
-    public interface ICustomersBLL
+    public interface ICustomerDAL
     {
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();
@@ -20,6 +17,8 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLogicLayer
         List<Customer> GetCustomersByName(string customerName);
 
         void UpdateCustomer(Customer customer);
-    }
 
+    }
 }
+
+

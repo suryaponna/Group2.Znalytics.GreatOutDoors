@@ -1,100 +1,136 @@
 ﻿//---------Archana
 
+//Importing Statements
 using System;
 using System.Collections.Generic;
-using Group2.Znalytics.GreatOutDoors.DataLayer;
+using Group2.Znalytics.GreatOutDoors.DataAccessLayer;
+using Group2.Znalytics.GreatOutDoors.IBusinessLogicLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 
 
-/// <summary>
-/// Business Logic for RetailStore
-/// </summary>
+//Created a namespace for businesslogic layer of Retail store
 namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 {
+    /// <summary>
+    /// Represents Businesslogic class of Retail store and Implementing an interface
+    /// </summary>
     public class RetailStoreBusinessLogicLayer : IRetailStoreBusinessLogicLayer
     {
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+       //private RetailStoreDataAccessLayer _retailStoreDataAccessLayer;
 
-       private RetailStoreDataLayer _rdl;
-         public RetailStoreBusinessLogicLayer()
-         {
-             _rdl = new RetailStoreDataLayer();
-         }
+        public RetailStoreBusinessLogicLayer()
+        {
+            //_retailStoreDataAccessLayer = new RetailStoreDataAccessLayer();
+        }
 
-         //Method to add retail store id list
-         public void AddRetailStoreID(Retailstore rsid)
-         {
+
+        /// <summary>
+        /// Method to add retail store details
+        /// </summary>
+        /// <param name="r">represents the retail store object</param>
+        public void AddRetailstore(Retailstore r)
+        {
             try
             {
-                //Retail store can't be null
-                if (rsid.RetailStoreID != null)
+                //Retail customer id not be null
+                if (r.RetailCustomerID != null)
                 {
-                    _rdl.AddRetailStoreID(rsid);
+                    //RetailStoreDataAccessLayer.AddRetailStore(r);
 
                 }
             }
-            catch (Exception ex)
+            catch (RetailstoreException ex)
             {
-                throw;
-            }
-         }
+                throw new RetailstoreException(ex.Message);
 
-       public Retailstore GetRetailstoreByRetailStoreID(string RetailStoreID)
-        {
-            throw new RetailstoreException("Retail id cannot be null");
+            }
         }
 
-        public List<Retailstore> GetRetailStoreID()
+        public List<Retailstore> GetRetailstores()
+        {
+            return RetailStoreDataAccessLayer.GetRetailstores();
+        }
+        //Method to Get retail store details by retail store id
+        public Retailstore GetRetailstoreByRetailstoreCustomerID(string retailCustomerID)
+        {
+            try
+            {
+                //Retail store Id should not be null
+
+                if (retailCustomerID != null)
+                {
+                    return RetailStoreDataAccessLayer.GetRetailstoreByRetailstoreCustomerID(retailCustomerID);
+
+                }
+                else
+                {
+                    return null;
+
+                }
+            }
+            catch (RetailstoreException ex)
+            {
+                throw new RetailstoreException(ex.Message);
+            }
+        }
+
+        public Retailstore GetRetailstoreByRetailstoreID(string rcID)
         {
             throw new RetailstoreException();
-           // return _rdl.GetRetailStoreIDs();
         }
-
-        //Get RetailStoreID
-        public List<Retailstore> GetRetailStoreIDs()
-         {
-             return _rdl.GetRetailStoreIDs();
-         }
-
-        public class RetailStoreID
-        {
-        }
-
-        /** RetailStoreDataLayer d = new RetailStoreDataLayer();
-public void AddRetailStoreID(Retailstore rsid)
-{
-    if(rsid.RetailStoreID!=null)
-    {
-        d.AddRetailStoreID(rsid);
-    }
-}
-public List<RetailStoreID>GetRetailStoreIDs()
-{
-    return d.AddGetRetailStoreIDs();
-}*/ public void AddProductQuantity(Retailstore p)
+        public void RemoveRetailCustomerByID(string retailCustomerID)
         {
             try
             {
-                //quantity of products should not br null
-                if(p.QuantityOfProducts!=null)
+                if (retailCustomerID != null)
                 {
-                    _rdl.AddProductQuantity(p);
+                    RetailStoreDataAccessLayer.RemoveRetailCustomerByID(retailCustomerID);
                 }
             }
-            catch(Exception ex)
+            catch (RetailstoreException ex)
             {
-                throw;
+                throw new RetailstoreException(ex.Message);
             }
         }
-
-        public void AddProductQuantity()
+        public void RemoveRetailstoreByCustomerName(string retailCustomerName)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (retailCustomerName != null)
+                {
+                    RetailStoreDataAccessLayer.RemoveRetailstoreByCustomerName(retailCustomerName);
+                }
+            }
+            catch (RetailstoreException ex)
+            {
+                throw new RetailstoreException(ex.Message);
+            }
         }
-
-        public List<Retailstore> GetProductQuantity()
+        public void UpdateRetailstoreCustomerName(Retailstore retailstore)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (retailstore.RetailCustomerID != null)
+                {
+                    RetailStoreDataAccessLayer.UpdateRetailstoreCustomerName(retailstore);
+                }
+            }
+            catch (RetailstoreException ex)
+            {
+                throw new RetailstoreException(ex.Message);
+            }
         }
+        /** public bool CheckRetailCustomerID(string id)
+         {
+             return RetailStoreDataAccessLayer.CheckRetailCustomerID(id);
+         }*/
+
+
     }
 
 }
+

@@ -180,6 +180,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             throw new NotImplementedException();
         }
+
+        public static implicit operator int(OrderProduct v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

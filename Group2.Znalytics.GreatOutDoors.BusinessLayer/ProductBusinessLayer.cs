@@ -3,88 +3,111 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GreatOutdoorsProduct.DataAccessLayer;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
-using GreatOutdoorsProduct.DataAccessLayer;
+using Group2.Znalytics.GreatOutDoors.DataLayer;
+
 
 namespace GreatOutdoorsProduct.BusinessLayer
 {
     public class ProductBusinessLayer : IProductBusinessLayer
     {
-        private static void Product(Product product)
+        ProductBusinessLayer _pb = new ProductBusinessLayer();
+        public void AddProducts()
+        {
+            throw new NotImplementedException();
+        }
 
-    /// <summary>
-    /// refers tp Product BusinessLogic
-    /// </summary>
-    public class ProductBusiness
-    {
+        public void DeleteProductBl()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProduct()
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
-        /// adding the products 
+        /// refers to Product BusinessLogic
         /// </summary>
-        /// <param name="n"> gets object of ProductDetails</param>
-        public void AddProducts(ProductDetails n)
+        public class ProductBusiness
         {
-            if (n.ProductName != null)
+
+            /// <summary>
+            /// adding the products 
+            /// </summary>
+            /// <param name="n"> gets object of ProductDetails</param>
+            public void AddProducts(Product n)
             {
-                throw ex;
-            }
-            return searchProduct;
-
-        }
-
-
-
-        public static void UpdateProduct(Product updateProduct)
-        {
-            bool productUpdated = false;
-            try
-            {
-                if (Product(updateProduct))
+                if (n.ProductName != null)
                 {
-                    ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
-                    productUpdated = productDataAccessLayer.UpdateProductDataAccessLayer(updateProduct);
-                }
-            }
-            catch (ProductException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-            return productUpdated;
-        }
-
-        public static void DeleteProductBL(int deleteProductID)
-        {
-            bool productDeleted = false;
-            try
-            {
-                if (deleteProductID > 0)
-                {
-                    ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
-                    productDeleted = productDataAccessLayer.DeleteProductDataAccessLayer(deleteProductID);
+                    _pb.AddProducts(n);
                 }
                 else
                 {
-                    throw new ProductException("Invalid Product ID");
+                    throw new Exception("Add valid Product Name");
                 }
-            }
-            catch (ProductException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+
+
             }
 
-            return productDeleted;
+
+            public static void UpdateProduct(Product updateProduct)
+            {
+                bool productUpdated = false;
+                try
+                {
+                    if (Product.updateProduct)
+                    {
+                        ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
+                        productUpdated = productDataAccessLayer.UpdateProductDataAccessLayer(updateProduct);
+                    }
+                }
+                catch (ProductException)
+                {
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+                // return productUpdated;
+            }
+
+            public static bool DeleteProduct(int deleteProductID)
+            {
+                bool productDeleted = false;
+                try
+                {
+                    if (deleteProductID > 0)
+                    {
+                        ProductDataAccessLayer productDataAccessLayer = new ProductDataAccessLayer();
+                        productDeleted = productDataAccessLayer.DeleteProductDataAccessLayer(deleteProductID);
+                    }
+                    else
+                    {
+                        throw new ProductException("Invalid Product ID");
+                    }
+                }
+                catch (ProductException)
+                {
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+                //return productDeleted;
+            }
+
         }
 
     }
-
 }
+
+    
