@@ -13,13 +13,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class ReturnsPresentation
     {
-        static void Main()
-        {
-            // Application begins here
-            ReturnPresentation();
-            Console.ReadKey();
-
-        }
+       
         static void ReturnPresentation()
         {
             int choice = 0;

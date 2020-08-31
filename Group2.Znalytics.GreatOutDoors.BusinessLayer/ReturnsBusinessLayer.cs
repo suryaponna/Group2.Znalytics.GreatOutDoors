@@ -111,8 +111,8 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         public void UpdateReturns(Return rm)
         {
 
-            //ProductId should not be null
-            if (rm.ProductID!= null)
+            //Product name should not be null
+            if ( rm.ProductName!=null)
             {
                  _rd.UpdateReturns(rm);
             }
