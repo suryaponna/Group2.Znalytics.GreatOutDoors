@@ -140,6 +140,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     AddressDetail samp = AllAddresses[AddressId];
                     ab.ChangeDefaultAddrees(samp);
                 }
+                else {
+                    throw new AddressException("Enter valid Address Id");
+                }
             }
             catch (Exception ex) {
                 WriteLine(ex.Message);
