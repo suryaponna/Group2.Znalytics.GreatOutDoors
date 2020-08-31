@@ -63,11 +63,37 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         {
 
             var b = CountriesList.Contains(address.CustomerCountry);
-            if (b != true)
+            if (b == true)
             {
-                throw new AddressException("Enteres Country was not valid please check once"); 
+                if (StatesList.Contains(address.State))
+                {
+                    string[] PhoneNumber = address.MobileNumber.Split(' ');
+                    if (PhoneNumber[0].Length == 2 && PhoneNumber[1].Length == 10)
+                    {
+                        string[] NumberCode = PhoneNumber[0].Split('+');
+                        if (NumberCodes.Contains(NumberCode[1]))
+                        {
+                            string Number = PhoneNumber[1].ToString();
+                            if (Number.All(char.IsDigit))
+                            {
+                                dll.Add(address);
+                            }
+                            else {
+                                throw new AddressException("Enter only digits");
+                            }
+                        }
+                        else {
+                            throw new AddressException("The enteres Number code doent belongs to any country please check once");
+                        }
+                    }
+                }
+                else {
+                    throw new AddressException("Enter Valid State");
+                }
             }
-            //dll.Add(address);
+            else {
+                throw new AddressException("Enteres Country was not valid please check once");
+            }
         }
         /// <summary>
         /// checking entered country was in list or not
