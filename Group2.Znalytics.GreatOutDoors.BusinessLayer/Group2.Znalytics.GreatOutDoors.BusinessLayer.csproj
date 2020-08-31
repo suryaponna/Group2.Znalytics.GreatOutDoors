@@ -51,7 +51,6 @@
     <Compile Include="IRetailStoreBusinessLogicLayer.cs" />
     <Compile Include="IReturnsBusinessLayer.cs" />
     <Compile Include="OrderBusinessLayer.cs" />
-    <Compile Include="OrderDataLayer.cs" />
     <Compile Include="OrderException.cs" />
     <Compile Include="OrderProductException.cs" />
     <Compile Include="ProductBusinessLayer.cs" />

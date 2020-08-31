@@ -110,6 +110,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         }
         public void DeleteCustomer(Customer customers)
         {
+            //using Exception handling concept(using try and catch).
             try
             {
                 if (customers.CustomerName != null && customers.CustomerId != null)
@@ -118,7 +119,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception ex)//catching Exception
             { 
                 throw new Exception("Customer Name and ID cannot be null");
             }

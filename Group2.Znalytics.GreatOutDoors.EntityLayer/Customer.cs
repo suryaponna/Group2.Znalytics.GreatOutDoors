@@ -2,6 +2,8 @@
 //Customer Entity Layer
 
 
+using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;//directory involved for using regularexpressions in the code
 
 
@@ -29,7 +31,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// Property for Customer userId
+        /// Id of the Customer based on which customer can login
         /// </summary>
         public int CustomerId
         {
@@ -51,7 +53,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
         }
 
         /// <summary>
-        /// Password of the Customer, based on which the customer can login
+        /// Password of the Customer based on which the customer can login
         /// </summary>
         public string Password
         {
@@ -81,7 +83,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// Name of the Customer
+        /// Name of the Customer based on which customer can signin
         /// </summary>
         public string CustomerName
         {
@@ -101,7 +103,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// Mail Id of the Customer
+        /// Mailid of the customer based on which customer can signup
         /// </summary>
         public string CustomerMailId
         {
@@ -117,7 +119,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// Aadhar CardNumber of the Customer
+        /// Aadhar CardNumber of the  Customer based on customer can signin
         /// </summary>
         public string AadharCardNumber
         {
@@ -137,7 +139,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
 
 
         /// <summary>
-        /// FlatNumber of the Customer
+        /// FlatNumber of the Customer.It represents default flat number(address) of the customer
         /// </summary>
         public double CustomerFlatNumber
         {
@@ -168,6 +170,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
             }
         }
 
+        public void AddCustomer(Customer customer)
+        {
+            throw new Exception();
+        }
+
 
         /// <summary>
         /// City of the Customer
@@ -185,6 +192,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
             {
                 return _customerCity;
             }
+        }
+
+        public List<Customer> ViewCustomer()
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -262,6 +274,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer//namespace is nothing but c
             {
                 return _customerPhoneNumber;
             }
+        }
+
+        public static void UpdateCustomer(Customer customers)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

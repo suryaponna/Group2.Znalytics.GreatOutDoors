@@ -1,42 +1,31 @@
-﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+﻿using Group2.Znalytics.GreatOutDoor.EntityLayer;
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using Group2.Znalytics.GreetOutDoors.DataLayer;
+
+//using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
 {
     /// <summary>
-    /// Represents Data Access Layer of  the customer details
+    /// Represents Data Access Layer of  the customer Personal details
     /// </summary>
     public class CustomerDAL : ICustomerDAL
     {
         //private fields
         private static List<Customer> _customers;
-        //static field of DataccessLayer
+
         static CustomerDAL()
         {
             _customers = new List<Customer>();
-
-            //code for loading data from file into _customers
         }
 
         //Adding Customer Personal Details
         public void AddCustomer(Customer customer)
         {
             //generate new customer id
-            if (_customers.Count == 0)
-            {
-                customer.CustomerId = 1;
-            }
-            else
-            {
-                customer.CustomerId = _customers.Max(temp => temp.CustomerId) + 1;
-            }
-
-            //add customer object to the collection
+            //customer.CustomerId = ??
             _customers.Add(customer);
         }
 
@@ -51,9 +40,9 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             //Get matching customer based on CustomerId
             Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
-            if (cust != null)
+            if (customer != null)
             {
-                cust.CustomerName = customer.CustomerName;
+                customer.CustomerName = customer.CustomerName;
             }
         }
 
@@ -62,13 +51,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="customerID">CustomerID to search</param>
         /// <returns>Returns matching customer</returns>
-        public Customer GetCustomerByCustomerID(string CustomerId)
+        public Customer GetCustomerByCustomerID(string customerID)
         {
-            Customer cust = _customers.Find(temp => temp.CustomerId == CustomerId);
+            Customer cust = _customers.Find(temp => temp.CustomerID == customerID);
             return cust;
-
+            ListOfCustomers();
         }
-        //JSON is used for converting object to text format
+
         public void ListOfCustomers()
         {
             List<Customer> _return = new List<Customer>();
@@ -92,17 +81,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             List<Customer> cust = _customers.FindAll(temp => temp.CustomerName == customerName);
             return cust;
-            
+            ListOfCustomers();
         }
+    }
+    public void DeleteCustomers(Customer customers)
+    {
+        _customers.Remove(temp => CustomerName == Customers.CustomerName);
 
-        public void DeleteCustomer(string customerID)
-        {
-            _customers.RemoveAll(temp => temp.CustomerId == customerID);
-        }
-
-     }
+    }
 }
-
-
-
 
