@@ -1,4 +1,5 @@
 ﻿using System;
+/*
 namespace ZnalyticsGreatOutDoors.PresentationLayer
 {
     //class
@@ -50,4 +51,4 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
         }
 
     }
-}
+}*/

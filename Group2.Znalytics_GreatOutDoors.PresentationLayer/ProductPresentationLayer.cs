@@ -1,6 +1,7 @@
 ﻿using System;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.BusinessLayer;
+/*
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 {
@@ -27,7 +28,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         /// <summary>
         /// Execution starts from main method 
         /// </summary>
-        public static void ProductMenu()
+        /*public static void ProductMenu()
         {
             int choice = -1;
             do
@@ -486,4 +487,4 @@ public class ProductPresentationLayer
         System.Console.WriteLine("--------------------------------------------------------------");
     }
 }
-            
+          */  

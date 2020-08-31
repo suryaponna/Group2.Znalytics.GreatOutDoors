@@ -36,7 +36,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <param name="FinalDelieveryAddress"></param>
         /// <param name="TimeOfSale"></param>
         /// <param name="OrderID"></param>
-        public OrderProduct(string ProductID, string AddToCart, string Quantity, string SellingPrice, string TotalAmount, string AmountPayable, string FinalDelieveryAddress, string TimeOfSale, string OrderID)
+       /*public OrderProduct(string ProductID, string AddToCart, string Quantity, string SellingPrice, string TotalAmount, string AmountPayable, string FinalDelieveryAddress, string TimeOfSale, string OrderID)
         {
             _productID = ProductID;
             _addToCart = AddToCart;
@@ -80,7 +80,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 
                 else
                 {
-                    throw new OrderProductEXception("")
+                    throw new OrderProductEXception("");
                 }
             }
 
@@ -188,3 +188,4 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     }
 }
 
+        */
