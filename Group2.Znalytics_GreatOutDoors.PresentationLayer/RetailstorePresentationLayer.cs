@@ -1,6 +1,7 @@
 //---------Archana
 
 //Importing Statements
+/**
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -141,7 +142,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             List<Retailstore> retailstoreList = rbl.GetRetailstores();
             Console.WriteLine("---------------------------------WELCOME TO GREAT OUTDOOR DETAIL RETAIL STORE---------------------------------");
             Console.WriteLine("------------------- RETAILSTORE DETAILS ---------------");
-            Console.WriteLine("RetailCustomerID" + " " + "CustomerName" + " " + "Reports");
+            Console.WriteLine("RetailCustomerID" + " " + "Reports");
             Console.WriteLine("-----------------------------------------------------------------------------");
             foreach (Retailstore var in retailstoreList)
             {
@@ -328,6 +329,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 3456");
                                     }
                                 } while (choice1 != 7);
                                 break;
@@ -374,6 +376,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 250678");
                                     }
                                 } while (choice2 != 6);
                                 break;
@@ -427,6 +430,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 2678");
                                     }
                                 } while (choice3 != 7);
                                 break;
@@ -468,6 +472,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice4 != 5);
                                 break;
@@ -523,6 +528,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 6580");
                                     }
                                 } while (choice5 != 8);
                                 break;
@@ -564,6 +570,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice6 != 5);
                                 break;
@@ -614,6 +621,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 500678");
                                     }
                                 } while (choice7 != 7);
                                 break;
@@ -656,6 +664,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 break;
 
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice8 != 5);
                                 break;
@@ -706,6 +715,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 60568");
                                     }
                                 } while (choice9 != 7);
                                 break;
@@ -826,11 +836,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
             //p.Cost = double.Parse(Console.ReadLine());
             Console.WriteLine("TOTAL COST IS:" + p.Cost * p.QuantityOfProducts);
-            /** if(p.QuantityOfProducts<=10)
-             {
-                 Console.WriteLine("cost is 10000");
-             }
-            */
+        }
             public static void SuppliersForTransporting()
             {
                 RProducts p = new RProducts();
@@ -856,7 +862,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             /// Checking the product ID
             /// </summary>
             /// <param name="productID"></param>
-            public bool CheckProductID(string productID)
+           public bool CheckProductID(string productID)
             {
                 RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
                 bool res = rp.CheckProductID(productID);
@@ -870,7 +876,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
 
-        }
     }
 }
 
+*/
