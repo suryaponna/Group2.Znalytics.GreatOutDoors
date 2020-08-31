@@ -135,5 +135,9 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
        
     }
+
+    public interface ICustomerDAL
+    {
+    }
 }
 
