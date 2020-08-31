@@ -86,7 +86,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
               
             }
             /// <summary>
-            /// deleting the products
+            /// Removing the products
             /// </summary>
             /// <param name="deleteProductID"></param>
             /// <returns></returns>
