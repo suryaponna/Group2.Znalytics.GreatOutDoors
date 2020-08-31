@@ -13,11 +13,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     {
         void AddCustomer(Customer customer);
         List<Customer> GetCustomers();
-        Customer GetCustomerByID(string customerID);
+        Customer GetCustomerByCustomerID(string customerID);
         List<Customer> GetCustomersByName(string customerName);
 
-        void UpdateCustomer(Customer customer);
-
+        void UpdateCustomer(Customer customers);
+        void DeleteCustomer(string customerID);
     }
 }
 

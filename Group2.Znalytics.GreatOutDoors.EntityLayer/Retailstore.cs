@@ -1,5 +1,7 @@
 ﻿//---------Archana
 using System;
+using System.Runtime.Remoting.Services;
+using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
@@ -9,14 +11,10 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     public class Retailstore
     {
         //Private field
-        private string _retailStoreID;
+        private string _retailCustomerID;
         private string _customerName;
         private string _reports;
-        private string _retailProducts;
-        private double _cost;
-        private int _quantityofProducts;
-        private string _suppliers;
-        private string _damagedProducts;
+
 
         /// <summary>
         /// Auto implemented Property for restailstore
@@ -25,83 +23,78 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
         }
         /// <summary>
-        /// Constructor that initializes details of RetailStore
+        ///Parameterized Constructor that initializes details of RetailStore
         /// </summary>
-        /// <param name="RetailStoreID">Represents Retail store identity using an ID</param>
-        /// <param name="Reports">Represents the payment of reports</param>
-        /// <param name="RetailProducts">Represents retail products</param>
-        /// <param name="Suppliers">Represents the suppliers for transport</param>
-        /// <param name="DamagedProducts">Represensts about damaged products</param>
+        /// <param name="RetailerCustomerID">Represents Retail store identity using an ID</param>
+        /// <param name="CustomerName">Reprsents Name of the customer</param>
+        /// <param name="Reports">Represents the payment method of reports</param>
 
-
-        public Retailstore(string RetailStoreID, string CustomerName, string Reports, string RetailProducts, int QuantityOfProducts, double Cost, string Suppliers, string DamagedProducts)
+        public Retailstore(string RetailCustomerID, string CustomerName, string Reports)
         {
-            _retailStoreID = RetailStoreID;
-            _customerName = CustomerName;
-            _reports = Reports;
-            _reports = RetailProducts;
-            _cost = Cost;
-            _suppliers = Suppliers;
-            _damagedProducts = DamagedProducts;
+            this._retailCustomerID = RetailCustomerID;
+            this._customerName = CustomerName;
+            this._reports = Reports;
+
         }
         /// <summary>
-        /// RetailStoreID for customer
+        /// Property for customer
         /// </summary>
-        public string RetailStoreID
+        public string RetailCustomerID
         {
             set
             {
-                try
+                if (!string.IsNullOrEmpty(value))
                 {
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!spaceFound && !atFound && !commaFound && value.Length <= 10)
+                    bool dotFound = value.Contains(".");
+                    if (!spaceFound && !atFound && !commaFound && !dotFound && value.StartsWith("ZRS") && value.Length <= 10)
                     {
-                        _retailStoreID = value;
+                        _retailCustomerID = value;
+                    }
+                    else
+                    {
+                        throw new RetailstoreException("Enter valid Product starts with ZRSPID Id should not contain spaces and length should be exactly 10");
+
                     }
                 }
-                catch
-                {
-                    throw new RetailstoreException("Enter valid Retail Store ID");
-                }
-
             }
             get
             {
-                return _retailStoreID;
+                return _retailCustomerID;
             }
         }
+        /// <summary>
+        /// Property for Customer name
+        /// </summary>
         public string CustomerName
         {
             set
             {
-                try
+                if (!string.IsNullOrEmpty(value))
                 {
                     bool spaceFound = value.Contains(" ");
                     bool atFound = value.Contains("@");
                     bool commaFound = value.Contains(",");
-                    if (!atFound && !commaFound && value.Length <= 20)
+                    bool dotFound = value.Contains(".");
+                    if (!spaceFound && !atFound && !commaFound && !dotFound && value.Length <= 25)
                     {
                         _customerName = value;
                     }
-
                 }
-                catch
+                else
                 {
-                    throw new RetailstoreException("customer name is invalid");
+                    throw new RetailstoreException("Customer name is invalid should not contain spaces and length should be 625");
                 }
             }
             get
             {
-
                 return _customerName;
             }
         }
-
-
         /// <summary>
-        /// Reports represents that we have to  choose the payment reports
+        /// Property for Reports 
         /// </summary>
         public string Reports
         {
@@ -114,78 +107,6 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
                 return _reports;
             }
         }
-        /// <summary>
-        /// RetailProducts
-        /// </summary>
-        public string RetailProducts
-        {
-            set
-            {
-                _retailProducts = value;
-            }
 
-            get
-            {
-                return _retailProducts;
-            }
-        }
-        /// <summary>
-        /// QuantityofProducts measn we have to add how much products we want
-        /// </summary>
-        public int QuantityOfProducts
-        {
-            set
-            {
-                _quantityofProducts = value;
-            }
-            get
-            {
-                return _quantityofProducts;
-            }
-        }
-        /// <summary>
-        /// Cost of the products
-        /// </summary>
-        public double Cost
-        {
-            set
-            {
-                _cost = value;
-            }
-            get
-            {
-                return _cost;
-            }
-        }
-
-        /// <summary>
-        /// Suppliers 
-        /// </summary>
-
-        public string Suppliers
-        {
-            set
-            {
-                _suppliers = value;
-            }
-            get
-            {
-                return _suppliers;
-            }
-        }
-        /// <summary>
-        /// Damaged Products
-        /// </summary>
-        public string DamagedProducts
-        {
-            set
-            {
-                _damagedProducts = value;
-            }
-            get
-            {
-                return _damagedProducts;
-            }
-        }
     }
 }

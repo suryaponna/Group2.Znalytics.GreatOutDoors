@@ -151,18 +151,29 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public object SyncRoot => ((ICollection)_customerAddressesList).SyncRoot;
 
         public bool IsSynchronized => ((ICollection)_customerAddressesList).IsSynchronized;
-
+        /// <summary>
+        /// Reruns the No of elements in the _customersList
+        /// </summary>
         int ICollection.Count => _customerAddressesList.Count;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public object this[int index] { 
             get => _customerAddressesList[index]; 
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
         public void UpdateExistingAddress(AddressDetail ad) {
-            for (int i=0; i < _customerAddressesList.Count; i++){
-                if (_customerAddressesList[i].CustomerId == ad.CustomerId) {
-                    _customerAddressesList[i] = ad;
-                }   
+            AddressDetail res = (from i in _customerAddressesList
+                                    where i.AddressId==ad.AddressId
+                                    select i).FirstOrDefault();
+            if (res != null) {
+                int AddressIndex=_customerAddressesList.IndexOf(res);
+                _customerAddressesList[AddressIndex] = ad;
+            }
+            else {
+                throw new AddressException("Address Not Found, add this address as a new one");
             }
             
         }
@@ -183,7 +194,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 return sample;
             }
             else {
-                throw new AddOrderDetails("No default Address you Might not enteres your address while singup");
+                throw new AddressException("No default Address you Might not enteres your address while singup");
             }
         }
         /// <summary>
@@ -200,7 +211,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 return samp;
             }
             else {
-                throw new AddOrderDetails("Requested Address Not Found");
+                throw new AddressException("Requested Address Not Found");
             }
         }
 
@@ -209,8 +220,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="ad"></param>
         /// <returns></returns>
-        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
-            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == ad.CustomerId);
+        public List<AddressDetail> GetAllCustomerAddresses(int Id) {
+            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == Id);
             return samp;
         }
         /// <summary>
