@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 using System.Data;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
+using Newtonsoft.Json;
+using System.IO;
 /// <summary>
 /// data access layer for products
 /// </summary>
 namespace GreatOutdoorsProduct.DataAccessLayer
 {
     public class ProductDataAccessLayer
-    {   
+    {
         //private fields
-        public static List<Product> productList = new List<Product>();
-       
+        private static List<Product> productList = new List<Product>();
+
         /// <summary>
         /// adding products
         /// </summary>
         /// <param name="newProduct"></param>
         /// <returns></returns>
-        public bool AddProductDataAccessLayer(Product newProduct)
+        public bool AddProducts(Product newProduct)
         {
             bool productAdded = false;
             try
@@ -67,6 +69,16 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             return searchProduct;
         }
+        private static void SaveIntoFile()
+        {
+            string s = JsonConvert.SerializeObject(productList);
+            //write the data into the file
+            StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop\aa");
+            streamWriter.Write(s);
+            streamWriter.Close();
+        }
+
+
         /// <summary>
         /// this method is for getting products by name
         /// </summary>
@@ -147,37 +159,21 @@ namespace GreatOutdoorsProduct.DataAccessLayer
 
         }
         /// <summary>
-        /// this method is for deleting the products
+        ///  Method for Removing Return by ProductID
         /// </summary>
-        /// <param name="deleteProductID"></param>
-        /// <returns></returns>
-        public bool DeleteProductDataAccessLayer(int deleteProductID)
+        public void RemoveProductByProductID(int ProductId) //Removing a Product by using Product ID
         {
-            bool productDeleted = false;
-            try
-            {
-                Product deleteProduct = null;
-                foreach (Product item in productList)
-                {
-                    if (item.ProductID == deleteProductID)
-                    {
-                        deleteProduct = item;
-                    }
-                }
-
-                if (deleteProduct != null)
-                {
-                    productList.Remove(deleteProduct);
-                    productDeleted = true;
-                }
-            }
-            catch (SystemException ex)
-            {
-                throw new ProductException(ex.Message);
-            }
-            return productDeleted;
+            productList.RemoveAll(temp => temp.ProductID == ProductId); ;
 
         }
+        /// <summary>
+        /// Method for removing Return by product name
+        /// </summary>
+        public void RemoveProductByProductName(string ProductName)// Removing a Product By using Product Name
+        {
 
+            productList.RemoveAll(temp => temp.ProductName == ProductName);
+        }
     }
 }
+

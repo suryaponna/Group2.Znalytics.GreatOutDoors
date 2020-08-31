@@ -151,9 +151,15 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public object SyncRoot => ((ICollection)_customerAddressesList).SyncRoot;
 
         public bool IsSynchronized => ((ICollection)_customerAddressesList).IsSynchronized;
-
+        /// <summary>
+        /// Reruns the No of elements in the _customersList
+        /// </summary>
         int ICollection.Count => _customerAddressesList.Count;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public object this[int index] { 
             get => _customerAddressesList[index]; 
             set => _customerAddressesList[index] = (AddressDetail)value; }
@@ -214,8 +220,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="ad"></param>
         /// <returns></returns>
-        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
-            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == ad.CustomerId);
+        public List<AddressDetail> GetAllCustomerAddresses(int Id) {
+            List<AddressDetail> samp = _customerAddressesList.FindAll(temp => temp.CustomerId == Id);
             return samp;
         }
         /// <summary>
