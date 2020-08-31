@@ -32,6 +32,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 }
                
         }
+        //getting file data from files(deserialization)
         public static List<Customer> GetFieldData()
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\GreatOutDoors.txt");
@@ -128,10 +129,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             return cust;
         }
 
-        Customer ICustomerDAL.GetCustomerByCustomerId(int customerID)
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }
 
