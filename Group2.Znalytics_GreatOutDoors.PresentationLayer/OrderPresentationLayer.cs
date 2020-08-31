@@ -74,9 +74,6 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             
         }
 
-        private static void AddOrderDetails()
-        {
-            throw new NotImplementedException();
-        }
     }
+
 }

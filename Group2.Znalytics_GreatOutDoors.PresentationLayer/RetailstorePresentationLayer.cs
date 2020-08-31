@@ -76,8 +76,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             } while (choice != 12);
         }
         /// <summary>
-        /// Method to Add Retailstore details to the list
+        /// AddRetailStore is a static method
         /// </summary>
+        /// <param name="RetailCustomerID">Represents ID of Retail customer id</param>
+        /// <param name="CustomerName">Represents retail customer name</param>
+        /// <param name="Reports">Reprsents payment choice</param>
         public static void AddRetailstore()
         {
             try
@@ -206,7 +209,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             {
                 Console.WriteLine("please enter the correct option");
             }
-            //Method to remove retailer customer id
+            ///<summary>
+            ///Method to remove retailer customer id
+            /// </summary>
             void RemoveRetailCustomerByID()
             {
                 Retailstore r = new Retailstore();
@@ -226,6 +231,10 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
 
             }
+            ///<summary>
+            ///Method to remove retailer customer name
+            /// </summary>
+
             void RemoveRetailstoreByCustomerName()
             {
                 Retailstore r = new Retailstore();
@@ -287,6 +296,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
             }
         }
+        /// <summary>
+        /// AddProducts is a static method  
+        /// </summary>
         public static void AddProducts()
         {
             try
@@ -763,6 +775,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// GetProducts method represents get the products from the lsit
+        /// </summary>
         public static void GetRProducts()
         {
             RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
@@ -774,6 +789,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine(item.RetailProducts + " " + item.ProductID);
             }
         }
+        /// <summary>
+        /// Removeproduct method which removes the products from the list if ProductId doesnot match
+        /// </summary>
         public static void RemoveProduct()
         {
             //creating the object for Product details class
@@ -792,6 +810,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             }
 
         }
+        /// <summary>
+        /// GetProductBYID is a static method represents the details of products presents in the list
+        /// </summary>
         public static void GetProductsByID()
         {
             //RProducts p = new RProducts();
@@ -811,6 +832,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
         }
+        /// <summary>
+        /// Update products method represents based on ProductId we can change the products
+        /// </summary>
         public static void UpdateProducts()
         {
             RProducts p = new RProducts();
@@ -837,12 +861,14 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             }
 
         }
-
         private static bool ValidateRetailProducts(List<string> retailProducts)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Add quantity represents that customer has to add the products the based on his choice
+        /// </summary>
         public static void AddQuantityOfProducts()
         {
 
@@ -871,6 +897,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
             Console.ReadKey();
         }
+        /// <summary>
+        /// Checking the product ID
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <returns></returns>
         public bool CheckProductID(string productID)
         {
             RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
