@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
-
+/*
 /// <summary>
 /// This is the Main method for the project
 /// </summary>
@@ -321,4 +321,4 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
     }
 }
-
+*/
