@@ -18,7 +18,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
     /// <summary>
-    /// Represents class for Menu
+    /// Represents class for Menu Presentation
     /// </summary>
     class RetailstoreMenuPresentation
     {
@@ -30,6 +30,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             RetailstoreMenu();
             Console.ReadKey();
         }
+        /// <summary>
+        /// Execution starts from main method 
+        /// </summary>
         public static void RetailstoreMenu()
         {
             int choice = -1;
@@ -72,7 +75,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
             } while (choice != 12);
         }
-        //Method to Add Retailstore details to the list
+        /// <summary>
+        /// Method to Add Retailstore details to the list
+        /// </summary>
         public static void AddRetailstore()
         {
             try
@@ -124,10 +129,14 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             }
 
         }
-        //Method to get the added details
+        /// <summary>
+        /// Method to get the Retailstore details
+        /// </summary>
         public static void GetRetailstores()
         {
+            //created an object for Retailstore business class is stored in a reference variable
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
+           //Retailstore list is stored in reference variable
             List<Retailstore> retailstoreList = rbl.GetRetailstores();
             Console.WriteLine("---------------------------------WELCOME TO GREAT OUTDOOR DETAIL RETAIL STORE---------------------------------");
             Console.WriteLine("------------------- RETAILSTORE DETAILS ---------------");
@@ -137,17 +146,21 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             {
                 Console.WriteLine("Customer Retail store id is:" + var.RetailCustomerID);
                 Console.WriteLine("customer name is:" + var.CustomerName);
-                Console.WriteLine("Choice of choosing payments reports arr:" + var.Reports);
+                Console.WriteLine("Choice of choosing payments reports are:" + var.Reports);
             }
         }
-        //Method to get Retail store details by  retailcusomerid
+        /// <summary>
+        /// Method to get Retail store details by  retailcusomerid
+        /// </summary>
         public static void GetRetailstoreByRetailstoreID()
         {
             try
             {
+                //created an object for Retailstore business class is stored in a reference variable
                 RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
                 Console.WriteLine("Enter existing customer id");
                 string rcID = Console.ReadLine();
+                //Condition to check whether customer id exists or not
                 Retailstore rs = rbl.GetRetailstoreByRetailstoreID(rcID);
                 if (rs != null)
                 {
@@ -166,6 +179,9 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine(ex.Message);
             }
         }
+        /// <summary>
+        /// Method to Remove retailstore details
+        /// </summary>
         public static void RemoveRetailstore()
         {
             Retailstore e = new Retailstore();//Creating object for retail store class
@@ -836,10 +852,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             p.QuantityOfProducts = int.Parse(Console.ReadLine());
             Console.WriteLine("The quantity of product is:" + p.QuantityOfProducts);
             rp.AddQuantityOfProducts(p);
+
             Console.WriteLine("================ Suppliers For Transporting================");
             Console.WriteLine("Enter true for if you want suppliers else enter false");
             //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-            bool k = true;
+            bool k;
             bool s = bool.Parse(Console.ReadLine());
             if (s == true)
             {
