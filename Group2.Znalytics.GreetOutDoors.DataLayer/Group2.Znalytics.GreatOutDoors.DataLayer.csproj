@@ -58,6 +58,7 @@
     <Compile Include="productDataAccessLayer.cs" />
     <Compile Include="productDataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetailProdcutsDataLayer.cs" />
     <Compile Include="RetailStoreDataLayer.cs" />
     <Compile Include="ReturnsDataAccessLayer.cs" />
   </ItemGroup>

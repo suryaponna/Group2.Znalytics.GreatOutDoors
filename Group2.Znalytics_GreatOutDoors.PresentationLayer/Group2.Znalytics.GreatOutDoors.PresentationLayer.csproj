@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.BusinessLayer\Group2.Znalytics.GreatOutDoors.BusinessLayer.csproj">
-      <Project>{ad3e2949-6503-48d4-a6f9-74eebe7131fd}</Project>
+      <Project>{AD3E2949-6503-48D4-A6F9-74EEBE7131FD}</Project>
       <Name>Group2.Znalytics.GreatOutDoors.BusinessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj">
