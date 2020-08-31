@@ -186,8 +186,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// </summary>
         /// <param name="ad">Customer Address Object</param>
         /// <returns></returns>
-        public List<AddressDetail> GetAllCustomerAddresses(int Id) {
-            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(Id);
+        public List<AddressDetail> GetAllCustomerAddresses(AddressDetail ad) {
+            List<AddressDetail> AllAddresses = dll.GetAllCustomerAddresses(ad.CustomerId);
             return AllAddresses;
         }
         /// <summary>
