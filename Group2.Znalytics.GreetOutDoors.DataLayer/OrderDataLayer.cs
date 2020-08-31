@@ -12,6 +12,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     /// </summary>
     public class OrderDataLayer : IOrderDataLayer
     {
+        // AddressDataLayer ad = new AddressDataLayer();
         /// <summary>
         /// Creating List Collection for OrderProduct
         /// </summary>
@@ -29,14 +30,15 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             _orderProducts.Add(order);
         }
-    
+
 
         //get the Existing Orders
         public List<OrderProduct> GetOrderProducts;
         {
-            return  _orderProducts;
+            return  OrderProduct;
+            
         }
-    public OrderProduct SearchProductDataLayer(int searchOrderID)
+    public void SearchProductDataLayer(int searchOrderID)
     {
         try
         {
@@ -52,7 +54,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     
         catch (Exception ex)
         {
-            throw new OrderProductException(ex.Message);
+            throw new Exception(ex.Message);
         }
         return searchOrder;
 
@@ -72,11 +74,29 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         }
         catch(Exception ex)
         {
-            throw new OrderProductException(ex.Message);
+            throw new Exception(ex.Message);
         }
 
         }
-    public void 
+    public void UpdateOrder(OrderProduct updateorder)
+    {
+        bool OrderUpdated = false;
+        try
+        {
+            for (int i = 0; i <= OrderProduct.Count;i++)
+            {
+                if(OrderProduct.OrderID==updateOrderID)
+                {
+                    OrderUpdated = true;
+                }
+            }
+        }
+        catch(Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+    }
+    
     }
 
     
@@ -84,7 +104,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
 
 
-    AddressDataLayer ad = new AddressDataLayer();
+    
 }
 
  
