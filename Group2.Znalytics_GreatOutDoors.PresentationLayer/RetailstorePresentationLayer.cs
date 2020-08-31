@@ -13,7 +13,7 @@ using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;
-
+/*
 //Created a namespace for PresentationLayer of RETAILSTORE module
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
@@ -886,46 +886,46 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             /** if(p.QuantityOfProducts<=10)
              {
                  Console.WriteLine("cost is 10000");
-             }*/         
-        }
-        public static void SuppliersForTransporting()
-        {
-            RProducts p = new RProducts();
-            Console.WriteLine("================ Suppliers For Transporting================");
-            Console.WriteLine("Enter true for if you want suppliers else enter false");
-            //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-            bool k = true;
-            bool s = bool.Parse(Console.ReadLine());
-            if (s == true)
-            {
-                Console.WriteLine("Yes I want suppliers" + p.Suppliers);
-            }
-            else
-            {
-                k = false;
-                Console.WriteLine("No");
-            }
-            Console.WriteLine("--------------------------------------------------------------");
-            System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
-            Console.ReadKey();
-        }
+             }
+//
+public static void SuppliersForTransporting()
+  {
+      RProducts p = new RProducts();
+      Console.WriteLine("================ Suppliers For Transporting================");
+      Console.WriteLine("Enter true for if you want suppliers else enter false");
+      //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
+      bool k = true;
+      bool s = bool.Parse(Console.ReadLine());
+      if (s == true)
+      {
+          Console.WriteLine("Yes I want suppliers" + p.Suppliers);
+      }
+      else
+      {
+          k = false;
+          Console.WriteLine("No");
+      }
+      Console.WriteLine("--------------------------------------------------------------");
+      System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
+      Console.ReadKey();
+  }
 
-        /// <summary>
-        /// Checking the product ID
-        /// </summary>
-        /// <param name="productID"></param>
-        public bool CheckProductID(string productID)
-        {
-            RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
-            bool res = rp.CheckProductID(productID);
-            if (res == true)
-            {
-                Console.WriteLine("Product ID Exists");
-                return res;
-            }
-            return res;
-        }
+  /// <summary>
+  /// Checking the product ID
+  /// </summary>
+  /// <param name="productID"></param>
+  public bool CheckProductID(string productID)
+  {
+      RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
+      bool res = rp.CheckProductID(productID);
+      if (res == true)
+      {
+          Console.WriteLine("Product ID Exists");
+          return res;
+      }
+      return res;
+  }
 
-    }
 }
-
+}
+*/

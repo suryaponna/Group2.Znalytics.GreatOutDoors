@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
-
+/*
 /// <summary>
 /// This is the Main method for the project
 /// </summary>
@@ -153,6 +153,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             }
             Console.WriteLine(rm.Producttype);
+            Console.WriteLine("------You can Return your product soon------");
         }
 
 
@@ -270,7 +271,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             rm.ProductID = Console.ReadLine();
 
             rbl.GetReturnByProductID(rm);
-            Console.WriteLine("Your Product ID is:");
+            Console.WriteLine("Your Product ID is:"+rm.ProductID);
         }
         /// <summary>
         /// Method to get Return details by Productname
@@ -320,4 +321,4 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
     }
 }
-
+*/

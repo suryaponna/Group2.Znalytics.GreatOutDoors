@@ -1,7 +1,10 @@
-﻿using Group2.Znalytics.GreatOutDoor.EntityLayer;
+﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using Group2.Znalytics.GreetOutDoors.DataLayer;
+
 
 //using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
@@ -15,17 +18,43 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
     {
         //private fields
         private static List<Customer> _customers;
-
-        static CustomerDAL()
+         //static field of DataAccessLayer
+        static  CustomerDAL()
         {
-            _customers = new List<Customer>();
-        }
+            //creating a list object in constructor
 
+            _customers = new List<Customer>();
+         
+            //loading data from file into customers
+                if(_customers.Count == 0)
+                {
+                    _customers = GetFieldData();
+                }
+               
+        }
+        //getting file data from files(deserialization)
+        public static List<Customer> GetFieldData()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\GreatOutDoors.txt");
+            string s2 = streamReader.ReadToEnd();
+            List<Customer> _customers = JsonConvert.DeserializeObject<List<Customer>>(s2);
+            streamReader.Close();
+            return _customers;
+        }
         //Adding Customer Personal Details
         public void AddCustomer(Customer customer)
         {
             //generate new customer id
-            //customer.CustomerId = ??
+            if (_customers.Count == 0)
+            {
+                customer.CustomerId = 1;
+            }
+            else
+            {
+                customer.CustomerId = _customers.Max(temp => temp.CustomerId) + 1;//using LINQ
+            }
+
+            //add customer object to the collection
             _customers.Add(customer);
         }
 
@@ -40,9 +69,9 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             //Get matching customer based on CustomerId
             Customer cust = _customers.Find(temp => temp.CustomerId == customer.CustomerId);
-            if (customer != null)
+            if (cust != null)
             {
-                customer.CustomerName = customer.CustomerName;
+                cust.CustomerName = customer.CustomerName;
             }
         }
 
@@ -51,13 +80,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// </summary>
         /// <param name="customerID">CustomerID to search</param>
         /// <returns>Returns matching customer</returns>
-        public Customer GetCustomerByCustomerID(string customerID)
+        public Customer GetCustomerByCustomerID(int CustomerId)
         {
-            Customer cust = _customers.Find(temp => temp.CustomerID == customerID);
+            Customer cust = _customers.Find(temp => temp.CustomerId == CustomerId);
             return cust;
-            ListOfCustomers();
-        }
 
+        }
+        //JSON is used for converting object to text format
         public void ListOfCustomers()
         {
             List<Customer> _return = new List<Customer>();
@@ -81,13 +110,26 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
             List<Customer> cust = _customers.FindAll(temp => temp.CustomerName == customerName);
             return cust;
-            ListOfCustomers();
-        }
-    }
-    public void DeleteCustomers(Customer customers)
-    {
-        _customers.Remove(temp => CustomerName == Customers.CustomerName);
 
+        }
+        //method for deleting customer
+        public void DeleteCustomer(int customerID)
+        {
+            _customers.RemoveAll(temp => temp.CustomerId == customerID);
+        }
+
+        /// <summary>
+        /// returns customer based on customerId
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <returns></returns>
+        public List<Customer> GetCustomerByCustomerId(int customerID)
+        {
+            List<Customer> cust = _customers.FindAll(temp => temp.CustomerId == customerID);
+            return cust;
+        }
+
+       
     }
 }
 

@@ -25,39 +25,47 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             //creating a list 
             _return = new List<Return>()
             {
-                new Return{ProductID="12345",ProductName="DELL Laptop",ProductQuantity=1,Producttype="Electronical Devices"}
+                new Return{ProductID="QWERT123" ,ProductName="Laptop" ,ProductQuantity=1 ,Producttype="Electronical Devices"}
             };
-            _return = LoadDetailsToList();
+           // _return = LoadDetailsToList();
         }
-        
+
         /// <summary>
         /// Declared a method for ListOfReturn which contains serialization part
         /// </summary>
-        public void ListOfReturn()
-        {
-            List<Return> _return = new List<Return>();
-            //convert data into Json
-            string s = JsonConvert.SerializeObject(_return);
+          public void ListOfReturn()
+          {
+              
+              //convert data into Json
+              string s = JsonConvert.SerializeObject(_return);
 
-            //write data into file
-            StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\Project.txt");
-            streamWriter.Write(s);
-            streamWriter.Close();
+              //write data into file
+              StreamWriter streamWriter = new StreamWriter(@"C:\Users\Administrator\Desktop\Project.txt");
+              streamWriter.Write(s);
+              streamWriter.Close();
 
-        }
-        /// <summary>
-        /// Deserialization method to load details into list
-        /// </summary>
-        /// <returns></returns>
-        public static List<Return> LoadDetailsToList()
-        {
-            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
-            string s2 = streamReader.ReadToEnd();
-            List<Return> _return = JsonConvert.DeserializeObject<List<Return>>(s2);
-            streamReader.Close();
-            return _return;
+          }
+          /// <summary>
+          /// Deserialization method to load details into list
+          /// </summary>
+          /// <returns></returns>
+          public static List<Return> LoadDetailsToList()
+          {
+              StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop\Project.txt");
+              string s2 = streamReader.ReadToEnd();
+              List<Return> returns = JsonConvert.DeserializeObject<List<Return>>(s2);
+              streamReader.Close();
 
-        }
+           if(returns==null)
+              {
+                  return new List<Return>();
+              }
+              else
+              {
+                  return returns;
+              }
+
+          }
         /// <summary>
         /// Method to AddReturns
         /// </summary>
@@ -66,7 +74,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public void AddReturn(Return rm)// 
         {
             _return.Add(rm);
-            ListOfReturn();
+           ListOfReturn();
         }
        public void ExchangeProduct(Return rm)
         {
@@ -78,7 +86,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             Return asm = _return.Find(temp => temp.ProductID == rm.ProductID);
             {
                 return asm;
-
+                
             }
 
         }
@@ -100,7 +108,8 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             if (rma != null)
             {
                 rma.ProductName = rm.ProductName;
-                ListOfReturn();
+                rma.ProductID = rm.ProductID;
+               ListOfReturn();
             }
             else
             {
@@ -114,7 +123,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public List<Return> GetReturns()
         {
             return _return;
-            
+            ListOfReturn();
         }
        
         
