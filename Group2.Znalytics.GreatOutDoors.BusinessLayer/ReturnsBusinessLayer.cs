@@ -39,19 +39,22 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <param name="rm">Represents object of ReturnModule</param>
         public void ExchangeProduct(Return rm)
         {
-           
-                //Date time 
-                    
-
-                    if (rm.Productdate < rm.ExchangeDate)
-                    {
-                        ExchangeProduct(rm);
-                    }
-            else
+            try
             {
-                throw new Exception("Exchange should be within one month of purchased date");
+                // checks condition that Purchased date should be less than exchange date to exchange the product
+                if (rm.Productdate < rm.ExchangeDate)
+                {
+                    ExchangeProduct(rm);
+                }
+                else
+                {
+                    throw new ReturnException("Exchange should be within one month of purchased date");
+                }
             }
-           
+            catch
+            {
+                throw;
+            }
             
         }
 

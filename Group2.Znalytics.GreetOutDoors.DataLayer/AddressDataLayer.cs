@@ -159,12 +159,17 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             set => _customerAddressesList[index] = (AddressDetail)value; }
 
         public void UpdateExistingAddress(AddressDetail ad) {
-            //List<AddressDetail> res = (from i in _customerAddressesList
-              //                      where i.AddressId==ad.AddressId && i.CustomerId==ad.CustomerId 
-                //                    select i).ToList();
+            AddressDetail res = (from i in _customerAddressesList
+                                    where i.AddressId==ad.AddressId
+                                    select i).FirstOrDefault();
+            if (res != null) {
+                int AddressIndex=_customerAddressesList.IndexOf(res);
+                _customerAddressesList[AddressIndex] = ad;
+            }
+            else {
+                throw new AddressException("Address Not Found, add this address as a new one");
+            }
             
-            
-
         }
         /// <summary>
         /// Returning Default Address of the Customer

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using System.Globalization;
 
 using Group2.Znalytics.GreatOutDoors.DataLayer;
 
@@ -73,6 +74,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// </summary>
         /// <param name="ad"></param>
         public void ValidatingCountry(AddressDetail ad) {
+            TextInfo CountryText = new CultureInfo("en-US",false).TextInfo;
+            ad.CustomerCountry =CountryText.ToTitleCase(ad.CustomerCountry);
             var b = CountriesList.Contains(ad.CustomerCountry);
             if (b != true)
             {
@@ -86,6 +89,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// <returns></returns>
         public bool IsCountryExists(string countryName)
         {
+            TextInfo CountryText = new CultureInfo("en-US", false).TextInfo;
+            countryName = CountryText.ToTitleCase(countryName);
             return CountriesList.Contains(countryName);
         }
         /// <summary>
@@ -93,6 +98,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// </summary>
         /// <param name="ad"></param>
         public void ValidatingState(AddressDetail ad) {
+            TextInfo CountryText = new CultureInfo("en-US", false).TextInfo;
+            ad.CustomerCountry = CountryText.ToTitleCase(ad.CustomerCountry);
             var b = StatesList.Contains(ad.State);
             if (b != true) {
                 throw new AddressException("Enteres State was not valid please check once");
