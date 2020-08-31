@@ -58,8 +58,19 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
             Console.WriteLine("============Product Details==========");
-            List<Product>
+
         }
+        public void UpdateOrderDetails()
+        {
+            OrderBusinessLayer orderBusiness = new OrderBusinessLayer();
+        }
+
+
+        public void cancelOrder()
+        {
+
+        }
+    }
                 /* OrderProduct op;
                  op = new OrderProduct(); //Local variable
                  Console.WriteLine("------------------------Welcome to Great OutDooors-------------------------");
@@ -95,21 +106,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                          Console.WriteLine("Unknown Product"); break;
 
 
-                 }*/
-                do
-            {    
-                Console.WriteLine("Enter the OrderDetails");
-                Console.WriteLine("1.Add OrderDetails");
-                Console.WriteLine("2.Get OrderDetails");
-                Console.WriteLine("3.Update OrderDetails");
-                Console.WriteLine("4.Delete OrderDetails");
-                Console.WriteLine("5.Exit");
-                Console.WriteLine("Enter Choice:");
-                choice = int.Parse(Console.ReadLine());
-
-
-    } while (choice != 6);
-
+               
 
         }
     }

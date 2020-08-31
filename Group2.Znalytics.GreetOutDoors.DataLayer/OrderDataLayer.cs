@@ -1,6 +1,8 @@
 ﻿using Group2.Znalytics.GreatOutDoors.EntityLayer;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.Serialization;
 using Znalytics.Group2.GreatOutDoor.Entity;
 
@@ -10,7 +12,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     /// <summary>
     /// Represents the details of Customer Ordering details
     /// </summary>
-    public class OrderDataLayer : IOrderDataLayer
+    public class OrderDataLayer // IOrderDataLayer
     {
         // AddressDataLayer ad = new AddressDataLayer();
         /// <summary>
@@ -20,35 +22,26 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         private static List<OrderProduct> _orderProducts;
 
-        static OrderDataLayer()
+        public OrderDataLayer()
         {
             _orderProducts = new List<OrderProduct>();
 
         }
-        //Adding Order to the cart
-        public void AddOrder(OrderProduct order)
+
+        public void SaveIntoFile()
         {
-            _orderProducts.Add(order);
+            string p = JsonConvert.SerializeObject(_orderProducts);
+            StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop.OrderProductJson.txt");
+            streamWriter.Write(p);
+            streamWriter.Close();
         }
 
-
-        //get the Existing Orders
-        public List<OrderProduct> GetOrderProducts;
+        public List<OrderProduct> GetFileData()
         {
-            return  OrderProduct;
-public void RemoveOrder(string orderID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddOrderDetails(OrderProduct order)
-        {
-            throw new NotImplementedException();
-        }
-
-        public OrderProduct GetOrdersByOrderID(string orderID)
-        {
-            throw new NotImplementedException();
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop.OrderProductJson.txt");
+            string s1 = streamReader.ReadToEnd();
+            List<OrderProduct> orderProducts = JsonConvert.DeserializeObject<List<OrderProduct>>(s1);
+            return _orderProducts;
         }
 
         public List<OrderProduct> GetOrderDetails()
@@ -56,9 +49,15 @@ public void RemoveOrder(string orderID)
             throw new NotImplementedException();
         }
 
-        public void CancelOrder(int value)
+        /// <summary>
+        /// Add OrderDetails in to the file
+        /// </summary>
+        /// <param name="values"></param>
+        public void AddOrderDetails(OrderProduct values)
         {
-            throw new NotImplementedException();
+            _orderProducts.Add(values)
+                SaveIntoFile();
+            
         }
 
         public List<OrderProduct> GetOrderDetailsByAddressID(string value)
@@ -66,12 +65,22 @@ public void RemoveOrder(string orderID)
             throw new NotImplementedException();
         }
 
-        public List<OrderProduct> GetOrderDetailsByProductID(string value)
+        /// <summary>
+        /// Get OrderDetails
+        /// </summary>
+        /// <returns></returns>
+        public List<OrderProduct> GetOrderDetails(string value)
         {
-            throw new NotImplementedException();
+            return GetFileData();
         }
 
-        public List<OrderProduct> GetOrderDetailsByCustomerID(int value)
+        public void CancelOrder(int value)
+        {
+            OrderProduct order = _orderProducts.Find(temp => temp.OrderID == value);
+            _orderProducts.Remove(order);
+        }
+
+        public List<OrderProduct> GetOrderDetails(int value)
         {
             throw new NotImplementedException();
         }
@@ -86,67 +95,9 @@ public void RemoveOrder(string orderID)
             throw new NotImplementedException();
         }
 
-        public int UpdateCustomerAddressDetails(int orderID, Customer value)
+        public void UpdateCustomerAddressDetails(int orderID, Customer value)
         {
             throw new NotImplementedException();
-        }
-    }
-    public void SearchProductDataLayer(int searchOrderID)
-    {
-        try
-        {
-            foreach (OrderProduct items in OrderList)
-            {
-                if (items.OrderID == searchOrderID)
-                {
-                    continue;
-                }
-                searchOrder = items;
-            }
-        }
-    
-        catch (Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
-        return searchOrder;
-
-    }
-    public List<OrderProduct> GetOrderProductByRetailer(int RetailerID)
-    {
-        List<OrderProduct> orderProducts = new List<OrderProduct>();
-        try
-        {
-            foreach (OrderDataLayer items in orderList)
-            {
-                if (items.RetailerID == RetailerID)
-                {
-                    searchOrder.Add(items);
-                }
-            }
-        }
-        catch(Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
-
-        }
-    public void UpdateOrder(OrderProduct updateorder)
-    {
-        bool OrderUpdated = false;
-        try
-        {
-            for (int i = 0; i <= OrderProduct.Count;i++)
-            {
-                if(OrderProduct.OrderID==updateOrderID)
-                {
-                    OrderUpdated = true;
-                }
-            }
-        }
-        catch(Exception ex)
-        {
-            throw new Exception(ex.Message);
         }
     }
     

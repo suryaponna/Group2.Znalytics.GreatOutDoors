@@ -244,7 +244,13 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <param name="ad"></param>
         /// <param name="Id"></param>
         public void RemoveAddress(AddressDetail ad) {
-            _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
+            try
+            {
+                _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId && ad.AddressId == samp.AddressId);
+            }
+            catch (AddressException ae) {
+                throw new AddressException("Dear Customer You dont Have this address any more you no need to delete");
+            }
         }
         /// <summary>
         /// changing customer Default Address
@@ -258,11 +264,15 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
                 sam.DefaultAddressOrNot = false;
                 ad.DefaultAddressOrNot = true;
             }
-            else {
+            else if (_customerAddressesList.Contains(ad))
+            {
                 AddressDetail sam = _customerAddressesList.Find(temp => temp.DefaultAddressOrNot == true);
                 sam.DefaultAddressOrNot = false;
                 ad.DefaultAddressOrNot = true;
                 _customerAddressesList.Add(ad);
+            }
+            else {
+                throw new AddressException("Dear Customer We dont this your Address to make as Deafult");
             }
             
         }

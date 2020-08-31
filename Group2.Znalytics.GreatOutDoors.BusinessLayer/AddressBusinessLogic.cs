@@ -1,4 +1,5 @@
-﻿using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+﻿//------------------------------------Surya-----------------------------------------------------------
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System.Collections.Generic;
 using System.Linq;
 using Znalytics.Group2.GreatOutDoor.Entity;
@@ -160,16 +161,35 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// <param name="Id"> AddressId</param>
         /// <param name="ad">Cutomer Address Object </param>
         public void UpdateExistingAddress(AddressDetail ad) {
-            dll.UpdateExistingAddress(ad);
+
+            try
+            {
+                if (ad != null) { dll.UpdateExistingAddress(ad); }
+                else
+                {
+                    throw new AddressException("Address You want to find was not valid one");
+                }
+            }
+            catch (AddressException ae)when(ae.Message== "Address Not Found, add this address as a new one") { 
+            }
         }
         /// <summary>
         /// Retunrning Default Address
         /// </summary>
         /// <param name="ad">Customer Address Object</param>
         /// <returns></returns>
-        public  AddressDetail RetunDefaultAddress(AddressDetail ad) { 
-            AddressDetail DeafultAddress=dll.RetunDefaultAddress(ad);
+        public  AddressDetail RetunDefaultAddress(AddressDetail ad) {
+            AddressDetail DeafultAddress=null;
+            try
+            {
+                 DeafultAddress= dll.RetunDefaultAddress(ad);
+                
+            }
+            catch (AddressException ae)when(ae.Message== "No default Address you Might not enteres your address while singup") { 
+                
+            }
             return DeafultAddress;
+
         }
         /// <summary>
         /// Returning Particular Address Of a Customer
@@ -178,7 +198,9 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// <param name="Id"></param>
         /// <returns></returns>
         public AddressDetail ReturnAddress(AddressDetail ad) {
-            AddressDetail ReturnedAddress = dll.ReturnAddress(ad);
+            AddressDetail ReturnedAddress=null;
+            try { ReturnedAddress = dll.ReturnAddress(ad); }
+            catch (AddressException ae) when (ae.Message == "Requested Address Not Found") { }
             return ReturnedAddress;
         }
         /// <summary>
@@ -187,7 +209,8 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// <param name="ad"></param>
         /// <param name="Id"></param>
         public void RemoveAddress(AddressDetail ad) {
-            dll.RemoveAddress(ad);
+            try { dll.RemoveAddress(ad); }
+            catch (AddressException aa) when (aa.Message ==) { }
         }
         /// <summary>
         /// Returning All Addresses Of the Customer
