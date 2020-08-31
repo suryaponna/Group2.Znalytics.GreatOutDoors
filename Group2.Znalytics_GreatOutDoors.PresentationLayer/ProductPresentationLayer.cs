@@ -10,7 +10,6 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
     class ProductMenuPresentation
     {
        
-
         /// <summary>
         /// Starting point of the program
         /// </summary>
