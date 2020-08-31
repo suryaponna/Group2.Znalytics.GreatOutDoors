@@ -10,6 +10,7 @@ namespace GreatOutdoorsProduct.Entities
     /// <summary>
     /// this class represents entity layer for product
     /// </summary>
+    
     public class Product 
     {   
         /// <summary>
