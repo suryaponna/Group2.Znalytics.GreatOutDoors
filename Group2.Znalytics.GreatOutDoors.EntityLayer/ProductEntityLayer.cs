@@ -75,7 +75,7 @@ namespace GreatOutdoorsProduct.Entities
         /// </summary>
         public string ProductName
         {
-            set => ProductID = value;
+            set => ProductName = value;
 
             get => productName;
 
