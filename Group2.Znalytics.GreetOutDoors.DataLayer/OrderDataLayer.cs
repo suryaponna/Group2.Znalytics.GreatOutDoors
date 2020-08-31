@@ -36,8 +36,61 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         public List<OrderProduct> GetOrderProducts;
         {
             return  OrderProduct;
-            
+public void RemoveOrder(string orderID)
+        {
+            throw new NotImplementedException();
         }
+
+        public void AddOrderDetails(OrderProduct order)
+        {
+            throw new NotImplementedException();
+        }
+
+        public OrderProduct GetOrdersByOrderID(string orderID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderProduct> GetOrderDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CancelOrder(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderProduct> GetOrderDetailsByAddressID(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderProduct> GetOrderDetailsByProductID(string value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<OrderProduct> GetOrderDetailsByCustomerID(int value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProductDetails(int orderID, List<OrderProduct> value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int UpdateCustomerAddressDetails(int orderID, Customer value)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public void SearchProductDataLayer(int searchOrderID)
     {
         try
