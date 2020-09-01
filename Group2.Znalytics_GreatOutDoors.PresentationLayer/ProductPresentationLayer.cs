@@ -195,6 +195,7 @@ public class ProductPresentationLayer
         System.Console.WriteLine("Enter 4 for mountaineering eqiupment");
         System.Console.WriteLine("Enter 5 for outdoor protection");
         int Choice = int.Parse(Console.ReadLine());
+
         //Switch case for selecting the choice for product
         switch (Choice)
         {
