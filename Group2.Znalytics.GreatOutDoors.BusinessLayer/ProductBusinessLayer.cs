@@ -124,7 +124,6 @@ namespace GreatOutdoorsProduct.BusinessLayer
                     throw new ProductException("Product id doesn't exists");
                 }
 
-
             }
 
         }
