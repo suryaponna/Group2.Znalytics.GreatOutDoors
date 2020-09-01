@@ -8,6 +8,7 @@ using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
 using Newtonsoft.Json;
 using System.IO;
+using System.CodeDom;
 /// <summary>
 /// data access layer for products
 /// </summary>
@@ -16,9 +17,22 @@ namespace GreatOutdoorsProduct.DataAccessLayer
     public class ProductDataAccessLayer
     {
 
-        //private fields
-
+        private static List<Product> _Product;
         private static List<Product> productList = new List<Product>();
+
+        /// <summary>
+        /// Constructor Return Data Access Logic that initializes collection
+        /// </summary>
+        static ProductDataAccessLayer() =>
+            //creating a list 
+            _Product = new List<Product>()
+            {
+                new Product{ProductID=123 ,ProductName="shoes" ,Available=true },
+                new Product{ProductID=2345 ,ProductName="hats" ,Available=true },
+                new Product{ProductID=5637 ,ProductName="books" ,Available=false}
+            };// _return = LoadDetailsToList();
+
+
         /// <summary>
         /// method to add products into the list
         /// </summary>
@@ -28,13 +42,16 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         {
             bool productAdded = false;
             try
-            {
+            {   
+                ///<summary>
+                ///adding new products into the list
+                ///</summary>
                 productList.Add(newProduct);
-                productAdded = true;
+                productAdded = true;//if added it would show as true
             }
             catch (SystemException ex)
             {
-                throw new ProductException(ex.Message);
+                throw new ProductException(ex.Message);//thrown an expection when it doesnot add a product
             }
             return productAdded;
 
@@ -57,6 +74,9 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             {
                 foreach (Product item in productList)
                 {
+                    ///<summary>
+                    ///if the product id is eual to searching product then returns the item
+                    ///</summary>
                     if (item.ProductID == searchProductID)
                     {
                         searchProduct = item;
@@ -65,20 +85,31 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             }
             catch (SystemException ex)
             {
-                throw new ProductException(ex.Message);
+                throw new ProductException(ex.Message);//Throws an Exception Statement  when condition is false
             }
-            return searchProduct;
+            return searchProduct;//returning the item which is found
         }
         private static void SaveIntoFile()
         {
+            //convert data into Json
             string s = JsonConvert.SerializeObject(productList);
             //write the data into the file
             StreamWriter streamWriter = new StreamWriter(@"C: \Users\Administrator\Desktop\aa");
             streamWriter.Write(s);
             streamWriter.Close();
         }
-
-
+        /// <summary>
+        /// Reading the data from json file and return data in the file in the form List format
+        /// </summary>
+        /// <returns>returns list of details present in Product </returns>
+        public static List<Product> GetFileData()
+        {
+            StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\source\repos\RetailStoreData");
+            string s1 = streamReader.ReadToEnd();
+            List<Product> p = JsonConvert.DeserializeObject<List<Product>>(s1);
+            streamReader.Close();
+            return p;
+        }
         /// <summary>
         /// this method is for getting products by name
         /// </summary>
@@ -89,17 +120,20 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             List<Product> searchProduct = new List<Product>();
             try
             {
+                ///<summary>
+                ///checks for the condition
+                ///</summary>
                 foreach (Product item in productList)
                 {
-                    if (item.ProductName == productName)
+                    if (item.ProductName == productName)//if given product name matches with the product name then returns the item
                     {
-                        searchProduct.Add(item);
+                        searchProduct.Add(item);//adding an item
                     }
                 }
             }
             catch (SystemException ex)
             {
-                throw new ProductException(ex.Message);
+                throw new ProductException(ex.Message);//if not found throwns an exception
             }
             return searchProduct;
         }
@@ -113,17 +147,18 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             List<Product> searchProduct = new List<Product>();
             try
             {
+                //checks for the condition
                 foreach (Product item in productList)
                 {
-                    if (item.CategoryID == categoryID)
+                    if (item.CategoryID == categoryID) //if given category id matches with the category id then returns the item
                     {
-                        searchProduct.Add(item);
+                        searchProduct.Add(item);//adding an item
                     }
                 }
             }
             catch (SystemException ex)
             {
-                throw new ProductException(ex.Message);
+                throw new ProductException(ex.Message);//when it is fale throws and expection
             }
             return searchProduct;
         }
@@ -137,17 +172,23 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             bool productUpdated = false;
             try
             {
+                ///<summary>
+                ///checks for the condition 
+                ///</summary>
                 for (int i = 0; i < productList.Count; i++)
                 {
                     if (productList[i].ProductID == updateProduct.ProductID)
+                        ///<summary>
+                        ///if the five if contation satisfies then it will update the products
+                        ///</summary>
                     {
-                        updateProduct.ProductName = productList[i].ProductName;
-                        updateProduct.CategoryID = productList[i].CategoryID;
-                        updateProduct.SpecificationID = productList[i].SpecificationID;
-                        updateProduct.CostPrice = productList[i].CostPrice;
-                        updateProduct.SellingPrice = productList[i].SellingPrice;
-                        updateProduct.Available = productList[i].Available;
-                        productUpdated = true;
+                        updateProduct.ProductName = productList[i].ProductName;//updating the product name
+                        updateProduct.CategoryID = productList[i].CategoryID;//updation product category
+                        updateProduct.SpecificationID = productList[i].SpecificationID;//updating specification id
+                        updateProduct.CostPrice = productList[i].CostPrice;//updating costprice
+                        updateProduct.SellingPrice = productList[i].SellingPrice;//updating selling price
+                        updateProduct.Available = productList[i].Available;//updating the products whether they are available or not
+                        productUpdated = true;//finally all products are updated then it shows true if not false
                     }
                 }
             }
@@ -163,7 +204,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         /// </summary>
         public void RemoveProductByProductID(int ProductId) //Removing a Product by using Product ID
         {
-            productList.RemoveAll(temp => temp.ProductID == ProductId); ;
+            productList.RemoveAll(temp => temp.ProductID == ProductId); //inline lambda expression
 
         }
         /// <summary>
@@ -172,7 +213,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
         public void RemoveProductByProductName(string ProductName)// Removing a Product By using Product Name
         {
 
-            productList.RemoveAll(temp => temp.ProductName == ProductName);
+            productList.RemoveAll(temp => temp.ProductName == ProductName);//inline lamba expression
         }
     }
 }
