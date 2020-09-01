@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 
-/*
+
 namespace ZnalyticsGreatOutDoors.PresentationLayer
 {
     /// <summary>
@@ -179,4 +179,4 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
             Console.WriteLine("Entered Customer ID to be deleted");
         }
     }
-}*/
+}

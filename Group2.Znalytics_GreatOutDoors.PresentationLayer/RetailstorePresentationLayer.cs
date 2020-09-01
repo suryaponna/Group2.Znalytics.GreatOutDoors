@@ -1,6 +1,7 @@
 //---------Archana
 
 //Importing Statements
+/**
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using Group2.Znalytics.GreatOutDoors.RetailDetailsException.EntityLayer;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;
-/*
+
 //Created a namespace for PresentationLayer of RETAILSTORE module
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 {
@@ -92,10 +93,6 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Console.WriteLine("Enter the Retail Store Details");
                 Console.WriteLine("Enter Retail store ID starts with ZRS and length of 8");
                 r.RetailCustomerID = Console.ReadLine();
-                //if(rbl.CheckRetailCustomerID(r.RetailCustomerID)==true)
-
-                Console.WriteLine("Enter Customer name");
-                r.CustomerName = Console.ReadLine();
                 Console.WriteLine("Enter choice of reports for the Choosing for the payment method");
                 //choice of choosing reports for paying  the amount
                 Console.WriteLine("================Select the choice  for payment choosing reports================");
@@ -141,16 +138,15 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         {
             //created an object for Retailstore business class is stored in a reference variable
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
-           //Retailstore list is stored in reference variable
+            //Retailstore list is stored in reference variable
             List<Retailstore> retailstoreList = rbl.GetRetailstores();
             Console.WriteLine("---------------------------------WELCOME TO GREAT OUTDOOR DETAIL RETAIL STORE---------------------------------");
             Console.WriteLine("------------------- RETAILSTORE DETAILS ---------------");
-            Console.WriteLine("RetailCustomerID" + " " + "CustomerName" + " " + "Reports");
+            Console.WriteLine("RetailCustomerID" + " " + "Reports");
             Console.WriteLine("-----------------------------------------------------------------------------");
             foreach (Retailstore var in retailstoreList)
             {
                 Console.WriteLine("Customer Retail store id is:" + var.RetailCustomerID);
-                Console.WriteLine("customer name is:" + var.CustomerName);
                 Console.WriteLine("Choice of choosing payments reports are:" + var.Reports);
             }
         }
@@ -169,8 +165,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 Retailstore rs = rbl.GetRetailstoreByRetailstoreID(rcID);
                 if (rs != null)
                 {
-                    Console.WriteLine("RetailCustomerID" + "  " + "RetailCustomerName" + " " + "Reports");
-                    Console.WriteLine(rs.RetailCustomerID + "  " + rs.CustomerName + " " + rs.Reports);
+                    Console.WriteLine("RetailCustomerID" + " " + "Reports");
+                    Console.WriteLine(rs.RetailCustomerID + " " + rs.Reports);
 
                 }
                 else
@@ -191,26 +187,8 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         {
             Retailstore e = new Retailstore();//Creating object for retail store class
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();//creating object for retail storebusinesslogic layer
-            Console.WriteLine("Select the type you want to remove the retailstore details ");
+            //Console.WriteLine("Select the type you want to remove the retailstore details ");
             Console.WriteLine("1. RetailCustomerID");
-            Console.WriteLine("2. Customer Name");
-            int choice;
-            bool b;
-            b = int.TryParse(Console.ReadLine(), out choice);
-            if (b == true)
-            {
-                switch (choice)
-                {
-                    case 1: RemoveRetailCustomerByID(); break;
-                    case 2: RemoveRetailstoreByCustomerName(); break;
-                    default: Console.WriteLine("Enter  the correct option"); break;
-                }
-
-            }
-            else
-            {
-                Console.WriteLine("please enter the correct option");
-            }
             ///<summary>
             ///Method to remove retailer customer id
             /// </summary>
@@ -233,58 +211,24 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 }
 
             }
-            ///<summary>
-            ///Method to remove retailer customer name
-            /// </summary>
-
-            void RemoveRetailstoreByCustomerName()
-            {
-                Retailstore r = new Retailstore();
-                Console.WriteLine("Enter customer name");
-                string name = Console.ReadLine();
-                try
-                {
-                    if (rbl.GetRetailstoreByRetailstoreCustomerID(r.CustomerName) == null)
-                    {
-                        rbl.RemoveRetailstoreByCustomerName(name);
-                    }
-                }
-                catch (RetailstoreException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-
-            }
         }
         public static void UpdateRetailstore()
         {
             RetailStoreBusinessLogicLayer rbl = new RetailStoreBusinessLogicLayer();
-            Console.WriteLine("1.Update Customer name");
-            int option;
-            bool a;
-            a = int.TryParse(Console.ReadLine(), out option);
-            if (a == true)
-            {
-                switch (option)
-                {
-                    //case 1:UpdateRetailstoreByRetailCustomerID();break;
-                    case 1: UpdateRetailstoreCustomerName(); break;
-                    default: Console.WriteLine("Enter 1st option"); break;
-                }
-            }
+            Console.WriteLine("1.Update By id");
             //method to update customer name 
-            void UpdateRetailstoreCustomerName()
+            void UpdateRetailstoreByRetailCustomerID()
             {
                 try
                 {
                     Console.WriteLine("Enter existing Retailcustomer Id");
-                    String rsCN = Console.ReadLine();
-                    Retailstore rs = rbl.GetRetailstoreByRetailstoreCustomerID(rsCN);
+                    String rsID = Console.ReadLine();
+                    Retailstore rs = rbl.GetRetailstoreByRetailstoreCustomerID(rsID);
                     if (rs != null)
                     {
-                        Console.WriteLine("Enter customer name");
-                        rs.CustomerName = Console.ReadLine();
-                        rbl.UpdateRetailstoreCustomerName(rs);
+                        Console.WriteLine("Enter customer ID");
+                        rs.RetailCustomerID = Console.ReadLine();
+                        rbl.UpdateRetailstoreByRetailCustomerID(rs);
                         Console.WriteLine(" Customer Name is updated successfully!!!!");
                     }
                     else
@@ -385,6 +329,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 3456");
                                     }
                                 } while (choice1 != 7);
                                 break;
@@ -431,6 +376,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 250678");
                                     }
                                 } while (choice2 != 6);
                                 break;
@@ -484,6 +430,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 2678");
                                     }
                                 } while (choice3 != 7);
                                 break;
@@ -525,6 +472,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice4 != 5);
                                 break;
@@ -580,6 +528,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 6580");
                                     }
                                 } while (choice5 != 8);
                                 break;
@@ -621,6 +570,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice6 != 5);
                                 break;
@@ -671,6 +621,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 500678");
                                     }
                                 } while (choice7 != 7);
                                 break;
@@ -713,6 +664,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 break;
 
                                         }
+                                        Console.WriteLine("Total cost of products is 50678");
                                     }
                                 } while (choice8 != 5);
                                 break;
@@ -763,6 +715,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                                                 Console.WriteLine("Exit");
                                                 break;
                                         }
+                                        Console.WriteLine("Total cost of products is 60568");
                                     }
                                 } while (choice9 != 7);
                                 break;
@@ -883,49 +836,47 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
             //p.Cost = double.Parse(Console.ReadLine());
             Console.WriteLine("TOTAL COST IS:" + p.Cost * p.QuantityOfProducts);
-            /** if(p.QuantityOfProducts<=10)
-             {
-                 Console.WriteLine("cost is 10000");
-             }
-//
-public static void SuppliersForTransporting()
-  {
-      RProducts p = new RProducts();
-      Console.WriteLine("================ Suppliers For Transporting================");
-      Console.WriteLine("Enter true for if you want suppliers else enter false");
-      //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
-      bool k = true;
-      bool s = bool.Parse(Console.ReadLine());
-      if (s == true)
-      {
-          Console.WriteLine("Yes I want suppliers" + p.Suppliers);
-      }
-      else
-      {
-          k = false;
-          Console.WriteLine("No");
-      }
-      Console.WriteLine("--------------------------------------------------------------");
-      System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
-      Console.ReadKey();
-  }
+        }
+            public static void SuppliersForTransporting()
+            {
+                RProducts p = new RProducts();
+                Console.WriteLine("================ Suppliers For Transporting================");
+                Console.WriteLine("Enter true for if you want suppliers else enter false");
+                //the customer has enter he want suppliers or not if he want suppliers here we are checking the condition of if-else statement.
+                bool k = true;
+                bool s = bool.Parse(Console.ReadLine());
+                if (s == true)
+                {
+                    Console.WriteLine("Yes I want suppliers" + p.Suppliers);
+                }
+                else
+                {
+                    k = false;
+                    Console.WriteLine("No");
+                }
+                Console.WriteLine("--------------------------------------------------------------");
+                System.Console.WriteLine("----------------------------------------------------\n| :) THANK YOU FOR CHOOSING OUR RETAIL STORE (: |\n----------------------------------------------------\n");
+                Console.ReadKey();
+            }
+            /// <summary>
+            /// Checking the product ID
+            /// </summary>
+            /// <param name="productID"></param>
+           public bool CheckProductID(string productID)
+            {
+                RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
+                bool res = rp.CheckProductID(productID);
+                if (res == true)
+                {
+                    Console.WriteLine("Product ID Exists");
+                    return res;
+                }
+                return res;
+            }
 
-  /// <summary>
-  /// Checking the product ID
-  /// </summary>
-  /// <param name="productID"></param>
-  public bool CheckProductID(string productID)
-  {
-      RetailProductsBusinessLogicLayer rp = new RetailProductsBusinessLogicLayer();
-      bool res = rp.CheckProductID(productID);
-      if (res == true)
-      {
-          Console.WriteLine("Product ID Exists");
-          return res;
-      }
-      return res;
-  }
 
+
+    }
 }
-}
+
 */

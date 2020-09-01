@@ -1,7 +1,7 @@
 ﻿using System;
 using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.BusinessLayer;
-/*
+
 namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 {
@@ -28,7 +28,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
         /// <summary>
         /// Execution starts from main method 
         /// </summary>
-        /*public static void ProductMenu()
+        public static void ProductMenu()
         {
             int choice = -1;
             do
@@ -70,6 +70,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
             /// <summary>
             /// Method to Add Product details to the list
             /// </summary>
+            
 
              void AddProduct()
             {
@@ -487,4 +488,4 @@ public class ProductPresentationLayer
         System.Console.WriteLine("--------------------------------------------------------------");
     }
 }
-          */  
+          

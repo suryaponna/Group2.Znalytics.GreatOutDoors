@@ -60,6 +60,7 @@
     <Compile Include="RetailProdcutsDataLayer.cs" />
     <Compile Include="RetailStoreDataLayer.cs" />
     <Compile Include="ReturnsDataAccessLayer.cs" />
+    <Compile Include="_ordersProducts.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Group2.Znalytics.GreatOutDoors.EntityLayer\Group2.Znalytics.GreatOutDoors.EntityLayer.csproj">

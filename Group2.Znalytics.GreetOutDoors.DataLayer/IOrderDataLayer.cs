@@ -10,5 +10,6 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     interface IOrderDataLayer
     {
         void AddOrder(OrderProduct order);
+        List<OrderProduct> GetFileData();
     }
 }
