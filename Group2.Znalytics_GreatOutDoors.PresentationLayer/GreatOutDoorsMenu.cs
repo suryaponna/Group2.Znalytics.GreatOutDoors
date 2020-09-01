@@ -43,6 +43,7 @@ using System.Security.Cryptography.X509Certificates;*/
                                 break;
                     case 3:     SelectProducts();
                                 break;
+                        //// Changing Shipping Address
                     case 4:     ChangeShippingAddress();
                                 break;
                     default:    WriteLine("Enter Valid Option");
@@ -115,6 +116,9 @@ using System.Security.Cryptography.X509Certificates;*/
             WriteLine("-----------------These are the Products Hope you find out what you want---------------");
 
         }
+        /// <summary>
+        /// Method for Changing Shipping Address
+        /// </summary>
         static void ChangeShippingAddress() {
             
 
@@ -148,6 +152,8 @@ using System.Security.Cryptography.X509Certificates;*/
                 ad.Town = ReadLine();
                 WriteLine("Enter your State");
                 ad.State = ReadLine();
+                WriteLine("Enter true if this is your Default address otherwise enter false");
+                ad.DefaultAddressOrNot = Convert.ToBoolean(ReadLine());
                 WriteLine("Enter your Address 0 for Type Home or 1 for Office");
                 bool val = int.TryParse(ReadLine(), out Type);
                 ad.AddressId = (AddressType)Type;
@@ -169,6 +175,9 @@ using System.Security.Cryptography.X509Certificates;*/
 
 
         }
+        /// <summary>
+        /// Changing Default Address of a Customer
+        /// </summary>
         static void ChangeDefaultAddress() {
             AddressBusinessLogic ab = new AddressBusinessLogic();
             AddressDetail ad = new AddressDetail();
@@ -206,6 +215,9 @@ using System.Security.Cryptography.X509Certificates;*/
             }
             
         }
+        /// <summary>
+        /// Removing Particular Address For a Customer
+        /// </summary>
         static void RemoveAddress() {
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic ab = new AddressBusinessLogic();
@@ -240,6 +252,9 @@ using System.Security.Cryptography.X509Certificates;*/
                 WriteLine("Enter Valid Option with ");
             }
         }
+        /// <summary>
+        /// Updating one address of the Customer Addresses
+        /// </summary>
         static void UpdateAddress() {
             WriteLine("These are your addresses");
             AddressDetail ad = new AddressDetail();
@@ -336,6 +351,18 @@ using System.Security.Cryptography.X509Certificates;*/
                     WriteLine("Enter Valid Address id to Update");
                 }
             }
+        }
+        /// <summary>
+        /// Removing Customer All Addresses
+        /// </summary>
+        static void RemoveMyAddresses() {
+            AddressDetail ad = new AddressDetail();
+            AddressBusinessLogic ab = new AddressBusinessLogic();
+            try { ab.RemoveAllAddresses(ad); }
+            catch (AddressException ae) {
+                throw new AddressException("For you there were no Adderesses");
+            }
+            
         }
         static void ReturnPresentation()
         {

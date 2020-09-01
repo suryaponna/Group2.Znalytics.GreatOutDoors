@@ -8,6 +8,7 @@ using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Znalytics.Group2.GreatOutDoor.Entity;
 using Newtonsoft.Json;
 using System.Linq;
+using System.CodeDom;
 /// <summary>
 /// Data Access Logic for Address
 /// </summary>
@@ -250,6 +251,19 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
             catch (AddressException ae) {
                 throw new AddressException("Dear Customer You dont Have this address any more you no need to delete");
+            }
+        }
+        /// <summary>
+        /// Removing All Addresses Of the Particular Customer
+        /// </summary>
+        /// <param name="ad"></param>
+        public void RemoveAllAddresses(AddressDetail ad) {
+            try
+            {
+                _customerAddressesList.RemoveAll(samp => samp.CustomerId == ad.CustomerId);
+            }
+            catch (AddressException ae) {
+                throw new AddressException("Dear Customer No addresses For you");
             }
         }
         /// <summary>

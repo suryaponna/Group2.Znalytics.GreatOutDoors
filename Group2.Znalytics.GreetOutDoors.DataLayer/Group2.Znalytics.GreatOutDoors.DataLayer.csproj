@@ -51,7 +51,6 @@
     <Compile Include="IAddressInterface.cs" />
     <Compile Include="ICustomerDAL.cs" />
     <Compile Include="ICustomerDataAccessLayer.cs" />
-    <Compile Include="IOrderDataLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />
     <Compile Include="OrderException.cs" />
