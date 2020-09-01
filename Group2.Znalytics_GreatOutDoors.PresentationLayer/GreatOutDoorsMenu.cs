@@ -22,7 +22,7 @@ using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.RetailProducts.BusinessLogicLayer;
 using System.Security.Cryptography.X509Certificates;*/
 
-namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
+/*namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class GreatOutDoorsMenu
     {
@@ -94,7 +94,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 }
             } while (choice != 13);
         }*/
-        static void CustomerSignUp() {
+      /*  static void CustomerSignUp() {
             SelectProducts();
 
 
@@ -1143,5 +1143,4 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
 
-    }
-}
+ 

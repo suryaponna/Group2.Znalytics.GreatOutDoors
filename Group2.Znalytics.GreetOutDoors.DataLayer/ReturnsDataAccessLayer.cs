@@ -77,14 +77,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
            ListOfReturn();
         }
 
-/// <summary>
-/// Method for exchange product
-/// </summary>
-/// <param name="rm"></param>
-       public void ExchangeProduct(Return rm)
-        {
-            _return.Add(rm);
-        }
+
         /// <summary>
         /// Method to get details of return by using productID
         /// </summary>
@@ -121,7 +114,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         /// <param name="rm"></param>
         public void UpdateReturn(Return rm)
         {
-            //Condition to check whether the Productname and ID exists or not
+            //Condition to check whether the Productname and ID finds or not
             Return rma = _return.Find(n => n.ProductName == rm.ProductName && n.ProductID==rm.ProductID);
             if (rma != null)
             {
@@ -131,7 +124,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
             else
             {
-                throw new Exception("Product name doesn't exist");
+                throw new Exception("Product name and ID doesn't exist");
             }
         }
         /// <summary>
@@ -161,6 +154,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         {
 
             _return.RemoveAll(temp=>temp.ProductName==ProductName);
+            ListOfReturn();
         }   
     }
        

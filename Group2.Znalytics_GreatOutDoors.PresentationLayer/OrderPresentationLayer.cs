@@ -1,4 +1,4 @@
-﻿using GreatOutdoorsProduct.Entities;
+﻿/*using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
@@ -104,7 +104,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 {
                     Console.WriteLine("You Didn't confirmed your order,Try again");
                 }
-            }
+            } while (choice != 2);
 
                 catch (Exception ex)
 
@@ -192,7 +192,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         
     }
 }
-
+*/
             
 
 
