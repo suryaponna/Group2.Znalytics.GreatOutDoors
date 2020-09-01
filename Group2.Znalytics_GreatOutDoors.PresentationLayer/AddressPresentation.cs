@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using static System.Console;
-using Group2.Znalytics.GreatOutDoors.EntityLayer;
+//using Group2.Znalytics.GreatOutDoors.EntityLayer;
 namespace Znalytics.Group2.GreatOutDoors.Entity
 {
     public class Address
@@ -27,6 +27,7 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
                 WriteLine("Enter 3 to Retun All Address");
                 WriteLine("Enter 4 to Remove Address");
                 WriteLine("Enter 5 to change Default Address");
+                WriteLine("Enter 6 to add new Address");
                 switch (Option) {
                     case 1:
                         ChangeShippingAddress();
@@ -43,9 +44,12 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
                     case 5:
                         ChangeDefaultAddress();
                         break;
+                    case 6:
+                        AddNewAddress();
+                        break;
                 }
 
-            } while (Option<6);
+            } while (Option<7);
         }
         /// <summary>
         /// Change Shipping Address
@@ -87,23 +91,25 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
                 WriteLine("Enter your Address 0 for Type Home or 1 for Office");
                 bool val = int.TryParse(ReadLine(), out Type);
                 ad.AddressId = (AddressType)Type;
+                WriteLine("These are your Address Details");
+                WriteLine("Country: " + ad.CustomerCountry);
+                WriteLine("Name: " + ad.CustomerName);
+                WriteLine("Mobile Number: " + ad.MobileNumber);
+                WriteLine("PinCode: " + ad.PinCode);
+                WriteLine("FlatNo " + ad.FlatNo);
+                WriteLine("Area: " + ad.AreaColony);
+                WriteLine("LandMark: " + ad.LandMark);
+                WriteLine("Town/City: " + ad.Town);
+                WriteLine("State: " + ad.State);
+                WriteLine("Address Type: " + ad.AddressId);
+                bd.AddAddress(ad);
             }
             catch (AddressException ex)
             {
                 WriteLine(ex.Message);
+               
             }
-            WriteLine("These are your Address Details");
-            WriteLine("Country: " + ad.CustomerCountry);
-            WriteLine("Name: " + ad.CustomerName);
-            WriteLine("Mobile Number: " + ad.MobileNumber);
-            WriteLine("PinCode: " + ad.PinCode);
-            WriteLine("FlatNo " + ad.FlatNo);
-            WriteLine("Area: " + ad.AreaColony);
-            WriteLine("LandMark: " + ad.LandMark);
-            WriteLine("Town/City: " + ad.Town);
-            WriteLine("State: " + ad.State);
-            WriteLine("Address Type: " + ad.AddressId);
-
+            
 
         }
         /// <summary>
@@ -304,6 +310,9 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
             }
 
         }
+        /// <summary>
+        /// All customer addresses are shown
+        /// </summary>
         static void ReturnAllAddresses() {
             List<AddressDetail> address = bd.GetAllCustomerAddresses(ad);
             foreach (var i in address) {
@@ -319,6 +328,59 @@ namespace Znalytics.Group2.GreatOutDoors.Entity
                 WriteLine("State: " + i.State);
                 WriteLine("State: " + i.DefaultAddressOrNot);
             }
+        }
+        static void AddNewAddress() {
+            int Type;
+            WriteLine("Enter All The Details Below Showed");
+
+            try
+            {
+                WriteLine("------------------Enter Your Shipping Details ------------------");
+                WriteLine("Enter Country:");
+                ad.CustomerCountry = ReadLine();
+                bd.ValidatingCountry(ad);
+                //bd.IsCountryExists(ad.CustomerCountry);
+                WriteLine("Enter Your Name:");
+                ad.CustomerName = ReadLine();
+                bd.ValidatingState(ad);
+                WriteLine("Enter Mobile Number:");
+                ad.MobileNumber = ReadLine();
+                bd.ValidatingPhoneNumber(ad);
+                WriteLine("Enter Your Pincode:");
+                ad.PinCode = ReadLine();
+                WriteLine("Enter Flat/DoorNumber:");
+                ad.FlatNo = ReadLine();
+                WriteLine("Enter Your Area");
+                ad.AreaColony = ReadLine();
+                WriteLine("Enter your LandMark:");
+                ad.LandMark = ReadLine();
+                WriteLine("Enter your Town/City:");
+                ad.Town = ReadLine();
+                WriteLine("Enter your State");
+                ad.State = ReadLine();
+                WriteLine("Enter true if this is your Default address otherwise enter false");
+                ad.DefaultAddressOrNot = Convert.ToBoolean(ReadLine());
+                WriteLine("Enter your Address 0 for Type Home or 1 for Office");
+                bool val = int.TryParse(ReadLine(), out Type);
+                ad.AddressId = (AddressType)Type;
+                WriteLine("These are your Address Details");
+                WriteLine("Country: " + ad.CustomerCountry);
+                WriteLine("Name: " + ad.CustomerName);
+                WriteLine("Mobile Number: " + ad.MobileNumber);
+                WriteLine("PinCode: " + ad.PinCode);
+                WriteLine("FlatNo " + ad.FlatNo);
+                WriteLine("Area: " + ad.AreaColony);
+                WriteLine("LandMark: " + ad.LandMark);
+                WriteLine("Town/City: " + ad.Town);
+                WriteLine("State: " + ad.State);
+                WriteLine("Address Type: " + ad.AddressId);
+                bd.AddAddress(ad);
+            }
+            catch (AddressException ex)
+            {
+                WriteLine(ex.Message);
+            }
+            
         }
 
     }
