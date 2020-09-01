@@ -27,7 +27,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             {
                 new Return{ProductID="QWERT123" ,ProductName="Laptop" ,ProductQuantity=1 ,Producttype="Electronical Devices"}
             };
-           // _return = LoadDetailsToList();
+            _return = LoadDetailsToList();
         }
 
         /// <summary>
@@ -76,10 +76,20 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             _return.Add(rm);
            ListOfReturn();
         }
+
+/// <summary>
+/// Method for exchange product
+/// </summary>
+/// <param name="rm"></param>
        public void ExchangeProduct(Return rm)
         {
             _return.Add(rm);
         }
+        /// <summary>
+        /// Method to get details of return by using productID
+        /// </summary>
+        /// <param name="rm"></param>
+        /// <returns></returns>
         public Return GetReturnByProductID(Return rm)
         {
             //Condition to check whether the ProductId finds or not
@@ -90,6 +100,11 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             }
 
         }
+        /// <summary>
+        /// Method to get details of return by using Productname
+        /// </summary>
+        /// <param name="rm"></param>
+        /// <returns></returns>
 
         public Return GetReturnByProductName(Return rm)
         {
@@ -100,7 +115,10 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
 
             }
         }
-
+        /// <summary>
+        /// Method to update return
+        /// </summary>
+        /// <param name="rm"></param>
         public void UpdateReturn(Return rm)
         {
             //Condition to check whether the Productname and ID exists or not
@@ -123,7 +141,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
         public List<Return> GetReturns()
         {
             return _return;
-            ListOfReturn();
+           // ListOfReturn();
         }
        
         
