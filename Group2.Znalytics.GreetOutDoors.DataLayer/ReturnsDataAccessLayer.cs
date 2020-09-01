@@ -25,7 +25,7 @@ namespace Group2.Znalytics.GreatOutDoors.DataLayer
             //creating a list 
             _return = new List<Return>()
             {
-                new Return{ProductID="QWERT123" ,ProductName="Laptop" ,ProductQuantity=1 ,Producttype="Electronical Devices"}
+                new Return{ProductID="IN12we3" ,ProductName="Laptop" ,ProductQuantity=1 ,Producttype="Electronical Devices"}
             };
             _return = LoadDetailsToList();
         }
