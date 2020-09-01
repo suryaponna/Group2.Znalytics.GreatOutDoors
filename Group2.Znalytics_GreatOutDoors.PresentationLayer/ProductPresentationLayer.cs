@@ -48,14 +48,14 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     switch (choice)
                     {
                         case 1:
-                            AddProduct();
+                            AddProduct();//adding projects
                             break;
 
                         case 2:
-                            DisplayProducts();
+                            DisplayProducts();//displaying the products
                             break;
                         case 3:
-                            RemoveProduct();
+                            RemoveProduct();//removing the product
                             break;
                         default:
                             System.Console.WriteLine("enter the valid option");
@@ -67,12 +67,11 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                     System.Console.WriteLine("invalid option");
                 }
             } while (choice != 5);
+
             /// <summary>
             /// Method to Add Product details to the list
             /// </summary>
-            
-
-             void AddProduct()
+                         void AddProduct()
             {
                 // creating the object for ProductDetails class
                 Product p = new Product();
@@ -90,7 +89,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 //pb.AddProducts(p); //adding the products into the List
                 System.Console.WriteLine("PRODUCTS ARE ADDED SUCCESSFULLY");
             }
-           
+           ///method for displaying the product
             void DisplayProducts()
             {
                 Product p = new Product();
@@ -103,6 +102,7 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 System.Console.WriteLine(p.ProductName + "    " + p.ProductID + "     " + p.SellingPrice);
 
             }
+            //method for removing product
             void RemoveProduct()
             {
                 Product Product = new Product();// creating the object fro ProductDeatils class
@@ -131,6 +131,10 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 {
                     System.Console.WriteLine("Please Enter Correct Option");
                 }
+                ///<summary>
+                ///method for removing the product by product id
+                ///</summary>
+                
                 void RemoveProductByProductID()
                 {
                     System.Console.Write("Enter the ProductID to be Deleted:");
@@ -141,6 +145,10 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
 
 
                 }
+                ///<summary>
+                ///method for removing the product by product id
+                ///</summary>
+
                 void RemoveProductByProductName()
                 {
                     System.Console.Write("Enter the ProductName:");
