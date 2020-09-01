@@ -46,14 +46,10 @@
   <ItemGroup>
     <Compile Include="AddressDataLayer.cs" />
     <Compile Include="CustomerDAL.cs" />
-    <Compile Include="CustomerDataLayerLogic.cs" />
-    <Compile Include="IAddressDataLayer.cs" />
     <Compile Include="IAddressInterface.cs" />
     <Compile Include="ICustomerDAL.cs" />
-    <Compile Include="ICustomerDataAccessLayer.cs" />
     <Compile Include="IReturnsDataAccessLayer.cs" />
     <Compile Include="OrderDataLayer.cs" />
-    <Compile Include="OrderException.cs" />
     <Compile Include="productDataAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RetailProdcutsDataLayer.cs" />
