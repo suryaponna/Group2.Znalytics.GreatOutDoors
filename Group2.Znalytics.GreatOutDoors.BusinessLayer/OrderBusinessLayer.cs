@@ -5,7 +5,6 @@ using System.Runtime.Remoting;
 using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Microsoft.Win32;
@@ -28,20 +27,22 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             _od = new OrderDataLayer();
         }
 
+        
+
+
         /// <summary>
         /// Adding orderDetails 
         /// </summary>
         /// <param name="order"></param>
         public void AddOrderDetails(OrderProduct order)
         {
-            List<OrderProduct> orderProducts = new List<OrderProduct>();
-            try
+            if(order.ProductID!=null)
             {
                 _od.AddOrderDetails(order);
             }
-            catch (Exception)
+            else
             {
-                throw;
+                throw new OrderException("Select atleast One Product");
             }
         }
         /// <summary>
@@ -97,11 +98,6 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             return _od.GetOrder();
         }
 
-        public Product ProductDetails(string productId)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Update the Product Details
         /// </summary>
@@ -116,15 +112,6 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             _od.UpdateCustomerAddressDetails(OrderID, value);
         }
 
-        public Customer GetCustomerDetailsByCustomerId(int customerId)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Get the Order of Products
-        /// </summary>
-        /// <returns></returns>
         public List<OrderProduct> GetOrderProducts()
         {
             throw new NotImplementedException();
@@ -134,28 +121,6 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         {
             throw new NotImplementedException();
         }
-
-        public void AddOrderDetails(Group2.Znalytics_GreatOutDoors.PresentationLayer.OrderProduct order)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void UpdateCustomerAddressDeeetails(int orderId, Customer customerAddress)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static Customer GetCustomerDetailsbyCustomerId(int customerId)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        ///Getting Order details from CustomerId
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-
     }
 }
           

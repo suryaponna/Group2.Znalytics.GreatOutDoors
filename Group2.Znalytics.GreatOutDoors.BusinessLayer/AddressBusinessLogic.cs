@@ -19,6 +19,9 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
 
         //List<string> TotalAddresses = new List<string>();
         AddressDataLayer dll;
+        /// <summary>
+        /// List Of world countries
+        /// </summary>
         List<string> CountriesList = new List<string>(){"Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica",
         "Antigua and Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados",
         "Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory",
@@ -45,11 +48,18 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         "Uruguay","Uzbekistan","Vanuatu","Venezuela","Viet Nam","Virgin Islands, British","Virgin Islands, US","Wallis and Futuna","Western Sahara",
         "Yemen","Zambia","Zimbabwe",
          };
+        /// <summary>
+        /// States List only Indian states are considered
+        /// </summary>
         List<string> StatesList = new List<string>(){"Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa",
             "Punjab", "Rajasthan", "Sikkim","Tamil Nadu","Tripura, Uttaranchal","Uttar Pradesh","Haryana", "Himachal Pradesh","Chhattisgarh"};
+        /// <summary>
+        /// Contries Phone Codes same were Taken we can add codes by AddPhoneCode()
+        /// </summary>
         List<string> NumberCodes = new List<string>() { "91", "93", "355", "213", "376", "244", "244", "672", "374", "297", "61", "43", "973", "375" };
-        
-
+        /// <summary>
+        /// C0nstructer creating Address Data LAyer Object 
+        /// </summary>
         public  AddressBusinessLogic()
         {
             dll = new AddressDataLayer();
@@ -257,6 +267,10 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         public void AddState(string State) {
             StatesList.Add(State);
         }
+        /// <summary>
+        /// Adding new Phone Code to numbercode list
+        /// </summary>
+        /// <param name="PhoneCode"></param>
         public void PhoneCode(string PhoneCode) {
             NumberCodes.Add(PhoneCode);
         }

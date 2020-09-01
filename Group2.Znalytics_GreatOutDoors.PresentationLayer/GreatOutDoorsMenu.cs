@@ -26,35 +26,28 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
     class GreatOutDoorsMenu
     {
-        static void Main()
-        {
+        static void Main() {
             WriteLine("----------------Welcome to GreatOutDoors hope you find your things here----------------");
             WriteLine();
             AddressDetail ad = new AddressDetail();
-            while (true)
-            {
+            while (true) {
                 WriteLine("Enter 1 to sign up");
                 WriteLine();
                 WriteLine("Enter 2 to sign in");
                 int option;
                 bool b = int.TryParse(ReadLine(), out option);
-                switch (option)
-                {
-                    case 1:
-                        CustomerSignUp();
-                        break;
-                    case 2:
-                        CustomerSignIn();
-                        break;
-                    case 3:
-                        SelectProducts();
-                        break;
-                    case 4:
-                        ChangeShippingAddress();
-                        break;
-                    default:
-                        WriteLine("Enter Valid Option");
-                        break;
+                switch(option){
+                    case 1:     CustomerSignUp();
+                                break;
+                    case 2:     CustomerSignIn();
+                                break;
+                    case 3:     SelectProducts();
+                                break;
+                        //// Changing Shipping Address
+                    case 4:     ChangeShippingAddress();
+                                break;
+                    default:    WriteLine("Enter Valid Option");
+                                break;  
                 }
             }
         }
@@ -102,8 +95,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 }
             } while (choice != 13);
         }*/
-        static void CustomerSignUp()
-        {
+        static void CustomerSignUp() {
             SelectProducts();
 
 
@@ -114,21 +106,21 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         }
-        static void CustomerSignIn()
-        {
+        static void CustomerSignIn() {
 
 
 
             SelectProducts();
         }
-        static void SelectProducts()
-        {
+        static void SelectProducts() {
             WriteLine("-----------------These are the Products Hope you find out what you want---------------");
 
         }
-        static void ChangeShippingAddress()
-        {
-
+        /// <summary>
+        /// Method for Changing Shipping Address
+        /// </summary>
+        static void ChangeShippingAddress() {
+            
 
             int Type;
             WriteLine("Enter All The Details Below Showed");
@@ -160,12 +152,13 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 ad.Town = ReadLine();
                 WriteLine("Enter your State");
                 ad.State = ReadLine();
+                WriteLine("Enter true if this is your Default address otherwise enter false");
+                ad.DefaultAddressOrNot = Convert.ToBoolean(ReadLine());
                 WriteLine("Enter your Address 0 for Type Home or 1 for Office");
                 bool val = int.TryParse(ReadLine(), out Type);
                 ad.AddressId = (AddressType)Type;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 WriteLine(ex.Message);
             }
             WriteLine("These are your Address Details");
@@ -182,15 +175,16 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         }
-        static void ChangeDefaultAddress()
-        {
+        /// <summary>
+        /// Changing Default Address of a Customer
+        /// </summary>
+        static void ChangeDefaultAddress() {
             AddressBusinessLogic ab = new AddressBusinessLogic();
             AddressDetail ad = new AddressDetail();
             int Id = ad.CustomerId;
             List<AddressDetail> AllAddresses = ab.GetAllCustomerAddresses(ad);
             WriteLine("From Below Addresses choose One");
-            foreach (var i in AllAddresses)
-            {
+            foreach (var i in AllAddresses) {
                 WriteLine("Address Type: " + i.AddressId);
                 WriteLine("Country: " + i.CustomerCountry);
                 WriteLine("Name: " + i.CustomerName);
@@ -212,24 +206,23 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     AddressDetail samp = AllAddresses[AddressId];
                     ab.ChangeDefaultAddrees(samp);
                 }
-                else
-                {
+                else {
                     throw new AddressException("Enter valid Address Id");
                 }
             }
-            catch (AddressException ex)
-            {
+            catch (AddressException ex) {
                 WriteLine(ex.Message);
             }
-
+            
         }
-        static void RemoveAddress()
-        {
+        /// <summary>
+        /// Removing Particular Address For a Customer
+        /// </summary>
+        static void RemoveAddress() {
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic ab = new AddressBusinessLogic();
-            List<AddressDetail> Addresses = ab.GetAllCustomerAddresses(ad);
-            foreach (var address in Addresses)
-            {
+            List<AddressDetail> Addresses=ab.GetAllCustomerAddresses(ad);
+            foreach (var address in Addresses) {
                 WriteLine("Address Type: " + address.AddressId);
                 WriteLine("Country: " + address.CustomerCountry);
                 WriteLine("Name: " + address.CustomerName);
@@ -243,16 +236,14 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
             WriteLine("Enter Your your Address Id to delete");
             int Option;
-            bool b = int.TryParse(ReadLine(), out Option);
-            if (b)
-            {
+            bool b= int.TryParse(ReadLine(),out Option);
+            if (b) {
                 try
                 {
                     AddressDetail add = Addresses[Option];
                     ab.RemoveAddress(add);
                 }
-                catch
-                {
+                catch {
                     throw new AddressException("Enter Valid Address Id which you entered is not there");
                 }
             }
@@ -261,8 +252,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 WriteLine("Enter Valid Option with ");
             }
         }
-        static void UpdateAddress()
-        {
+        /// <summary>
+        /// Updating one address of the Customer Addresses
+        /// </summary>
+        static void UpdateAddress() {
             WriteLine("These are your addresses");
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic ab = new AddressBusinessLogic();
@@ -283,9 +276,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
             WriteLine("Enter Your Address Id to change");
             int Option;
-            bool b = int.TryParse(ReadLine(), out Option);
-            if (b)
-            {
+            bool b = int.TryParse(ReadLine(),out Option);
+            if (b) {
                 try
                 {
                     AddressDetail add = Addresses[Option];
@@ -307,11 +299,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                         WriteLine("Enter 12 to Update Address Type");
                         int Option1;
                         bool bb = int.TryParse(ReadLine(), out Option1);
-                        if (bb)
-                        {
-                            switch (Option1)
-                            {
-                                case 1:
+                        if (bb) {
+                            switch (Option1) {
+                                case 1: 
                                     add.CustomerCountry = ReadLine();
                                     updating.ValidatingCountry(add);
                                     break;
@@ -357,11 +347,22 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     ab.UpdateExistingAddress(add);
 
                 }
-                catch (AddressException ae)
-                {
+                catch(AddressException ae) {
                     WriteLine("Enter Valid Address id to Update");
                 }
             }
+        }
+        /// <summary>
+        /// Removing Customer All Addresses
+        /// </summary>
+        static void RemoveMyAddresses() {
+            AddressDetail ad = new AddressDetail();
+            AddressBusinessLogic ab = new AddressBusinessLogic();
+            try { ab.RemoveAllAddresses(ad); }
+            catch (AddressException ae) {
+                throw new AddressException("For you there were no Adderesses");
+            }
+            
         }
         static void ReturnPresentation()
         {
@@ -1166,6 +1167,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                      }
                      return res;
                  }*/
+
 
 
     }

@@ -14,7 +14,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
     /// <summary>
     /// Represents the details of Customer Ordering details
     /// </summary>
-    public class OrderDataLayer // IOrderDataLayer
+    public class OrderDataLayer //OrderDataLayerAbstract
     {
         // AddressDataLayer ad = new AddressDataLayer();
         /// <summary>
@@ -51,16 +51,23 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             throw new NotImplementedException();
         }
 
+
         /// <summary>
         /// Add OrderDetails in to the file
         /// </summary>
         /// <param name="values"></param>
         public void AddOrderDetails(OrderProduct values)
         {
-            _orderProducts.Add(values)
+            _orderProducts.Add(values);
                 SaveIntoFile(); 
 
         }
+
+        /// <summary>
+        /// Get order details by AddressID
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
 
         public List<OrderProduct> GetOrderDetailsByAddressID(string value)
         {
@@ -90,12 +97,14 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             throw new NotImplementedException();
         }
 
+
+
         /// <summary>
         /// Get order Details by Product ID
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public override List<OrderProduct> GetOrderDetailByProductID(string value)
+     /*  public List<OrderProduct> GetOrderDetails( string value)
         {
             List<OrderProduct> order = new List<OrderProduct>();
 
@@ -103,14 +112,14 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             {
                 foreach (var products in orders.Products)
                 {
-                    if (products.ProductID = value)
+                   // if (products.ProductID = value)
                         
                         order.Add(orders);
 
                 }
                 return order;
             }
-        }
+        }*/
 
         public void UpdateCustomerAddressDetails(int orderID, Customer value)
         {
@@ -134,9 +143,9 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             
             foreach (var order in _orders)
             {
-                if (orders.CustomerAddress.CustomerID !=value)
+                //if (orders.CustomerAddress.CustomerID == value)
                 {
-                    order.Add(orders);
+                  //  order.Add(orders);
                 }
             }
             return orders;
@@ -149,20 +158,25 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// <param name="value"></param>
         public void UpdateProductDetails(int orderid, List<Product> value)
         {
-            OrderProduct order = _ordersProducts.Find(temp => temp.OrderID == orderid)
+           //OrderProduct orders = _ordersProducts.Find(temp => temp.OrderId= orderid);
 
-                order.Products = value;
+            //orders.Products = value;
             SaveIntoFile();
         }
 
-
+        /// <summary>
+        /// Update th customer address details
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <param name="value"></param>
         public void UpdateCustomerAddrerssDetails(int orderid, Customer value)
         {
-            OrderProduct order = _ordersProducts.Find(temp => temp.OrderID == orderid);
-            order.CustomerAddress = value;
+            //OrderProduct order = _ordersProducts.Find(temp => temp.OrderId == orderid);
+           // order.CustomerAddress = value;
             SaveIntoFile();
         }
 
+        
     }
 
 }

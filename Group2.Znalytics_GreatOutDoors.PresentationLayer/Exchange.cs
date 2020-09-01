@@ -17,7 +17,7 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
             Console.WriteLine("Enter Your Address");
             string c = System.Console.ReadLine();
             Console.WriteLine("Enter Product Id");
-            string d = System.Console.ReadLine();
+            string e = System.Console.ReadLine();
             Console.WriteLine("Select your Reason For Exchanging the Product");
             Console.WriteLine("______________________________________");
             Console.WriteLine("1.Unsatisfactory Product");
