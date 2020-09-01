@@ -1,4 +1,7 @@
 ﻿
+using GreatOutdoorsProduct.Entities;
+using System.Collections.Generic;
+
 namespace GreatOutdoorsProduct.BusinessLayer
 {
     public interface IProductBusinessLayer
@@ -6,5 +9,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
         void AddProducts();       
         void UpdateProduct();
         void DeleteProductBl();
+        List<Product> DisplayProducts();
+        Product GetProductByProductID(string productID);
     }
 }
