@@ -8,17 +8,17 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     /// <summary>
     /// Represents details of Order and IEquatable is for comparing two customers are same or not
     /// </summary>
-    public class OrderProduct// IEquatable<OrderProduct>
+    public class OrderProduct : IEquatable<OrderProduct>
     {
         public List<Product> Products;
 
         //private fields
-        List<Product> products;
+         List<Product> products1;
         private Customer _customerAddress;
         private string _orderID;
         double _totalprice;
         private int _quantity;     //each product has its own 
-        private List<Product> _products;
+       
 
         /// <summary>
         /// Default Constructor
@@ -36,9 +36,9 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// <param name="OrderID"></param>
         /// <param name="TotalPrice"></param>
         /// <param name="Quantity"></param>
-        public OrderProduct(List<Product> products, Customer customerAddress, string OrderID, double Price, int Quantity)
+        public OrderProduct(List<Product> Products1, Customer customerAddress, string OrderID, double Price, int Quantity)
         {
-            products = _products;
+            Products = Products1; ;
             customerAddress = _customerAddress;
             OrderID = _orderID;
             Price = _totalprice;
@@ -50,11 +50,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// Property for setting values to products field and getting the value of the field
         /// </summary>
 
-        public List<Product> order
+        public List<Product> Order
         {
             set
             {
-                List<Product> products = new List<Product>();
+                List<Product> _products = new List<Product>();
                 if (value != null)
                 {
                     _products = value;
@@ -66,14 +66,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             }
             get
             {
-                return _products;
+                return Products;
             }
         }
 
         /// <summary>
         /// Property for setting values to customer address field and getting the values of customer address field
         /// </summary>
-        public Customer CustomerAddress
+       /* public Customer CustomerAddress
         {
             set
             {
@@ -91,7 +91,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             {
                 return _customerAddress;
             }
-        }
+        }*/
 
         /// <summary>
         /// Property for setting values to orderid and getting the value of the orderId field
@@ -129,7 +129,10 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 
         }
 
-        public int Qunatity
+        /// <summary>
+        /// Property for getting values to Quantity field and getting the values from the price field
+        /// </summary>
+        public int Quantity
         {
             set
             {
@@ -143,6 +146,11 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             {
                 return _quantity;
             }
+        }
+
+        public bool Equals(OrderProduct other)
+        {
+            throw new NotImplementedException();
         }
     }
 }
