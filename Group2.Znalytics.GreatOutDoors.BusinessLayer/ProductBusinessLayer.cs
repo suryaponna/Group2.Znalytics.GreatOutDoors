@@ -34,17 +34,20 @@ namespace GreatOutdoorsProduct.BusinessLayer
         }
 
             /// <summary>
-            /// adding the products 
+            ///methods for adding the products 
             /// </summary>
             /// <param name="n"> gets object of ProductDetails</param>
             public void AddProducts(Product p)
             {
+                //product name should not be null
+                //if the product name not equal to null then add product name
                 if (p.ProductName != null)
                 {
                  _pb.AddProducts(p);
                 }
                 else
                 {
+                   //if it is equal to null then throws an excpetion
                     throw new Exception("Add valid Product Name");
                 }
 
@@ -52,7 +55,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             }
 
             /// <summary>
-            /// updating the products
+            /// method for updating te products
             /// </summary>
             /// <param name="updateProduct"></param>
             public static void UpdateProduct(Product updateProduct)
@@ -86,7 +89,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
             {
 
                 try
-                {
+                {   //product id should not be null
                     if (ProductId != 0)
                     {
 
@@ -94,6 +97,7 @@ namespace GreatOutdoorsProduct.BusinessLayer
                     }
                     else
                     {
+                        //if null raises an excpetion
                         throw new ProductException("Product id doesn't exists");
                     }
 
@@ -109,13 +113,14 @@ namespace GreatOutdoorsProduct.BusinessLayer
             /// </summary>
             public void RemoveProductByProductName(string ProductName)
             {
-
+                //product name should not be null
                 if (ProductName != null)
                 {
                     _pb.RemoveProductByProductName(ProductName);
                 }
                 else
                 {
+                   //if null then raises an excpetion
                     throw new ProductException("Product id doesn't exists");
                 }
 
