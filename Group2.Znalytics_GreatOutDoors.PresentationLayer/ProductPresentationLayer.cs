@@ -148,7 +148,6 @@ namespace Group2.Znalytics.GreatOutDoors.PresentationLayer
                 ///<summary>
                 ///method for removing the product by product id
                 ///</summary>
-
                 void RemoveProductByProductName()
                 {
                     System.Console.Write("Enter the ProductName:");
