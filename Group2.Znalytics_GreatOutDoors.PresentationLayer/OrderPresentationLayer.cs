@@ -1,4 +1,4 @@
-﻿/*using GreatOutdoorsProduct.Entities;
+﻿using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 {
-    //class
+    //Represents PresentationLayer of OrderProduct
     class OrderPresentationLayer
     {
         //Execution Starts from the Main Method
@@ -55,76 +55,50 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         }
 
 
+
         /// <summary>
         /// Method for adding Ordrdetails to List
         /// </summary>
 
         public void PlaceOrder()
         {
-            OrderProduct order = new OrderProduct();
-            OrderBusinessLayer orderLayer = new OrderBusinessLayer();
-
-
-            Console.WriteLine("============Product Details==========");
-            int choice = 0;
-            do
+            try
             {
-                Console.WriteLine("Enter 1 if you want to select products from orders or else enter 2");
-                Console.WriteLine("Enter Choice: ");
-                choice = int.Parse(Console.ReadLine());
+                OrderProduct order = new OrderProduct();
+                OrderBusinessLayer orderLayer = new OrderBusinessLayer();
 
-                switch (choice)
-                {
-                    case 1:
-                        Console.WriteLine("Enter ProductID to select products");
-                        string productId = Console.ReadLine();
-                        Console.WriteLine("Enter Quantity");
-                        int quantity = int.Parse(Console.ReadLine());
+                //Calling the method from BusinessLogicLayer to display the details
+                Console.WriteLine("============Product Details==========");
+                Console.WriteLine("Enter ProductID to select Products that you want to order");
+                order.ProductID = Console.ReadLine();
+                Console.WriteLine("Enter Quantity");
+                int quantity = int.Parse(Console.ReadLine());
+                Product p = orderLayer.ProductDetails(order.ProductId);
+                order.TotalPrice += p.CostPrice * quantity;
+                Console.WriteLine("================AddressDetails of customer==========");
+                Console.WriteLine("Enter your CustomerId to Choose your Address");
+                int CustomerID = int.Parse(Console.ReadLine());
+                Customer customerAddress = orderLayer.GetOrderDetailsByCustomerID(CustomerID);
+                order.CustomerAddressId = CustomerID;
 
-
-                         Product p = orderLayer.ProductDetails(productId);
-
-                        order.Price += p.TotalPrice * quantity;
-                        order.Quantity += quantity;
-                        break;
-                    case 2: Console.WriteLine("Exit"); break;
-                }
-                while (choice == 1) ;
-
-                Console.WriteLine("==================AddressDetails=====================");
-                Console.WriteLine("Enter your CustomerID to choose Your Address");
-                int CustomerId = int.Parse(Console.ReadLine());
-                Customer customerAddress = orderLayer.GetCustomerDetailsByCustomerId(CustomerId);
-                Console.WriteLine("Price for Selected Product is:" + order.totalPrice);
-                Console.WriteLine("Enter 1 if you want to confirm you order");
+                Console.WriteLine("Price for selected Products is:" + order.TotalPrice);
+                Console.WriteLine("Enter 1 if you want to Confirm Your Order");
                 int i = int.Parse(Console.ReadLine());
                 if (i == 1)
                 {
-
-                    Console.WriteLine("Your OrderID is:" + order.OrderID);
-                    orderLayer.AddOrderDetails(orders);
+                    Console.WriteLine("Your OrderID is:" + orderLayer.OrderID());
+                    //orderLayer.AddOrderDetails(order);
                 }
                 else
                 {
-                    Console.WriteLine("You Didn't confirmed your order,Try again");
+                    Console.WriteLine("You didn't confirm your orders,please Try again");
                 }
             }
-            try
+            catch (Exception e)
             {
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
+                Console.WriteLine(e.Message);
             }
         }
-            
-           
-
-        }
-
-
-
 
         /// <summary>
         /// Represents method for updating the order details
@@ -139,7 +113,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("1.Product Details");
                 Console.WriteLine("2.Quantity");
                 Console.WriteLine("3.Customer Details");
-                Console.WriteLine("$.Exit");
+                Console.WriteLine("4.Exit");
 
                 Console.WriteLine("Enter Choice:");
                 choice = int.Parse(Console.ReadLine());
@@ -148,81 +122,70 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 switch (choice)
                 {
                     case 1:
-                        List<Product> products = new List<Product>();
-                        do
-                        {
-                            Console.WriteLine("Enter ProductID");
-                            string ProductId = Console.ReadLine();
-                            Product p = orderBusiness.UpdateProductDetails)(ProductId);
-                            products.Add(p);
-                            Console.WriteLine("Enter 1 if you want to Update one more otherwise enter2");
-                            Console.WriteLine("EnterChoice:");
-                            choice = int.Parse(Console.ReadLine());
-                        }
-                        while (choice == 1);
-                        orderBusiness.UpdateProductDetails(orderId, products);
-                        break;
-                    case 2:
-                        OrderProduct order = new OrderProduct();
+
+
                         Console.WriteLine("Enter ProductID");
-                        string productId = Console.ReadLine();
-                        Console.WriteLine("Enter the quantity you want to replace");
-                        int Quantity = int.Parse(Console.ReadLine());
+                        string ProductId = Console.ReadLine();
+                        orderBusiness.UpdateProductDetails(orderId, ProductId); ;
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Enter Quantity");
+                        int quantity = int.Parse(Console.ReadLine());
+                        orderBusiness.UpdateQuantity(orderId, quantity);
                         break;
                     case 3:
                         Console.WriteLine("Enter AddressID");
-                        string AddressID = Console.ReadLine();
+                        string addressID = Console.ReadLine();
+                        orderBusiness.UpdateCustomerAddressDetails(orderId, addressID);
                         break;
                     case 4:
-                        Console.WriteLine("Enter Custome ID");
-                        int CustomerId = int.Parse(Console.ReadLine());
-                        // Customer customerAddress = OrderBusinessLayer.GetCustomerDetailsbyCustomerId(CustomerId);
-                        //OrderBusinessLayer.UpdateCustomerAddressDeeetails(orderId, customerAddress);
+                        Console.WriteLine("Enter CustomerID");
+                        int customerId = int.Parse(Console.ReadLine());
+                        orderBusiness.UpdateCustomerAddressDetails(orderId, customerId);
                         break;
-                    case 5: Console.WriteLine("Exit"); break;
+                    case 5:
+                        Console.WriteLine("Exit"); break;
                 }
-            
+
 
             } while (choice != 4);
-
-
-
         }
         /// <summary>
         /// Represents a method for cancel order
         /// </summary>
-        public void CancelOrder()
+        static void CancelOrder()
         {
             Console.WriteLine("Enter OrderId");
             int orderId = int.Parse(Console.ReadLine());
-            OrderBusinessLayer orderLayer = new OrderBusinessLayer();
-            //orderLayer.CancelOrderDetails(orderId);
+            OrderBusinessLayer orderBusiness = new OrderBusinessLayer();
+            orderBusiness.CancelOrderDetails(orderId);
         }
 
         /// <summary>
         /// Represents method to view the Order Details
         /// </summary>
 
-        public void ViewOrderDetails()
+        static void ViewOrderDetails()
         {
-            OrderBusinessLayer orderLayer = new OrderBusinessLayer();
+            OrderBusinessLayer orderBusiness = new OrderBusinessLayer();
             Console.WriteLine("Enter CustomerID");
             int CustomerID = int.Parse(Console.ReadLine());
-           List<OrderProduct> orderProducts = orderLayer. GetOrderDetailsByCustomerID,CustomerID);
-            foreach (var order in orderProducts)
+            //List<OrderProduct> orderProducts = orderBusiness.GetOrderDetailsByCustomerID(CustomerID);
+           /* foreach (var order in orders)
             {
-                foreach (var item in orderProducts)
-                {
-                    foreach (var product in order.Products)
-                    {
+                Console.WriteLine("ProductId:" + order.ProductId);
+                Console.WriteLine("CustomerAddressId:" + order.CustomerAddressId);
+                Console.WriteLine("TotalPrice:" + order.TotalPrice);
+                Console.WriteLine("Quantity;" + order.Quantity);
+            }*/
+           
+        }
 
-                    }
-                }
-            }
-            
+    }
 }
 
-*/
+
   
             
 

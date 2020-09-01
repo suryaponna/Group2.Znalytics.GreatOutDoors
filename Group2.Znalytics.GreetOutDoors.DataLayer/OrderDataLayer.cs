@@ -30,6 +30,9 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         }
 
+        /// <summary>
+        /// Method for Saving FileInformation
+        /// </summary>
         public void SaveIntoFile()
         {
             string p = JsonConvert.SerializeObject(_orderProducts);
@@ -38,6 +41,11 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             streamWriter.Close();
         }
 
+
+        /// <summary>
+        /// Method for Getting Data from file
+        /// </summary>
+        /// <returns></returns>
         public List<OrderProduct> GetFileData()
         {
             StreamReader streamReader = new StreamReader(@"C:\Users\Administrator\Desktop.OrderProductJson.txt");
@@ -46,11 +54,8 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             return _orderProducts;
         }
 
-        public List<OrderProduct> GetOrderDetails()
-        {
-            throw new NotImplementedException();
-        }
 
+       
 
         /// <summary>
         /// Add OrderDetails in to the file
@@ -63,13 +68,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
 
         }
 
-        /// <summary>
-        /// Get order details by AddressID
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-
-        public List<OrderProduct> GetOrderDetailsByAddressID(string value)
+        public List<OrderProduct> GetOrderDetails()
         {
             throw new NotImplementedException();
         }
@@ -83,7 +82,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             return GetFileData();
         }
         /// <summary>
-        /// cancel the order
+        /// cancel the orderDetails By Using OrderID
         /// </summary>
         /// <param name="value"></param>
         public void CancelOrder(int value)
@@ -92,41 +91,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             _orderProducts.Remove(order);
         }
 
-        public int GetOrder()
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-        /// <summary>
-        /// Get order Details by Product ID
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-     /*  public List<OrderProduct> GetOrderDetails( string value)
-        {
-            List<OrderProduct> order = new List<OrderProduct>();
-
-            foreach (var orders in _orderProducts)
-            {
-                foreach (var products in orders.Products)
-                {
-                   // if (products.ProductID = value)
-                        
-                        order.Add(orders);
-
-                }
-                return order;
-            }
-        }*/
-
-        public void UpdateCustomerAddressDetails(int orderID, Customer value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateProductDetails(int orderID, List<OrderProduct> value)
+        public List<OrderProduct> GetOrderDetailsByAddressID(string value)
         {
             throw new NotImplementedException();
         }
@@ -143,9 +108,9 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             
             foreach (var order in _orders)
             {
-                //if (orders.CustomerAddress.CustomerID == value)
+                //if (orders.CustomerAddressID == value)
                 {
-                  //  order.Add(orders);
+                  // order.Add(orders);
                 }
             }
             return orders;
@@ -156,7 +121,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// </summary>
         /// <param name="orderid"></param>
         /// <param name="value"></param>
-        public void UpdateProductDetails(int orderid, List<Product> value)
+        public void UpdateProductDetails(int orderid, string value)
         {
            //OrderProduct orders = _ordersProducts.Find(temp => temp.OrderId= orderid);
 
@@ -164,8 +129,20 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
             SaveIntoFile();
         }
 
+        public int GetOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProductDetails(int orderID, List<OrderProduct> value)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
         /// <summary>
-        /// Update th customer address details
+        /// Update the customer address details
         /// </summary>
         /// <param name="orderid"></param>
         /// <param name="value"></param>
@@ -173,6 +150,18 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         {
             //OrderProduct order = _ordersProducts.Find(temp => temp.OrderId == orderid);
            // order.CustomerAddress = value;
+            SaveIntoFile();
+        }
+
+        public void UpdateCustomerAddressDetails(int orderID, Customer value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateQuantity(int orderid,int value)
+        {
+            //OrderProduct product = _ordersProducts.Find(temp => temp.OrderID == orderid);
+            //product.Quantity = value;
             SaveIntoFile();
         }
 
