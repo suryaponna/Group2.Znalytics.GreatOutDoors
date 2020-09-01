@@ -43,6 +43,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                                 break;
                     case 3:     SelectProducts();
                                 break;
+                        //// Changing Shipping Address
                     case 4:     ChangeShippingAddress();
                                 break;
                     default:    WriteLine("Enter Valid Option");
@@ -115,6 +116,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             WriteLine("-----------------These are the Products Hope you find out what you want---------------");
 
         }
+        /// <summary>
+        /// Method for Changing Shipping Address
+        /// </summary>
         static void ChangeShippingAddress() {
             
 
@@ -169,6 +173,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
         }
+        /// <summary>
+        /// Changing Default Address of a Customer
+        /// </summary>
         static void ChangeDefaultAddress() {
             AddressBusinessLogic ab = new AddressBusinessLogic();
             AddressDetail ad = new AddressDetail();
@@ -206,6 +213,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
             
         }
+        /// <summary>
+        /// Removing Particular Address For a Customer
+        /// </summary>
         static void RemoveAddress() {
             AddressDetail ad = new AddressDetail();
             AddressBusinessLogic ab = new AddressBusinessLogic();
@@ -336,6 +346,18 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     WriteLine("Enter Valid Address id to Update");
                 }
             }
+        }
+        /// <summary>
+        /// Removing Customer All Addresses
+        /// </summary>
+        static void RemoveMyAddresses() {
+            AddressDetail ad = new AddressDetail();
+            AddressBusinessLogic ab = new AddressBusinessLogic();
+            try { ab.RemoveAllAddresses(ad); }
+            catch (AddressException ae) {
+                throw new AddressException("For you there were no Adderesses");
+            }
+            
         }
         static void ReturnPresentation()
         {

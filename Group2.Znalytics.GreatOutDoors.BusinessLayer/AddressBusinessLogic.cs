@@ -235,7 +235,13 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         public void ChangeDefaultAddrees(AddressDetail ad) {
             dll.ChangeDefaultAddrees(ad);
         }
-
+        public void RemoveAllAddresses(AddressDetail ad) {
+            try
+            {
+                dll.RemoveAllAddresses(ad);
+            }
+            catch (AddressException ae) when (ae.Message == "Dear Customer No addresses For you") { }
+        }
 
     }
 }
