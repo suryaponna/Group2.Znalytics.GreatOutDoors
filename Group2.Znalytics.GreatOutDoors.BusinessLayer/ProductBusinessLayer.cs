@@ -8,7 +8,9 @@ using GreatOutdoorsProduct.Entities;
 using GreatOutdoorsProduct.Exceptions;
 using Group2.Znalytics.GreatOutDoors.DataLayer;
 
-
+/// <summary>
+/// BUSINESSACCESSLAYER FOR PRODUCTS
+/// </summary>
 namespace GreatOutdoorsProduct.BusinessLayer
 {
     /// <summary>
