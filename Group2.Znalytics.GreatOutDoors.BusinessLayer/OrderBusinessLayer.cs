@@ -36,7 +36,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// <param name="order"></param>
         public void AddOrderDetails(OrderProduct order)
         {
-            if(order.Products!=null)
+            if(order.ProductID!=null)
             {
                 _od.AddOrderDetails(order);
             }
@@ -55,7 +55,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             return orderDetails;
         }
 
-        public void CancelOrderDetails(string value)
+        public void CancelOrderDetails(int value)
         {
             _od.CancelOrder(value);
         }

@@ -1,4 +1,4 @@
-﻿using GreatOutdoorsProduct.Entities;
+﻿/*using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System;
@@ -67,7 +67,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
             Console.WriteLine("============Product Details==========");
             int choice = 0;
-           /* do
+            do
             {
                 Console.WriteLine("Enter 1 if you want to select products from orders or else enter 2");
                 Console.WriteLine("Enter Choice: ");
@@ -82,10 +82,10 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                         int quantity = int.Parse(Console.ReadLine());
 
 
-                        // Product p = orderLayer.ProductDetails(productId);
+                         Product p = orderLayer.ProductDetails(productId);
 
-                        //order.Price += p.TotalPrice * quantity;
-                        //order.Quantity += quantity;
+                        order.Price += p.TotalPrice * quantity;
+                        order.Quantity += quantity;
                         break;
                     case 2: Console.WriteLine("Exit"); break;
                 }
@@ -94,22 +94,32 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 Console.WriteLine("==================AddressDetails=====================");
                 Console.WriteLine("Enter your CustomerID to choose Your Address");
                 int CustomerId = int.Parse(Console.ReadLine());
-                //Customer customerAddress = orderLayer.GetCustomerDetailsByCustomerId(CustomerId);
-                //Console.WriteLine("Price for Selected Product is:" + order.totalPrice);
+                Customer customerAddress = orderLayer.GetCustomerDetailsByCustomerId(CustomerId);
+                Console.WriteLine("Price for Selected Product is:" + order.totalPrice);
                 Console.WriteLine("Enter 1 if you want to confirm you order");
                 int i = int.Parse(Console.ReadLine());
                 if (i == 1)
                 {
 
-                    //Console.WriteLine("Your OrderID is:" + order.OrderID);
-                    //orderLayer.AddOrderDetails(orders);
+                    Console.WriteLine("Your OrderID is:" + order.OrderID);
+                    orderLayer.AddOrderDetails(orders);
                 }
                 else
                 {
                     Console.WriteLine("You Didn't confirmed your order,Try again");
                 }
             }
-           */
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+            
+           
 
         }
 
@@ -143,14 +153,14 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                         {
                             Console.WriteLine("Enter ProductID");
                             string ProductId = Console.ReadLine();
-                            //Product p = orderBusiness.UpdateProductDetails)(ProductId);
-                            //products.Add(p);
+                            Product p = orderBusiness.UpdateProductDetails)(ProductId);
+                            products.Add(p);
                             Console.WriteLine("Enter 1 if you want to Update one more otherwise enter2");
                             Console.WriteLine("EnterChoice:");
                             choice = int.Parse(Console.ReadLine());
                         }
                         while (choice == 1);
-                        //orderBusiness.UpdateProductDetails(orderId, products);
+                        orderBusiness.UpdateProductDetails(orderId, products);
                         break;
                     case 2:
                         OrderProduct order = new OrderProduct();
@@ -198,7 +208,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             OrderBusinessLayer orderLayer = new OrderBusinessLayer();
             Console.WriteLine("Enter CustomerID");
             int CustomerID = int.Parse(Console.ReadLine());
-           /* List<OrderProduct> orderProducts = orderLayer. GetOrderDetailsByCustomerID,CustomerID);
+           List<OrderProduct> orderProducts = orderLayer. GetOrderDetailsByCustomerID,CustomerID);
             foreach (var order in orderProducts)
             {
                 foreach (var item in orderProducts)
@@ -206,13 +216,13 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                     foreach (var product in order.Products)
                     {
 
-                    }*/
+                    }
                 }
             }
             
 }
 
-
+*/
   
             
 

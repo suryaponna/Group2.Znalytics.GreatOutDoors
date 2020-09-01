@@ -10,39 +10,41 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     /// </summary>
     public class OrderProduct : IEquatable<OrderProduct>
     {
-        public List<Product> Products;
+
 
         //private fields
-         List<Product> products1;
-        private Customer _customerAddress;
-        private string _orderID;
-        double _totalprice;
-        private int _quantity;     //each product has its own 
+        private string _productID;
+        private int _customerAddressID;
+        private int _orderID;
+        private double _totalprice;
+        private int _quantity;   //each product has its own 
        
+
+        
+       /// <summary>
+       /// Constructor that initializes the fields
+       /// </summary>
+       /// <param name="ProductID"></param>
+       /// <param name="CustomerAddressID"></param>
+       /// <param name="OrderID"></param>
+       /// <param name="TotalPrice"></param>
+       /// <param name="Quantity"></param>
+        public OrderProduct(string ProductID,int CustomerAddressID,int OrderID,int TotalPrice,int Quantity)
+        {
+            _productID = ProductID;
+            _customerAddressID = CustomerAddressID;
+            _orderID = OrderID;
+            _totalprice = TotalPrice;
+            _quantity = Quantity;
+
+        }
 
         /// <summary>
         /// Default Constructor
         /// </summary>
 
-        public OrderProduct(List<Product> products)
+        public OrderProduct()
         {
-            this.Products = products;
-        }
-        /// <summary>
-        /// Cosntructor that intialises the fields
-        /// </summary>
-        /// <param name="products"></param>
-        /// <param name="customerAddress"></param>
-        /// <param name="OrderID"></param>
-        /// <param name="TotalPrice"></param>
-        /// <param name="Quantity"></param>
-        public OrderProduct(List<Product> Products1, Customer customerAddress, string OrderID, double Price, int Quantity)
-        {
-            Products = Products1; ;
-            customerAddress = _customerAddress;
-            OrderID = _orderID;
-            Price = _totalprice;
-            Quantity = _quantity;
 
         }
 
@@ -50,14 +52,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         /// Property for setting values to products field and getting the value of the field
         /// </summary>
 
-        public List<Product> Order
+        public string ProductID
         {
             set
             {
-                List<Product> _products = new List<Product>();
+                ;
                 if (value != null)
                 {
-                    _products = value;
+                    _productID = value;
                 }
                 else
                 {
@@ -66,20 +68,20 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             }
             get
             {
-                return Products;
+                return _productID;
             }
         }
 
         /// <summary>
         /// Property for setting values to customer address field and getting the values of customer address field
         /// </summary>
-       /* public Customer CustomerAddress
+        public int CustomerAddressID
         {
             set
             {
-                if (value != null)
+                if (value != 0)
                 {
-                    _customerAddress = value;
+                    _customerAddressID = value;
                 }
                 else
                 {
@@ -89,14 +91,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             }
             get
             {
-                return _customerAddress;
+                return _customerAddressID;
             }
-        }*/
+        }
 
         /// <summary>
         /// Property for setting values to orderid and getting the value of the orderId field
         /// </summary>
-        public string OrderID
+        public int OrderID
         {
             set
             {

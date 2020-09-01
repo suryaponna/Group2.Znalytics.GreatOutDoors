@@ -86,7 +86,7 @@ namespace Group2.Znalytics.GreetOutDoors.DataLayer
         /// cancel the order
         /// </summary>
         /// <param name="value"></param>
-        public void CancelOrder(string value)
+        public void CancelOrder(int value)
         {
             OrderProduct order = _orderProducts.Find(temp => temp.OrderID == value);
             _orderProducts.Remove(order);
