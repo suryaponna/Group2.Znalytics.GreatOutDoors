@@ -1,5 +1,5 @@
 ﻿//created by K.Prasanna
-using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+/*using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
@@ -201,7 +201,13 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
 
+            Console.Write("Enter new Product ID(should start with(*** capital IN***)): ");
+            rm.ProductName = Console.ReadLine();
             Console.Write("Enter new Product Name: ");
+            rm.ProductName = Console.ReadLine();
+            Console.Write("Enter new ProductQuantity: ");
+            rm.ProductName = Console.ReadLine();
+            Console.Write("Enter new Productdate: ");
             rm.ProductName = Console.ReadLine();
 
             rbl.AddReturn(rm);
@@ -236,7 +242,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             string ProductName = System.Console.ReadLine();
 
             rbl.RemoveReturnByProductName(ProductName);
-            System.Console.WriteLine("Product Removed");
+            System.Console.WriteLine("ProductName Removed");
         }
 
 
@@ -256,7 +262,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
                 System.Console.WriteLine("--------------- Details are --------------");
-                Console.WriteLine("ProductID :"+item.ProductID + " ProductName is: " + item.ProductName + " ProductQuantity is: " + item.ProductQuantity + " ProductType " + item.Producttype + "  Productdate :" + item.Productdate + "  ");
+                Console.WriteLine("ProductID :"+item.ProductID + " ProductName is: " + item.ProductName + " ProductQuantity is: " + item.ProductQuantity +  "  Productdate :" + item.Productdate + "  ");
             }
 
         }
@@ -320,4 +326,4 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
 
     }
-}
+}*/
