@@ -7,7 +7,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     public class Return
     {
-        //private fields
+        //private fields of Return
         private string _productID;
         private string _productName;
         private DateTime _productdate;
@@ -60,7 +60,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 
             set
             {
-                _productdate = value.AddDays(30);
+                _productdate = value.AddDays(30);//Productdate will be added by 30 days to check exchange condition
             }
             get
             {
@@ -75,7 +75,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                if (value < 20)
+                if (value < 20)//ProductQuantity should be less than 20 only
                 {
                     _productQuantity = value;
                 }
