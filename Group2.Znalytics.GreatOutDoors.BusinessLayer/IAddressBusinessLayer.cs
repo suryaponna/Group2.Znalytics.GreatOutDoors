@@ -52,6 +52,21 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
         /// </summary>
         /// <param name="ad"></param>
         void ChangeDefaultAddrees(AddressDetail ad);
+        /// <summary>
+        /// Adding Country to existing Countries List
+        /// </summary>
+        /// <param name="Country"></param>
+        void AddCountrie(string Country);
+        /// <summary>
+        /// Adding States To existing States List
+        /// </summary>
+        /// <param name="State"></param>
+        void AddState(string State);
+        /// <summary>
+        /// Adding Phone Code existing Phone Codes List
+        /// </summary>
+        /// <param name="PhoneCode"></param>
+        void PhoneCode(string PhoneCode);
 
     }
 }

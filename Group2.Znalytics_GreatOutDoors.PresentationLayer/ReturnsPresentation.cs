@@ -1,10 +1,10 @@
 ﻿//created by K.Prasanna
-/**using Group2.Znalytics.GreatOutDoors.BusinessLayer;
+using Group2.Znalytics.GreatOutDoors.BusinessLayer;
 using System;
 using System.Collections.Generic;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using System.Reflection.Emit;
-/*
+
 /// <summary>
 /// This is the Main method for the project
 /// </summary>
@@ -87,7 +87,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             }
 
 
-            Console.WriteLine("Enter ProductID");
+            Console.WriteLine("Enter ProductID (should start with ***captital IN***");
             rm.ProductID = (Console.ReadLine());
 
 
@@ -217,7 +217,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
-            System.Console.Write("Enter the ProductID to be Deleted:");
+            System.Console.Write("Enter the ProductID(should start with(*** capital IN***)) to be Deleted:");
             string ProductId = (System.Console.ReadLine());
 
             rbl.RemoveReturnByProductID(ProductId);
@@ -267,7 +267,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         {
             ReturnsBusinessLayer rbl = new ReturnsBusinessLayer();
             Return rm = new Return();
-            Console.WriteLine("Enter ProductID");
+            Console.WriteLine("Enter ProductID (should start with(*** capital IN***))");
             rm.ProductID = Console.ReadLine();
 
             rbl.GetReturnByProductID(rm);
@@ -284,7 +284,7 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             rm.ProductName = Console.ReadLine();
 
             rbl.GetReturnByProductName(rm);
-            Console.WriteLine("Your Product name is:");
+            Console.WriteLine("Your Product name is:"+rm.ProductName);
         }
         /// <summary>
         /// Method to update Returns
@@ -295,14 +295,14 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
             Return rm = new Return();
             Console.WriteLine("Enter existing Product name to update");
             rm.ProductName = Console.ReadLine();
-            Console.WriteLine("Enter existing Product Id to update");
+            Console.WriteLine("Enter existing Product Id(should start with(*** capital IN***)) to update");
             rm.ProductID = Console.ReadLine();
 
             if (rm != null)
             {
                Console.WriteLine("Enter the new Productname ");
                rm.ProductName= Console.ReadLine();
-                Console.WriteLine("Enter the new ProductId ");
+                Console.WriteLine("Enter the new ProductId (should start with(*** capital IN***)) ");
                 rm.ProductName = Console.ReadLine();
 
                 rbl.UpdateReturn(rm);
@@ -321,4 +321,3 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
 
     }
 }
-*/
