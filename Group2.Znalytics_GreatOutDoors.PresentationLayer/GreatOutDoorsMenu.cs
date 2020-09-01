@@ -52,10 +52,11 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
         }
         /**public static void RetailstoreMenu()
         {
+         Console.WriteLine("         ------------------------------:) WELCOME TO RETAIL STORE (:------------------------------");
             int choice = -1;
             do
             {
-                Console.WriteLine("------------------------------:) WELCOME TO RETAIL STORE (:------------------------------");
+               // Console.WriteLine("------------------------------:) WELCOME TO RETAIL STORE (:------------------------------");
                 Console.WriteLine("RETAILSTORE MENU");
                 Console.WriteLine("1. Add Retailstore");
                 Console.WriteLine("2. Display Retailstore");
