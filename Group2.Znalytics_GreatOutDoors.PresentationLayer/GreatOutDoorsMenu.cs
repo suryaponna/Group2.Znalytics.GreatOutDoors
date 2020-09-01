@@ -152,6 +152,8 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 ad.Town = ReadLine();
                 WriteLine("Enter your State");
                 ad.State = ReadLine();
+                WriteLine("Enter true if this is your Default address otherwise enter false");
+                ad.DefaultAddressOrNot = Convert.ToBoolean(ReadLine());
                 WriteLine("Enter your Address 0 for Type Home or 1 for Office");
                 bool val = int.TryParse(ReadLine(), out Type);
                 ad.AddressId = (AddressType)Type;
@@ -250,6 +252,9 @@ namespace Group2.Znalytics_GreatOutDoors.PresentationLayer
                 WriteLine("Enter Valid Option with ");
             }
         }
+        /// <summary>
+        /// Updating one address of the Customer Addresses
+        /// </summary>
         static void UpdateAddress() {
             WriteLine("These are your addresses");
             AddressDetail ad = new AddressDetail();
