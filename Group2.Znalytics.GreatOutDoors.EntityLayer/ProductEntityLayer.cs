@@ -11,7 +11,7 @@ namespace GreatOutdoorsProduct.Entities
     /// this class represents entity layer for product
     /// </summary>
     
-    public class Product 
+    public class Product
     {   
         /// <summary>
         /// creating private fields
