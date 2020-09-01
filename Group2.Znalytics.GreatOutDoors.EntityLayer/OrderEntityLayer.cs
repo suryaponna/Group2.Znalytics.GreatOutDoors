@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreatOutdoorsProduct.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,184 +8,141 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
     /// <summary>
     /// Represents details of Order and IEquatable is for comparing two customers are same or not
     /// </summary>
-    public class OrderProduct: IEquatable<OrderProduct>
+    public class OrderProduct// IEquatable<OrderProduct>
     {
-        //private fields
-        private string _productID;
-        private string _productName;
-        private string _price;
-        private string _quantity;     //each product has its own 
-        private string _finalDelieveryAddress;
-        //private DateTime _timeOfSale;  //for time on shelf      
-        private string _orderID;
-        private string _totalAmount;    //_quantity*_sellingPrice
-        private string _amountPayable;  //total amount payable
+        public List<Product> Products;
 
-        public OrderProduct()
+        //private fields
+        List<Product> products;
+        private Customer _customerAddress;
+        private string _orderID;
+        double _totalprice;
+        private int _quantity;     //each product has its own 
+        private List<Product> _products;
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+
+        public OrderProduct(List<Product> products)
         {
+            this.Products = products;
+        }
+        /// <summary>
+        /// Cosntructor that intialises the fields
+        /// </summary>
+        /// <param name="products"></param>
+        /// <param name="customerAddress"></param>
+        /// <param name="OrderID"></param>
+        /// <param name="TotalPrice"></param>
+        /// <param name="Quantity"></param>
+        public OrderProduct(List<Product> products, Customer customerAddress, string OrderID, double Price, int Quantity)
+        {
+            products = _products;
+            customerAddress = _customerAddress;
+            OrderID = _orderID;
+            Price = _totalprice;
+            Quantity = _quantity;
+
         }
 
         /// <summary>
-        /// Constructor that initializes the details to order the product
+        /// Property for setting values to products field and getting the value of the field
         /// </summary>
-        /// <param name="ProductID"></param>
-        /// <param name="AddToCart"></param>
-        /// <param name="Quantity"></param>
-        /// <param name="SellingPrice"></param>
-        /// <param name="TotalAmount"></param>
-        /// <param name="AmountPayable"></param>
-        /// <param name="FinalDelieveryAddress"></param>
-        /// <param name="TimeOfSale"></param>
-        /// <param name="OrderID"></param>
-        public OrderProduct(string ProductID, string AddToCart, string Quantity, string SellingPrice, string TotalAmount, string AmountPayable, string FinalDelieveryAddress, string TimeOfSale, string OrderID)
-        {
-            _productID = ProductID;
-            _addToCart = AddToCart;
-            _quantity = Quantity;
-            _sellingPrice = SellingPrice;
-            _totalAmount = TotalAmount;
-            _amountPayable = AmountPayable;
-            _finalDelieveryAddress = FinalDelieveryAddress;
-            // _timeOfSale = TimeOfSale;
-            _orderID = OrderID;
-        }
-        public string ProductID
+
+        public List<Product> order
         {
             set
             {
-                bool spaceFound = value.Contains(" ");
-                bool atFound = value.Contains("@");
-                if(!spaceFound && !atFound && value.Length<=10)
-                { 
-                   this._productID = value;
+                List<Product> products = new List<Product>();
+                if (value != null)
+                {
+                    _products = value;
                 }
                 else
                 {
-                    throw new OrderProductEXception("Enter the Valid ProductID  ");
+                    throw new OrderException("Select atleast One Product");
+                }
+            }
+            get
+            {
+                return _products;
+            }
+        }
+
+        /// <summary>
+        /// Property for setting values to customer address field and getting the values of customer address field
+        /// </summary>
+        public Customer CustomerAddress
+        {
+            set
+            {
+                if (value != null)
+                {
+                    _customerAddress = value;
+                }
+                else
+                {
+                    throw new OrderException("Select Customer Address");
                 }
 
             }
             get
             {
-                return _productID;
+                return _customerAddress;
             }
         }
-        public string AddToCart
-        {
-            set
-            {
-                if(value.Length<=10)
-                {
-                   this._addToCart = value;
-                }
-                
-                else
-                {
-                    throw new OrderProductEXception("");
-                }
-            }
 
-            get
-            {
-                return _addToCart;
-            }
-        }
-        public string Quantity
+        /// <summary>
+        /// Property for setting values to orderid and getting the value of the orderId field
+        /// </summary>
+        public string OrderID
         {
             set
             {
-                if (value.Length <= 10)
-                {
-                    _quantity = value;
-                }
-            }
-            get
-            {
-                return _quantity;
-            }
-        }
-        public string SellingPrice
-        {
-            set
-            {
-                if(value.Length<=10)
-                {
-                    _sellingPrice = value;
-                }
-            }
-            get
-            {
-                return _sellingPrice;
-            }
-        }
-        public string TotalAmount
-        {
-            set
-            {
-                if(value.Length<=10)
-                {
-                    _totalAmount = value;
-                }
-            }
-            get
-            {
-                return _totalAmount;
-            }
-        }
-        public string AmountPayable
-        {
-            set
-            {
-                if(value.Length<=10)
-                {
-                    _amountPayable = value;
-                }
-            }
-            get
-            {
-                return _amountPayable;
-            }
-        }
-        public string FinalDelieveryAddress
-        {
-            set
-            {
-                if(value.Length<=50)
-                {
-                    _finalDelieveryAddress = value;
-                }
-            }
-            get
-            {
-                return _finalDelieveryAddress;
-            }
-        }
-       public string OrderID
-        {
-            set
-            {
-                if(value.Length<=10)
-                {
-                    _orderID = value;
-                }
+                _orderID = value;
+
             }
             get
             {
                 return _orderID;
             }
         }
-
-        public string ProductName { get; set; }
-
-        public bool Equals(OrderProduct other)
+         /// <summary>
+         /// Property for getting values to price field and getting the values from the Price field
+         /// </summary>
+        public double totalPrice
         {
-            throw new NotImplementedException();
+            set
+            {
+                if(value > 0)
+                {
+                    _totalprice = value;
+                }
+                
+
+            }
+            get
+            {
+                return _totalprice;
+            }
+
         }
 
-        public static implicit operator int(OrderProduct v)
+        public int Qunatity
         {
-            throw new NotImplementedException();
+            set
+            {
+                if (value > 0 && value != ' ')
+                {
+                    _quantity = value;
+                }
+                else throw new OrderException("Quantity should be greater than 0 ,it should not be null");
+            }
+            get
+            {
+                return _quantity;
+            }
         }
     }
 }
-

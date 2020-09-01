@@ -47,7 +47,7 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
          };
         List<string> StatesList = new List<string>(){"Andhra Pradesh", "Assam", "Arunachal Pradesh", "Bihar", "Goa", "Gujarat", "Jammu Kashmir", "Jharkhand", "West Bengal", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa",
             "Punjab", "Rajasthan", "Sikkim","Tamil Nadu","Tripura, Uttaranchal","Uttar Pradesh","Haryana", "Himachal Pradesh","Chhattisgarh"};
-        List<string> NumberCodes = new List<string>();
+        List<string> NumberCodes = new List<string>() { "91", "93", "355", "213", "376", "244", "244", "672", "374", "297", "61", "43", "973", "375" };
         
 
         public  AddressBusinessLogic()
@@ -210,7 +210,7 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         /// <param name="Id"></param>
         public void RemoveAddress(AddressDetail ad) {
             try { dll.RemoveAddress(ad); }
-            catch (AddressException aa) when (aa.Message ==) { }
+            catch (AddressException aa) when (aa.Message == "Dear Customer You dont Have this address any more you no need to delete") { }
         }
         /// <summary>
         /// Returning All Addresses Of the Customer
@@ -235,7 +235,31 @@ namespace Znalytics.Group2.GreatOutDoor.BusinessLayer
         public void ChangeDefaultAddrees(AddressDetail ad) {
             dll.ChangeDefaultAddrees(ad);
         }
+        public void RemoveAllAddresses(AddressDetail ad) {
+            try
+            {
+                dll.RemoveAllAddresses(ad);
+            }
+            catch (AddressException ae) when (ae.Message == "Dear Customer No addresses For you") { }
+        }
+        /// <summary>
+        /// Adding country to CountriesList
+        /// </summary>
+        /// <param name="country"></param>
+        public void AddCountrie(string Country) {
 
+            CountriesList.Add(Country);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="State"></param>
+        public void AddState(string State) {
+            StatesList.Add(State);
+        }
+        public void PhoneCode(string PhoneCode) {
+            NumberCodes.Add(PhoneCode);
+        }
 
     }
 }
