@@ -27,6 +27,7 @@ namespace GreatOutdoorsProduct.DataAccessLayer
             //creating a list 
             _Product = new List<Product>()
             {
+                //mock data
                 new Product{ProductID=123 ,ProductName="shoes" ,Available=true },
                 new Product{ProductID=2345 ,ProductName="hats" ,Available=true },
                 new Product{ProductID=5637 ,ProductName="books" ,Available=false}
