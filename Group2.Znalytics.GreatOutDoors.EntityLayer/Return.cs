@@ -4,7 +4,9 @@ using System;
 /// This is Return Module
 /// </summary>
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
-{
+{/// <summary>
+/// 
+/// </summary>
     public class Return
     {
         //private fields of Return
@@ -43,7 +45,14 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
             set
             {
 
-                _productName = value;
+                if ( (value.StartsWith("IN")))//Name must start with IN
+                {
+                    _productName = value;
+                }
+                else
+                {
+                    throw new ReturnException("Entered name is valid please start with IN");
+                }
 
             }
             get

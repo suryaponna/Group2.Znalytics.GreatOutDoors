@@ -5,6 +5,8 @@ using System.Runtime.Remoting;
 using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using GreatOutdoorsProduct.BusinessLayer;
+using GreatOutdoorsProduct.Entities;
 using Group2.Znalytics.GreatOutDoors.EntityLayer;
 using Group2.Znalytics.GreetOutDoors.DataLayer;
 using Microsoft.Win32;
@@ -14,12 +16,8 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     public class OrderBusinessLayer : IOrderBusinessLayer
     {
         OrderDataLayer _od;
-
-
-
-
         /// <summary>
-        /// Constructor for Order Business Layer
+        /// Represents a Constructor for Order Business Layer class
         /// </summary>
         public OrderBusinessLayer()
         {
@@ -27,22 +25,41 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             _od = new OrderDataLayer();
         }
 
-        
+        //Creating Reference variable for interface IproductBusinessLayer
+        IProductBusinessLayer product = new ProductBusinessLayer();
+        /// <summary>
+        /// Method for Displaying Products
+        /// </summary>
+        /// <returns></returns>
+        public List<Product> DisplayProducts()
+        {
+            return product.DisplayProducts();
+        }
+
+        public Product ProductDetails(string ProductID)
+        {
+            return product.GetProductByProductID(ProductID);
+        }
+
+        /*  public Customer GetCustomerDetailsByCustomerID(int CustomerId)
+          {
+              return UpdateCustomerAddressDetails.GetCustomerById(CustomerId);
+          }*/
 
 
         /// <summary>
         /// Adding orderDetails 
         /// </summary>
         /// <param name="order"></param>
-        public void AddOrderDetails(OrderProduct order)
+        public void AddOrderDetails(OrderProduct values)
         {
-            if(order.ProductID!=null)
+            try
             {
-                _od.AddOrderDetails(order);
+                _od.AddOrderDetails(values);
             }
-            else
+            catch(Exception)
             {
-                throw new OrderException("Select atleast One Product");
+                throw;
             }
         }
         /// <summary>
@@ -54,10 +71,18 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             List<OrderProduct> orderDetails = _od.GetOrderDetails();
             return orderDetails;
         }
-
+        /// <summary>
+        /// Cancel OrderDetails by OrderId
+        /// </summary>
+        /// <param name="value"></param>
         public void CancelOrderDetails(int value)
         {
             _od.CancelOrder(value);
+        }
+
+        public Product ProductDetails(object productId)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -72,6 +97,11 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
 
         }
 
+        public Customer GetOrderDetailsByCustomerID(object customerID)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Get order Details by Product Id 
         /// </summary>
@@ -82,7 +112,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             return _od.GetOrderDetails(value);
         }
 
-
+      
 
         /// <summary>
         /// Get order details by Customer ID
@@ -112,12 +142,27 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             _od.UpdateCustomerAddressDetails(OrderID, value);
         }
 
-        public List<OrderProduct> GetOrderProducts()
+        public void UpdateQuantity(int orderId,int value)
+        {
+            _od.UpdateQuantity(orderId, value);
+        }
+
+        public List<OrderProduct> GetOrderDetailsByEMployeeID(int value)
         {
             throw new NotImplementedException();
         }
 
-        public List<OrderProduct> GetOrderDetailsByEMployeeID(int value)
+        public void UpdateCustomerAddressDetails(int orderId, string addressID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateCustomerAddressDetails(int orderId, int customerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProductDetails(int orderId, string productId)
         {
             throw new NotImplementedException();
         }
