@@ -42,9 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBusinessLogic.cs" />
-    <Compile Include="CustomerBLL.cs" />
-    <Compile Include="CustomerBusinessLayerLogic.cs" />
-    <Compile Include="Exchange.cs" />
     <Compile Include="ExchangeBusinessLogicLayer.cs" />
     <Compile Include="IAddressBusinessLayer.cs" />
     <Compile Include="IOrderBusinessLayer.cs" />
