@@ -10,7 +10,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
     interface IOrderBusinessLayer
     {
         //Get Order Details
-        List<OrderProduct> GetOrderProducts();
+        List<OrderProduct> GetOrderDetails();
         //Get orderDetails by productId
         List<OrderProduct> GetOrderDetailsByProductID(string value);
         //get OrderDetails by AddressID

@@ -6,9 +6,9 @@ using System.Linq;
 namespace Group2.Znalytics.GreatOutDoors.EntityLayer
 {
     /// <summary>
-    /// Represents details of Order and IEquatable is for comparing two customers are same or not
+    /// Represents details of Order 
     /// </summary>
-    public class OrderProduct : IEquatable<OrderProduct>
+    public class OrderProduct 
     {
 
 
@@ -49,7 +49,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         }
 
         /// <summary>
-        /// Property for setting values to products field and getting the value of the field
+        /// Property for setting values to productsID field and getting the value of the ProductID field
         /// </summary>
 
         public string ProductID

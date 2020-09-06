@@ -11,12 +11,12 @@ namespace ZnalyticsGreatOutDoors.PresentationLayer
     class CustomerPL
     {
         //Execution starts from main method
-        static void Main()
+       /* static void Main()
         {
             CustomerPresentation();
             Console.ReadKey();//reads from keyboard
         }
-
+       */
         //Displaying Customers menu
         //static method is nothing but all instances of class share the same copy of the methoad and its data.
         static void CustomerPresentation()
