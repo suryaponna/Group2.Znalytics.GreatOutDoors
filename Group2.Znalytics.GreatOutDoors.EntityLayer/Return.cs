@@ -30,7 +30,23 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-                _productID = value;
+                try
+                {
+
+                    if ((value.StartsWith("IN")))//Name must start with IN
+                    {
+                        _productID = value;
+                    }
+                    else
+                    {
+                        throw new ReturnException("Entered name is not valid please start with IN");
+                    }
+                }
+                catch
+                {
+                    throw;
+                }
+
             }
             get
             {
@@ -44,15 +60,7 @@ namespace Group2.Znalytics.GreatOutDoors.EntityLayer
         {
             set
             {
-
-                if ( (value.StartsWith("IN")))//Name must start with IN
-                {
-                    _productName = value;
-                }
-                else
-                {
-                    throw new ReturnException("Entered name is valid please start with IN");
-                }
+                _productName = value;
 
             }
             get

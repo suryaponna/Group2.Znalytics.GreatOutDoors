@@ -42,7 +42,7 @@ namespace Group2.Znalytics.GreatOutDoors.BusinessLayer
             try
             {
                 // checks condition that Purchased date should be less than exchange date to exchange the product
-                if (rm.Productdate > rm.ExchangeDate)
+                if (rm.Productdate < rm.ExchangeDate)
                 {
                     ExchangeProduct(rm);
                 }
